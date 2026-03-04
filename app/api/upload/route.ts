@@ -3,7 +3,7 @@ import { writeFile, mkdir } from 'fs/promises';
 import path from 'path';
 import { DocumentVerifier, type DocumentType } from '@/lib/documentVerifier';
 
-const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB
+const MAX_FILE_SIZE = 2 * 1024 * 1024; // 2MB
 
 // Folders that require PDF-only uploads
 const PDF_ONLY_FOLDERS = ['surat-izin', 'surat-permohonan'];
@@ -24,7 +24,7 @@ export async function POST(request: NextRequest) {
 
         // Validate file size
         if (file.size > MAX_FILE_SIZE) {
-            return NextResponse.json({ error: 'File size exceeds 10MB limit' }, { status: 400 });
+            return NextResponse.json({ error: 'Ukuran file maksimal 2MB' }, { status: 400 });
         }
 
         // For surat folders, enforce PDF-only

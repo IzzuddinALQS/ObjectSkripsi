@@ -2,12 +2,12 @@ import { writeFile, unlink, mkdir } from 'fs/promises';
 import path from 'path';
 
 const UPLOAD_DIR = path.join(process.cwd(), 'public', 'uploads');
-const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB
+const MAX_FILE_SIZE = 2 * 1024 * 1024; // 2MB
 
 export async function saveFile(file: File): Promise<string> {
     // Validate file size
     if (file.size > MAX_FILE_SIZE) {
-        throw new Error('File size exceeds 10MB limit');
+        throw new Error('Ukuran file maksimal 2MB');
     }
 
     // Generate unique filename

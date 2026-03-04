@@ -19,6 +19,11 @@ export default function ReturnModal({ loanId, itemName, onClose }: ReturnModalPr
     const handlePhotoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const file = e.target.files?.[0];
         if (file) {
+            if (file.size > 2 * 1024 * 1024) {
+                alert('Ukuran file maksimal 2MB');
+                e.target.value = '';
+                return;
+            }
             setPhotoFile(file);
             const reader = new FileReader();
             reader.onloadend = () => {
@@ -119,7 +124,7 @@ export default function ReturnModal({ loanId, itemName, onClose }: ReturnModalPr
                                 <label className="border-2 border-dashed border-gray-200 rounded-lg p-6 flex flex-col items-center justify-center cursor-pointer hover:border-primary/50 hover:bg-gray-50 transition-colors">
                                     <Upload className="w-8 h-8 text-gray-400 mb-2" />
                                     <p className="text-sm text-gray-500">Klik untuk upload foto</p>
-                                    <p className="text-xs text-gray-400 mt-1">JPG, PNG (Max 5MB)</p>
+                                    <p className="text-xs text-gray-400 mt-1">JPG, PNG (Maks. 2MB)</p>
                                     <input
                                         type="file"
                                         accept="image/*"

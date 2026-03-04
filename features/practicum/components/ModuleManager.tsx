@@ -62,6 +62,11 @@ export default function ModuleManager({ modules, courses }: ModuleManagerProps) 
     const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const file = e.target.files?.[0];
         if (file) {
+            if (file.size > 2 * 1024 * 1024) {
+                alert('Ukuran file maksimal 2MB');
+                e.target.value = '';
+                return;
+            }
             setSelectedFile(file);
         }
     };
@@ -229,7 +234,7 @@ export default function ModuleManager({ modules, courses }: ModuleManagerProps) 
                                         <div className="py-4">
                                             <Upload className="w-8 h-8 text-gray-400 mx-auto mb-2" />
                                             <p className="text-sm text-gray-500">Klik atau drag file ke sini</p>
-                                            <p className="text-xs text-gray-400 mt-1">PDF, DOC, DOCX, PPT, PPTX</p>
+                                            <p className="text-xs text-gray-400 mt-1">PDF, DOC, DOCX, PPT, PPTX (Maks. 2MB)</p>
                                         </div>
                                     )}
                                 </div>

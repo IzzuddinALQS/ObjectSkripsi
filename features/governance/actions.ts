@@ -9,6 +9,8 @@ import { join } from 'path';
 import { mkdir } from 'fs/promises';
 import { requirePermission } from '@/lib/auth';
 
+const MAX_FILE_SIZE = 2 * 1024 * 1024; // 2MB
+
 export async function getGovernanceDocs(type: string) {
     const docs = await db
         .select({
@@ -39,6 +41,14 @@ export async function uploadGovernanceDoc(formData: FormData) {
 
         if (!file || file.size === 0) {
             return { success: false, error: 'Tidak ada file yang diunggah' };
+        }
+
+        if (file.size > MAX_FILE_SIZE) {
+            return { success: false, error: 'Ukuran file dokumen maksimal 2MB' };
+        }
+
+        if (coverFile && coverFile.size > MAX_FILE_SIZE) {
+            return { success: false, error: 'Ukuran file cover maksimal 2MB' };
         }
 
         const bytes = await file.arrayBuffer();
@@ -98,6 +108,9 @@ export async function updateGovernanceDoc(id: number, formData: FormData) {
         const uniqueSuffix = `${Date.now()}-${Math.round(Math.random() * 1E9)}`;
 
         if (file && file.size > 0) {
+            if (file.size > MAX_FILE_SIZE) {
+                return { success: false, error: 'Ukuran file dokumen maksimal 2MB' };
+            }
             const bytes = await file.arrayBuffer();
             const buffer = Buffer.from(bytes);
             const filename = `${uniqueSuffix}-${file.name.replace(/[^a-zA-Z0-9.-]/g, '_')}`;
@@ -107,6 +120,9 @@ export async function updateGovernanceDoc(id: number, formData: FormData) {
         }
 
         if (coverFile && coverFile.size > 0) {
+            if (coverFile.size > MAX_FILE_SIZE) {
+                return { success: false, error: 'Ukuran file cover maksimal 2MB' };
+            }
             const coverBytes = await coverFile.arrayBuffer();
             const coverBuffer = Buffer.from(coverBytes);
             const coverFilename = `cover-${uniqueSuffix}-${coverFile.name.replace(/[^a-zA-Z0-9.-]/g, '_')}`;

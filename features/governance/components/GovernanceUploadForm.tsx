@@ -85,6 +85,7 @@ export default function GovernanceUploadForm({ adminId, allowedTypes, initialDat
                         accept=".pdf"
                         className="w-full px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-primary/10 file:text-primary hover:file:bg-primary/20"
                     />
+                    <p className="text-xs text-gray-500 mt-1">Format: PDF. Maks. 2MB</p>
                 </div>
 
                 <div className="md:col-span-2">
@@ -92,7 +93,7 @@ export default function GovernanceUploadForm({ adminId, allowedTypes, initialDat
                         {isEdit ? 'Cover Image (Opsional) - Biarkan kosong jika tidak ingin mengubah' : 'Cover Image (Opsional, untuk SOP)'}
                     </label>
                     <input type="file" name="cover" accept="image/*" className="w-full px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-primary/10 file:text-primary hover:file:bg-primary/20" />
-                    <p className="text-xs text-gray-500 mt-1">Format: JPG, PNG. Disarankan rasio 1:1 atau portrait.</p>
+                    <p className="text-xs text-gray-500 mt-1">Format: JPG, PNG. Maks. 2MB. Disarankan rasio 1:1 atau portrait.</p>
                 </div>
 
                 <div className="md:col-span-2 flex gap-2">

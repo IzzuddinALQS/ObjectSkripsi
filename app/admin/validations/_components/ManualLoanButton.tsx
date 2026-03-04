@@ -54,6 +54,11 @@ export default function ManualLoanButton({ items, lecturers, adminId }: ManualLo
                 e.target.value = '';
                 return;
             }
+            if (file.size > 2 * 1024 * 1024) {
+                alert('Ukuran file maksimal 2MB');
+                e.target.value = '';
+                return;
+            }
             setSuratFile(file);
         }
     };
@@ -325,7 +330,7 @@ export default function ManualLoanButton({ items, lecturers, adminId }: ManualLo
                                                         className="w-full text-sm file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-white file:border file:border-gray-200 hover:file:bg-gray-50 cursor-pointer"
                                                     />
                                                 </div>
-                                                <p className="text-xs text-gray-500 mt-1">Upload surat izin (format .pdf)</p>
+                                                <p className="text-xs text-gray-500 mt-1">Upload surat izin (format .pdf, maks. 2MB)</p>
                                             </div>
                                         </div>
                                     </div>

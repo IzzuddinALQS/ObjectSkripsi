@@ -129,7 +129,7 @@ export async function getRoomAttendanceStats() {
     const result = await db.select({
         roomId: labAttendance.roomId,
         roomName: rooms.name,
-        count: sql<number>`cast(count(*) as integer)`,
+        count: sql<number>`count(*)`,
     })
         .from(labAttendance)
         .innerJoin(rooms, eq(labAttendance.roomId, rooms.id))

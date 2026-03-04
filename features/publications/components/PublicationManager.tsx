@@ -336,7 +336,7 @@ export default function PublicationManager({ publications, userId }: Props) {
                                     <label className="flex flex-col items-center cursor-pointer py-4">
                                         <Upload className="w-8 h-8 text-gray-400 mb-2" />
                                         <span className="text-sm text-gray-500">Klik untuk upload file PDF</span>
-                                        <span className="text-xs text-gray-400 mt-1">Maks. 10MB</span>
+                                        <span className="text-xs text-gray-400 mt-1">Maks. 2MB</span>
                                         <input
                                             type="file"
                                             accept=".pdf"
@@ -344,8 +344,8 @@ export default function PublicationManager({ publications, userId }: Props) {
                                             onChange={(e) => {
                                                 const file = e.target.files?.[0];
                                                 if (file) {
-                                                    if (file.size > 10 * 1024 * 1024) {
-                                                        alert('File terlalu besar (maks. 10MB)');
+                                                    if (file.size > 2 * 1024 * 1024) {
+                                                        alert('File terlalu besar (maks. 2MB)');
                                                         return;
                                                     }
                                                     setSelectedFile(file);
