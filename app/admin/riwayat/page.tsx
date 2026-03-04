@@ -162,119 +162,124 @@ export default async function RiwayatPage({
             {/* Loans Table */}
             {activeTab === 'loans' && (
                 <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
-                    <table className="w-full text-left">
-                        <thead className="bg-gray-50 border-b border-gray-100">
-                            <tr>
-                                <th className="px-6 py-4 font-semibold text-gray-700">Mahasiswa</th>
-                                <th className="px-6 py-4 font-semibold text-gray-700">Alat</th>
-                                <th className="px-6 py-4 font-semibold text-gray-700">Tanggal Pinjam</th>
-                                <th className="px-6 py-4 font-semibold text-gray-700">Status</th>
-                            </tr>
-                        </thead>
-                        <tbody className="divide-y divide-gray-100">
-                            {filteredLoans.map((loan) => (
-                                <tr key={loan.id} className="hover:bg-gray-50 transition-colors">
-                                    <td className="px-6 py-4">
-                                        <div className="flex items-center gap-2">
-                                            <User className="w-4 h-4 text-gray-400" />
-                                            <div>
-                                                <p className="font-medium text-gray-900">{loan.student.fullName}</p>
-                                                <p className="text-xs text-gray-500">{loan.student.identifier}</p>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td className="px-6 py-4">
-                                        <div className="flex items-center gap-2">
-                                            <Box className="w-4 h-4 text-gray-400" />
-                                            <p className="text-gray-900">{loan.item.name}</p>
-                                        </div>
-                                    </td>
-                                    <td className="px-6 py-4 text-gray-600" suppressHydrationWarning>
-                                        {loan.requestDate ? new Date(loan.requestDate).toLocaleDateString('id-ID') : '-'}
-                                    </td>
-                                    <td className="px-6 py-4">
-                                        <span
-                                            className={`text-xs px-2 py-1 rounded ${loan.status === 'Pending'
-                                                ? 'bg-yellow-100 text-yellow-700'
-                                                : loan.status === 'Disetujui'
-                                                    ? 'bg-green-100 text-green-700'
-                                                    : loan.status === 'Selesai'
-                                                        ? 'bg-blue-100 text-blue-700'
-                                                        : 'bg-red-100 text-red-700'
-                                                }`}
-                                        >
-                                            {loan.status}
-                                        </span>
-                                    </td>
-                                </tr>
-                            ))}
-                            {filteredLoans.length === 0 && (
+                    <div className="overflow-x-auto">
+                        <table className="w-full text-left">
+                            <thead className="bg-gray-50 border-b border-gray-100">
                                 <tr>
-                                    <td colSpan={4} className="px-6 py-8 text-center text-gray-500">
-                                        Tidak ada data
-                                    </td>
+                                    <th className="px-6 py-4 font-semibold text-gray-700">Mahasiswa</th>
+                                    <th className="px-6 py-4 font-semibold text-gray-700">Alat</th>
+                                    <th className="px-6 py-4 font-semibold text-gray-700">Tanggal Pinjam</th>
+                                    <th className="px-6 py-4 font-semibold text-gray-700">Status</th>
                                 </tr>
-                            )}
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody className="divide-y divide-gray-100">
+                                {filteredLoans.map((loan) => (
+                                    <tr key={loan.id} className="hover:bg-gray-50 transition-colors">
+                                        <td className="px-6 py-4">
+                                            <div className="flex items-center gap-2">
+                                                <User className="w-4 h-4 text-gray-400" />
+                                                <div>
+                                                    <p className="font-medium text-gray-900">{loan.student.fullName}</p>
+                                                    <p className="text-xs text-gray-500">{loan.student.identifier}</p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td className="px-6 py-4">
+                                            <div className="flex items-center gap-2">
+                                                <Box className="w-4 h-4 text-gray-400" />
+                                                <p className="text-gray-900">{loan.item.name}</p>
+                                            </div>
+                                        </td>
+                                        <td className="px-6 py-4 text-gray-600" suppressHydrationWarning>
+                                            {loan.requestDate ? new Date(loan.requestDate).toLocaleDateString('id-ID') : '-'}
+                                        </td>
+                                        <td className="px-6 py-4">
+                                            <span
+                                                className={`text-xs px-2 py-1 rounded ${loan.status === 'Pending'
+                                                    ? 'bg-yellow-100 text-yellow-700'
+                                                    : loan.status === 'Disetujui'
+                                                        ? 'bg-green-100 text-green-700'
+                                                        : loan.status === 'Selesai'
+                                                            ? 'bg-blue-100 text-blue-700'
+                                                            : 'bg-red-100 text-red-700'
+                                                    }`}
+                                            >
+                                                {loan.status}
+                                            </span>
+                                        </td>
+                                    </tr>
+                                ))}
+                                {filteredLoans.length === 0 && (
+                                    <tr>
+                                        <td colSpan={4} className="px-6 py-8 text-center text-gray-500">
+                                            Tidak ada data
+                                        </td>
+                                    </tr>
+                                )}
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             )}
 
             {/* Bookings Table */}
             {activeTab === 'bookings' && (
                 <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
-                    <table className="w-full text-left">
-                        <thead className="bg-gray-50 border-b border-gray-100">
-                            <tr>
-                                <th className="px-6 py-4 font-semibold text-gray-700">Pemohon</th>
-                                <th className="px-6 py-4 font-semibold text-gray-700">Ruangan</th>
-                                <th className="px-6 py-4 font-semibold text-gray-700">Tanggal & Waktu</th>
-                                <th className="px-6 py-4 font-semibold text-gray-700">Status</th>
-                            </tr>
-                        </thead>
-                        <tbody className="divide-y divide-gray-100">
-                            {filteredBookings.map((booking) => (
-                                <tr key={booking.id} className="hover:bg-gray-50 transition-colors">
-                                    <td className="px-6 py-4">
-                                        <div className="flex items-center gap-2">
-                                            <User className="w-4 h-4 text-gray-400" />
-                                            <div>
-                                                <p className="font-medium text-gray-900">{booking.user.fullName}</p>
-                                                <p className="text-xs text-gray-500">{booking.user.identifier}</p>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td className="px-6 py-4">
-                                        <p className="text-gray-900">{booking.room.name}</p>
-                                    </td>
-                                    <td className="px-6 py-4 text-gray-600" suppressHydrationWarning>
-                                        {new Date(booking.startTime).toLocaleDateString('id-ID')}
-                                    </td>
-                                    <td className="px-6 py-4">
-                                        <span
-                                            className={`text-xs px-2 py-1 rounded ${booking.status === 'Pending'
-                                                ? 'bg-yellow-100 text-yellow-700'
-                                                : booking.status === 'Disetujui'
-                                                    ? 'bg-green-100 text-green-700'
-                                                    : 'bg-red-100 text-red-700'
-                                                }`}
-                                        >
-                                            {booking.status}
-                                        </span>
-                                    </td>
-                                </tr>
-                            ))}
-                            {filteredBookings.length === 0 && (
+                    <div className="overflow-x-auto">
+                        <table className="w-full text-left">
+                            <thead className="bg-gray-50 border-b border-gray-100">
                                 <tr>
-                                    <td colSpan={4} className="px-6 py-8 text-center text-gray-500">
-                                        Tidak ada data
-                                    </td>
+                                    <th className="px-6 py-4 font-semibold text-gray-700">Pemohon</th>
+                                    <th className="px-6 py-4 font-semibold text-gray-700">Ruangan</th>
+                                    <th className="px-6 py-4 font-semibold text-gray-700">Tanggal & Waktu</th>
+                                    <th className="px-6 py-4 font-semibold text-gray-700">Status</th>
                                 </tr>
-                            )}
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody className="divide-y divide-gray-100">
+                                {filteredBookings.map((booking) => (
+                                    <tr key={booking.id} className="hover:bg-gray-50 transition-colors">
+                                        <td className="px-6 py-4">
+                                            <div className="flex items-center gap-2">
+                                                <User className="w-4 h-4 text-gray-400" />
+                                                <div>
+                                                    <p className="font-medium text-gray-900">{booking.user.fullName}</p>
+                                                    <p className="text-xs text-gray-500">{booking.user.identifier}</p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td className="px-6 py-4">
+                                            <p className="text-gray-900">{booking.room.name}</p>
+                                        </td>
+                                        <td className="px-6 py-4 text-gray-600" suppressHydrationWarning>
+                                            {new Date(booking.startTime).toLocaleDateString('id-ID')}
+                                        </td>
+                                        <td className="px-6 py-4">
+                                            <span
+                                                className={`text-xs px-2 py-1 rounded ${booking.status === 'Pending'
+                                                    ? 'bg-yellow-100 text-yellow-700'
+                                                    : booking.status === 'Disetujui'
+                                                        ? 'bg-green-100 text-green-700'
+                                                        : 'bg-red-100 text-red-700'
+                                                    }`}
+                                            >
+                                                {booking.status}
+                                            </span>
+                                        </td>
+                                    </tr>
+                                ))}
+                                {filteredBookings.length === 0 && (
+                                    <tr>
+                                        <td colSpan={4} className="px-6 py-8 text-center text-gray-500">
+                                            Tidak ada data
+                                        </td>
+                                    </tr>
+                                )}
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             )}
         </div>
     );
 }
+

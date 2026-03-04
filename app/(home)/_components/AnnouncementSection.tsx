@@ -9,14 +9,14 @@ export default function AnnouncementSection({ maintenanceRooms, maintenanceItems
     const hasAnnouncements = maintenanceRooms.length > 0 || maintenanceItems.length > 0;
 
     return (
-        <div className="bg-white p-6 h-[250px] overflow-y-auto rounded-lg shadow-sm border border-gray-100">
+        <div className="bg-white p-4 sm:p-6 h-auto max-h-[15.625rem] overflow-y-auto rounded-lg shadow-sm border border-gray-100">
             <h3 className="text-lg font-bold mb-4 flex items-center gap-2">
                 <span className="w-1 h-6 bg-[#0F4C81] rounded-full"></span>
                 Pengumuman
             </h3>
 
             {!hasAnnouncements ? (
-                <div className="flex items-center justify-center h-[150px] text-gray-400 italic">
+                <div className="flex items-center justify-center min-h-[8rem] text-gray-400 italic">
                     Tidak ada pengumuman
                 </div>
             ) : (

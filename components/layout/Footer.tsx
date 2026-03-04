@@ -8,7 +8,7 @@ export default function Footer() {
     return (
         <footer className="bg-[#0F4C81] text-white border-t border-blue-800">
             {/* --- Main Footer Content --- */}
-            <div className="container mx-auto px-4 py-12">
+            <div className="container mx-auto px-4 py-8 sm:py-12">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
 
                     {/* Kolom 1: Identitas & Deskripsi */}

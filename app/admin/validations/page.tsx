@@ -73,14 +73,14 @@ export default async function AdminValidationsPage({
         <div>
             {/* Stats & Actions */}
             <div className="flex flex-col md:flex-row gap-6 mb-8 justify-between items-start md:items-center">
-                <div className="flex gap-6">
-                    <div className="bg-white px-6 py-4 rounded-xl shadow-sm border border-gray-100 min-w-[150px]">
+                <div className="flex flex-wrap gap-4 sm:gap-6">
+                    <div className="bg-white px-4 sm:px-6 py-4 rounded-xl shadow-sm border border-gray-100 flex-1 min-w-[7rem]">
                         <h3 className="text-gray-500 text-sm font-medium">Pending</h3>
-                        <p className="text-3xl font-bold text-orange-500 mt-1">{pendingLoans.length}</p>
+                        <p className="text-2xl sm:text-3xl font-bold text-orange-500 mt-1">{pendingLoans.length}</p>
                     </div>
-                    <div className="bg-white px-6 py-4 rounded-xl shadow-sm border border-gray-100 min-w-[150px]">
+                    <div className="bg-white px-4 sm:px-6 py-4 rounded-xl shadow-sm border border-gray-100 flex-1 min-w-[7rem]">
                         <h3 className="text-gray-500 text-sm font-medium">Aktif</h3>
-                        <p className="text-3xl font-bold text-green-600 mt-1">
+                        <p className="text-2xl sm:text-3xl font-bold text-green-600 mt-1">
                             {loans.filter(l => l.status === 'Disetujui').length}
                         </p>
                     </div>
@@ -109,75 +109,77 @@ export default async function AdminValidationsPage({
                     </span>
                 </h3>
                 <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
-                    <table className="w-full text-left">
-                        <thead className="bg-gray-50 border-b border-gray-100">
-                            <tr>
-                                <th className="px-6 py-4 font-semibold text-gray-700">Mahasiswa</th>
-                                <th className="px-6 py-4 font-semibold text-gray-700">Alat</th>
-                                <th className="px-6 py-4 font-semibold text-gray-700">Tanggal Pinjam</th>
-                                <th className="px-6 py-4 font-semibold text-gray-700">Request Return</th>
-                                <th className="px-6 py-4 font-semibold text-gray-700 text-center">Aksi</th>
-                            </tr>
-                        </thead>
-                        <tbody className="divide-y divide-gray-100">
-                            {pendingReturns.map((loan) => (
-                                <tr key={loan.id} className="hover:bg-gray-50 transition-colors">
-                                    <td className="px-6 py-4">
-                                        <div className="flex items-center gap-2">
-                                            <User className="w-4 h-4 text-gray-400" />
-                                            <div>
-                                                <p className="font-medium text-gray-900">{loan.student.fullName}</p>
-                                                <p className="text-xs text-gray-500">{loan.student.identifier}</p>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td className="px-6 py-4">
-                                        <div className="flex items-center gap-2">
-                                            <Box className="w-4 h-4 text-primary" />
-                                            <p className="font-medium text-gray-900">{loan.item.name}</p>
-                                        </div>
-                                    </td>
-                                    <td className="px-6 py-4 text-gray-600 text-sm" suppressHydrationWarning>
-                                        {loan.requestDate ? new Date(loan.requestDate).toLocaleDateString('id-ID') : '-'}
-                                    </td>
-                                    <td className="px-6 py-4">
-                                        <span className="inline-flex px-2 py-1 rounded text-xs font-medium bg-orange-50 text-orange-700">
-                                            Pending Return
-                                        </span>
-                                    </td>
-                                    <td className="px-6 py-4">
-                                        <div className="flex gap-2 justify-center">
-                                            <form action={async () => {
-                                                'use server';
-                                                await approveReturn(loan.id, session!.user.identifier);
-                                            }}>
-                                                <button className="flex items-center gap-1 px-3 py-1.5 bg-green-600 text-white rounded-lg text-sm hover:bg-green-700 transition-colors" title="Approve Return">
-                                                    <CheckCircle className="w-4 h-4" />
-                                                    Approve
-                                                </button>
-                                            </form>
-                                            <form action={async () => {
-                                                'use server';
-                                                await rejectReturn(loan.id);
-                                            }}>
-                                                <button className="flex items-center gap-1 px-3 py-1.5 bg-red-600 text-white rounded-lg text-sm hover:bg-red-700 transition-colors" title="Reject Return">
-                                                    <XCircle className="w-4 h-4" />
-                                                    Reject
-                                                </button>
-                                            </form>
-                                        </div>
-                                    </td>
-                                </tr>
-                            ))}
-                            {pendingReturns.length === 0 && (
+                    <div className="overflow-x-auto">
+                        <table className="w-full text-left">
+                            <thead className="bg-gray-50 border-b border-gray-100">
                                 <tr>
-                                    <td colSpan={5} className="px-6 py-8 text-center text-gray-500">
-                                        Tidak ada permintaan pengembalian yang menunggu validasi.
-                                    </td>
+                                    <th className="px-6 py-4 font-semibold text-gray-700">Mahasiswa</th>
+                                    <th className="px-6 py-4 font-semibold text-gray-700">Alat</th>
+                                    <th className="px-6 py-4 font-semibold text-gray-700">Tanggal Pinjam</th>
+                                    <th className="px-6 py-4 font-semibold text-gray-700">Request Return</th>
+                                    <th className="px-6 py-4 font-semibold text-gray-700 text-center">Aksi</th>
                                 </tr>
-                            )}
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody className="divide-y divide-gray-100">
+                                {pendingReturns.map((loan) => (
+                                    <tr key={loan.id} className="hover:bg-gray-50 transition-colors">
+                                        <td className="px-6 py-4">
+                                            <div className="flex items-center gap-2">
+                                                <User className="w-4 h-4 text-gray-400" />
+                                                <div>
+                                                    <p className="font-medium text-gray-900">{loan.student.fullName}</p>
+                                                    <p className="text-xs text-gray-500">{loan.student.identifier}</p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td className="px-6 py-4">
+                                            <div className="flex items-center gap-2">
+                                                <Box className="w-4 h-4 text-primary" />
+                                                <p className="font-medium text-gray-900">{loan.item.name}</p>
+                                            </div>
+                                        </td>
+                                        <td className="px-6 py-4 text-gray-600 text-sm" suppressHydrationWarning>
+                                            {loan.requestDate ? new Date(loan.requestDate).toLocaleDateString('id-ID') : '-'}
+                                        </td>
+                                        <td className="px-6 py-4">
+                                            <span className="inline-flex px-2 py-1 rounded text-xs font-medium bg-orange-50 text-orange-700">
+                                                Pending Return
+                                            </span>
+                                        </td>
+                                        <td className="px-6 py-4">
+                                            <div className="flex gap-2 justify-center">
+                                                <form action={async () => {
+                                                    'use server';
+                                                    await approveReturn(loan.id, session!.user.identifier);
+                                                }}>
+                                                    <button className="flex items-center gap-1 px-3 py-1.5 bg-green-600 text-white rounded-lg text-sm hover:bg-green-700 transition-colors" title="Approve Return">
+                                                        <CheckCircle className="w-4 h-4" />
+                                                        Approve
+                                                    </button>
+                                                </form>
+                                                <form action={async () => {
+                                                    'use server';
+                                                    await rejectReturn(loan.id);
+                                                }}>
+                                                    <button className="flex items-center gap-1 px-3 py-1.5 bg-red-600 text-white rounded-lg text-sm hover:bg-red-700 transition-colors" title="Reject Return">
+                                                        <XCircle className="w-4 h-4" />
+                                                        Reject
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                ))}
+                                {pendingReturns.length === 0 && (
+                                    <tr>
+                                        <td colSpan={5} className="px-6 py-8 text-center text-gray-500">
+                                            Tidak ada permintaan pengembalian yang menunggu validasi.
+                                        </td>
+                                    </tr>
+                                )}
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div >
         </div >
@@ -190,20 +192,20 @@ export default async function AdminValidationsPage({
         <div>
             {/* Stats & Actions */}
             <div className="flex flex-col md:flex-row gap-6 mb-8 justify-between items-start md:items-center">
-                <div className="flex gap-6 flex-wrap">
-                    <div className="bg-white px-6 py-4 rounded-xl shadow-sm border border-gray-100 min-w-[150px]">
+                <div className="flex flex-wrap gap-4 sm:gap-6">
+                    <div className="bg-white px-4 sm:px-6 py-4 rounded-xl shadow-sm border border-gray-100 flex-1 min-w-[7rem]">
                         <h3 className="text-gray-500 text-sm font-medium">Pending</h3>
-                        <p className="text-3xl font-bold text-orange-500 mt-1">{pendingBookings.length}</p>
+                        <p className="text-2xl sm:text-3xl font-bold text-orange-500 mt-1">{pendingBookings.length}</p>
                     </div>
-                    <div className="bg-white px-6 py-4 rounded-xl shadow-sm border border-gray-100 min-w-[150px]">
+                    <div className="bg-white px-4 sm:px-6 py-4 rounded-xl shadow-sm border border-gray-100 flex-1 min-w-[7rem]">
                         <h3 className="text-gray-500 text-sm font-medium">Disetujui</h3>
-                        <p className="text-3xl font-bold text-green-600 mt-1">
+                        <p className="text-2xl sm:text-3xl font-bold text-green-600 mt-1">
                             {bookings.filter(b => b.status === 'Disetujui').length}
                         </p>
                     </div>
-                    <div className="bg-white px-6 py-4 rounded-xl shadow-sm border border-gray-100 min-w-[150px]">
+                    <div className="bg-white px-4 sm:px-6 py-4 rounded-xl shadow-sm border border-gray-100 flex-1 min-w-[7rem]">
                         <h3 className="text-gray-500 text-sm font-medium">Ditolak</h3>
-                        <p className="text-3xl font-bold text-red-600 mt-1">
+                        <p className="text-2xl sm:text-3xl font-bold text-red-600 mt-1">
                             {bookings.filter(b => b.status === 'Ditolak').length}
                         </p>
                     </div>
@@ -263,82 +265,84 @@ export default async function AdminValidationsPage({
             <div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-4">Riwayat Peminjaman Alat ({historyLoans.length})</h3>
                 <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
-                    <table className="w-full text-left">
-                        <thead className="bg-gray-50 border-b border-gray-100">
-                            <tr>
-                                <th className="px-6 py-4 font-semibold text-gray-700">Mahasiswa</th>
-                                <th className="px-6 py-4 font-semibold text-gray-700">Alat</th>
-                                <th className="px-6 py-4 font-semibold text-gray-700">Tanggal Pinjam</th>
-                                <th className="px-6 py-4 font-semibold text-gray-700">Rencana Kembali</th>
-                                <th className="px-6 py-4 font-semibold text-gray-700">Status</th>
-                                <th className="px-6 py-4 font-semibold text-gray-700">Validator</th>
-                                <th className="px-6 py-4 font-semibold text-gray-700 text-center">Aksi</th>
-                            </tr>
-                        </thead>
-                        <tbody className="divide-y divide-gray-100">
-                            {historyLoans.map((loan) => (
-                                <tr key={loan.id} className="hover:bg-gray-50 transition-colors">
-                                    <td className="px-6 py-4">
-                                        <div className="flex items-center gap-2">
-                                            <User className="w-4 h-4 text-gray-400" />
-                                            <div>
-                                                <p className="font-medium text-gray-900">{loan.student.fullName}</p>
-                                                <p className="text-xs text-gray-500">{loan.student.identifier}</p>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td className="px-6 py-4">
-                                        <div className="flex items-center gap-2">
-                                            <Box className="w-4 h-4 text-primary" />
-                                            <div>
-                                                <p className="font-medium text-gray-900">{loan.item.name}</p>
-                                                <p className="text-xs text-gray-500">{loan.item.category.name}</p>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td className="px-6 py-4 text-gray-600 text-sm">
-                                        {new Date(loan.requestDate!).toLocaleDateString('id-ID')}
-                                    </td>
-                                    <td className="px-6 py-4 text-gray-600 text-sm">
-                                        {new Date(loan.returnPlanDate).toLocaleDateString('id-ID')}
-                                    </td>
-                                    <td className="px-6 py-4">
-                                        <span className={`inline-flex px-2 py-1 rounded text-xs font-medium ${loan.status === 'Pending' ? 'bg-yellow-50 text-yellow-700' :
-                                            loan.status === 'Disetujui' ? 'bg-green-50 text-green-700' :
-                                                loan.status === 'Ditolak' ? 'bg-red-50 text-red-700' :
-                                                    loan.status === 'Selesai' ? 'bg-blue-50 text-blue-700' :
-                                                        'bg-gray-50 text-gray-700'
-                                            }`}>
-                                            {loan.status}
-                                        </span>
-                                    </td>
-                                    <td className="px-6 py-4 text-gray-600 text-sm">
-                                        {loan.validatorId ? 'Admin' : '-'}
-                                    </td>
-                                    <td className="px-6 py-4 text-center">
-                                        <form action={async () => {
-                                            'use server';
-                                            await deleteLoan(loan.id);
-                                        }}>
-                                            <button
-                                                className="text-red-500 hover:text-red-700 p-2 hover:bg-red-50 rounded-lg transition-colors"
-                                                title="Hapus Riwayat"
-                                            >
-                                                <Trash2 className="w-4 h-4" />
-                                            </button>
-                                        </form>
-                                    </td>
-                                </tr>
-                            ))}
-                            {historyLoans.length === 0 && (
+                    <div className="overflow-x-auto">
+                        <table className="w-full text-left">
+                            <thead className="bg-gray-50 border-b border-gray-100">
                                 <tr>
-                                    <td colSpan={7} className="px-6 py-12 text-center text-gray-500">
-                                        Tidak ada riwayat peminjaman.
-                                    </td>
+                                    <th className="px-6 py-4 font-semibold text-gray-700">Mahasiswa</th>
+                                    <th className="px-6 py-4 font-semibold text-gray-700">Alat</th>
+                                    <th className="px-6 py-4 font-semibold text-gray-700">Tanggal Pinjam</th>
+                                    <th className="px-6 py-4 font-semibold text-gray-700">Rencana Kembali</th>
+                                    <th className="px-6 py-4 font-semibold text-gray-700">Status</th>
+                                    <th className="px-6 py-4 font-semibold text-gray-700">Validator</th>
+                                    <th className="px-6 py-4 font-semibold text-gray-700 text-center">Aksi</th>
                                 </tr>
-                            )}
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody className="divide-y divide-gray-100">
+                                {historyLoans.map((loan) => (
+                                    <tr key={loan.id} className="hover:bg-gray-50 transition-colors">
+                                        <td className="px-6 py-4">
+                                            <div className="flex items-center gap-2">
+                                                <User className="w-4 h-4 text-gray-400" />
+                                                <div>
+                                                    <p className="font-medium text-gray-900">{loan.student.fullName}</p>
+                                                    <p className="text-xs text-gray-500">{loan.student.identifier}</p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td className="px-6 py-4">
+                                            <div className="flex items-center gap-2">
+                                                <Box className="w-4 h-4 text-primary" />
+                                                <div>
+                                                    <p className="font-medium text-gray-900">{loan.item.name}</p>
+                                                    <p className="text-xs text-gray-500">{loan.item.category.name}</p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td className="px-6 py-4 text-gray-600 text-sm">
+                                            {new Date(loan.requestDate!).toLocaleDateString('id-ID')}
+                                        </td>
+                                        <td className="px-6 py-4 text-gray-600 text-sm">
+                                            {new Date(loan.returnPlanDate).toLocaleDateString('id-ID')}
+                                        </td>
+                                        <td className="px-6 py-4">
+                                            <span className={`inline-flex px-2 py-1 rounded text-xs font-medium ${loan.status === 'Pending' ? 'bg-yellow-50 text-yellow-700' :
+                                                loan.status === 'Disetujui' ? 'bg-green-50 text-green-700' :
+                                                    loan.status === 'Ditolak' ? 'bg-red-50 text-red-700' :
+                                                        loan.status === 'Selesai' ? 'bg-blue-50 text-blue-700' :
+                                                            'bg-gray-50 text-gray-700'
+                                                }`}>
+                                                {loan.status}
+                                            </span>
+                                        </td>
+                                        <td className="px-6 py-4 text-gray-600 text-sm">
+                                            {loan.validatorId ? 'Admin' : '-'}
+                                        </td>
+                                        <td className="px-6 py-4 text-center">
+                                            <form action={async () => {
+                                                'use server';
+                                                await deleteLoan(loan.id);
+                                            }}>
+                                                <button
+                                                    className="text-red-500 hover:text-red-700 p-2 hover:bg-red-50 rounded-lg transition-colors"
+                                                    title="Hapus Riwayat"
+                                                >
+                                                    <Trash2 className="w-4 h-4" />
+                                                </button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                ))}
+                                {historyLoans.length === 0 && (
+                                    <tr>
+                                        <td colSpan={7} className="px-6 py-12 text-center text-gray-500">
+                                            Tidak ada riwayat peminjaman.
+                                        </td>
+                                    </tr>
+                                )}
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
 
@@ -346,73 +350,75 @@ export default async function AdminValidationsPage({
             <div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-4">Riwayat Booking Ruangan ({historyBookings.length})</h3>
                 <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
-                    <table className="w-full text-left">
-                        <thead className="bg-gray-50 border-b border-gray-100">
-                            <tr>
-                                <th className="px-6 py-4 font-semibold text-gray-700">Pemohon</th>
-                                <th className="px-6 py-4 font-semibold text-gray-700">Ruangan</th>
-                                <th className="px-6 py-4 font-semibold text-gray-700">Waktu</th>
-                                <th className="px-6 py-4 font-semibold text-gray-700">Status</th>
-                                <th className="px-6 py-4 font-semibold text-gray-700">Validator</th>
-                                <th className="px-6 py-4 font-semibold text-gray-700 text-center">Aksi</th>
-                            </tr>
-                        </thead>
-                        <tbody className="divide-y divide-gray-100">
-                            {historyBookings.map((booking) => (
-                                <tr key={booking.id} className="hover:bg-gray-50 transition-colors">
-                                    <td className="px-6 py-4">
-                                        <div className="flex items-center gap-2">
-                                            <User className="w-4 h-4 text-gray-400" />
-                                            <div>
-                                                <p className="font-medium text-gray-900">{booking.user.fullName}</p>
-                                                <p className="text-xs text-gray-500">{booking.user.identifier}</p>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td className="px-6 py-4 font-medium text-gray-900">{booking.room.name}</td>
-                                    <td className="px-6 py-4 text-gray-600 text-sm">
-                                        <div>{new Date(booking.startTime).toLocaleDateString('id-ID')}</div>
-                                        <div className="text-xs text-gray-500">
-                                            {new Date(booking.startTime).toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' })} -
-                                            {new Date(booking.endTime).toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' })}
-                                        </div>
-                                    </td>
-                                    <td className="px-6 py-4">
-                                        <span className={`inline-flex px-2 py-1 rounded text-xs font-medium ${booking.status === 'Pending' ? 'bg-yellow-50 text-yellow-700' :
-                                            booking.status === 'Disetujui' ? 'bg-green-50 text-green-700' :
-                                                booking.status === 'Ditolak' ? 'bg-red-50 text-red-700' :
-                                                    'bg-gray-50 text-gray-700'
-                                            }`}>
-                                            {booking.status}
-                                        </span>
-                                    </td>
-                                    <td className="px-6 py-4 text-gray-600 text-sm">
-                                        {booking.validatorId ? 'Admin' : '-'}
-                                    </td>
-                                    <td className="px-6 py-4 text-center">
-                                        <form action={async () => {
-                                            'use server';
-                                            await deleteBooking(booking.id);
-                                        }}>
-                                            <button
-                                                className="text-red-500 hover:text-red-700 p-2 hover:bg-red-50 rounded-lg transition-colors"
-                                                title="Hapus Riwayat"
-                                            >
-                                                <Trash2 className="w-4 h-4" />
-                                            </button>
-                                        </form>
-                                    </td>
-                                </tr>
-                            ))}
-                            {historyBookings.length === 0 && (
+                    <div className="overflow-x-auto">
+                        <table className="w-full text-left">
+                            <thead className="bg-gray-50 border-b border-gray-100">
                                 <tr>
-                                    <td colSpan={6} className="px-6 py-12 text-center text-gray-500">
-                                        Tidak ada riwayat booking.
-                                    </td>
+                                    <th className="px-6 py-4 font-semibold text-gray-700">Pemohon</th>
+                                    <th className="px-6 py-4 font-semibold text-gray-700">Ruangan</th>
+                                    <th className="px-6 py-4 font-semibold text-gray-700">Waktu</th>
+                                    <th className="px-6 py-4 font-semibold text-gray-700">Status</th>
+                                    <th className="px-6 py-4 font-semibold text-gray-700">Validator</th>
+                                    <th className="px-6 py-4 font-semibold text-gray-700 text-center">Aksi</th>
                                 </tr>
-                            )}
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody className="divide-y divide-gray-100">
+                                {historyBookings.map((booking) => (
+                                    <tr key={booking.id} className="hover:bg-gray-50 transition-colors">
+                                        <td className="px-6 py-4">
+                                            <div className="flex items-center gap-2">
+                                                <User className="w-4 h-4 text-gray-400" />
+                                                <div>
+                                                    <p className="font-medium text-gray-900">{booking.user.fullName}</p>
+                                                    <p className="text-xs text-gray-500">{booking.user.identifier}</p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td className="px-6 py-4 font-medium text-gray-900">{booking.room.name}</td>
+                                        <td className="px-6 py-4 text-gray-600 text-sm">
+                                            <div>{new Date(booking.startTime).toLocaleDateString('id-ID')}</div>
+                                            <div className="text-xs text-gray-500">
+                                                {new Date(booking.startTime).toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' })} -
+                                                {new Date(booking.endTime).toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' })}
+                                            </div>
+                                        </td>
+                                        <td className="px-6 py-4">
+                                            <span className={`inline-flex px-2 py-1 rounded text-xs font-medium ${booking.status === 'Pending' ? 'bg-yellow-50 text-yellow-700' :
+                                                booking.status === 'Disetujui' ? 'bg-green-50 text-green-700' :
+                                                    booking.status === 'Ditolak' ? 'bg-red-50 text-red-700' :
+                                                        'bg-gray-50 text-gray-700'
+                                                }`}>
+                                                {booking.status}
+                                            </span>
+                                        </td>
+                                        <td className="px-6 py-4 text-gray-600 text-sm">
+                                            {booking.validatorId ? 'Admin' : '-'}
+                                        </td>
+                                        <td className="px-6 py-4 text-center">
+                                            <form action={async () => {
+                                                'use server';
+                                                await deleteBooking(booking.id);
+                                            }}>
+                                                <button
+                                                    className="text-red-500 hover:text-red-700 p-2 hover:bg-red-50 rounded-lg transition-colors"
+                                                    title="Hapus Riwayat"
+                                                >
+                                                    <Trash2 className="w-4 h-4" />
+                                                </button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                ))}
+                                {historyBookings.length === 0 && (
+                                    <tr>
+                                        <td colSpan={6} className="px-6 py-12 text-center text-gray-500">
+                                            Tidak ada riwayat booking.
+                                        </td>
+                                    </tr>
+                                )}
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
@@ -429,56 +435,58 @@ export default async function AdminValidationsPage({
             </div>
 
             <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
-                <table className="w-full text-left">
-                    <thead className="bg-gray-50 border-b border-gray-100">
-                        <tr>
-                            <th className="px-6 py-4 font-semibold text-gray-700">Nama Lengkap</th>
-                            <th className="px-6 py-4 font-semibold text-gray-700">NIM</th>
-                            <th className="px-6 py-4 font-semibold text-gray-700">Email</th>
-                            <th className="px-6 py-4 font-semibold text-gray-700">Tanggal Daftar</th>
-                            <th className="px-6 py-4 font-semibold text-gray-700 text-center">Aksi</th>
-                        </tr>
-                    </thead>
-                    <tbody className="divide-y divide-gray-100">
-                        {pendingUsers.map((user) => (
-                            <tr key={user.identifier} className="hover:bg-gray-50 transition-colors">
-                                <td className="px-6 py-4 font-medium text-gray-900">{user.fullName}</td>
-                                <td className="px-6 py-4 text-gray-600">{user.identifier}</td>
-                                <td className="px-6 py-4 text-gray-600">{user.email}</td>
-                                <td className="px-6 py-4 text-gray-600 text-sm">
-                                    {new Date(user.createdAt!).toLocaleDateString('id-ID')}
-                                </td>
-                                <td className="px-6 py-4">
-                                    <div className="flex gap-2 justify-center">
-                                        <form action={async () => {
-                                            'use server';
-                                            await updateUserStatus(user.identifier, 'Active');
-                                        }}>
-                                            <button className="text-green-600 hover:text-green-700 p-2 hover:bg-green-50 rounded-lg transition-colors" title="Setujui">
-                                                <CheckCircle className="w-5 h-5" />
-                                            </button>
-                                        </form>
-                                        <form action={async () => {
-                                            'use server';
-                                            await updateUserStatus(user.identifier, 'Rejected');
-                                        }}>
-                                            <button className="text-red-600 hover:text-red-700 p-2 hover:bg-red-50 rounded-lg transition-colors" title="Tolak">
-                                                <XCircle className="w-5 h-5" />
-                                            </button>
-                                        </form>
-                                    </div>
-                                </td>
-                            </tr>
-                        ))}
-                        {pendingUsers.length === 0 && (
+                <div className="overflow-x-auto">
+                    <table className="w-full text-left">
+                        <thead className="bg-gray-50 border-b border-gray-100">
                             <tr>
-                                <td colSpan={5} className="px-6 py-12 text-center text-gray-500">
-                                    Tidak ada permintaan akun baru.
-                                </td>
+                                <th className="px-6 py-4 font-semibold text-gray-700">Nama Lengkap</th>
+                                <th className="px-6 py-4 font-semibold text-gray-700">NIM</th>
+                                <th className="px-6 py-4 font-semibold text-gray-700">Email</th>
+                                <th className="px-6 py-4 font-semibold text-gray-700">Tanggal Daftar</th>
+                                <th className="px-6 py-4 font-semibold text-gray-700 text-center">Aksi</th>
                             </tr>
-                        )}
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody className="divide-y divide-gray-100">
+                            {pendingUsers.map((user) => (
+                                <tr key={user.identifier} className="hover:bg-gray-50 transition-colors">
+                                    <td className="px-6 py-4 font-medium text-gray-900">{user.fullName}</td>
+                                    <td className="px-6 py-4 text-gray-600">{user.identifier}</td>
+                                    <td className="px-6 py-4 text-gray-600">{user.email}</td>
+                                    <td className="px-6 py-4 text-gray-600 text-sm">
+                                        {new Date(user.createdAt!).toLocaleDateString('id-ID')}
+                                    </td>
+                                    <td className="px-6 py-4">
+                                        <div className="flex gap-2 justify-center">
+                                            <form action={async () => {
+                                                'use server';
+                                                await updateUserStatus(user.identifier, 'Active');
+                                            }}>
+                                                <button className="text-green-600 hover:text-green-700 p-2 hover:bg-green-50 rounded-lg transition-colors" title="Setujui">
+                                                    <CheckCircle className="w-5 h-5" />
+                                                </button>
+                                            </form>
+                                            <form action={async () => {
+                                                'use server';
+                                                await updateUserStatus(user.identifier, 'Rejected');
+                                            }}>
+                                                <button className="text-red-600 hover:text-red-700 p-2 hover:bg-red-50 rounded-lg transition-colors" title="Tolak">
+                                                    <XCircle className="w-5 h-5" />
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </td>
+                                </tr>
+                            ))}
+                            {pendingUsers.length === 0 && (
+                                <tr>
+                                    <td colSpan={5} className="px-6 py-12 text-center text-gray-500">
+                                        Tidak ada permintaan akun baru.
+                                    </td>
+                                </tr>
+                            )}
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     );

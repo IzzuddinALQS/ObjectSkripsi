@@ -102,87 +102,89 @@ export default function SearchableBookingsSection({ bookings, sessionUserId }: S
 
             {/* Bookings Table */}
             <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
-                <table className="w-full text-left">
-                    <thead className="bg-gray-50 border-b border-gray-100">
-                        <tr>
-                            <th className="px-6 py-4 font-semibold text-gray-700">Pemohon</th>
-                            <th className="px-6 py-4 font-semibold text-gray-700">Ruangan</th>
-                            <th className="px-6 py-4 font-semibold text-gray-700">Tanggal & Waktu</th>
-                            <th className="px-6 py-4 font-semibold text-gray-700">Keperluan</th>
-                            <th className="px-6 py-4 font-semibold text-gray-700">Status</th>
-                            <th className="px-6 py-4 font-semibold text-gray-700 text-center">Aksi</th>
-                        </tr>
-                    </thead>
-                    <tbody className="divide-y divide-gray-100">
-                        {filteredBookings.map((booking) => (
-                            <tr key={booking.id} className={`hover:bg-gray-50 transition-colors ${isPending ? 'opacity-50' : ''}`}>
-                                <td className="px-6 py-4">
-                                    <div className="flex items-center gap-2">
-                                        <User className="w-4 h-4 text-gray-400" />
-                                        <div>
-                                            <p className="font-medium text-gray-900">{booking.user.fullName}</p>
-                                            <p className="text-xs text-gray-500">{booking.user.identifier}</p>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td className="px-6 py-4">
-                                    <div className="flex items-center gap-2">
-                                        <MapPin className="w-4 h-4 text-[#0F4C81]" />
-                                        <p className="font-medium text-gray-900">{booking.room.name}</p>
-                                    </div>
-                                </td>
-                                <td className="px-6 py-4 text-gray-600 text-sm">
-                                    <div>{new Date(booking.startTime).toLocaleDateString('id-ID')}</div>
-                                    <div className="text-xs text-gray-500">
-                                        {new Date(booking.startTime).toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' })} -
-                                        {new Date(booking.endTime).toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' })}
-                                    </div>
-                                </td>
-                                <td className="px-6 py-4 text-gray-600 text-sm max-w-[200px] truncate">
-                                    {booking.purpose || '-'}
-                                </td>
-                                <td className="px-6 py-4">
-                                    <span className={`inline-flex px-2 py-1 rounded text-xs font-medium ${booking.status === 'Pending' ? 'bg-yellow-50 text-yellow-700' :
-                                        booking.status === 'Disetujui' ? 'bg-green-50 text-green-700' :
-                                            'bg-red-50 text-red-700'
-                                        }`}>
-                                        {booking.status}
-                                    </span>
-                                </td>
-                                <td className="px-6 py-4">
-                                    {booking.status === 'Pending' && (
-                                        <div className="flex gap-2 justify-center">
-                                            <button
-                                                onClick={() => handleApprove(booking.id)}
-                                                disabled={isPending}
-                                                className="text-green-600 hover:text-green-700 p-2 hover:bg-green-50 rounded-lg transition-colors disabled:opacity-50"
-                                            >
-                                                <CheckCircle className="w-5 h-5" />
-                                            </button>
-                                            <button
-                                                onClick={() => handleReject(booking.id)}
-                                                disabled={isPending}
-                                                className="text-red-600 hover:text-red-700 p-2 hover:bg-red-50 rounded-lg transition-colors disabled:opacity-50"
-                                            >
-                                                <XCircle className="w-5 h-5" />
-                                            </button>
-                                        </div>
-                                    )}
-                                    {booking.status === 'Disetujui' && (
-                                        <span className="text-gray-400 text-sm">Aktif</span>
-                                    )}
-                                </td>
-                            </tr>
-                        ))}
-                        {filteredBookings.length === 0 && (
+                <div className="overflow-x-auto">
+                    <table className="w-full text-left">
+                        <thead className="bg-gray-50 border-b border-gray-100">
                             <tr>
-                                <td colSpan={6} className="px-6 py-12 text-center text-gray-500">
-                                    {searchQuery ? 'Tidak ada hasil pencarian' : 'Belum ada permintaan booking.'}
-                                </td>
+                                <th className="px-6 py-4 font-semibold text-gray-700">Pemohon</th>
+                                <th className="px-6 py-4 font-semibold text-gray-700">Ruangan</th>
+                                <th className="px-6 py-4 font-semibold text-gray-700">Tanggal & Waktu</th>
+                                <th className="px-6 py-4 font-semibold text-gray-700">Keperluan</th>
+                                <th className="px-6 py-4 font-semibold text-gray-700">Status</th>
+                                <th className="px-6 py-4 font-semibold text-gray-700 text-center">Aksi</th>
                             </tr>
-                        )}
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody className="divide-y divide-gray-100">
+                            {filteredBookings.map((booking) => (
+                                <tr key={booking.id} className={`hover:bg-gray-50 transition-colors ${isPending ? 'opacity-50' : ''}`}>
+                                    <td className="px-6 py-4">
+                                        <div className="flex items-center gap-2">
+                                            <User className="w-4 h-4 text-gray-400" />
+                                            <div>
+                                                <p className="font-medium text-gray-900">{booking.user.fullName}</p>
+                                                <p className="text-xs text-gray-500">{booking.user.identifier}</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td className="px-6 py-4">
+                                        <div className="flex items-center gap-2">
+                                            <MapPin className="w-4 h-4 text-[#0F4C81]" />
+                                            <p className="font-medium text-gray-900">{booking.room.name}</p>
+                                        </div>
+                                    </td>
+                                    <td className="px-6 py-4 text-gray-600 text-sm">
+                                        <div>{new Date(booking.startTime).toLocaleDateString('id-ID')}</div>
+                                        <div className="text-xs text-gray-500">
+                                            {new Date(booking.startTime).toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' })} -
+                                            {new Date(booking.endTime).toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' })}
+                                        </div>
+                                    </td>
+                                    <td className="px-6 py-4 text-gray-600 text-sm max-w-[200px] truncate">
+                                        {booking.purpose || '-'}
+                                    </td>
+                                    <td className="px-6 py-4">
+                                        <span className={`inline-flex px-2 py-1 rounded text-xs font-medium ${booking.status === 'Pending' ? 'bg-yellow-50 text-yellow-700' :
+                                            booking.status === 'Disetujui' ? 'bg-green-50 text-green-700' :
+                                                'bg-red-50 text-red-700'
+                                            }`}>
+                                            {booking.status}
+                                        </span>
+                                    </td>
+                                    <td className="px-6 py-4">
+                                        {booking.status === 'Pending' && (
+                                            <div className="flex gap-2 justify-center">
+                                                <button
+                                                    onClick={() => handleApprove(booking.id)}
+                                                    disabled={isPending}
+                                                    className="text-green-600 hover:text-green-700 p-2 hover:bg-green-50 rounded-lg transition-colors disabled:opacity-50"
+                                                >
+                                                    <CheckCircle className="w-5 h-5" />
+                                                </button>
+                                                <button
+                                                    onClick={() => handleReject(booking.id)}
+                                                    disabled={isPending}
+                                                    className="text-red-600 hover:text-red-700 p-2 hover:bg-red-50 rounded-lg transition-colors disabled:opacity-50"
+                                                >
+                                                    <XCircle className="w-5 h-5" />
+                                                </button>
+                                            </div>
+                                        )}
+                                        {booking.status === 'Disetujui' && (
+                                            <span className="text-gray-400 text-sm">Aktif</span>
+                                        )}
+                                    </td>
+                                </tr>
+                            ))}
+                            {filteredBookings.length === 0 && (
+                                <tr>
+                                    <td colSpan={6} className="px-6 py-12 text-center text-gray-500">
+                                        {searchQuery ? 'Tidak ada hasil pencarian' : 'Belum ada permintaan booking.'}
+                                    </td>
+                                </tr>
+                            )}
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     );

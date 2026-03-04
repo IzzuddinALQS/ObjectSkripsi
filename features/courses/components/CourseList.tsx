@@ -77,7 +77,7 @@ export default function CourseList({ courses }: CourseListProps) {
                     <select
                         value={filterSemester}
                         onChange={(e) => handleSemesterFilterChange(e.target.value)}
-                        className="px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20 min-w-[180px]"
+                        className="px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20 min-w-0 w-full sm:min-w-[11.25rem] sm:w-auto"
                     >
                         <option value="">Semua Semester</option>
                         <option value="Ganjil">Ganjil</option>
@@ -115,51 +115,53 @@ export default function CourseList({ courses }: CourseListProps) {
                 </div>
             ) : viewMode === 'list' ? (
                 <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
-                    <table className="w-full">
-                        <thead>
-                            <tr className="border-b border-gray-100 text-left text-sm text-gray-500">
-                                <th className="px-6 py-3 font-medium">Mata Kuliah</th>
-                                <th className="px-4 py-3 font-medium">Semester</th>
-                                <th className="px-4 py-3 font-medium">SKS</th>
-                                <th className="px-4 py-3 font-medium">Dosen</th>
-                            </tr>
-                        </thead>
-                        <tbody className="divide-y divide-gray-100">
-                            {paginatedCourses.map((course) => (
-                                <tr key={course.id} className="hover:bg-gray-50 transition-colors">
-                                    <td className="px-6 py-4">
-                                        <div className="flex items-center gap-3">
-                                            <div className="w-8 h-8 bg-blue-100 rounded flex items-center justify-center flex-shrink-0">
-                                                <GraduationCap className="w-4 h-4 text-blue-600" />
-                                            </div>
-                                            <div>
-                                                <div className="font-medium text-gray-900">{course.name}</div>
-                                                <div className="text-xs text-gray-500">{course.code}</div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td className="px-4 py-4 text-sm text-gray-600">
-                                        <span className={`inline-flex px-2 py-0.5 rounded text-xs font-medium ${course.semester === 'Ganjil' ? 'bg-orange-50 text-orange-700' : 'bg-teal-50 text-teal-700'}`}>
-                                            {course.semester || '-'}
-                                        </span>
-                                    </td>
-                                    <td className="px-4 py-4 text-sm text-gray-600">
-                                        {course.sks || '-'}
-                                    </td>
-                                    <td className="px-4 py-4 text-sm text-gray-500">
-                                        {course.lecturerName ? (
-                                            <div className="flex items-center gap-1.5">
-                                                <User className="w-3.5 h-3.5 text-gray-400 flex-shrink-0" />
-                                                <span>{course.lecturerName}</span>
-                                            </div>
-                                        ) : (
-                                            <span className="text-gray-400">Belum di set</span>
-                                        )}
-                                    </td>
+                    <div className="overflow-x-auto">
+                        <table className="w-full">
+                            <thead>
+                                <tr className="border-b border-gray-100 text-left text-sm text-gray-500">
+                                    <th className="px-6 py-3 font-medium">Mata Kuliah</th>
+                                    <th className="px-4 py-3 font-medium">Semester</th>
+                                    <th className="px-4 py-3 font-medium">SKS</th>
+                                    <th className="px-4 py-3 font-medium">Dosen</th>
                                 </tr>
-                            ))}
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody className="divide-y divide-gray-100">
+                                {paginatedCourses.map((course) => (
+                                    <tr key={course.id} className="hover:bg-gray-50 transition-colors">
+                                        <td className="px-6 py-4">
+                                            <div className="flex items-center gap-3">
+                                                <div className="w-8 h-8 bg-blue-100 rounded flex items-center justify-center flex-shrink-0">
+                                                    <GraduationCap className="w-4 h-4 text-blue-600" />
+                                                </div>
+                                                <div>
+                                                    <div className="font-medium text-gray-900">{course.name}</div>
+                                                    <div className="text-xs text-gray-500">{course.code}</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td className="px-4 py-4 text-sm text-gray-600">
+                                            <span className={`inline-flex px-2 py-0.5 rounded text-xs font-medium ${course.semester === 'Ganjil' ? 'bg-orange-50 text-orange-700' : 'bg-teal-50 text-teal-700'}`}>
+                                                {course.semester || '-'}
+                                            </span>
+                                        </td>
+                                        <td className="px-4 py-4 text-sm text-gray-600">
+                                            {course.sks || '-'}
+                                        </td>
+                                        <td className="px-4 py-4 text-sm text-gray-500">
+                                            {course.lecturerName ? (
+                                                <div className="flex items-center gap-1.5">
+                                                    <User className="w-3.5 h-3.5 text-gray-400 flex-shrink-0" />
+                                                    <span>{course.lecturerName}</span>
+                                                </div>
+                                            ) : (
+                                                <span className="text-gray-400">Belum di set</span>
+                                            )}
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             ) : (
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">

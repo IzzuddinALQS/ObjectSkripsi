@@ -141,11 +141,11 @@ export default async function StudentPublicationsPage({
             )}
 
             {/* Toolbar */}
-            <div className="flex items-center justify-between">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
                 <p className="text-sm text-gray-500">
                     Menampilkan {Math.min((currentPage - 1) * perPage + 1, result.totalCount)}-{Math.min(currentPage * perPage, result.totalCount)} dari {result.totalCount} publikasi
                 </p>
-                <div className="flex items-center gap-3">
+                <div className="flex flex-wrap items-center gap-3">
                     <div className="flex items-center gap-2 text-sm text-gray-600">
                         <span>Per halaman:</span>
                         {[10, 20, 50, 100].map(n => (
@@ -178,48 +178,50 @@ export default async function StudentPublicationsPage({
                 </div>
             ) : viewMode === 'list' ? (
                 <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
-                    <table className="w-full">
-                        <thead>
-                            <tr className="border-b border-gray-100 text-left text-sm text-gray-500">
-                                <th className="px-6 py-3 font-medium">Judul</th>
-                                <th className="px-4 py-3 font-medium">Penulis</th>
-                                <th className="px-4 py-3 font-medium">Tahun</th>
-                                <th className="px-4 py-3 font-medium text-center">Views</th>
-                                <th className="px-4 py-3 font-medium text-center">Likes</th>
-                                <th className="px-4 py-3 font-medium"></th>
-                            </tr>
-                        </thead>
-                        <tbody className="divide-y divide-gray-100">
-                            {result.data.map((pub) => (
-                                <tr key={pub.id} className="hover:bg-gray-50 transition-colors">
-                                    <td className="px-6 py-4">
-                                        {(pub.link || pub.filePath) ? (
-                                            <PublicationLink id={pub.id} url={pub.link || pub.filePath || '#'} className="font-medium text-gray-900 hover:text-[#0F4C81] line-clamp-1">
-                                                {pub.title}
-                                            </PublicationLink>
-                                        ) : (
-                                            <span className="font-medium text-gray-900 line-clamp-1">{pub.title}</span>
-                                        )}
-                                    </td>
-                                    <td className="px-4 py-4 text-sm text-gray-600">{pub.authorName}</td>
-                                    <td className="px-4 py-4 text-sm text-gray-500">{formatPublishDate(pub.publishYear, pub.publishMonth, pub.publishDay)}</td>
-                                    <td className="px-4 py-4 text-center">
-                                        <span className="text-sm text-gray-500 flex items-center justify-center gap-1"><Eye className="w-3 h-3" />{pub.viewCount}</span>
-                                    </td>
-                                    <td className="px-4 py-4 text-center">
-                                        <LikeButton publicationId={pub.id} userId={session.user.identifier} initialLiked={userLikedIds.includes(pub.id)} initialLikeCount={likeCounts[pub.id] || 0} />
-                                    </td>
-                                    <td className="px-4 py-4">
-                                        {(pub.link || pub.filePath) && (
-                                            <PublicationLink id={pub.id} url={pub.link || pub.filePath || '#'} className="inline-flex items-center gap-1 text-[#0F4C81] hover:text-blue-700 text-sm">
-                                                <ExternalLink className="w-3 h-3" />Lihat
-                                            </PublicationLink>
-                                        )}
-                                    </td>
+                    <div className="overflow-x-auto">
+                        <table className="w-full">
+                            <thead>
+                                <tr className="border-b border-gray-100 text-left text-sm text-gray-500">
+                                    <th className="px-6 py-3 font-medium">Judul</th>
+                                    <th className="px-4 py-3 font-medium">Penulis</th>
+                                    <th className="px-4 py-3 font-medium">Tahun</th>
+                                    <th className="px-4 py-3 font-medium text-center">Views</th>
+                                    <th className="px-4 py-3 font-medium text-center">Likes</th>
+                                    <th className="px-4 py-3 font-medium"></th>
                                 </tr>
-                            ))}
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody className="divide-y divide-gray-100">
+                                {result.data.map((pub) => (
+                                    <tr key={pub.id} className="hover:bg-gray-50 transition-colors">
+                                        <td className="px-6 py-4">
+                                            {(pub.link || pub.filePath) ? (
+                                                <PublicationLink id={pub.id} url={pub.link || pub.filePath || '#'} className="font-medium text-gray-900 hover:text-[#0F4C81] line-clamp-1">
+                                                    {pub.title}
+                                                </PublicationLink>
+                                            ) : (
+                                                <span className="font-medium text-gray-900 line-clamp-1">{pub.title}</span>
+                                            )}
+                                        </td>
+                                        <td className="px-4 py-4 text-sm text-gray-600">{pub.authorName}</td>
+                                        <td className="px-4 py-4 text-sm text-gray-500">{formatPublishDate(pub.publishYear, pub.publishMonth, pub.publishDay)}</td>
+                                        <td className="px-4 py-4 text-center">
+                                            <span className="text-sm text-gray-500 flex items-center justify-center gap-1"><Eye className="w-3 h-3" />{pub.viewCount}</span>
+                                        </td>
+                                        <td className="px-4 py-4 text-center">
+                                            <LikeButton publicationId={pub.id} userId={session.user.identifier} initialLiked={userLikedIds.includes(pub.id)} initialLikeCount={likeCounts[pub.id] || 0} />
+                                        </td>
+                                        <td className="px-4 py-4">
+                                            {(pub.link || pub.filePath) && (
+                                                <PublicationLink id={pub.id} url={pub.link || pub.filePath || '#'} className="inline-flex items-center gap-1 text-[#0F4C81] hover:text-blue-700 text-sm">
+                                                    <ExternalLink className="w-3 h-3" />Lihat
+                                                </PublicationLink>
+                                            )}
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             ) : (
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

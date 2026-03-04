@@ -185,7 +185,7 @@ export default function ItemsView({ items, rooms, categories }: ItemsViewProps) 
                     <select
                         value={filterCategory}
                         onChange={(e) => setFilterCategory(e.target.value)}
-                        className="px-3 py-2 rounded-lg border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20"
+                        className="px-3 py-2 rounded-lg border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 w-full sm:w-auto"
                     >
                         <option value="">Semua Kategori</option>
                         {categories.map(cat => (
@@ -196,7 +196,7 @@ export default function ItemsView({ items, rooms, categories }: ItemsViewProps) 
                     <select
                         value={filterRoom}
                         onChange={(e) => setFilterRoom(e.target.value)}
-                        className="px-3 py-2 rounded-lg border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20"
+                        className="px-3 py-2 rounded-lg border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 w-full sm:w-auto"
                     >
                         <option value="">Semua Ruangan</option>
                         {rooms.map(room => (
@@ -207,7 +207,7 @@ export default function ItemsView({ items, rooms, categories }: ItemsViewProps) 
                     <select
                         value={filterStatus}
                         onChange={(e) => setFilterStatus(e.target.value)}
-                        className="px-3 py-2 rounded-lg border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20"
+                        className="px-3 py-2 rounded-lg border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 w-full sm:w-auto"
                     >
                         <option value="">Semua Status</option>
                         <option value="Tersedia">Tersedia</option>
@@ -220,110 +220,112 @@ export default function ItemsView({ items, rooms, categories }: ItemsViewProps) 
 
             {/* Items List */}
             <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
-                <table className="w-full text-left">
-                    <thead className="bg-gray-50 border-b border-gray-100">
-                        <tr>
-                            <th className="px-6 py-4 font-semibold text-gray-700">Nama Alat</th>
-                            <th className="px-6 py-4 font-semibold text-gray-700">Kategori</th>
-                            <th className="px-6 py-4 font-semibold text-gray-700">Lokasi</th>
-                            <th className="px-6 py-4 font-semibold text-gray-700">Status</th>
-                            <th className="px-6 py-4 font-semibold text-gray-700">QR Code</th>
-                            <th className="px-6 py-4 font-semibold text-gray-700 text-center">Aksi</th>
-                        </tr>
-                    </thead>
-                    <tbody className="divide-y divide-gray-100">
-                        {filteredItems.map((item) => (
-                            <tr key={item.id} className="hover:bg-gray-50 transition-colors">
-                                <td className="px-6 py-4">
-                                    <div className="flex items-center gap-3">
-                                        <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                                            <Box className="w-5 h-5 text-primary" />
-                                        </div>
-                                        <div>
-                                            <p className="font-medium text-gray-900">{item.name}</p>
-                                            {item.description && (
-                                                <p className="text-xs text-gray-500">{item.description}</p>
-                                            )}
-                                        </div>
-                                    </div>
-                                </td>
-                                <td className="px-6 py-4">
-                                    <span className="inline-flex items-center gap-1 px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs font-medium">
-                                        <Tag className="w-3 h-3" />
-                                        {item.category.name}
-                                    </span>
-                                </td>
-                                <td className="px-6 py-4 text-gray-600">
-                                    <span className="flex items-center gap-1 text-sm">
-                                        <MapPin className="w-4 h-4 text-gray-400" />
-                                        {item.room.name}
-                                    </span>
-                                </td>
-                                <td className="px-6 py-4">
-                                    {item.status === 'Dipinjam' ? (
-                                        // Dipinjam is read-only (controlled by loan process)
-                                        <span className="inline-flex px-2 py-1 rounded text-xs font-medium bg-orange-50 text-orange-700">
-                                            Dipinjam
-                                        </span>
-                                    ) : (
-                                        // Admin can only toggle between Tersedia and Maintenance
-                                        <select
-                                            defaultValue={item.status || 'Tersedia'}
-                                            onChange={async (e) => {
-                                                const { updateItemStatus } = await import('@/features/inventory/actions');
-                                                await updateItemStatus(
-                                                    item.id,
-                                                    e.target.value as 'Tersedia' | 'Maintenance'
-                                                );
-                                            }}
-                                            className={`text-xs font-medium px-2 py-1 rounded border-0 cursor-pointer ${item.status === 'Tersedia' ? 'bg-green-50 text-green-700' :
-                                                'bg-gray-50 text-gray-700'
-                                                }`}
-                                        >
-                                            <option value="Tersedia">Tersedia</option>
-                                            <option value="Maintenance">Maintenance</option>
-                                        </select>
-                                    )}
-                                </td>
-                                <td className="px-6 py-4">
-                                    <QRCodeDisplay value={item.qrCode} baseUrl={process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'} />
-                                </td>
-                                <td className="px-6 py-4">
-                                    <div className="flex gap-1 justify-center">
-                                        <button
-                                            onClick={() => setEditingItem(item)}
-                                            className="text-blue-500 hover:text-blue-700 p-2 hover:bg-blue-50 rounded-lg transition-colors"
-                                            title="Edit"
-                                        >
-                                            <Edit className="w-4 h-4" />
-                                        </button>
-                                        <form action={async () => {
-                                            if (confirm('Apakah Anda yakin ingin menghapus alat ini?')) {
-                                                await deleteItem(item.id);
-                                            }
-                                        }}>
-                                            <button
-                                                className="text-red-500 hover:text-red-700 p-2 hover:bg-red-50 rounded-lg transition-colors"
-                                                title="Hapus"
-                                            >
-                                                <Trash2 className="w-4 h-4" />
-                                            </button>
-                                        </form>
-                                    </div>
-                                </td>
-                            </tr>
-                        ))}
-                        {filteredItems.length === 0 && (
+                <div className="overflow-x-auto">
+                    <table className="w-full text-left">
+                        <thead className="bg-gray-50 border-b border-gray-100">
                             <tr>
-                                <td colSpan={6} className="px-6 py-12 text-center text-gray-500">
-                                    {items.length === 0
-                                        ? 'Belum ada data alat. Silahkan tambahkan alat baru.'
-                                        : 'Tidak ada alat yang sesuai filter.'}
-                                </td>
+                                <th className="px-6 py-4 font-semibold text-gray-700">Nama Alat</th>
+                                <th className="px-6 py-4 font-semibold text-gray-700">Kategori</th>
+                                <th className="px-6 py-4 font-semibold text-gray-700">Lokasi</th>
+                                <th className="px-6 py-4 font-semibold text-gray-700">Status</th>
+                                <th className="px-6 py-4 font-semibold text-gray-700">QR Code</th>
+                                <th className="px-6 py-4 font-semibold text-gray-700 text-center">Aksi</th>
                             </tr>
-                        )}
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody className="divide-y divide-gray-100">
+                            {filteredItems.map((item) => (
+                                <tr key={item.id} className="hover:bg-gray-50 transition-colors">
+                                    <td className="px-6 py-4">
+                                        <div className="flex items-center gap-3">
+                                            <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                                                <Box className="w-5 h-5 text-primary" />
+                                            </div>
+                                            <div>
+                                                <p className="font-medium text-gray-900">{item.name}</p>
+                                                {item.description && (
+                                                    <p className="text-xs text-gray-500">{item.description}</p>
+                                                )}
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td className="px-6 py-4">
+                                        <span className="inline-flex items-center gap-1 px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs font-medium">
+                                            <Tag className="w-3 h-3" />
+                                            {item.category.name}
+                                        </span>
+                                    </td>
+                                    <td className="px-6 py-4 text-gray-600">
+                                        <span className="flex items-center gap-1 text-sm">
+                                            <MapPin className="w-4 h-4 text-gray-400" />
+                                            {item.room.name}
+                                        </span>
+                                    </td>
+                                    <td className="px-6 py-4">
+                                        {item.status === 'Dipinjam' ? (
+                                            // Dipinjam is read-only (controlled by loan process)
+                                            <span className="inline-flex px-2 py-1 rounded text-xs font-medium bg-orange-50 text-orange-700">
+                                                Dipinjam
+                                            </span>
+                                        ) : (
+                                            // Admin can only toggle between Tersedia and Maintenance
+                                            <select
+                                                defaultValue={item.status || 'Tersedia'}
+                                                onChange={async (e) => {
+                                                    const { updateItemStatus } = await import('@/features/inventory/actions');
+                                                    await updateItemStatus(
+                                                        item.id,
+                                                        e.target.value as 'Tersedia' | 'Maintenance'
+                                                    );
+                                                }}
+                                                className={`text-xs font-medium px-2 py-1 rounded border-0 cursor-pointer ${item.status === 'Tersedia' ? 'bg-green-50 text-green-700' :
+                                                    'bg-gray-50 text-gray-700'
+                                                    }`}
+                                            >
+                                                <option value="Tersedia">Tersedia</option>
+                                                <option value="Maintenance">Maintenance</option>
+                                            </select>
+                                        )}
+                                    </td>
+                                    <td className="px-6 py-4">
+                                        <QRCodeDisplay value={item.qrCode} baseUrl={process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'} />
+                                    </td>
+                                    <td className="px-6 py-4">
+                                        <div className="flex gap-1 justify-center">
+                                            <button
+                                                onClick={() => setEditingItem(item)}
+                                                className="text-blue-500 hover:text-blue-700 p-2 hover:bg-blue-50 rounded-lg transition-colors"
+                                                title="Edit"
+                                            >
+                                                <Edit className="w-4 h-4" />
+                                            </button>
+                                            <form action={async () => {
+                                                if (confirm('Apakah Anda yakin ingin menghapus alat ini?')) {
+                                                    await deleteItem(item.id);
+                                                }
+                                            }}>
+                                                <button
+                                                    className="text-red-500 hover:text-red-700 p-2 hover:bg-red-50 rounded-lg transition-colors"
+                                                    title="Hapus"
+                                                >
+                                                    <Trash2 className="w-4 h-4" />
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </td>
+                                </tr>
+                            ))}
+                            {filteredItems.length === 0 && (
+                                <tr>
+                                    <td colSpan={6} className="px-6 py-12 text-center text-gray-500">
+                                        {items.length === 0
+                                            ? 'Belum ada data alat. Silahkan tambahkan alat baru.'
+                                            : 'Tidak ada alat yang sesuai filter.'}
+                                    </td>
+                                </tr>
+                            )}
+                        </tbody>
+                    </table>
+                </div>
             </div>
 
             {/* Category Management Modal */}

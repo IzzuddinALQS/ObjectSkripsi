@@ -218,7 +218,7 @@ export default function AttendanceModal({ isOpen, onClose, userData }: Attendanc
                                         id="dosenPenanggungJawab"
                                         value={dosenPenanggungJawab}
                                         onChange={(e) => setDosenPenanggungJawab(e.target.value)}
-                                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0F4C81] focus:border-transparent transition-all text-gray-700 bg-white"
+                                        className="w-full max-w-full truncate px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0F4C81] focus:border-transparent transition-all text-gray-700 bg-white"
                                     >
                                         <option value="">Dosen Pembimbing Saya / Tidak Memiliki</option>
                                         {lecturers.map((lecturer) => (

@@ -133,7 +133,7 @@ export default function StudentScheduleWidget({ schedules }: StudentScheduleWidg
     return (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {/* MINI CALENDAR (Left - 50%) */}
-            <div className="flex flex-col h-[500px] lg:h-auto">
+            <div className="flex flex-col h-auto min-h-[20rem] lg:h-auto">
                 <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden h-full flex flex-col">
                     <div className="px-4 py-3 border-b border-gray-100 flex items-center justify-between bg-gradient-to-r from-indigo-50 to-blue-50">
                         <button onClick={prevMonth} className="p-1 hover:bg-white/70 rounded-md transition-colors">
@@ -180,9 +180,9 @@ export default function StudentScheduleWidget({ schedules }: StudentScheduleWidg
             </div>
 
             {/* WEEKLY SCHEDULE LIST (Right - 50%) */}
-            <div className="flex flex-col h-[500px] lg:h-auto">
+            <div className="flex flex-col h-auto min-h-[20rem] lg:h-auto">
                 <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden h-full flex flex-col">
-                    <div className="px-5 py-4 border-b border-gray-100 flex items-center justify-between bg-white">
+                    <div className="px-3 sm:px-5 py-3 sm:py-4 border-b border-gray-100 flex flex-wrap items-center justify-between gap-3 bg-white">
                         <div className="flex items-center gap-2">
                             <div className="p-2 bg-indigo-50 rounded-lg text-indigo-600">
                                 <CalendarIcon className="w-5 h-5" />
@@ -200,9 +200,9 @@ export default function StudentScheduleWidget({ schedules }: StudentScheduleWidg
                         <div className="flex items-center gap-2">
                             <button
                                 onClick={prevWeek}
-                                className="px-3 py-1.5 text-sm font-medium text-gray-700 bg-gray-50 border border-gray-200 rounded-lg hover:bg-gray-100 transition-colors flex items-center gap-1"
+                                className="px-2 sm:px-3 py-1.5 text-sm font-medium text-gray-700 bg-gray-50 border border-gray-200 rounded-lg hover:bg-gray-100 transition-colors flex items-center gap-1"
                             >
-                                <ChevronLeft className="w-4 h-4" /> Bebelumnya
+                                <ChevronLeft className="w-4 h-4" /> <span className="hidden sm:inline">Bebelumnya</span>
                             </button>
                             {weekOffset !== 0 && (
                                 <button
@@ -214,9 +214,9 @@ export default function StudentScheduleWidget({ schedules }: StudentScheduleWidg
                             )}
                             <button
                                 onClick={nextWeek}
-                                className="px-3 py-1.5 text-sm font-medium text-gray-700 bg-gray-50 border border-gray-200 rounded-lg hover:bg-gray-100 transition-colors flex items-center gap-1"
+                                className="px-2 sm:px-3 py-1.5 text-sm font-medium text-gray-700 bg-gray-50 border border-gray-200 rounded-lg hover:bg-gray-100 transition-colors flex items-center gap-1"
                             >
-                                Berikutnya <ChevronRight className="w-4 h-4" />
+                                <span className="hidden sm:inline">Berikutnya</span> <ChevronRight className="w-4 h-4" />
                             </button>
                         </div>
                     </div>

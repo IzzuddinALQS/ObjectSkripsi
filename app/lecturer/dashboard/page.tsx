@@ -19,7 +19,7 @@ export default async function LecturerDashboard() {
 
     return (
         <div>
-            <div className="flex justify-between items-center mb-6">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
                 <h1 className="text-2xl font-bold text-gray-900">
                     Dashboard Dosen
                 </h1>
@@ -36,7 +36,7 @@ export default async function LecturerDashboard() {
                             <Package className="w-4 h-4 text-blue-500" />
                         </div>
                     </div>
-                    <p className="text-3xl font-bold text-gray-900">{dashboard.activeLoans?.length || 0}</p>
+                    <p className="text-2xl sm:text-3xl font-bold text-gray-900">{dashboard.activeLoans?.length || 0}</p>
                     <p className="text-xs text-gray-500 mt-2 flex items-center gap-1 group-hover:text-blue-500 transition-colors">
                         Lihat alat dipinjam <ArrowRight className="w-3 h-3" />
                     </p>
@@ -50,7 +50,7 @@ export default async function LecturerDashboard() {
                             <Calendar className="w-4 h-4 text-green-500" />
                         </div>
                     </div>
-                    <p className="text-3xl font-bold text-gray-900">{dashboard.totalBookings}</p>
+                    <p className="text-2xl sm:text-3xl font-bold text-gray-900">{dashboard.totalBookings}</p>
                     <p className="text-xs text-gray-500 mt-2 flex items-center gap-1 group-hover:text-green-500 transition-colors">
                         Lihat jadwal ruangan <ArrowRight className="w-3 h-3" />
                     </p>
@@ -64,7 +64,7 @@ export default async function LecturerDashboard() {
                             <Clock className="w-4 h-4 text-orange-500" />
                         </div>
                     </div>
-                    <p className="text-3xl font-bold text-gray-900">{dashboard.pendingRequests?.length || 0}</p>
+                    <p className="text-2xl sm:text-3xl font-bold text-gray-900">{dashboard.pendingRequests?.length || 0}</p>
                     <p className="text-xs text-gray-500 mt-2">Menunggu persetujuan</p>
                 </div>
             </div>

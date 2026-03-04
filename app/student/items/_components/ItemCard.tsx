@@ -287,7 +287,7 @@ export default function ItemCard({ item, userId, variant = 'grid', role = 'stude
                                     <select
                                         value={organisasi}
                                         onChange={(e) => setOrganisasi(e.target.value)}
-                                        className="w-full px-3 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20 text-sm"
+                                        className="w-full max-w-full truncate px-3 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20 text-sm"
                                     >
                                         {ORGANISASI_OPTIONS.map(org => (
                                             <option key={org} value={org}>{org}</option>
@@ -314,7 +314,7 @@ export default function ItemCard({ item, userId, variant = 'grid', role = 'stude
                                         <select
                                             value={dosenPembimbing}
                                             onChange={(e) => setDosenPembimbing(e.target.value)}
-                                            className="w-full px-3 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20 text-sm"
+                                            className="w-full max-w-full truncate px-3 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20 text-sm"
                                         >
                                             <option value="">-- Pilih Dosen --</option>
                                             {lecturers.map(lecturer => (
@@ -337,7 +337,7 @@ export default function ItemCard({ item, userId, variant = 'grid', role = 'stude
                                         onChange={(e) => setLoanDate(e.target.value)}
                                         min={today}
                                         required
-                                        className="w-full px-3 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20 text-sm"
+                                        className="w-full max-w-full truncate px-3 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20 text-sm"
                                     />
                                 </div>
 
@@ -352,7 +352,7 @@ export default function ItemCard({ item, userId, variant = 'grid', role = 'stude
                                         onChange={(e) => setReturnDate(e.target.value)}
                                         min={loanDate || minReturnDate}
                                         required
-                                        className="w-full px-3 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20 text-sm"
+                                        className="w-full max-w-full truncate px-3 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20 text-sm"
                                     />
                                 </div>
 
@@ -387,7 +387,7 @@ export default function ItemCard({ item, userId, variant = 'grid', role = 'stude
                                 <select
                                     value={selectedPurpose}
                                     onChange={(e) => setSelectedPurpose(e.target.value)}
-                                    className="w-full px-3 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20 text-sm"
+                                    className="w-full max-w-full truncate px-3 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20 text-sm"
                                     required
                                 >
                                     <option value="" disabled>-- Pilih Keperluan --</option>

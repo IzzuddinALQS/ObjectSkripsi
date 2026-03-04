@@ -80,7 +80,7 @@ export default function ModuleList({ modules, courses }: ModuleListProps) {
                     <select
                         value={filterCourseId}
                         onChange={(e) => handleCourseFilterChange(e.target.value)}
-                        className="px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20 min-w-[180px]"
+                        className="px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20 min-w-0 w-full sm:min-w-[11.25rem] sm:w-auto"
                     >
                         <option value="">Semua Mata Kuliah</option>
                         {courses.map(course => (
@@ -120,52 +120,54 @@ export default function ModuleList({ modules, courses }: ModuleListProps) {
                 </div>
             ) : viewMode === 'list' ? (
                 <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
-                    <table className="w-full">
-                        <thead>
-                            <tr className="border-b border-gray-100 text-left text-sm text-gray-500">
-                                <th className="px-6 py-3 font-medium">Judul Modul</th>
-                                <th className="px-4 py-3 font-medium">Mata Kuliah</th>
-                                <th className="px-4 py-3 font-medium">Deskripsi</th>
-                                <th className="px-4 py-3 font-medium">File</th>
-                            </tr>
-                        </thead>
-                        <tbody className="divide-y divide-gray-100">
-                            {paginatedModules.map((module) => (
-                                <tr key={module.id} className="hover:bg-gray-50 transition-colors">
-                                    <td className="px-6 py-4">
-                                        <div className="flex items-center gap-2">
-                                            <BookOpen className="w-4 h-4 text-[#0F4C81] flex-shrink-0" />
-                                            <span className="font-medium text-gray-900 line-clamp-1">{module.name}</span>
-                                        </div>
-                                    </td>
-                                    <td className="px-4 py-4 text-sm text-gray-600">
-                                        {module.courseName ? (
-                                            <span className="inline-flex px-2 py-0.5 rounded text-xs font-medium bg-blue-50 text-blue-700 whitespace-nowrap">
-                                                {module.courseCode} - {module.courseName}
-                                            </span>
-                                        ) : '-'}
-                                    </td>
-                                    <td className="px-4 py-4 text-sm text-gray-500">
-                                        <p className="line-clamp-2 max-w-xs">{module.description || '-'}</p>
-                                    </td>
-                                    <td className="px-4 py-4">
-                                        {module.filePath ? (
-                                            <a
-                                                href={module.filePath}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="inline-flex items-center gap-1 text-[#0F4C81] hover:text-blue-700 text-sm font-medium"
-                                            >
-                                                <ExternalLink className="w-3 h-3" /> Buka
-                                            </a>
-                                        ) : (
-                                            <span className="text-gray-400 text-sm">Tidak tersedia</span>
-                                        )}
-                                    </td>
+                    <div className="overflow-x-auto">
+                        <table className="w-full">
+                            <thead>
+                                <tr className="border-b border-gray-100 text-left text-sm text-gray-500">
+                                    <th className="px-6 py-3 font-medium">Judul Modul</th>
+                                    <th className="px-4 py-3 font-medium">Mata Kuliah</th>
+                                    <th className="px-4 py-3 font-medium">Deskripsi</th>
+                                    <th className="px-4 py-3 font-medium">File</th>
                                 </tr>
-                            ))}
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody className="divide-y divide-gray-100">
+                                {paginatedModules.map((module) => (
+                                    <tr key={module.id} className="hover:bg-gray-50 transition-colors">
+                                        <td className="px-6 py-4">
+                                            <div className="flex items-center gap-2">
+                                                <BookOpen className="w-4 h-4 text-[#0F4C81] flex-shrink-0" />
+                                                <span className="font-medium text-gray-900 line-clamp-1">{module.name}</span>
+                                            </div>
+                                        </td>
+                                        <td className="px-4 py-4 text-sm text-gray-600">
+                                            {module.courseName ? (
+                                                <span className="inline-flex px-2 py-0.5 rounded text-xs font-medium bg-blue-50 text-blue-700 whitespace-nowrap">
+                                                    {module.courseCode} - {module.courseName}
+                                                </span>
+                                            ) : '-'}
+                                        </td>
+                                        <td className="px-4 py-4 text-sm text-gray-500">
+                                            <p className="line-clamp-2 max-w-xs">{module.description || '-'}</p>
+                                        </td>
+                                        <td className="px-4 py-4">
+                                            {module.filePath ? (
+                                                <a
+                                                    href={module.filePath}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="inline-flex items-center gap-1 text-[#0F4C81] hover:text-blue-700 text-sm font-medium"
+                                                >
+                                                    <ExternalLink className="w-3 h-3" /> Buka
+                                                </a>
+                                            ) : (
+                                                <span className="text-gray-400 text-sm">Tidak tersedia</span>
+                                            )}
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             ) : (
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -213,8 +215,8 @@ export default function ModuleList({ modules, courses }: ModuleListProps) {
                         onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
                         disabled={currentPage === 1}
                         className={`px-4 py-2 rounded-lg text-sm transition-colors ${currentPage === 1
-                                ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                                : 'bg-white border border-gray-200 text-gray-600 hover:bg-gray-50'
+                            ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                            : 'bg-white border border-gray-200 text-gray-600 hover:bg-gray-50'
                             }`}
                     >
                         ← Sebelumnya
@@ -232,8 +234,8 @@ export default function ModuleList({ modules, courses }: ModuleListProps) {
                                 key={pageNum}
                                 onClick={() => setCurrentPage(pageNum)}
                                 className={`px-3 py-2 rounded-lg text-sm transition-colors ${pageNum === currentPage
-                                        ? 'bg-[#0F4C81] text-white'
-                                        : 'bg-white border border-gray-200 text-gray-600 hover:bg-gray-50'
+                                    ? 'bg-[#0F4C81] text-white'
+                                    : 'bg-white border border-gray-200 text-gray-600 hover:bg-gray-50'
                                     }`}
                             >
                                 {pageNum}
@@ -245,8 +247,8 @@ export default function ModuleList({ modules, courses }: ModuleListProps) {
                         onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
                         disabled={currentPage === totalPages}
                         className={`px-4 py-2 rounded-lg text-sm transition-colors ${currentPage === totalPages
-                                ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                                : 'bg-white border border-gray-200 text-gray-600 hover:bg-gray-50'
+                            ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                            : 'bg-white border border-gray-200 text-gray-600 hover:bg-gray-50'
                             }`}
                     >
                         Selanjutnya →

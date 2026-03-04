@@ -281,7 +281,7 @@ export default function ModuleManager({ modules, courses }: ModuleManagerProps) 
                     <select
                         value={filterCourseId}
                         onChange={(e) => handleCourseFilterChange(e.target.value)}
-                        className="px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#0F4C81]/20 min-w-[180px]"
+                        className="px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#0F4C81]/20 min-w-0 w-full sm:min-w-[11.25rem] sm:w-auto"
                     >
                         <option value="">Semua Mata Kuliah</option>
                         {courses.map(course => (

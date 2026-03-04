@@ -89,54 +89,56 @@ export default function StudentRoomManager({
                         <div className="px-6 py-4 border-b border-gray-100 bg-gray-50">
                             <h3 className="font-semibold text-gray-900">Riwayat Pengajuan Booking</h3>
                         </div>
-                        <table className="w-full text-left">
-                            <thead className="bg-white border-b border-gray-100">
-                                <tr>
-                                    <th className="px-6 py-4 font-semibold text-gray-700 text-sm">Ruangan</th>
-                                    <th className="px-6 py-4 font-semibold text-gray-700 text-sm">Tanggal & Waktu</th>
-                                    <th className="px-6 py-4 font-semibold text-gray-700 text-sm">Keperluan</th>
-                                    <th className="px-6 py-4 font-semibold text-gray-700 text-sm">Status</th>
-                                </tr>
-                            </thead>
-                            <tbody className="divide-y divide-gray-100 bg-white">
-                                {myBookings.map((booking) => (
-                                    <tr key={booking.id} className="hover:bg-gray-50 transition-colors">
-                                        <td className="px-6 py-4">
-                                            <div className="flex items-center gap-3">
-                                                <div className="w-8 h-8 rounded-lg bg-[#0F4C81]/10 flex items-center justify-center shrink-0">
-                                                    <MapPin className="w-4 h-4 text-[#0F4C81]" />
-                                                </div>
-                                                <span className="font-medium text-gray-900 text-sm">{booking.room.name}</span>
-                                            </div>
-                                        </td>
-                                        <td className="px-6 py-4 text-gray-600 text-sm">
-                                            <div className="font-medium">{new Date(booking.startTime).toLocaleDateString('id-ID', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</div>
-                                            <div className="text-xs text-gray-500 mt-0.5">
-                                                {new Date(booking.startTime).toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' })} -
-                                                {new Date(booking.endTime).toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' })} WIB
-                                            </div>
-                                        </td>
-                                        <td className="px-6 py-4 text-gray-600 text-sm max-w-xs">
-                                            <p className="line-clamp-2" title={booking.purpose}>{booking.purpose}</p>
-                                        </td>
-                                        <td className="px-6 py-4">
-                                            <span className={`inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-md text-xs font-medium ${getStatusBadge(booking.status!)}`}>
-                                                {getStatusIcon(booking.status!)}
-                                                {booking.status}
-                                            </span>
-                                        </td>
-                                    </tr>
-                                ))}
-                                {myBookings.length === 0 && (
+                        <div className="overflow-x-auto">
+                            <table className="w-full text-left">
+                                <thead className="bg-white border-b border-gray-100">
                                     <tr>
-                                        <td colSpan={4} className="px-6 py-12 text-center text-gray-500">
-                                            <ClipboardList className="w-12 h-12 text-gray-300 mx-auto mb-3" />
-                                            Belum ada riwayat booking ruangan.
-                                        </td>
+                                        <th className="px-6 py-4 font-semibold text-gray-700 text-sm">Ruangan</th>
+                                        <th className="px-6 py-4 font-semibold text-gray-700 text-sm">Tanggal & Waktu</th>
+                                        <th className="px-6 py-4 font-semibold text-gray-700 text-sm">Keperluan</th>
+                                        <th className="px-6 py-4 font-semibold text-gray-700 text-sm">Status</th>
                                     </tr>
-                                )}
-                            </tbody>
-                        </table>
+                                </thead>
+                                <tbody className="divide-y divide-gray-100 bg-white">
+                                    {myBookings.map((booking) => (
+                                        <tr key={booking.id} className="hover:bg-gray-50 transition-colors">
+                                            <td className="px-6 py-4">
+                                                <div className="flex items-center gap-3">
+                                                    <div className="w-8 h-8 rounded-lg bg-[#0F4C81]/10 flex items-center justify-center shrink-0">
+                                                        <MapPin className="w-4 h-4 text-[#0F4C81]" />
+                                                    </div>
+                                                    <span className="font-medium text-gray-900 text-sm">{booking.room.name}</span>
+                                                </div>
+                                            </td>
+                                            <td className="px-6 py-4 text-gray-600 text-sm">
+                                                <div className="font-medium">{new Date(booking.startTime).toLocaleDateString('id-ID', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</div>
+                                                <div className="text-xs text-gray-500 mt-0.5">
+                                                    {new Date(booking.startTime).toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' })} -
+                                                    {new Date(booking.endTime).toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' })} WIB
+                                                </div>
+                                            </td>
+                                            <td className="px-6 py-4 text-gray-600 text-sm max-w-xs">
+                                                <p className="line-clamp-2" title={booking.purpose}>{booking.purpose}</p>
+                                            </td>
+                                            <td className="px-6 py-4">
+                                                <span className={`inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-md text-xs font-medium ${getStatusBadge(booking.status!)}`}>
+                                                    {getStatusIcon(booking.status!)}
+                                                    {booking.status}
+                                                </span>
+                                            </td>
+                                        </tr>
+                                    ))}
+                                    {myBookings.length === 0 && (
+                                        <tr>
+                                            <td colSpan={4} className="px-6 py-12 text-center text-gray-500">
+                                                <ClipboardList className="w-12 h-12 text-gray-300 mx-auto mb-3" />
+                                                Belum ada riwayat booking ruangan.
+                                            </td>
+                                        </tr>
+                                    )}
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 )}
             </div>

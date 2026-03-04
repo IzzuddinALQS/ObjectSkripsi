@@ -15,7 +15,7 @@ interface SOPSectionProps {
 
 export default function SOPSection({ sops }: SOPSectionProps) {
     return (
-        <div className="bg-white p-4 rounded-lg shadow-sm h-[600px] overflow-y-auto border border-gray-100 custom-scrollbar">
+        <div className="bg-white p-4 rounded-lg shadow-sm h-auto max-h-[24rem] sm:max-h-[37.5rem] overflow-y-auto border border-gray-100 custom-scrollbar">
             <div className="flex items-center justify-between mb-3">
                 <h3 className="text-base font-bold text-gray-800 flex items-center gap-2">
                     <FileText className="w-4 h-4 text-blue-600" />

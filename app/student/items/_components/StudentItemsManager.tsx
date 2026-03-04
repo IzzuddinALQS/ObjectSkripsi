@@ -109,7 +109,7 @@ export default function StudentItemsManager({
                                 <select
                                     value={selectedCategory}
                                     onChange={(e) => setSelectedCategory(e.target.value)}
-                                    className="px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20 min-w-[150px]"
+                                    className="px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20 min-w-0 w-full sm:min-w-[9.375rem] sm:w-auto"
                                 >
                                     <option value="">Semua Kategori</option>
                                     {categories.map(cat => (
@@ -119,7 +119,7 @@ export default function StudentItemsManager({
                                 <select
                                     value={selectedRoom}
                                     onChange={(e) => setSelectedRoom(e.target.value)}
-                                    className="px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20 min-w-[150px]"
+                                    className="px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20 min-w-0 w-full sm:min-w-[9.375rem] sm:w-auto"
                                 >
                                     <option value="">Semua Ruangan</option>
                                     {rooms.map(room => (
@@ -160,56 +160,58 @@ export default function StudentItemsManager({
                             </div>
                         ) : viewMode === 'list' ? (
                             <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
-                                <table className="w-full">
-                                    <thead>
-                                        <tr className="border-b border-gray-100 text-left text-sm text-gray-500">
-                                            <th className="px-6 py-3 font-medium">Nama Alat</th>
-                                            <th className="px-4 py-3 font-medium">Kategori</th>
-                                            <th className="px-4 py-3 font-medium">Ruangan</th>
-                                            <th className="px-4 py-3 font-medium text-center">Aksi</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody className="divide-y divide-gray-100">
-                                        {filteredItems.map((item) => (
-                                            <tr key={item.id} className="hover:bg-gray-50 transition-colors">
-                                                <td className="px-6 py-4">
-                                                    <div className="flex items-center gap-3">
-                                                        <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                                                            <Box className="w-5 h-5 text-primary" />
-                                                        </div>
-                                                        <div>
-                                                            <p className="font-medium text-gray-900">{item.name}</p>
-                                                            {item.description && (
-                                                                <p className="text-xs text-gray-500 line-clamp-1 max-w-xs">{item.description}</p>
-                                                            )}
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td className="px-4 py-4">
-                                                    <span className="inline-flex items-center gap-1 text-sm text-gray-600 bg-gray-100 px-2 py-1 rounded">
-                                                        <Tag className="w-3 h-3 text-gray-400" />
-                                                        {item.category.name}
-                                                    </span>
-                                                </td>
-                                                <td className="px-4 py-4">
-                                                    <span className="inline-flex items-center gap-1 text-sm text-gray-600">
-                                                        <MapPin className="w-3 h-3 text-gray-400" />
-                                                        {item.room.name}
-                                                    </span>
-                                                </td>
-                                                <td className="px-4 py-4 text-center">
-                                                    <ItemCard
-                                                        item={item}
-                                                        userId={userId}
-                                                        variant="list"
-                                                        role={role}
-                                                        initialOpen={initialQrCode === item.qrCode && initialAction === 'pinjam'}
-                                                    />
-                                                </td>
+                                <div className="overflow-x-auto">
+                                    <table className="w-full">
+                                        <thead>
+                                            <tr className="border-b border-gray-100 text-left text-sm text-gray-500">
+                                                <th className="px-6 py-3 font-medium">Nama Alat</th>
+                                                <th className="px-4 py-3 font-medium">Kategori</th>
+                                                <th className="px-4 py-3 font-medium">Ruangan</th>
+                                                <th className="px-4 py-3 font-medium text-center">Aksi</th>
                                             </tr>
-                                        ))}
-                                    </tbody>
-                                </table>
+                                        </thead>
+                                        <tbody className="divide-y divide-gray-100">
+                                            {filteredItems.map((item) => (
+                                                <tr key={item.id} className="hover:bg-gray-50 transition-colors">
+                                                    <td className="px-6 py-4">
+                                                        <div className="flex items-center gap-3">
+                                                            <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                                                                <Box className="w-5 h-5 text-primary" />
+                                                            </div>
+                                                            <div>
+                                                                <p className="font-medium text-gray-900">{item.name}</p>
+                                                                {item.description && (
+                                                                    <p className="text-xs text-gray-500 line-clamp-1 max-w-xs">{item.description}</p>
+                                                                )}
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td className="px-4 py-4">
+                                                        <span className="inline-flex items-center gap-1 text-sm text-gray-600 bg-gray-100 px-2 py-1 rounded">
+                                                            <Tag className="w-3 h-3 text-gray-400" />
+                                                            {item.category.name}
+                                                        </span>
+                                                    </td>
+                                                    <td className="px-4 py-4">
+                                                        <span className="inline-flex items-center gap-1 text-sm text-gray-600">
+                                                            <MapPin className="w-3 h-3 text-gray-400" />
+                                                            {item.room.name}
+                                                        </span>
+                                                    </td>
+                                                    <td className="px-4 py-4 text-center">
+                                                        <ItemCard
+                                                            item={item}
+                                                            userId={userId}
+                                                            variant="list"
+                                                            role={role}
+                                                            initialOpen={initialQrCode === item.qrCode && initialAction === 'pinjam'}
+                                                        />
+                                                    </td>
+                                                </tr>
+                                            ))}
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         ) : (
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

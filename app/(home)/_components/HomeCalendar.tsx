@@ -180,7 +180,7 @@ export default function HomeCalendar({
                 </div>
 
                 {/* Filter */}
-                <div className="relative group min-w-[180px]">
+                <div className="relative group min-w-0 w-full sm:min-w-[180px] sm:w-auto">
                     <div className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none">
                         <Filter className="w-4 h-4" />
                     </div>

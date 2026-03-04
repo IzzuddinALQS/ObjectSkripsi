@@ -463,64 +463,66 @@ export default function PublicationManager({ publications, userId }: Props) {
                     ) : viewMode === 'list' ? (
                         /* List View */
                         <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
-                            <table className="w-full">
-                                <thead>
-                                    <tr className="border-b border-gray-100 text-left text-sm text-gray-500">
-                                        <th className="px-6 py-3 font-medium">Judul</th>
-                                        <th className="px-4 py-3 font-medium">Penulis</th>
-                                        <th className="px-4 py-3 font-medium">Kata Kunci</th>
-                                        <th className="px-4 py-3 font-medium">Tahun</th>
-                                        <th className="px-4 py-3 font-medium text-center">Views</th>
-                                        <th className="px-4 py-3 font-medium text-center">Aksi</th>
-                                    </tr>
-                                </thead>
-                                <tbody className="divide-y divide-gray-100">
-                                    {paginatedPublications.map((pub) => {
-                                        let pubKeywords: string[] = [];
-                                        if (pub.keywords) { try { pubKeywords = JSON.parse(pub.keywords); } catch { } }
-                                        return (
-                                            <tr key={pub.id} className="hover:bg-gray-50 transition-colors">
-                                                <td className="px-6 py-4">
-                                                    <div className="font-medium text-gray-900 line-clamp-1">{pub.title}</div>
-                                                    {pub.abstract && <p className="text-xs text-gray-500 line-clamp-1 mt-0.5">{pub.abstract}</p>}
-                                                </td>
-                                                <td className="px-4 py-4 text-sm text-gray-600">{pub.authorName}</td>
-                                                <td className="px-4 py-4">
-                                                    <div className="flex flex-wrap gap-1">
-                                                        {pubKeywords.slice(0, 2).map((kw, idx) => (
-                                                            <span key={idx} className="text-xs bg-blue-50 text-blue-700 px-2 py-0.5 rounded">{kw}</span>
-                                                        ))}
-                                                        {pubKeywords.length > 2 && <span className="text-xs text-gray-400">+{pubKeywords.length - 2}</span>}
-                                                    </div>
-                                                </td>
-                                                <td className="px-4 py-4 text-sm text-gray-500">
-                                                    {formatPublishDate(pub.publishYear, pub.publishMonth, pub.publishDay)}
-                                                </td>
-                                                <td className="px-4 py-4 text-center">
-                                                    <span className="text-sm text-gray-500 flex items-center justify-center gap-1">
-                                                        <Eye className="w-3 h-3" />{pub.viewCount}
-                                                    </span>
-                                                </td>
-                                                <td className="px-4 py-4">
-                                                    <div className="flex items-center justify-center gap-1">
-                                                        {(pub.link || pub.filePath) && (
-                                                            <a href={pub.link || pub.filePath || '#'} target="_blank" rel="noopener noreferrer" className="text-[#0F4C81] hover:text-blue-700 p-1.5 hover:bg-blue-50 rounded-lg transition-colors" title="Lihat">
-                                                                <ExternalLink className="w-4 h-4" />
-                                                            </a>
-                                                        )}
-                                                        <button onClick={() => setEditingPublication(pub)} className="text-blue-500 hover:text-blue-700 p-1.5 hover:bg-blue-50 rounded-lg transition-colors" title="Edit">
-                                                            <Edit className="w-4 h-4" />
-                                                        </button>
-                                                        <button onClick={() => handleDelete(pub.id)} className="text-red-500 hover:text-red-700 p-1.5 hover:bg-red-50 rounded-lg transition-colors" title="Hapus">
-                                                            <Trash2 className="w-4 h-4" />
-                                                        </button>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        );
-                                    })}
-                                </tbody>
-                            </table>
+                            <div className="overflow-x-auto">
+                                <table className="w-full">
+                                    <thead>
+                                        <tr className="border-b border-gray-100 text-left text-sm text-gray-500">
+                                            <th className="px-6 py-3 font-medium">Judul</th>
+                                            <th className="px-4 py-3 font-medium">Penulis</th>
+                                            <th className="px-4 py-3 font-medium">Kata Kunci</th>
+                                            <th className="px-4 py-3 font-medium">Tahun</th>
+                                            <th className="px-4 py-3 font-medium text-center">Views</th>
+                                            <th className="px-4 py-3 font-medium text-center">Aksi</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody className="divide-y divide-gray-100">
+                                        {paginatedPublications.map((pub) => {
+                                            let pubKeywords: string[] = [];
+                                            if (pub.keywords) { try { pubKeywords = JSON.parse(pub.keywords); } catch { } }
+                                            return (
+                                                <tr key={pub.id} className="hover:bg-gray-50 transition-colors">
+                                                    <td className="px-6 py-4">
+                                                        <div className="font-medium text-gray-900 line-clamp-1">{pub.title}</div>
+                                                        {pub.abstract && <p className="text-xs text-gray-500 line-clamp-1 mt-0.5">{pub.abstract}</p>}
+                                                    </td>
+                                                    <td className="px-4 py-4 text-sm text-gray-600">{pub.authorName}</td>
+                                                    <td className="px-4 py-4">
+                                                        <div className="flex flex-wrap gap-1">
+                                                            {pubKeywords.slice(0, 2).map((kw, idx) => (
+                                                                <span key={idx} className="text-xs bg-blue-50 text-blue-700 px-2 py-0.5 rounded">{kw}</span>
+                                                            ))}
+                                                            {pubKeywords.length > 2 && <span className="text-xs text-gray-400">+{pubKeywords.length - 2}</span>}
+                                                        </div>
+                                                    </td>
+                                                    <td className="px-4 py-4 text-sm text-gray-500">
+                                                        {formatPublishDate(pub.publishYear, pub.publishMonth, pub.publishDay)}
+                                                    </td>
+                                                    <td className="px-4 py-4 text-center">
+                                                        <span className="text-sm text-gray-500 flex items-center justify-center gap-1">
+                                                            <Eye className="w-3 h-3" />{pub.viewCount}
+                                                        </span>
+                                                    </td>
+                                                    <td className="px-4 py-4">
+                                                        <div className="flex items-center justify-center gap-1">
+                                                            {(pub.link || pub.filePath) && (
+                                                                <a href={pub.link || pub.filePath || '#'} target="_blank" rel="noopener noreferrer" className="text-[#0F4C81] hover:text-blue-700 p-1.5 hover:bg-blue-50 rounded-lg transition-colors" title="Lihat">
+                                                                    <ExternalLink className="w-4 h-4" />
+                                                                </a>
+                                                            )}
+                                                            <button onClick={() => setEditingPublication(pub)} className="text-blue-500 hover:text-blue-700 p-1.5 hover:bg-blue-50 rounded-lg transition-colors" title="Edit">
+                                                                <Edit className="w-4 h-4" />
+                                                            </button>
+                                                            <button onClick={() => handleDelete(pub.id)} className="text-red-500 hover:text-red-700 p-1.5 hover:bg-red-50 rounded-lg transition-colors" title="Hapus">
+                                                                <Trash2 className="w-4 h-4" />
+                                                            </button>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            );
+                                        })}
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     ) : (
                         /* Grid View */

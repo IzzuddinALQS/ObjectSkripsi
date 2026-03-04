@@ -21,24 +21,24 @@ export default function Navbar() {
                     </div>
 
                     <div className="flex flex-col justify-center">
-                        <h1 className="font-bold text-xl text-[#0F4C81] leading-tight tracking-tight">
+                        <h1 className="font-bold text-lg sm:text-xl text-[#0F4C81] leading-tight tracking-tight">
                             Lab Informatika
                         </h1>
-                        <span className="text-xs font-medium text-[#6B7280] tracking-wider">
+                        <span className="hidden sm:block text-xs font-medium text-[#6B7280] tracking-wider">
                             UNIVERSITAS AL AZHAR INDONESIA
                         </span>
                     </div>
                 </div>
 
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-2 sm:gap-4">
                     <AttendanceButton />
 
                     <Link
                         href="/login"
-                        className="flex items-center gap-2 bg-[#0F4C81] hover:bg-[#0F4C81]/90 text-white px-4 py-2 rounded-lg font-medium text-sm transition-all shadow-sm hover:shadow-md"
+                        className="flex items-center gap-2 bg-[#0F4C81] hover:bg-[#0F4C81]/90 text-white px-3 py-2 sm:px-4 rounded-lg font-medium text-sm transition-all shadow-sm hover:shadow-md"
                     >
                         <LogIn className="w-4 h-4" />
-                        <span>Login</span>
+                        <span className="hidden sm:inline">Login</span>
                     </Link>
                 </div>
             </div>

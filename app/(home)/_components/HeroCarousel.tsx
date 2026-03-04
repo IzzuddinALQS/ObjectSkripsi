@@ -37,15 +37,15 @@ export default function HeroCarousel({ photos }: { photos: HeroPhoto[] }) {
 
     if (photos.length === 0) {
         return (
-            <div className="w-full aspect-[21/9] relative bg-gray-900 flex flex-col items-center justify-center overflow-hidden rounded-2xl shadow-lg">
+            <div className="w-full aspect-[16/9] sm:aspect-[21/9] relative bg-gray-900 flex flex-col items-center justify-center overflow-hidden rounded-2xl shadow-lg">
                 {/* Gradient Overlay similar to actual slides */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10" />
 
-                <div className="z-20 flex flex-col items-center text-center p-8">
-                    <div className="p-4 bg-white/10 backdrop-blur-sm rounded-full mb-4 shadow-sm border border-white/20">
-                        <ImageIcon className="w-8 h-8 text-white/80" />
+                <div className="z-20 flex flex-col items-center text-center p-4 sm:p-8">
+                    <div className="p-3 sm:p-4 bg-white/10 backdrop-blur-sm rounded-full mb-3 sm:mb-4 shadow-sm border border-white/20">
+                        <ImageIcon className="w-6 h-6 sm:w-8 sm:h-8 text-white/80" />
                     </div>
-                    <h2 className="text-xl font-semibold text-white">Belum ada foto kegiatan</h2>
+                    <h2 className="text-base sm:text-xl font-semibold text-white">Belum ada foto kegiatan</h2>
                     <p className="text-white/80 mt-2">Foto kegiatan akan muncul di sini</p>
                 </div>
             </div>
@@ -53,7 +53,7 @@ export default function HeroCarousel({ photos }: { photos: HeroPhoto[] }) {
     }
 
     return (
-        <div className="w-full aspect-[21/9] relative bg-gray-900 flex items-center justify-center overflow-hidden rounded-2xl shadow-lg group">
+        <div className="w-full aspect-[16/9] sm:aspect-[21/9] relative bg-gray-900 flex items-center justify-center overflow-hidden rounded-2xl shadow-lg group">
             {photos.map((photo, index) => {
                 const Content = () => (
                     <>
@@ -67,10 +67,10 @@ export default function HeroCarousel({ photos }: { photos: HeroPhoto[] }) {
                         />
 
                         {/* Content */}
-                        <div className="absolute bottom-0 left-0 right-0 p-8 z-20 transform transition-transform duration-500 translate-y-0">
-                            <h2 className="text-3xl font-bold text-white mb-2 drop-shadow-md">{photo.title}</h2>
+                        <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 lg:p-8 z-20 transform transition-transform duration-500 translate-y-0">
+                            <h2 className="text-lg sm:text-2xl lg:text-3xl font-bold text-white mb-1 sm:mb-2 drop-shadow-md">{photo.title}</h2>
                             {photo.description && (
-                                <p className="text-white/90 text-lg max-w-2xl drop-shadow-sm">{photo.description}</p>
+                                <p className="text-white/90 text-sm sm:text-base lg:text-lg max-w-2xl drop-shadow-sm line-clamp-2">{photo.description}</p>
                             )}
                         </div>
                     </>

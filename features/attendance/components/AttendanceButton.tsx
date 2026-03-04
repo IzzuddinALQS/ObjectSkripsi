@@ -19,10 +19,10 @@ export default function AttendanceButton({ userData }: AttendanceButtonProps = {
         <>
             <button
                 onClick={() => setIsModalOpen(true)}
-                className="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg font-medium text-sm transition-all shadow-sm hover:shadow-md"
+                className="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-3 py-2 sm:px-4 rounded-lg font-medium text-sm transition-all shadow-sm hover:shadow-md"
             >
                 <UserCheck className="w-4 h-4" />
-                <span>Absen Masuk</span>
+                <span className="hidden sm:inline">Absen Masuk</span>
             </button>
 
             <AttendanceModal

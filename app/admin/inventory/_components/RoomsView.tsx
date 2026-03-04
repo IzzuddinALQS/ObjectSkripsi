@@ -136,79 +136,81 @@ export default function RoomsView({ rooms }: RoomsViewProps) {
 
             {/* Rooms List */}
             <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
-                <table className="w-full text-left">
-                    <thead className="bg-gray-50 border-b border-gray-100">
-                        <tr>
-                            <th className="px-6 py-4 font-semibold text-gray-700">Nama Ruangan</th>
-                            <th className="px-6 py-4 font-semibold text-gray-700">Lokasi</th>
-                            <th className="px-6 py-4 font-semibold text-gray-700">Kapasitas</th>
-                            <th className="px-6 py-4 font-semibold text-gray-700">Status</th>
-                            <th className="px-6 py-4 font-semibold text-gray-700 text-center">Aksi</th>
-                        </tr>
-                    </thead>
-                    <tbody className="divide-y divide-gray-100">
-                        {filteredRooms.map((room) => (
-                            <tr key={room.id} className="hover:bg-gray-50 transition-colors">
-                                <td className="px-6 py-4 font-medium text-gray-900">{room.name}</td>
-                                <td className="px-6 py-4 text-gray-600 flex items-center gap-2">
-                                    <MapPin className="w-4 h-4 text-gray-400" />
-                                    {room.location}
-                                </td>
-                                <td className="px-6 py-4 text-gray-600">{room.capacity} Orang</td>
-                                <td className="px-6 py-4">
-                                    <select
-                                        defaultValue={room.status || 'Tersedia'}
-                                        onChange={async (e) => {
-                                            const { updateRoomStatus } = await import('@/features/inventory/actions');
-                                            await updateRoomStatus(
-                                                room.id,
-                                                e.target.value as 'Tersedia' | 'Maintenance'
-                                            );
-                                        }}
-                                        className={`text-xs font-medium px-2 py-1 rounded border-0 cursor-pointer ${room.status === 'Tersedia' ? 'bg-green-50 text-green-700' :
-                                            'bg-gray-50 text-gray-700'
-                                            }`}
-                                    >
-                                        <option value="Tersedia">Tersedia</option>
-                                        <option value="Maintenance">Maintenance</option>
-                                    </select>
-                                </td>
-                                <td className="px-6 py-4">
-                                    <div className="flex gap-1 justify-center">
-                                        <button
-                                            onClick={() => setEditingRoom(room)}
-                                            className="text-blue-500 hover:text-blue-700 p-2 hover:bg-blue-50 rounded-lg transition-colors"
-                                            title="Edit"
-                                        >
-                                            <Edit className="w-4 h-4" />
-                                        </button>
-                                        <form action={async () => {
-                                            if (confirm('Apakah Anda yakin ingin menghapus ruangan ini?')) {
-                                                await deleteRoom(room.id);
-                                            }
-                                        }}>
-                                            <button
-                                                className="text-red-500 hover:text-red-700 p-2 hover:bg-red-50 rounded-lg transition-colors"
-                                                title="Hapus"
-                                            >
-                                                <Trash2 className="w-4 h-4" />
-                                            </button>
-                                        </form>
-                                    </div>
-                                </td>
-                            </tr>
-                        ))}
-                        {filteredRooms.length === 0 && (
+                <div className="overflow-x-auto">
+                    <table className="w-full text-left">
+                        <thead className="bg-gray-50 border-b border-gray-100">
                             <tr>
-                                <td colSpan={5} className="px-6 py-12 text-center text-gray-500">
-                                    {rooms.length === 0
-                                        ? 'Belum ada data ruangan. Silahkan tambahkan ruangan baru.'
-                                        : 'Tidak ada ruangan yang sesuai filter.'}
-                                </td>
+                                <th className="px-6 py-4 font-semibold text-gray-700">Nama Ruangan</th>
+                                <th className="px-6 py-4 font-semibold text-gray-700">Lokasi</th>
+                                <th className="px-6 py-4 font-semibold text-gray-700">Kapasitas</th>
+                                <th className="px-6 py-4 font-semibold text-gray-700">Status</th>
+                                <th className="px-6 py-4 font-semibold text-gray-700 text-center">Aksi</th>
                             </tr>
-                        )}
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody className="divide-y divide-gray-100">
+                            {filteredRooms.map((room) => (
+                                <tr key={room.id} className="hover:bg-gray-50 transition-colors">
+                                    <td className="px-6 py-4 font-medium text-gray-900">{room.name}</td>
+                                    <td className="px-6 py-4 text-gray-600 flex items-center gap-2">
+                                        <MapPin className="w-4 h-4 text-gray-400" />
+                                        {room.location}
+                                    </td>
+                                    <td className="px-6 py-4 text-gray-600">{room.capacity} Orang</td>
+                                    <td className="px-6 py-4">
+                                        <select
+                                            defaultValue={room.status || 'Tersedia'}
+                                            onChange={async (e) => {
+                                                const { updateRoomStatus } = await import('@/features/inventory/actions');
+                                                await updateRoomStatus(
+                                                    room.id,
+                                                    e.target.value as 'Tersedia' | 'Maintenance'
+                                                );
+                                            }}
+                                            className={`text-xs font-medium px-2 py-1 rounded border-0 cursor-pointer ${room.status === 'Tersedia' ? 'bg-green-50 text-green-700' :
+                                                'bg-gray-50 text-gray-700'
+                                                }`}
+                                        >
+                                            <option value="Tersedia">Tersedia</option>
+                                            <option value="Maintenance">Maintenance</option>
+                                        </select>
+                                    </td>
+                                    <td className="px-6 py-4">
+                                        <div className="flex gap-1 justify-center">
+                                            <button
+                                                onClick={() => setEditingRoom(room)}
+                                                className="text-blue-500 hover:text-blue-700 p-2 hover:bg-blue-50 rounded-lg transition-colors"
+                                                title="Edit"
+                                            >
+                                                <Edit className="w-4 h-4" />
+                                            </button>
+                                            <form action={async () => {
+                                                if (confirm('Apakah Anda yakin ingin menghapus ruangan ini?')) {
+                                                    await deleteRoom(room.id);
+                                                }
+                                            }}>
+                                                <button
+                                                    className="text-red-500 hover:text-red-700 p-2 hover:bg-red-50 rounded-lg transition-colors"
+                                                    title="Hapus"
+                                                >
+                                                    <Trash2 className="w-4 h-4" />
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </td>
+                                </tr>
+                            ))}
+                            {filteredRooms.length === 0 && (
+                                <tr>
+                                    <td colSpan={5} className="px-6 py-12 text-center text-gray-500">
+                                        {rooms.length === 0
+                                            ? 'Belum ada data ruangan. Silahkan tambahkan ruangan baru.'
+                                            : 'Tidak ada ruangan yang sesuai filter.'}
+                                    </td>
+                                </tr>
+                            )}
+                        </tbody>
+                    </table>
+                </div>
             </div>
 
             {/* Edit Room Modal */}
@@ -269,4 +271,3 @@ export default function RoomsView({ rooms }: RoomsViewProps) {
         </div>
     );
 }
-

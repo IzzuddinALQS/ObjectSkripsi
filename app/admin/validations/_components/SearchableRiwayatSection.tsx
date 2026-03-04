@@ -105,63 +105,65 @@ export default function SearchableRiwayatSection({ completedLoans, completedBook
             <div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-4">Riwayat Peminjaman Selesai ({filteredLoans.length})</h3>
                 <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
-                    <table className="w-full text-left">
-                        <thead className="bg-gray-50 border-b border-gray-100">
-                            <tr>
-                                <th className="px-6 py-4 font-semibold text-gray-700">Mahasiswa</th>
-                                <th className="px-6 py-4 font-semibold text-gray-700">Alat</th>
-                                <th className="px-6 py-4 font-semibold text-gray-700">Tanggal</th>
-                                <th className="px-6 py-4 font-semibold text-gray-700">Status</th>
-                                <th className="px-6 py-4 font-semibold text-gray-700 text-center">Aksi</th>
-                            </tr>
-                        </thead>
-                        <tbody className="divide-y divide-gray-100">
-                            {filteredLoans.map((loan) => (
-                                <tr key={loan.id} className={`hover:bg-gray-50 transition-colors ${isPending ? 'opacity-50' : ''}`}>
-                                    <td className="px-6 py-4">
-                                        <div className="flex items-center gap-2">
-                                            <User className="w-4 h-4 text-gray-400" />
-                                            <div>
-                                                <p className="font-medium text-gray-900">{loan.student.fullName}</p>
-                                                <p className="text-xs text-gray-500">{loan.student.identifier}</p>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td className="px-6 py-4">
-                                        <div className="flex items-center gap-2">
-                                            <Box className="w-4 h-4 text-gray-400" />
-                                            <p className="text-gray-900">{loan.item.name}</p>
-                                        </div>
-                                    </td>
-                                    <td className="px-6 py-4 text-gray-600">
-                                        {loan.requestDate ? new Date(loan.requestDate).toLocaleDateString('id-ID') : '-'}
-                                    </td>
-                                    <td className="px-6 py-4">
-                                        <span className="text-xs px-2 py-1 rounded bg-blue-100 text-blue-700">
-                                            Selesai
-                                        </span>
-                                    </td>
-                                    <td className="px-6 py-4 text-center">
-                                        <button
-                                            onClick={() => handleDeleteLoan(loan.id)}
-                                            disabled={isPending}
-                                            className="text-red-500 hover:text-red-700 p-2 hover:bg-red-50 rounded-lg transition-colors disabled:opacity-50"
-                                            title="Hapus Riwayat"
-                                        >
-                                            <Trash2 className="w-4 h-4" />
-                                        </button>
-                                    </td>
-                                </tr>
-                            ))}
-                            {filteredLoans.length === 0 && (
+                    <div className="overflow-x-auto">
+                        <table className="w-full text-left">
+                            <thead className="bg-gray-50 border-b border-gray-100">
                                 <tr>
-                                    <td colSpan={5} className="px-6 py-8 text-center text-gray-500">
-                                        {searchQuery ? 'Tidak ada hasil pencarian' : 'Tidak ada riwayat selesai'}
-                                    </td>
+                                    <th className="px-6 py-4 font-semibold text-gray-700">Mahasiswa</th>
+                                    <th className="px-6 py-4 font-semibold text-gray-700">Alat</th>
+                                    <th className="px-6 py-4 font-semibold text-gray-700">Tanggal</th>
+                                    <th className="px-6 py-4 font-semibold text-gray-700">Status</th>
+                                    <th className="px-6 py-4 font-semibold text-gray-700 text-center">Aksi</th>
                                 </tr>
-                            )}
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody className="divide-y divide-gray-100">
+                                {filteredLoans.map((loan) => (
+                                    <tr key={loan.id} className={`hover:bg-gray-50 transition-colors ${isPending ? 'opacity-50' : ''}`}>
+                                        <td className="px-6 py-4">
+                                            <div className="flex items-center gap-2">
+                                                <User className="w-4 h-4 text-gray-400" />
+                                                <div>
+                                                    <p className="font-medium text-gray-900">{loan.student.fullName}</p>
+                                                    <p className="text-xs text-gray-500">{loan.student.identifier}</p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td className="px-6 py-4">
+                                            <div className="flex items-center gap-2">
+                                                <Box className="w-4 h-4 text-gray-400" />
+                                                <p className="text-gray-900">{loan.item.name}</p>
+                                            </div>
+                                        </td>
+                                        <td className="px-6 py-4 text-gray-600">
+                                            {loan.requestDate ? new Date(loan.requestDate).toLocaleDateString('id-ID') : '-'}
+                                        </td>
+                                        <td className="px-6 py-4">
+                                            <span className="text-xs px-2 py-1 rounded bg-blue-100 text-blue-700">
+                                                Selesai
+                                            </span>
+                                        </td>
+                                        <td className="px-6 py-4 text-center">
+                                            <button
+                                                onClick={() => handleDeleteLoan(loan.id)}
+                                                disabled={isPending}
+                                                className="text-red-500 hover:text-red-700 p-2 hover:bg-red-50 rounded-lg transition-colors disabled:opacity-50"
+                                                title="Hapus Riwayat"
+                                            >
+                                                <Trash2 className="w-4 h-4" />
+                                            </button>
+                                        </td>
+                                    </tr>
+                                ))}
+                                {filteredLoans.length === 0 && (
+                                    <tr>
+                                        <td colSpan={5} className="px-6 py-8 text-center text-gray-500">
+                                            {searchQuery ? 'Tidak ada hasil pencarian' : 'Tidak ada riwayat selesai'}
+                                        </td>
+                                    </tr>
+                                )}
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
 
@@ -169,63 +171,64 @@ export default function SearchableRiwayatSection({ completedLoans, completedBook
             <div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-4">Riwayat Booking Selesai ({filteredBookings.length})</h3>
                 <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
-                    <table className="w-full text-left">
-                        <thead className="bg-gray-50 border-b border-gray-100">
-                            <tr>
-                                <th className="px-6 py-4 font-semibold text-gray-700">Pemohon</th>
-                                <th className="px-6 py-4 font-semibold text-gray-700">Ruangan</th>
-                                <th className="px-6 py-4 font-semibold text-gray-700">Waktu</th>
-                                <th className="px-6 py-4 font-semibold text-gray-700">Status</th>
-                                <th className="px-6 py-4 font-semibold text-gray-700 text-center">Aksi</th>
-                            </tr>
-                        </thead>
-                        <tbody className="divide-y divide-gray-100">
-                            {filteredBookings.map((booking) => (
-                                <tr key={booking.id} className={`hover:bg-gray-50 transition-colors ${isPending ? 'opacity-50' : ''}`}>
-                                    <td className="px-6 py-4">
-                                        <div className="flex items-center gap-2">
-                                            <User className="w-4 h-4 text-gray-400" />
-                                            <div>
-                                                <p className="font-medium text-gray-900">{booking.user.fullName}</p>
-                                                <p className="text-xs text-gray-500">{booking.user.identifier}</p>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td className="px-6 py-4">
-                                        <p className="text-gray-900">{booking.room.name}</p>
-                                    </td>
-                                    <td className="px-6 py-4 text-gray-600">
-                                        {new Date(booking.startTime).toLocaleDateString('id-ID')}
-                                    </td>
-                                    <td className="px-6 py-4">
-                                        <span className="text-xs px-2 py-1 rounded bg-blue-100 text-blue-700">
-                                            Selesai
-                                        </span>
-                                    </td>
-                                    <td className="px-6 py-4 text-center">
-                                        <button
-                                            onClick={() => handleDeleteBooking(booking.id)}
-                                            disabled={isPending}
-                                            className="text-red-500 hover:text-red-700 p-2 hover:bg-red-50 rounded-lg transition-colors disabled:opacity-50"
-                                            title="Hapus Riwayat"
-                                        >
-                                            <Trash2 className="w-4 h-4" />
-                                        </button>
-                                    </td>
-                                </tr>
-                            ))}
-                            {filteredBookings.length === 0 && (
+                    <div className="overflow-x-auto">
+                        <table className="w-full text-left">
+                            <thead className="bg-gray-50 border-b border-gray-100">
                                 <tr>
-                                    <td colSpan={5} className="px-6 py-8 text-center text-gray-500">
-                                        {searchQuery ? 'Tidak ada hasil pencarian' : 'Tidak ada riwayat selesai'}
-                                    </td>
+                                    <th className="px-6 py-4 font-semibold text-gray-700">Pemohon</th>
+                                    <th className="px-6 py-4 font-semibold text-gray-700">Ruangan</th>
+                                    <th className="px-6 py-4 font-semibold text-gray-700">Waktu</th>
+                                    <th className="px-6 py-4 font-semibold text-gray-700">Status</th>
+                                    <th className="px-6 py-4 font-semibold text-gray-700 text-center">Aksi</th>
                                 </tr>
-                            )}
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody className="divide-y divide-gray-100">
+                                {filteredBookings.map((booking) => (
+                                    <tr key={booking.id} className={`hover:bg-gray-50 transition-colors ${isPending ? 'opacity-50' : ''}`}>
+                                        <td className="px-6 py-4">
+                                            <div className="flex items-center gap-2">
+                                                <User className="w-4 h-4 text-gray-400" />
+                                                <div>
+                                                    <p className="font-medium text-gray-900">{booking.user.fullName}</p>
+                                                    <p className="text-xs text-gray-500">{booking.user.identifier}</p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td className="px-6 py-4">
+                                            <p className="text-gray-900">{booking.room.name}</p>
+                                        </td>
+                                        <td className="px-6 py-4 text-gray-600">
+                                            {new Date(booking.startTime).toLocaleDateString('id-ID')}
+                                        </td>
+                                        <td className="px-6 py-4">
+                                            <span className="text-xs px-2 py-1 rounded bg-blue-100 text-blue-700">
+                                                Selesai
+                                            </span>
+                                        </td>
+                                        <td className="px-6 py-4 text-center">
+                                            <button
+                                                onClick={() => handleDeleteBooking(booking.id)}
+                                                disabled={isPending}
+                                                className="text-red-500 hover:text-red-700 p-2 hover:bg-red-50 rounded-lg transition-colors disabled:opacity-50"
+                                                title="Hapus Riwayat"
+                                            >
+                                                <Trash2 className="w-4 h-4" />
+                                            </button>
+                                        </td>
+                                    </tr>
+                                ))}
+                                {filteredBookings.length === 0 && (
+                                    <tr>
+                                        <td colSpan={5} className="px-6 py-8 text-center text-gray-500">
+                                            {searchQuery ? 'Tidak ada hasil pencarian' : 'Tidak ada riwayat selesai'}
+                                        </td>
+                                    </tr>
+                                )}
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
     );
 }
-

@@ -261,7 +261,7 @@ export default function CourseManager({ courses, lecturers, readOnly = false }: 
                     <select
                         value={filterSemester}
                         onChange={(e) => handleSemesterFilterChange(e.target.value)}
-                        className="px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#0F4C81]/20 min-w-[180px]"
+                        className="px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#0F4C81]/20 min-w-0 w-full sm:min-w-[11.25rem] sm:w-auto"
                     >
                         <option value="">Semua Semester</option>
                         <option value="Ganjil">Ganjil</option>

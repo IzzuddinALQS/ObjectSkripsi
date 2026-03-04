@@ -249,7 +249,7 @@ export default function RoomBookingClient({ rooms, calendarBookings, practicumSc
                                         required
                                         value={selectedRoomId}
                                         onChange={(e) => setSelectedRoomId(e.target.value)}
-                                        className="w-full px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20"
+                                        className="w-full max-w-full truncate px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20"
                                     >
                                         <option value="">Pilih Ruangan</option>
                                         {rooms.map(room => (
@@ -265,7 +265,7 @@ export default function RoomBookingClient({ rooms, calendarBookings, practicumSc
                                     <select
                                         value={organisasi}
                                         onChange={(e) => setOrganisasi(e.target.value)}
-                                        className="w-full px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20"
+                                        className="w-full max-w-full truncate px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20"
                                     >
                                         {ORGANISASI_OPTIONS.map(org => (
                                             <option key={org} value={org}>{org}</option>
@@ -292,7 +292,7 @@ export default function RoomBookingClient({ rooms, calendarBookings, practicumSc
                                         min="1"
                                         value={jumlahPeserta}
                                         onChange={(e) => setJumlahPeserta(e.target.value)}
-                                        className="w-full px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20"
+                                        className="w-full max-w-full truncate px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20"
                                     />
                                 </div>
                             </div>
@@ -309,7 +309,7 @@ export default function RoomBookingClient({ rooms, calendarBookings, practicumSc
                                             value={selectedDate}
                                             onChange={(e) => setSelectedDate(e.target.value)}
                                             min={new Date().toISOString().split('T')[0]}
-                                            className="w-full px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20"
+                                            className="w-full max-w-full truncate px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20"
                                         />
                                         <div className="flex gap-2 items-center">
                                             <TimeSelect
@@ -337,7 +337,7 @@ export default function RoomBookingClient({ rooms, calendarBookings, practicumSc
                                         <select
                                             value={dosenPembimbing}
                                             onChange={(e) => setDosenPembimbing(e.target.value)}
-                                            className="w-full px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20"
+                                            className="w-full max-w-full truncate px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20"
                                         >
                                             <option value="">Dosen Pembimbing Saya</option>
                                             {lecturers.map(lecturer => (
@@ -356,7 +356,7 @@ export default function RoomBookingClient({ rooms, calendarBookings, practicumSc
                                 <select
                                     value={selectedPurpose}
                                     onChange={(e) => setSelectedPurpose(e.target.value)}
-                                    className="w-full px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20"
+                                    className="w-full max-w-full truncate px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20"
                                     required
                                 >
                                     <option value="" disabled>-- Pilih Keperluan --</option>

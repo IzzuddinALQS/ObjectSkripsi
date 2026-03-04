@@ -27,13 +27,13 @@ function formatDate(year?: number | null, month?: number | null): string {
 
 export default function PublicationSection({ topPublications }: PublicationSectionProps) {
     return (
-        <section className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8">
-            <div className="flex items-center justify-between mb-6">
+        <section className="bg-white rounded-2xl shadow-sm border border-gray-100 p-4 sm:p-6 lg:p-8">
+            <div className="flex items-center justify-between mb-4 sm:mb-6">
                 <div className="flex items-center gap-3">
                     <div className="p-2 bg-blue-50 rounded-lg">
                         <BookOpen className="w-6 h-6 text-[#0F4C81]" />
                     </div>
-                    <h2 className="text-xl font-bold text-gray-900">
+                    <h2 className="text-lg sm:text-xl font-bold text-gray-900">
                         Publikasi Terpopuler
                     </h2>
                 </div>
