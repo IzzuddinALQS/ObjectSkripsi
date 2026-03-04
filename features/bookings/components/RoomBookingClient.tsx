@@ -115,6 +115,11 @@ export default function RoomBookingClient({ rooms, calendarBookings, practicumSc
                 e.target.value = '';
                 return;
             }
+            if (file.size > 2 * 1024 * 1024) {
+                alert('Ukuran file maksimal 2MB');
+                e.target.value = '';
+                return;
+            }
             setSuratFile(file);
             setSuratVerified(null); // Reset verification state
         }
@@ -390,7 +395,7 @@ export default function RoomBookingClient({ rooms, calendarBookings, practicumSc
                                     />
                                 </div>
                                 <p className="text-xs text-green-600 mt-1 flex items-center gap-1">
-                                    <span className="text-lg">💡</span> Upload surat permohonan PDF untuk auto-approval (akan diverifikasi otomatis)
+                                    <span className="text-lg">💡</span> Upload surat permohonan PDF untuk auto-approval (akan diverifikasi otomatis) — Maks. 2MB
                                 </p>
                             </div>
                         </div>

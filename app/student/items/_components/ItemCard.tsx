@@ -95,9 +95,9 @@ export default function ItemCard({ item, userId, variant = 'grid', role = 'stude
                 e.target.value = '';
                 return;
             }
-            // Validate file size (10MB max)
-            if (file.size > 10 * 1024 * 1024) {
-                alert('Ukuran file maksimal 10MB');
+            // Validate file size (2MB max)
+            if (file.size > 2 * 1024 * 1024) {
+                alert('Ukuran file maksimal 2MB');
                 e.target.value = '';
                 return;
             }
@@ -481,7 +481,7 @@ export default function ItemCard({ item, userId, variant = 'grid', role = 'stude
                                     />
                                 </div>
                                 <p className="text-xs text-green-600 mt-1 flex items-center gap-1">
-                                    💡 Upload surat izin PDF untuk auto-approval (akan diverifikasi otomatis)
+                                    💡 Upload surat izin PDF untuk auto-approval (akan diverifikasi otomatis) — Maks. 2MB
                                 </p>
                             </div>
 

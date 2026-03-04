@@ -58,6 +58,11 @@ export default function HeroPhotoManager({ initialPhotos }: { initialPhotos: Her
     const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const file = e.target.files?.[0];
         if (file) {
+            if (file.size > 2 * 1024 * 1024) {
+                alert('Ukuran file maksimal 2MB');
+                e.target.value = '';
+                return;
+            }
             setSelectedFile(file);
             const url = URL.createObjectURL(file);
             setPreviewUrl(url);
@@ -160,7 +165,7 @@ export default function HeroPhotoManager({ initialPhotos }: { initialPhotos: Her
                                 <div className="py-8">
                                     <ImageIcon className="w-12 h-12 text-gray-400 mx-auto mb-2" />
                                     <p className="text-sm text-gray-500">Klik atau drag foto ke sini</p>
-                                    <p className="text-xs text-gray-400 mt-1">Maksimal 10MB</p>
+                                    <p className="text-xs text-gray-400 mt-1">Maksimal 2MB</p>
                                 </div>
                             )}
                         </div>
