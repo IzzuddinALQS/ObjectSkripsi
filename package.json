@@ -11,7 +11,8 @@
     "db:migrate": "drizzle-kit migrate",
     "db:push": "drizzle-kit push",
     "db:studio": "drizzle-kit studio",
-    "db:seed": "tsx db/seeds/run-seed.ts"
+    "db:seed": "tsx db/seeds/run-seed.ts",
+    "db:seed:admin02": "tsx db/seeds/add-admin02.ts"
   },
   "dependencies": {
     "bcryptjs": "^3.0.3",

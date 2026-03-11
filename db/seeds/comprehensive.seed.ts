@@ -95,6 +95,7 @@ export async function seedPermissions() {
         { code: 'practicum.manage', name: 'Manajemen Modul & Jadwal Praktikum', category: 'Academic' },
         { code: 'publications.manage', name: 'Manajemen Publikasi', category: 'Publications' },
         { code: 'governance.manage', name: 'Manajemen SOP & Laporan LPJ', category: 'Governance' },
+        { code: 'hero.manage', name: 'Kelola Hero Photos', category: 'Hero' },
     ];
 
     await db.insert(permissions).values(permData);
@@ -156,6 +157,24 @@ export async function seedUsers() {
             phoneNumber: '081200000000',
         });
         console.log('   ✅ Created admin user');
+    }
+
+    const existingAdmin2 = await db.query.users.findFirst({
+        where: (users, { eq }) => eq(users.email, 'admin02@lab.ac.id')
+    });
+
+    if (!existingAdmin2) {
+        await db.insert(users).values({
+            fullName: 'Administrator 2',
+            identifier: 'admin2',
+            email: 'admin02@lab.ac.id',
+            passwordHash: adminPassword, // using same 'admin' password
+            roleId: adminRole.id,
+            status: 'Active',
+            dosenPembimbing: '-',
+            phoneNumber: '081200000002',
+        });
+        console.log('   ✅ Created admin02 user');
     }
 
     // Create lecturers
