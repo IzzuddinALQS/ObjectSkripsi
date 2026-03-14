@@ -159,7 +159,8 @@ export class LoanService {
     static async updateStatus(
         loanId: number,
         status: 'Disetujui' | 'Ditolak',
-        validatorId: string
+        validatorId: string,
+        rejectionReason?: string
     ) {
         const loanResult = await db
             .select()
@@ -171,7 +172,11 @@ export class LoanService {
         if (!loan) throw new Error('Loan not found');
 
         await db.update(itemLoans)
-            .set({ status, validatorId })
+            .set({ 
+                status, 
+                validatorId,
+                rejectionReason: status === 'Ditolak' ? (rejectionReason || null) : null
+            })
             .where(eq(itemLoans.id, loanId));
 
         if (status === 'Disetujui') {

@@ -174,10 +174,15 @@ export class BookingService {
     static async updateStatus(
         bookingId: number,
         status: 'Disetujui' | 'Ditolak',
-        validatorId: string
+        validatorId: string,
+        rejectionReason?: string
     ) {
         await db.update(roomBookings)
-            .set({ status, validatorId })
+            .set({ 
+                status, 
+                validatorId,
+                rejectionReason: status === 'Ditolak' ? (rejectionReason || null) : null
+            })
             .where(eq(roomBookings.id, bookingId));
     }
 

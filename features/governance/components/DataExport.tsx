@@ -95,7 +95,7 @@ export default function DataExport() {
     ];
 
     return (
-        <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 mt-8">
+        <div className="bg-white p-4 md:p-6 rounded-xl shadow-sm border border-gray-100 mt-8">
             <h2 className="text-lg font-semibold mb-4 flex items-center gap-2">
                 <Download className="w-5 h-5 text-primary" />
                 Export Laporan
@@ -103,7 +103,7 @@ export default function DataExport() {
 
             <div className="mb-6 p-4 bg-gray-50 rounded-lg">
                 <p className="text-sm font-medium text-gray-700 mb-3">Filter Periode</p>
-                <div className="flex flex-wrap gap-4 items-center">
+                <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
                     <div className="flex items-center gap-2">
                         <label className="text-sm text-gray-600">Dari:</label>
                         <input
@@ -134,7 +134,7 @@ export default function DataExport() {
                 </div>
             )}
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 {exportItems.map((item) => (
                     <div
                         key={item.id}

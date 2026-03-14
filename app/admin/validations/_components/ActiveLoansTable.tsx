@@ -1,10 +1,11 @@
 'use client';
 
 import { useState, useTransition } from 'react';
-import { Box, User, CheckCircle, XCircle, Eye, X, ExternalLink } from 'lucide-react';
+import { Box, User, CheckCircle, XCircle, Eye, X, ExternalLink, LayoutGrid, List } from 'lucide-react';
 import { updateLoanStatus, adminDirectReturn } from '@/features/loans/actions';
 import { useAlert } from '@/components/providers/AlertProvider';
 import { translateError } from '@/lib/error';
+import RejectReasonModal from '@/components/ui/RejectReasonModal';
 
 interface Loan {
     id: number;
@@ -32,6 +33,16 @@ export default function ActiveLoansTable({ loans, sessionUserId }: ActiveLoansTa
     const { showConfirm, showAlert } = useAlert();
     const [isPending, startTransition] = useTransition();
     const [selectedLoan, setSelectedLoan] = useState<Loan | null>(null);
+    const [rejectModalOpen, setRejectModalOpen] = useState(false);
+    const [rejectingLoanId, setRejectingLoanId] = useState<number | null>(null);
+
+    // View Mode State
+    const [viewMode, setViewMode] = useState<'grid' | 'list'>(() => {
+        if (typeof window !== 'undefined') {
+            return window.innerWidth >= 768 ? 'list' : 'grid';
+        }
+        return 'list';
+    });
 
     const handleApprove = (loanId: number) => {
         startTransition(async () => {
@@ -39,17 +50,19 @@ export default function ActiveLoansTable({ loans, sessionUserId }: ActiveLoansTa
         });
     };
 
-    const handleReject = async (loanId: number) => {
-        const confirmed = await showConfirm({
-            title: 'Tolak Peminjaman',
-            message: 'Tolak permintaan pinjaman ini?',
-            type: 'danger',
-            confirmText: 'Tolak'
-        });
-        if (!confirmed) return;
+    const handleReject = (loanId: number) => {
+        setRejectingLoanId(loanId);
+        setRejectModalOpen(true);
+    };
+
+    const handleRejectConfirm = (reason: string) => {
+        if (rejectingLoanId === null) return;
+        const loanId = rejectingLoanId;
+        setRejectModalOpen(false);
+        setRejectingLoanId(null);
         startTransition(async () => {
             try {
-                await updateLoanStatus(loanId, 'Ditolak', sessionUserId);
+                await updateLoanStatus(loanId, 'Ditolak', sessionUserId, reason || undefined);
                 showAlert({ title: 'Berhasil', message: 'Permintaan pinjaman ditolak', type: 'success' });
             } catch (error: any) {
                 const { title, message } = translateError(error, 'Gagal menolak peminjaman');
@@ -79,8 +92,27 @@ export default function ActiveLoansTable({ loans, sessionUserId }: ActiveLoansTa
 
     return (
         <>
+            <div className="flex justify-end mb-4">
+                <div className="hidden md:flex items-center bg-gray-100 rounded-lg p-0.5">
+                    <button
+                        onClick={() => setViewMode('grid')}
+                        className={`p-1.5 rounded ${viewMode === 'grid' ? 'bg-white shadow-sm text-[#0F4C81]' : 'text-gray-500 hover:text-gray-700'}`} title="Tampilan Grid">
+                        <LayoutGrid className="w-4 h-4" />
+                    </button>
+                    <button
+                        onClick={() => setViewMode('list')}
+                        className={`p-1.5 rounded ${viewMode === 'list' ? 'bg-white shadow-sm text-[#0F4C81]' : 'text-gray-500 hover:text-gray-700'}`} title="Tampilan List">
+                        <List className="w-4 h-4" />
+                    </button>
+                </div>
+            </div>
+
+            {/* Users List */}
             <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
-                <table className="w-full text-left">
+                {/* Table View (Hidden on mobile, toggled on desktop) */}
+                {viewMode === 'list' && (
+                <div className="overflow-x-auto hidden md:block">
+                    <table className="w-full text-left">
                     <thead className="bg-gray-50 border-b border-gray-100">
                         <tr>
                             <th className="px-6 py-4 font-semibold text-gray-700">Mahasiswa</th>
@@ -181,6 +213,87 @@ export default function ActiveLoansTable({ loans, sessionUserId }: ActiveLoansTa
                         )}
                     </tbody>
                 </table>
+                </div>
+                )}
+
+                {/* Grid/Card View — always on mobile, desktop only in grid mode */}
+                <div className={`p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ${viewMode === 'grid' ? 'grid' : 'grid md:hidden'}`}>
+                        {loans.map((loan) => (
+                            <div key={loan.id} className={`bg-white border rounded-xl p-4 flex flex-col gap-3 shadow-sm hover:shadow-md transition-shadow ${isPending ? 'opacity-50' : ''}`}>
+                                <div className="flex justify-between items-start">
+                                    <div className="flex items-center gap-3">
+                                        <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-blue-600 shrink-0">
+                                            <Box className="w-5 h-5" />
+                                        </div>
+                                        <div className="min-w-0">
+                                            <p className="font-semibold text-gray-900 break-words" title={loan.item.name}>{loan.item.name}</p>
+                                            <p className="text-xs text-gray-500 break-words">{loan.item.category.name}</p>
+                                        </div>
+                                    </div>
+                                    <span className={`inline-flex px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider ${
+                                        loan.status === 'Pending' ? 'bg-yellow-100 text-yellow-700' :
+                                        loan.status === 'Disetujui' ? 'bg-green-100 text-green-700' :
+                                        'bg-red-100 text-red-700'
+                                    }`}>
+                                        {loan.status}
+                                    </span>
+                                </div>
+                                
+                                <div className="bg-gray-50 rounded-lg p-3 space-y-2 text-sm">
+                                    <div className="flex items-center gap-2 text-gray-700">
+                                        <User className="w-4 h-4 text-gray-400 shrink-0" />
+                                        <span className="break-words" title={loan.student.fullName}>{loan.student.fullName} ({loan.student.identifier})</span>
+                                    </div>
+                                    <div className="flex justify-between items-center text-xs text-gray-600 pt-1 border-t border-gray-200">
+                                        <span>Pinjam: {new Date(loan.requestDate!).toLocaleDateString('id-ID')}</span>
+                                        <span>Kembali: {new Date(loan.returnPlanDate).toLocaleDateString('id-ID')}</span>
+                                    </div>
+                                </div>
+                                
+                                <div className="flex justify-end gap-2 mt-auto pt-2">
+                                    <button
+                                        onClick={() => setSelectedLoan(loan)}
+                                        className="flex-1 flex justify-center items-center gap-1 text-[#0F4C81] bg-blue-50 hover:bg-blue-100 py-2 rounded-lg text-xs font-semibold transition-colors"
+                                    >
+                                        <Eye className="w-3.5 h-3.5" /> Detail
+                                    </button>
+                                    
+                                    {loan.status === 'Pending' && (
+                                        <>
+                                            <button
+                                                onClick={() => handleApprove(loan.id)}
+                                                disabled={isPending}
+                                                className="flex-1 flex justify-center items-center gap-1 text-green-700 bg-green-50 hover:bg-green-100 py-2 rounded-lg text-xs font-semibold transition-colors disabled:opacity-50"
+                                            >
+                                                <CheckCircle className="w-3.5 h-3.5" /> Setuju
+                                            </button>
+                                            <button
+                                                onClick={() => handleReject(loan.id)}
+                                                disabled={isPending}
+                                                className="flex-1 flex justify-center items-center gap-1 text-red-700 bg-red-50 hover:bg-red-100 py-2 rounded-lg text-xs font-semibold transition-colors disabled:opacity-50"
+                                            >
+                                                <XCircle className="w-3.5 h-3.5" /> Tolak
+                                            </button>
+                                        </>
+                                    )}
+                                    {loan.status === 'Disetujui' && (
+                                        <button
+                                            onClick={() => handleReturn(loan.id)}
+                                            disabled={isPending}
+                                            className="flex-2 flex justify-center items-center gap-1 text-white bg-[#0F4C81] hover:bg-[#0F4C81]/90 py-2 px-3 rounded-lg text-xs font-semibold transition-colors disabled:opacity-50"
+                                        >
+                                            <CheckCircle className="w-3.5 h-3.5" /> Kembalikan
+                                        </button>
+                                    )}
+                                </div>
+                            </div>
+                        ))}
+                        {loans.length === 0 && (
+                            <div className="col-span-full py-12 text-center text-gray-500 border rounded-xl border-dashed">
+                                Belum ada permintaan peminjaman.
+                            </div>
+                        )}
+                </div>
             </div>
 
             {/* Modal Detail Peminjaman */}
@@ -301,6 +414,13 @@ export default function ActiveLoansTable({ loans, sessionUserId }: ActiveLoansTa
                     </div>
                 </div>
             )}
+            <RejectReasonModal
+                isOpen={rejectModalOpen}
+                onClose={() => { setRejectModalOpen(false); setRejectingLoanId(null); }}
+                onConfirm={handleRejectConfirm}
+                title="Tolak Peminjaman"
+                isPending={isPending}
+            />
         </>
     );
 }

@@ -65,6 +65,10 @@ export async function getPendingUsers() {
     return UserService.getPending();
 }
 
+export async function getRejectedUsers() {
+    return UserService.getRejected();
+}
+
 export async function updateUserStatus(userId: string, status: 'Active' | 'Rejected') {
     await UserService.updateStatus(userId, status);
     revalidatePath('/admin/validations');

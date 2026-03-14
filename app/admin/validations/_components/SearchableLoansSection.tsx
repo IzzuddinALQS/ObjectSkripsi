@@ -3,6 +3,7 @@
 import { useState, useMemo, useTransition } from 'react';
 import { Box, User, CheckCircle, XCircle, Search, X } from 'lucide-react';
 import { updateLoanStatus, approveReturn as approveReturnAction, rejectReturn as rejectReturnAction, adminDirectReturn } from '@/features/loans/actions';
+import RejectReasonModal from '@/components/ui/RejectReasonModal';
 
 interface Loan {
     id: number;
@@ -43,6 +44,8 @@ interface SearchableLoansProps {
 export default function SearchableLoansSection({ loans, pendingReturns, sessionUserId }: SearchableLoansProps) {
     const [searchQuery, setSearchQuery] = useState('');
     const [isPending, startTransition] = useTransition();
+    const [rejectModalOpen, setRejectModalOpen] = useState(false);
+    const [rejectingLoanId, setRejectingLoanId] = useState<number | null>(null);
 
     // Filter active loans (Pending + Disetujui)
     const activeLoans = useMemo(() => {
@@ -79,8 +82,17 @@ export default function SearchableLoansSection({ loans, pendingReturns, sessionU
     };
 
     const handleReject = (loanId: number) => {
+        setRejectingLoanId(loanId);
+        setRejectModalOpen(true);
+    };
+
+    const handleRejectConfirm = (reason: string) => {
+        if (rejectingLoanId === null) return;
+        const loanId = rejectingLoanId;
+        setRejectModalOpen(false);
+        setRejectingLoanId(null);
         startTransition(async () => {
-            await updateLoanStatus(loanId, 'Ditolak', sessionUserId);
+            await updateLoanStatus(loanId, 'Ditolak', sessionUserId, reason || undefined);
         });
     };
 
@@ -320,6 +332,13 @@ export default function SearchableLoansSection({ loans, pendingReturns, sessionU
                     </table>
                 </div>
             </div>
+            <RejectReasonModal
+                isOpen={rejectModalOpen}
+                onClose={() => { setRejectModalOpen(false); setRejectingLoanId(null); }}
+                onConfirm={handleRejectConfirm}
+                title="Tolak Peminjaman"
+                isPending={isPending}
+            />
         </div>
     );
 }

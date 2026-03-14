@@ -34,7 +34,12 @@ export default function StudentItemsManager({
     const [searchQuery, setSearchQuery] = useState(initialQrCode || '');
     const [selectedCategory, setSelectedCategory] = useState('');
     const [selectedRoom, setSelectedRoom] = useState('');
-    const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
+    const [viewMode, setViewMode] = useState<'grid' | 'list'>(() => {
+        if (typeof window !== 'undefined') {
+            return window.innerWidth >= 768 ? 'list' : 'grid';
+        }
+        return 'list';
+    });
 
     // Filter items
     const filteredItems = useMemo(() => {
@@ -134,7 +139,7 @@ export default function StudentItemsManager({
                             <p className="text-sm text-gray-500">
                                 Menampilkan {filteredItems.length} dari {items.length} alat
                             </p>
-                            <div className="flex items-center bg-gray-100 rounded-lg p-0.5">
+                            <div className="hidden md:flex items-center bg-gray-100 rounded-lg p-0.5">
                                 <button
                                     onClick={() => setViewMode('grid')}
                                     className={`p-1.5 rounded ${viewMode === 'grid' ? 'bg-white shadow-sm text-[#0F4C81]' : 'text-gray-500 hover:text-gray-700'}`} title="Tampilan Grid">

@@ -51,16 +51,16 @@ export default function GovernanceManager({ sops, lpjs, users, roles, lecturers,
     };
 
     return (
-        <div>
-            <div className="flex justify-between items-center mb-6">
+        <div className="min-w-0 overflow-hidden">
+            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-6 gap-2">
                 <div>
-                    <h1 className="text-2xl font-bold text-gray-900">Tata Kelola</h1>
+                    <h1 className="text-xl sm:text-2xl font-bold text-gray-900">Tata Kelola</h1>
                     <p className="text-gray-500 text-sm mt-1">Manajemen SOP, LPJ, Foto Hero, dan Pengguna Sistem</p>
                 </div>
             </div>
 
             {/* Tabs */}
-            <div className="flex space-x-1 bg-gray-100 p-1 rounded-xl mb-6 w-fit overflow-x-auto">
+            <div className="flex space-x-1 bg-gray-100 p-1 rounded-xl mb-6 w-full max-w-full overflow-x-auto scrollbar-hide">
                 <button
                     onClick={() => { setActiveTab('sop'); setEditingDoc(null); }}
                     className={`flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-medium transition-all whitespace-nowrap ${activeTab === 'sop'

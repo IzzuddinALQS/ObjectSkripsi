@@ -1,7 +1,7 @@
 'use client';
 
 import { createRoom, deleteRoom, updateRoom } from '@/features/inventory/actions';
-import { Plus, Trash2, MapPin, Edit, Search } from 'lucide-react';
+import { Plus, Trash2, MapPin, Edit, Search, LayoutGrid, List } from 'lucide-react';
 import { useState, useMemo } from 'react';
 import Modal from '@/components/shared/Modal';
 import { useAlert } from '@/components/providers/AlertProvider';
@@ -23,6 +23,14 @@ export default function RoomsView({ rooms }: RoomsViewProps) {
     const { showConfirm, showAlert } = useAlert();
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [editingRoom, setEditingRoom] = useState<Room | null>(null);
+
+    // View Mode State
+    const [viewMode, setViewMode] = useState<'grid' | 'list'>(() => {
+        if (typeof window !== 'undefined') {
+            return window.innerWidth >= 768 ? 'list' : 'grid';
+        }
+        return 'list';
+    });
 
     // Search & Filter State
     const [searchQuery, setSearchQuery] = useState('');
@@ -77,8 +85,9 @@ export default function RoomsView({ rooms }: RoomsViewProps) {
 
     return (
         <div className="space-y-6">
+
             {/* Add Room Form */}
-            <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+            <div className="bg-white p-4 md:p-6 rounded-xl shadow-sm border border-gray-100">
                 <h2 className="text-lg font-semibold mb-4 flex items-center gap-2">
                     <Plus className="w-5 h-5 text-primary" />
                     Tambah Ruangan Baru
@@ -141,19 +150,38 @@ export default function RoomsView({ rooms }: RoomsViewProps) {
                     <select
                         value={filterStatus}
                         onChange={(e) => setFilterStatus(e.target.value)}
-                        className="px-3 py-2 rounded-lg border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20"
+                        className="px-3 py-2 rounded-lg border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 w-full sm:w-auto"
                     >
                         <option value="">Semua Status</option>
                         <option value="Tersedia">Tersedia</option>
                         <option value="Maintenance">Maintenance</option>
                     </select>
+                    {/* View Toggle */}
+                    <div className="hidden md:flex items-center bg-gray-100 rounded-lg p-0.5">
+                        <button
+                            onClick={() => setViewMode('grid')}
+                            className={`p-1.5 rounded ${viewMode === 'grid' ? 'bg-white shadow-sm text-[#0F4C81]' : 'text-gray-500 hover:text-gray-700'}`}
+                            title="Tampilan Grid"
+                        >
+                            <LayoutGrid className="w-4 h-4" />
+                        </button>
+                        <button
+                            onClick={() => setViewMode('list')}
+                            className={`p-1.5 rounded ${viewMode === 'list' ? 'bg-white shadow-sm text-[#0F4C81]' : 'text-gray-500 hover:text-gray-700'}`}
+                            title="Tampilan List"
+                        >
+                            <List className="w-4 h-4" />
+                        </button>
+                    </div>
                 </div>
                 <p className="text-xs text-gray-500 mt-2">Menampilkan {filteredRooms.length} dari {rooms.length} ruangan</p>
             </div>
 
             {/* Rooms List */}
             <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
-                <div className="overflow-x-auto">
+                {/* Table View */}
+                {viewMode === 'list' && (
+                <div className="overflow-x-auto hidden md:block">
                     <table className="w-full text-left">
                         <thead className="bg-gray-50 border-b border-gray-100">
                             <tr>
@@ -246,6 +274,83 @@ export default function RoomsView({ rooms }: RoomsViewProps) {
                             )}
                         </tbody>
                     </table>
+                </div>
+                )}
+
+                {/* Grid/Card View — always shown on mobile, shown on desktop only in grid mode */}
+                <div className={`p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ${viewMode === 'grid' ? 'grid' : 'grid md:hidden'}`}>
+                        {filteredRooms.map((room) => (
+                            <div key={room.id} className="bg-white border rounded-xl p-4 flex flex-col gap-3 shadow-sm hover:shadow-md transition-shadow">
+                                <div className="flex justify-between items-start">
+                                    <div className="flex items-center gap-3">
+                                        <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-blue-600 shrink-0">
+                                            <MapPin className="w-5 h-5" />
+                                        </div>
+                                        <div className="min-w-0">
+                                            <p className="font-semibold text-gray-900 break-words">{room.name}</p>
+                                            <p className="text-xs text-gray-500 break-words">{room.location} • {room.capacity} Orang</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="flex items-center justify-between mt-auto pt-2">
+                                    <select
+                                        defaultValue={room.status || 'Tersedia'}
+                                        onChange={async (e) => {
+                                            try {
+                                                const { updateRoomStatus } = await import('@/features/inventory/actions');
+                                                await updateRoomStatus(room.id, e.target.value as 'Tersedia' | 'Maintenance');
+                                            } catch (error: any) {
+                                                const { title, message } = translateError(error);
+                                                showAlert({ title, message, type: 'error' });
+                                            }
+                                        }}
+                                        className={`text-xs font-medium px-2 py-1 rounded border-0 cursor-pointer ${
+                                            room.status === 'Tersedia' ? 'bg-green-50 text-green-700' : 'bg-gray-50 text-gray-700'
+                                        }`}
+                                    >
+                                        <option value="Tersedia">Tersedia</option>
+                                        <option value="Maintenance">Maintenance</option>
+                                    </select>
+                                    <div className="flex gap-1 justify-end">
+                                        <button
+                                            onClick={() => setEditingRoom(room)}
+                                            className="text-blue-500 hover:text-blue-700 p-2 hover:bg-blue-50 rounded-lg transition-colors"
+                                            title="Edit"
+                                        >
+                                            <Edit className="w-4 h-4" />
+                                        </button>
+                                        <form action={async () => {
+                                            const confirmed = await showConfirm({
+                                                title: 'Hapus Ruangan',
+                                                message: 'Apakah Anda yakin ingin menghapus ruangan ini?',
+                                                type: 'danger',
+                                                confirmText: 'Hapus'
+                                            });
+                                            if (confirmed) {
+                                                try {
+                                                    await deleteRoom(room.id);
+                                                    showAlert({ title: 'Berhasil', message: 'Ruangan berhasil dihapus', type: 'success' });
+                                                } catch (error: any) {
+                                                    const { title, message } = translateError(error);
+                                                    showAlert({ title, message, type: 'error' });
+                                                }
+                                            }
+                                        }}>
+                                            <button className="text-red-500 hover:text-red-700 p-2 hover:bg-red-50 rounded-lg transition-colors" title="Hapus">
+                                                <Trash2 className="w-4 h-4" />
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                        {filteredRooms.length === 0 && (
+                            <div className="col-span-full py-12 text-center text-gray-500 border rounded-xl border-dashed">
+                                {rooms.length === 0
+                                    ? 'Belum ada data ruangan. Silahkan tambahkan ruangan baru.'
+                                    : 'Tidak ada ruangan yang sesuai filter.'}
+                            </div>
+                        )}
                 </div>
             </div>
 

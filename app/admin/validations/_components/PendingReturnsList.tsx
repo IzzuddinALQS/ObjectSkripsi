@@ -43,7 +43,7 @@ export default function PendingReturnsList({ returns, validatorId }: PendingRetu
 
     if (returns.length === 0) {
         return (
-            <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-12 text-center">
+            <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 md:p-12 text-center">
                 <Clock className="w-12 h-12 text-gray-300 mx-auto mb-4" />
                 <p className="text-gray-500">Tidak ada pengembalian yang menunggu persetujuan</p>
             </div>

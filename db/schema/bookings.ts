@@ -11,7 +11,6 @@ export const rooms = mysqlTable('rooms', {
     status: mysqlEnum('status', ['Tersedia', 'Maintenance']).default('Tersedia'),
 });
 
-// Room Bookings
 export const roomBookings = mysqlTable('room_bookings', {
     id: int('id').autoincrement().primaryKey(),
     userId: varchar('user_id', { length: 50 }).notNull().references(() => users.identifier, { onDelete: 'cascade' }),
@@ -26,6 +25,7 @@ export const roomBookings = mysqlTable('room_bookings', {
     suratPermohonan: varchar('surat_permohonan', { length: 255 }), // File path for permission letter (optional)
     dosenPembimbing: varchar('dosen_pembimbing', { length: 255 }), // Supervising lecturer name
     status: mysqlEnum('status', ['Pending', 'Disetujui', 'Ditolak']).default('Pending'),
+    rejectionReason: text('rejection_reason'),
     notificationRead: mysqlEnum('notification_read', ['0', '1']).default('0'), // Track if admin has seen auto-approval notification
 }, (table) => ({
     userIdx: index('user_idx').on(table.userId),

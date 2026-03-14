@@ -47,7 +47,7 @@ interface Lecturer {
     fullName: string;
 }
 
-export default function ItemCard({ item, userId, variant = 'grid', role = 'student', initialOpen = false }: { item: any; userId: string; variant?: 'grid' | 'list', role?: 'student' | 'lecturer', initialOpen?: boolean }) {
+export default function ItemCard({ item, userId, variant = 'grid', role = 'student', initialOpen = false, onEdit, onDelete, onStatusChange }: { item: any; userId: string; variant?: 'grid' | 'list', role?: 'student' | 'lecturer' | 'admin', initialOpen?: boolean, onEdit?: () => void, onDelete?: () => void, onStatusChange?: (status: string) => void }) {
     const { showAlert } = useAlert();
     const [showModal, setShowModal] = useState(initialOpen);
     const [loading, setLoading] = useState(false);
@@ -253,12 +253,42 @@ export default function ItemCard({ item, userId, variant = 'grid', role = 'stude
                             </div>
                         </div>
 
-                        <button
-                            onClick={() => setShowModal(true)}
-                            className="w-full bg-[#0F4C81] text-white py-2 rounded-lg text-sm font-medium hover:bg-[#0F4C81]/90 transition-colors"
-                        >
-                            Ajukan Peminjaman
-                        </button>
+                        {role === 'admin' ? (
+                            <div className="flex gap-2">
+                                <select
+                                    defaultValue={item.status || 'Tersedia'}
+                                    onChange={(e) => onStatusChange?.(e.target.value)}
+                                    className={`flex-1 text-xs font-medium px-2 py-2 rounded-lg border-0 cursor-pointer text-center ${item.status === 'Tersedia' ? 'bg-green-50 text-green-700' :
+                                        item.status === 'Dipinjam' ? 'bg-orange-50 text-orange-700' :
+                                            'bg-gray-50 text-gray-700'
+                                        }`}
+                                    disabled={item.status === 'Dipinjam'}
+                                >
+                                    <option value="Tersedia">Tersedia</option>
+                                    <option value="Maintenance">Maintenance</option>
+                                    {item.status === 'Dipinjam' && <option value="Dipinjam">Dipinjam</option>}
+                                </select>
+                                <button
+                                    onClick={onEdit}
+                                    className="bg-blue-50 text-blue-600 p-2 rounded-lg hover:bg-blue-100 transition-colors"
+                                >
+                                    Edit
+                                </button>
+                                <button
+                                    onClick={onDelete}
+                                    className="bg-red-50 text-red-600 p-2 rounded-lg hover:bg-red-100 transition-colors"
+                                >
+                                    Hapus
+                                </button>
+                            </div>
+                        ) : (
+                            <button
+                                onClick={() => setShowModal(true)}
+                                className="w-full bg-[#0F4C81] text-white py-2 rounded-lg text-sm font-medium hover:bg-[#0F4C81]/90 transition-colors"
+                            >
+                                Ajukan Peminjaman
+                            </button>
+                        )}
                     </div>
                 </div>
             )}

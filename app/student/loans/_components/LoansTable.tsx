@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Box, Clock, CheckCircle, XCircle } from 'lucide-react';
+import { Box, Clock, CheckCircle, XCircle, MessageSquare } from 'lucide-react';
 import ReturnModal from './ReturnModal';
 
 interface Loan {
@@ -10,6 +10,7 @@ interface Loan {
     returnPlanDate: string;
     status: string | null;
     returnStatus: string | null;
+    rejectionReason: string | null;
     item: {
         name: string;
         category: {
@@ -85,6 +86,12 @@ export default function LoansTable({ loans }: LoansTableProps) {
                                             {getStatusIcon(loan.status!)}
                                             {loan.status}
                                         </span>
+                                        {loan.status === 'Ditolak' && loan.rejectionReason && (
+                                            <div className="mt-1.5 flex items-start gap-1.5 text-xs text-red-600 bg-red-50 rounded-lg px-2.5 py-1.5 max-w-xs">
+                                                <MessageSquare className="w-3.5 h-3.5 mt-0.5 shrink-0" />
+                                                <span>{loan.rejectionReason}</span>
+                                            </div>
+                                        )}
                                     </td>
                                     <td className="px-6 py-4 text-center">
                                         {loan.status === 'Disetujui' && loan.returnStatus === 'Belum' && (

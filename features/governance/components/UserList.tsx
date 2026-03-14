@@ -1,7 +1,7 @@
 'use client';
 
 import { deleteUser } from '@/features/users/actions';
-import { Trash2, Edit, User, Search, X, Shield, Check, Loader2 } from 'lucide-react';
+import { Trash2, Edit, User, Search, X, Shield, Check, Loader2, LayoutGrid, List } from 'lucide-react';
 import { useState, useMemo, useTransition } from 'react';
 import UserForm from './UserForm';
 import { getUserPermissionOverrides, updateUserPermissions } from '@/features/permissions/actions';
@@ -25,6 +25,14 @@ interface UserListProps {
 export default function UserList({ users, roles, lecturers, allPermissions = [], rolePermissionMap = {} }: UserListProps) {
     const [editingUser, setEditingUser] = useState<any>(null);
     const [searchQuery, setSearchQuery] = useState('');
+    
+    // View Mode State
+    const [viewMode, setViewMode] = useState<'grid' | 'list'>(() => {
+        if (typeof window !== 'undefined') {
+            return window.innerWidth >= 768 ? 'list' : 'grid';
+        }
+        return 'list';
+    });
 
     // Permission modal state
     const [permUser, setPermUser] = useState<any>(null);
@@ -148,14 +156,33 @@ export default function UserList({ users, roles, lecturers, allPermissions = [],
                             </button>
                         )}
                     </div>
-                    {searchQuery && (
-                        <p className="text-sm text-gray-500 mt-2">
-                            Menampilkan {filteredUsers.length} dari {users.length} user
-                        </p>
-                    )}
+                    <div className="flex items-center justify-between mt-4">
+                        {searchQuery ? (
+                            <p className="text-sm text-gray-500">
+                                Menampilkan {filteredUsers.length} dari {users.length} user
+                            </p>
+                        ) : (
+                            <p className="text-sm text-gray-500">Total {users.length} user</p>
+                        )}
+
+                        <div className="hidden md:flex items-center bg-gray-100 rounded-lg p-0.5 ml-auto">
+                            <button
+                                onClick={() => setViewMode('grid')}
+                                className={`p-1.5 rounded ${viewMode === 'grid' ? 'bg-white shadow-sm text-[#0F4C81]' : 'text-gray-500 hover:text-gray-700'}`} title="Tampilan Grid">
+                                <LayoutGrid className="w-4 h-4" />
+                            </button>
+                            <button
+                                onClick={() => setViewMode('list')}
+                                className={`p-1.5 rounded ${viewMode === 'list' ? 'bg-white shadow-sm text-[#0F4C81]' : 'text-gray-500 hover:text-gray-700'}`} title="Tampilan List">
+                                <List className="w-4 h-4" />
+                            </button>
+                        </div>
+                    </div>
                 </div>
 
-                <table className="w-full text-left">
+                {/* Table View */}
+                <div className={`overflow-x-auto ${viewMode === 'list' ? 'block' : 'hidden'}`}>
+                    <table className="min-w-full divide-y divide-gray-200">
                     <thead className="bg-gray-50 border-b border-gray-100">
                         <tr>
                             <th className="px-6 py-4 font-semibold text-gray-700">Nama Lengkap</th>
@@ -224,6 +251,63 @@ export default function UserList({ users, roles, lecturers, allPermissions = [],
                         )}
                     </tbody>
                 </table>
+            </div>
+
+                {/* Grid View */}
+                <div className={`p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ${viewMode === 'grid' ? 'grid' : 'hidden'}`}>
+                    {filteredUsers.map((user) => (
+                            <div key={user.identifier} className="bg-white border rounded-xl p-4 flex flex-col gap-3 shadow-sm hover:shadow-md transition-shadow">
+                                <div className="flex items-start gap-3">
+                                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-sm shrink-0">
+                                        {user.fullName.charAt(0)}
+                                    </div>
+                                    <div className="min-w-0">
+                                        <p className="font-semibold text-gray-900 break-words" title={user.fullName}>{user.fullName}</p>
+                                        <p className="text-sm text-gray-500 break-words" title={user.identifier}>{user.identifier}</p>
+                                    </div>
+                                </div>
+                                <div className="space-y-1 mt-2">
+                                    <p className="text-xs text-gray-600 break-words" title={user.email}>{user.email || 'Tidak ada email'}</p>
+                                    <span className={`inline-flex px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider ${
+                                        user.roleName === 'Admin' ? 'bg-purple-100 text-purple-700' :
+                                        user.roleName === 'Dosen' ? 'bg-blue-100 text-blue-700' :
+                                        'bg-green-100 text-green-700'
+                                    }`}>
+                                        {user.roleName}
+                                    </span>
+                                </div>
+                                <div className="flex flex-wrap gap-2 mt-2 pt-3 border-t">
+                                    <button
+                                        onClick={() => openPermModal(user)}
+                                        className="flex-1 min-w-[70px] flex justify-center items-center gap-1 text-amber-600 bg-amber-50 hover:bg-amber-100 py-2 rounded-lg text-xs font-semibold transition-colors"
+                                    >
+                                        <Shield className="w-3.5 h-3.5" /> Akses
+                                    </button>
+                                    <button
+                                        onClick={() => setEditingUser(user)}
+                                        className="flex-1 min-w-[70px] flex justify-center items-center gap-1 text-blue-600 bg-blue-50 hover:bg-blue-100 py-2 rounded-lg text-xs font-semibold transition-colors"
+                                    >
+                                        <Edit className="w-3.5 h-3.5" /> Edit
+                                    </button>
+                                    <button
+                                        onClick={async () => {
+                                            if (confirm('Apakah Anda yakin ingin menghapus user ini?')) {
+                                                await deleteUser(user.identifier);
+                                            }
+                                        }}
+                                        className="flex-1 min-w-[70px] flex justify-center items-center gap-1 text-red-600 bg-red-50 hover:bg-red-100 py-2 rounded-lg text-xs font-semibold transition-colors"
+                                    >
+                                        <Trash2 className="w-3.5 h-3.5" /> Hapus
+                                    </button>
+                                </div>
+                            </div>
+                        ))}
+                        {filteredUsers.length === 0 && (
+                            <div className="col-span-full py-12 text-center text-gray-500 border rounded-xl border-dashed">
+                                {searchQuery ? 'Tidak ada hasil pencarian' : 'Belum ada data user.'}
+                            </div>
+                        )}
+                </div>
             </div>
 
             {/* Permission Modal */}
@@ -332,7 +416,7 @@ export default function UserList({ users, roles, lecturers, allPermissions = [],
                         </div>
 
                         {/* Footer */}
-                        <div className="flex items-center justify-between px-6 py-4 border-t border-gray-100 bg-gray-50/50">
+                        <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 px-4 sm:px-6 py-4 border-t border-gray-100 bg-gray-50/50">
                             <div>
                                 {saveMessage && (
                                     <p className={`text-sm ${saveMessage.includes('Gagal') ? 'text-red-600' : 'text-green-600'}`}>
@@ -341,13 +425,13 @@ export default function UserList({ users, roles, lecturers, allPermissions = [],
                                 )}
                             </div>
                             <div className="flex gap-2">
-                                <button onClick={closePermModal} className="px-4 py-2 text-sm text-gray-600 hover:bg-gray-100 rounded-lg transition-colors">
+                                <button onClick={closePermModal} className="flex-1 sm:flex-none px-4 py-2 text-sm text-gray-600 hover:bg-gray-100 rounded-lg transition-colors">
                                     Batal
                                 </button>
                                 <button
                                     onClick={handleSavePerm}
                                     disabled={isPending}
-                                    className="flex items-center gap-1.5 px-4 py-2 bg-[#0F4C81] text-white rounded-lg text-sm hover:bg-[#0D3F6B] transition-colors disabled:opacity-50"
+                                    className="flex-1 sm:flex-none flex items-center justify-center gap-1.5 px-4 py-2 bg-[#0F4C81] text-white rounded-lg text-sm hover:bg-[#0D3F6B] transition-colors disabled:opacity-50"
                                 >
                                     {isPending ? <Loader2 className="w-4 h-4 animate-spin" /> : <Check className="w-4 h-4" />}
                                     Simpan

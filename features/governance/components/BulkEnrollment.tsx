@@ -75,17 +75,18 @@ export default function BulkEnrollment({ onSuccess }: BulkEnrollmentProps) {
     };
 
     return (
-        <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 mb-8">
+        <div className="bg-white p-4 md:p-6 rounded-xl shadow-sm border border-gray-100 mb-8">
             <h2 className="text-lg font-semibold mb-4 flex items-center gap-2">
                 <Upload className="w-5 h-5 text-primary" />
                 Bulk Enrollment (Pre-registrasi)
             </h2>
 
-            <div className="mb-4 p-4 bg-blue-50 rounded-lg text-sm text-blue-700">
+            <div className="mb-4 p-3 sm:p-4 bg-blue-50 rounded-lg text-sm text-blue-700 overflow-hidden">
                 <p className="font-medium mb-1">Petunjuk:</p>
-                <p>Upload file CSV dengan format: <code className="bg-blue-100 px-1 rounded">fullName,identifier,batch,studyType,programStudi,dosenPembimbing</code></p>
-                <p className="mt-1 text-xs">Baris pertama akan diabaikan (header). User akan berstatus "Pre-registered" dan perlu daftar akun untuk mengaktifkan.</p>
-                <p className="mt-1 text-xs text-blue-600"><strong>Tip:</strong> Jika nilai mengandung koma (misal: "Dr. Budi, M.Kom"), bungkus dengan tanda kutip ganda.</p>
+                <p className="break-words">Upload file CSV dengan format:</p>
+                <code className="block mt-1 bg-blue-100 px-2 py-1 rounded text-xs break-all whitespace-normal">fullName,identifier,batch,studyType,programStudi,dosenPembimbing</code>
+                <p className="mt-1 text-xs">Baris pertama akan diabaikan (header). User akan berstatus &quot;Pre-registered&quot; dan perlu daftar akun untuk mengaktifkan.</p>
+                <p className="mt-1 text-xs text-blue-600"><strong>Tip:</strong> Jika nilai mengandung koma (misal: &quot;Dr. Budi, M.Kom&quot;), bungkus dengan tanda kutip ganda.</p>
             </div>
 
             {/* File Upload */}
@@ -135,7 +136,7 @@ export default function BulkEnrollment({ onSuccess }: BulkEnrollmentProps) {
                             <X className="w-3 h-3" /> Clear
                         </button>
                     </div>
-                    <div className="max-h-60 overflow-auto border rounded-lg">
+                    <div className="max-h-60 overflow-x-auto overflow-y-auto border rounded-lg">
                         <table className="w-full text-xs">
                             <thead className="bg-gray-50 sticky top-0">
                                 <tr>

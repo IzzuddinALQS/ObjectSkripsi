@@ -51,7 +51,7 @@ export default async function AdminLayout({
                     initial: session.user.fullName.charAt(0)
                 }}
             />
-            <main className="flex-1 lg:ml-64 pt-20 lg:pt-0 p-4 lg:p-8">
+            <main className="flex-1 lg:ml-64 pt-20 lg:pt-0 p-4 lg:p-8 overflow-x-hidden">
                 {children}
             </main>
         </div>

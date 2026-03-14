@@ -1,5 +1,6 @@
 import { getPublicPublications, getPublicationKeywords, getPublicationLikeCounts, getUserLikedPublicationIds, getPublicationYears } from '@/features/publications/actions';
 import { getSession } from '@/lib/auth';
+import { getDefaultViewMode } from '@/lib/device';
 import { BookOpen, ExternalLink, User, Search, Tag, ArrowLeft, Eye, LayoutGrid, List } from 'lucide-react';
 import PublicationLink from '@/features/publications/components/PublicationLink';
 import LikeButton from '@/features/publications/components/LikeButton';
@@ -49,7 +50,8 @@ export default async function PublicationsPage({
 
     const currentPage = Number(params.page) || 1;
     const perPage = Number(params.perPage) || 20;
-    const viewMode = params.view || 'grid';
+    const defaultView = await getDefaultViewMode();
+    const viewMode = params.view || defaultView;
 
     const result = await getPublicPublications({
         search: params.search,

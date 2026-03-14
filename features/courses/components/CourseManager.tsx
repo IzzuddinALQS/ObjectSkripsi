@@ -26,7 +26,12 @@ export default function CourseManager({ courses, lecturers, readOnly = false }: 
     const [filterSemester, setFilterSemester] = useState('');
 
     // Pagination & View Mode
-    const [viewMode, setViewMode] = useState<'grid' | 'list'>('list');
+    const [viewMode, setViewMode] = useState<'grid' | 'list'>(() => {
+        if (typeof window !== 'undefined') {
+            return window.innerWidth >= 768 ? 'list' : 'grid';
+        }
+        return 'list';
+    });
     const [currentPage, setCurrentPage] = useState(1);
     const perPage = 12;
 
@@ -275,7 +280,7 @@ export default function CourseManager({ courses, lecturers, readOnly = false }: 
                 <p className="text-xs text-gray-500">
                     Menampilkan {filteredCourses.length > 0 ? (currentPage - 1) * perPage + 1 : 0}-{Math.min(currentPage * perPage, filteredCourses.length)} dari {filteredCourses.length} mata kuliah
                 </p>
-                <div className="flex items-center bg-gray-100 rounded-lg p-0.5">
+                <div className="hidden md:flex items-center bg-gray-100 rounded-lg p-0.5">
                     <button
                         onClick={() => setViewMode('grid')}
                         className={`p-1.5 rounded ${viewMode === 'grid' ? 'bg-white shadow-sm text-[#0F4C81]' : 'text-gray-500 hover:text-gray-700'}`} title="Tampilan Grid">

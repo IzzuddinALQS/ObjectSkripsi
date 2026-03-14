@@ -42,7 +42,7 @@ export default function TodayAttendance() {
 
     if (loading) {
         return (
-            <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 mb-6">
+            <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
                 <div className="animate-pulse">
                     <div className="h-6 w-48 bg-gray-200 rounded mb-4"></div>
                     <div className="space-y-3">
@@ -55,7 +55,7 @@ export default function TodayAttendance() {
     }
 
     return (
-        <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 mb-6">
+        <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
             <div className="flex items-center gap-2 mb-4">
                 <Users className="w-5 h-5 text-[#0F4C81]" />
                 <h2 className="text-lg font-semibold text-gray-800">Kehadiran Lab Hari Ini</h2>

@@ -75,7 +75,7 @@ export default function CategoriesView({ categories }: CategoriesViewProps) {
     return (
         <div>
             {/* Add Category Form */}
-            <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 mb-8">
+            <div className="bg-white p-4 md:p-6 rounded-xl shadow-sm border border-gray-100 mb-8">
                 <h2 className="text-lg font-semibold mb-4 flex items-center gap-2">
                     <Plus className="w-5 h-5 text-primary" />
                     Tambah Kategori Baru
@@ -94,7 +94,7 @@ export default function CategoriesView({ categories }: CategoriesViewProps) {
                     } finally {
                         setIsSubmitting(false);
                     }
-                }} id="add-category-form" className="flex gap-4 items-end">
+                }} id="add-category-form" className="flex flex-col sm:flex-row gap-4 items-stretch sm:items-end">
                     <div className="flex-1">
                         <label className="block text-sm font-medium text-gray-700 mb-1">Nama Kategori</label>
                         <input name="name" required placeholder="Contoh: Laptop, Proyektor, Kabel" className="w-full px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20" />

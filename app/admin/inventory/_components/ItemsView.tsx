@@ -1,10 +1,11 @@
 'use client';
 
 import { createItem, deleteItem, updateItem } from '@/features/inventory/actions';
-import { Plus, Trash2, Box, Tag, MapPin, Settings, Edit, Search } from 'lucide-react';
+import { Plus, Trash2, Box, Tag, MapPin, Settings, Edit, Search, LayoutGrid, List } from 'lucide-react';
 import QRCodeDisplay from '@/components/shared/QRCodeDisplay';
 import { useState, useMemo } from 'react';
 import Modal from '@/components/shared/Modal';
+import ItemCard from '@/app/student/items/_components/ItemCard';
 import CategoriesView from './CategoriesView';
 import { useAlert } from '@/components/providers/AlertProvider';
 import { translateError } from '@/lib/error';
@@ -40,6 +41,14 @@ export default function ItemsView({ items, rooms, categories }: ItemsViewProps) 
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [showCategoryModal, setShowCategoryModal] = useState(false);
     const [editingItem, setEditingItem] = useState<Item | null>(null);
+
+    // View Mode State
+    const [viewMode, setViewMode] = useState<'grid' | 'list'>(() => {
+        if (typeof window !== 'undefined') {
+            return window.innerWidth >= 768 ? 'list' : 'grid';
+        }
+        return 'list';
+    });
 
     // Search & Filter State
     const [searchQuery, setSearchQuery] = useState('');
@@ -103,7 +112,7 @@ export default function ItemsView({ items, rooms, categories }: ItemsViewProps) 
     return (
         <div className="space-y-6">
             {/* Add Item Form */}
-            <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+            <div className="bg-white p-4 md:p-6 rounded-xl shadow-sm border border-gray-100">
                 <div className="flex items-center justify-between mb-4">
                     <h2 className="text-lg font-semibold flex items-center gap-2">
                         <Plus className="w-5 h-5 text-primary" />
@@ -231,12 +240,32 @@ export default function ItemsView({ items, rooms, categories }: ItemsViewProps) 
                         <option value="Dipinjam">Dipinjam</option>
                         <option value="Maintenance">Maintenance</option>
                     </select>
+                    {/* View Toggle */}
+                    <div className="hidden md:flex items-center bg-gray-100 rounded-lg p-0.5">
+                        <button
+                            onClick={() => setViewMode('grid')}
+                            className={`p-1.5 rounded ${viewMode === 'grid' ? 'bg-white shadow-sm text-[#0F4C81]' : 'text-gray-500 hover:text-gray-700'}`}
+                            title="Tampilan Grid"
+                        >
+                            <LayoutGrid className="w-4 h-4" />
+                        </button>
+                        <button
+                            onClick={() => setViewMode('list')}
+                            className={`p-1.5 rounded ${viewMode === 'list' ? 'bg-white shadow-sm text-[#0F4C81]' : 'text-gray-500 hover:text-gray-700'}`}
+                            title="Tampilan List"
+                        >
+                            <List className="w-4 h-4" />
+                        </button>
+                    </div>
                 </div>
-                <p className="text-xs text-gray-500 mt-2">Menampilkan {filteredItems.length} dari {items.length} alat</p>
+                <div className="flex items-center justify-between mt-4">
+                    <p className="text-xs text-gray-500">Menampilkan {filteredItems.length} dari {items.length} alat</p>
+                </div>
             </div>
 
             {/* Items List */}
-            <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+            {viewMode === 'list' ? (
+                <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
                 <div className="overflow-x-auto">
                     <table className="w-full text-left">
                         <thead className="bg-gray-50 border-b border-gray-100">
@@ -361,6 +390,53 @@ export default function ItemsView({ items, rooms, categories }: ItemsViewProps) 
                     </table>
                 </div>
             </div>
+            ) : (
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                    {filteredItems.map(item => (
+                        <ItemCard 
+                            key={item.id} 
+                            item={item as any} 
+                            userId="" 
+                            role="admin" 
+                            variant="grid" 
+                            onEdit={() => setEditingItem(item)}
+                            onDelete={async () => {
+                                const confirmed = await showConfirm({
+                                    title: 'Hapus Alat',
+                                    message: 'Apakah Anda yakin ingin menghapus alat ini?',
+                                    type: 'danger',
+                                    confirmText: 'Hapus'
+                                });
+                                if (confirmed) {
+                                    try {
+                                        await deleteItem(item.id);
+                                        showAlert({ title: 'Berhasil', message: 'Alat berhasil dihapus', type: 'success' });
+                                    } catch (error: any) {
+                                        const { title, message } = translateError(error);
+                                        showAlert({ title, message, type: 'error' });
+                                    }
+                                }
+                            }}
+                            onStatusChange={async (status) => {
+                                try {
+                                    const { updateItemStatus } = await import('@/features/inventory/actions');
+                                    await updateItemStatus(item.id, status as 'Tersedia' | 'Maintenance');
+                                } catch (error: any) {
+                                    const { title, message } = translateError(error);
+                                    showAlert({ title, message, type: 'error' });
+                                }
+                            }}
+                        />
+                    ))}
+                    {filteredItems.length === 0 && (
+                        <div className="col-span-full bg-white p-12 rounded-xl shadow-sm border border-gray-100 text-center text-gray-500">
+                             {items.length === 0
+                                ? 'Belum ada data alat. Silahkan tambahkan alat baru.'
+                                : 'Tidak ada alat yang sesuai filter.'}
+                        </div>
+                    )}
+                </div>
+            )}
 
             {/* Category Management Modal */}
             <Modal

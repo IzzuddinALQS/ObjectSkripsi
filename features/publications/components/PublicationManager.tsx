@@ -52,7 +52,12 @@ export default function PublicationManager({ publications, userId }: Props) {
     const [filterKeyword, setFilterKeyword] = useState('');
     const [filterYear, setFilterYear] = useState('');
     const [filterMonth, setFilterMonth] = useState('');
-    const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
+    const [viewMode, setViewMode] = useState<'grid' | 'list'>(() => {
+        if (typeof window !== 'undefined') {
+            return window.innerWidth >= 768 ? 'list' : 'grid';
+        }
+        return 'list';
+    });
 
     // Extract all unique keywords from publications
     const allKeywords = useMemo(() => {
@@ -417,7 +422,7 @@ export default function PublicationManager({ publications, userId }: Props) {
                                 ))}
                             </select>
                             {/* View Toggle */}
-                            <div className="flex items-center bg-gray-100 rounded-lg p-0.5">
+                            <div className="hidden md:flex items-center bg-gray-100 rounded-lg p-0.5">
                                 <button
                                     onClick={() => setViewMode('grid')}
                                     className={`p-1.5 rounded ${viewMode === 'grid' ? 'bg-white shadow-sm text-[#0F4C81]' : 'text-gray-500 hover:text-gray-700'}`}

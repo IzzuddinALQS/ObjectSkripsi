@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { CalendarDays, ClipboardList, MapPin, Clock, CheckCircle, XCircle } from 'lucide-react';
+import { CalendarDays, ClipboardList, MapPin, Clock, CheckCircle, XCircle, MessageSquare } from 'lucide-react';
 import RoomBookingClient from '@/features/bookings/components/RoomBookingClient';
 
 interface StudentRoomManagerProps {
@@ -125,6 +125,12 @@ export default function StudentRoomManager({
                                                     {getStatusIcon(booking.status!)}
                                                     {booking.status}
                                                 </span>
+                                                {booking.status === 'Ditolak' && booking.rejectionReason && (
+                                                    <div className="mt-1.5 flex items-start gap-1.5 text-xs text-red-600 bg-red-50 rounded-lg px-2.5 py-1.5 max-w-xs">
+                                                        <MessageSquare className="w-3.5 h-3.5 mt-0.5 shrink-0" />
+                                                        <span>{booking.rejectionReason}</span>
+                                                    </div>
+                                                )}
                                             </td>
                                         </tr>
                                     ))}

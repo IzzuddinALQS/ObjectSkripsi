@@ -3,6 +3,7 @@
 import { useState, useMemo, useTransition } from 'react';
 import { User, CheckCircle, XCircle, Search, X, MapPin } from 'lucide-react';
 import { updateBookingStatus } from '@/features/bookings/actions';
+import RejectReasonModal from '@/components/ui/RejectReasonModal';
 
 interface Booking {
     id: number;
@@ -27,6 +28,8 @@ interface SearchableBookingsProps {
 export default function SearchableBookingsSection({ bookings, sessionUserId }: SearchableBookingsProps) {
     const [searchQuery, setSearchQuery] = useState('');
     const [isPending, startTransition] = useTransition();
+    const [rejectModalOpen, setRejectModalOpen] = useState(false);
+    const [rejectingBookingId, setRejectingBookingId] = useState<number | null>(null);
 
     // Filter active bookings (Pending + Disetujui)
     const activeBookings = useMemo(() => {
@@ -54,8 +57,17 @@ export default function SearchableBookingsSection({ bookings, sessionUserId }: S
     };
 
     const handleReject = (bookingId: number) => {
+        setRejectingBookingId(bookingId);
+        setRejectModalOpen(true);
+    };
+
+    const handleRejectConfirm = (reason: string) => {
+        if (rejectingBookingId === null) return;
+        const bookingId = rejectingBookingId;
+        setRejectModalOpen(false);
+        setRejectingBookingId(null);
         startTransition(async () => {
-            await updateBookingStatus(bookingId, 'Ditolak', sessionUserId);
+            await updateBookingStatus(bookingId, 'Ditolak', sessionUserId, reason || undefined);
         });
     };
 
@@ -186,6 +198,13 @@ export default function SearchableBookingsSection({ bookings, sessionUserId }: S
                     </table>
                 </div>
             </div>
+            <RejectReasonModal
+                isOpen={rejectModalOpen}
+                onClose={() => { setRejectModalOpen(false); setRejectingBookingId(null); }}
+                onConfirm={handleRejectConfirm}
+                title="Tolak Booking Ruangan"
+                isPending={isPending}
+            />
         </div>
     );
 }

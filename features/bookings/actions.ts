@@ -85,10 +85,11 @@ export async function deleteBooking(id: number) {
 export async function updateBookingStatus(
     bookingId: number,
     status: 'Disetujui' | 'Ditolak',
-    validatorId: string
+    validatorId: string,
+    rejectionReason?: string
 ) {
     await requirePermission('bookings.manage');
-    await BookingService.updateStatus(bookingId, status, validatorId);
+    await BookingService.updateStatus(bookingId, status, validatorId, rejectionReason);
     revalidatePath('/admin/bookings');
     revalidatePath('/student/rooms');
     revalidatePath('/lecturer/rooms');

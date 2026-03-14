@@ -1,9 +1,9 @@
 import { getLoanRequests, updateLoanStatus, deleteLoan, getPendingReturns, approveReturn, rejectReturn, adminDirectReturn } from '@/features/loans/actions';
 import { getBookingRequests, updateBookingStatus, getAllRooms, getMonthBookings, deleteBooking, getScheduledPracticumsForCalendar } from '@/features/bookings/actions';
-import { getPendingUsers, updateUserStatus } from '@/features/users/actions';
+import { getPendingUsers, getRejectedUsers, updateUserStatus } from '@/features/users/actions';
 import { getSession } from '@/lib/auth';
 import { redirect } from 'next/navigation';
-import { Box, User, CheckCircle, XCircle, MapPin, Trash2 } from 'lucide-react';
+import { Box, User, CheckCircle, XCircle, MapPin, Trash2, MessageSquare } from 'lucide-react';
 import CalendarView from '@/components/shared/CalendarView';
 import ValidationTabs from './_components/ValidationTabs';
 import PendingReturnsList from './_components/PendingReturnsList';
@@ -55,6 +55,7 @@ export default async function AdminValidationsPage({
 
     // --- Data Fetching for Users ---
     const pendingUsers = await getPendingUsers();
+    const rejectedUsers = await getRejectedUsers();
 
     // --- Data Fetching for Returns ---
     const pendingReturns = await getPendingReturns();
@@ -82,6 +83,12 @@ export default async function AdminValidationsPage({
                         <h3 className="text-gray-500 text-sm font-medium">Aktif</h3>
                         <p className="text-2xl sm:text-3xl font-bold text-green-600 mt-1">
                             {loans.filter(l => l.status === 'Disetujui').length}
+                        </p>
+                    </div>
+                    <div className="bg-white px-4 sm:px-6 py-4 rounded-xl shadow-sm border border-gray-100 flex-1 min-w-[7rem]">
+                        <h3 className="text-gray-500 text-sm font-medium">Ditolak</h3>
+                        <p className="text-2xl sm:text-3xl font-bold text-red-600 mt-1">
+                            {loans.filter(l => l.status === 'Ditolak').length}
                         </p>
                     </div>
                 </div>
@@ -235,9 +242,9 @@ export default async function AdminValidationsPage({
         </div >
     );
 
-    // --- Riwayat Content (Completed Only) ---
-    const completedLoans = loans.filter(l => l.returnStatus === 'Dikembalikan');
-    const completedBookings = bookings.filter(b => b.status === 'Selesai' as any);
+    // --- Riwayat Content (Completed + Rejected) ---
+    const completedLoans = loans.filter(l => l.returnStatus === 'Dikembalikan' || l.status === 'Ditolak');
+    const completedBookings = bookings.filter(b => (b.status as string) === 'Selesai' || b.status === 'Ditolak');
 
     const riwayatContent = (
         <SearchableRiwayatSection
@@ -314,6 +321,12 @@ export default async function AdminValidationsPage({
                                                 }`}>
                                                 {loan.status}
                                             </span>
+                                            {loan.status === 'Ditolak' && (loan as any).rejectionReason && (
+                                                <div className="mt-1.5 flex items-start gap-1.5 text-xs text-red-600 bg-red-50 rounded-lg px-2.5 py-1.5 max-w-xs">
+                                                    <MessageSquare className="w-3.5 h-3.5 mt-0.5 shrink-0" />
+                                                    <span>{(loan as any).rejectionReason}</span>
+                                                </div>
+                                            )}
                                         </td>
                                         <td className="px-6 py-4 text-gray-600 text-sm">
                                             {loan.validatorId ? 'Admin' : '-'}
@@ -390,6 +403,12 @@ export default async function AdminValidationsPage({
                                                 }`}>
                                                 {booking.status}
                                             </span>
+                                            {booking.status === 'Ditolak' && (booking as any).rejectionReason && (
+                                                <div className="mt-1.5 flex items-start gap-1.5 text-xs text-red-600 bg-red-50 rounded-lg px-2.5 py-1.5 max-w-xs">
+                                                    <MessageSquare className="w-3.5 h-3.5 mt-0.5 shrink-0" />
+                                                    <span>{(booking as any).rejectionReason}</span>
+                                                </div>
+                                            )}
                                         </td>
                                         <td className="px-6 py-4 text-gray-600 text-sm">
                                             {booking.validatorId ? 'Admin' : '-'}
@@ -486,6 +505,90 @@ export default async function AdminValidationsPage({
                             )}
                         </tbody>
                     </table>
+                </div>
+            </div>
+
+            {/* Rejected Users History */}
+            <div className="mt-8">
+                <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                    Riwayat Pendaftaran Ditolak
+                    <span className="ml-2 text-sm font-normal text-gray-500">
+                        ({rejectedUsers.length})
+                    </span>
+                </h3>
+                <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+                    <div className="overflow-x-auto hidden md:block">
+                        <table className="w-full text-left">
+                            <thead className="bg-gray-50 border-b border-gray-100">
+                                <tr>
+                                    <th className="px-6 py-4 font-semibold text-gray-700">Nama Lengkap</th>
+                                    <th className="px-6 py-4 font-semibold text-gray-700">NIM/NIDN</th>
+                                    <th className="px-6 py-4 font-semibold text-gray-700">Email</th>
+                                    <th className="px-6 py-4 font-semibold text-gray-700">Role</th>
+                                    <th className="px-6 py-4 font-semibold text-gray-700">Tanggal Daftar</th>
+                                    <th className="px-6 py-4 font-semibold text-gray-700">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody className="divide-y divide-gray-100">
+                                {rejectedUsers.map((user) => (
+                                    <tr key={user.identifier} className="hover:bg-gray-50 transition-colors">
+                                        <td className="px-6 py-4 font-medium text-gray-900">{user.fullName}</td>
+                                        <td className="px-6 py-4 text-gray-600">{user.identifier}</td>
+                                        <td className="px-6 py-4 text-gray-600">{user.email}</td>
+                                        <td className="px-6 py-4 text-gray-600 text-sm">{user.role}</td>
+                                        <td className="px-6 py-4 text-gray-600 text-sm">
+                                            {new Date(user.createdAt!).toLocaleDateString('id-ID')}
+                                        </td>
+                                        <td className="px-6 py-4">
+                                            <span className="inline-flex px-2 py-1 rounded text-xs font-medium bg-red-50 text-red-700">
+                                                Ditolak
+                                            </span>
+                                        </td>
+                                    </tr>
+                                ))}
+                                {rejectedUsers.length === 0 && (
+                                    <tr>
+                                        <td colSpan={6} className="px-6 py-8 text-center text-gray-500">
+                                            Tidak ada riwayat pendaftaran yang ditolak.
+                                        </td>
+                                    </tr>
+                                )}
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div className="p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 block md:hidden">
+                        {rejectedUsers.map((user) => (
+                            <div key={user.identifier} className="bg-white border rounded-xl p-4 flex flex-col gap-3 shadow-sm hover:shadow-md transition-shadow">
+                                <div className="flex justify-between items-start">
+                                    <div className="flex items-center gap-3">
+                                        <div className="w-10 h-10 rounded-full bg-red-50 flex items-center justify-center text-red-600 shrink-0">
+                                            <User className="w-5 h-5" />
+                                        </div>
+                                        <div className="min-w-0">
+                                            <p className="font-semibold text-gray-900 break-words">{user.fullName}</p>
+                                            <p className="text-xs text-gray-500">{user.identifier}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="bg-gray-50 rounded-lg p-3 space-y-1 mt-auto">
+                                    <p className="text-xs text-red-700 font-medium">{user.role}</p>
+                                    <p className="text-xs text-gray-600 break-words">{user.email || 'Tidak ada email'}</p>
+                                </div>
+                                <div className="flex justify-between items-center pt-2 border-t border-gray-100">
+                                    <span className="text-xs text-gray-500">{new Date(user.createdAt!).toLocaleDateString('id-ID')}</span>
+                                    <span className="inline-flex px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider bg-red-100 text-red-700">
+                                        Ditolak
+                                    </span>
+                                </div>
+                            </div>
+                        ))}
+                        {rejectedUsers.length === 0 && (
+                            <div className="col-span-full py-12 text-center text-gray-500 border rounded-xl border-dashed">
+                                Tidak ada riwayat pendaftaran yang ditolak.
+                            </div>
+                        )}
+                    </div>
                 </div>
             </div>
         </div>

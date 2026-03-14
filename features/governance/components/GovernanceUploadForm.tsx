@@ -16,7 +16,7 @@ export default function GovernanceUploadForm({ adminId, allowedTypes, initialDat
     const isEdit = !!initialData;
 
     return (
-        <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 mb-8">
+        <div className="bg-white p-4 md:p-6 rounded-xl shadow-sm border border-gray-100 mb-8">
             <h2 className="text-lg font-semibold mb-4 flex items-center gap-2">
                 <Upload className="w-5 h-5 text-primary" />
                 {isEdit ? 'Edit Dokumen Tata Kelola' : 'Upload Dokumen Tata Kelola'}
@@ -83,7 +83,7 @@ export default function GovernanceUploadForm({ adminId, allowedTypes, initialDat
                         name="file"
                         required={!isEdit}
                         accept=".pdf"
-                        className="w-full px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-primary/10 file:text-primary hover:file:bg-primary/20"
+                        className="w-full max-w-full overflow-hidden text-ellipsis px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-primary/10 file:text-primary hover:file:bg-primary/20"
                     />
                     <p className="text-xs text-gray-500 mt-1">Format: PDF. Maks. 2MB</p>
                 </div>
@@ -92,7 +92,7 @@ export default function GovernanceUploadForm({ adminId, allowedTypes, initialDat
                     <label className="block text-sm font-medium text-gray-700 mb-1">
                         {isEdit ? 'Cover Image (Opsional) - Biarkan kosong jika tidak ingin mengubah' : 'Cover Image (Opsional, untuk SOP)'}
                     </label>
-                    <input type="file" name="cover" accept="image/*" className="w-full px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-primary/10 file:text-primary hover:file:bg-primary/20" />
+                    <input type="file" name="cover" accept="image/*" className="w-full max-w-full overflow-hidden text-ellipsis px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-primary/10 file:text-primary hover:file:bg-primary/20" />
                     <p className="text-xs text-gray-500 mt-1">Format: JPG, PNG. Maks. 2MB. Disarankan rasio 1:1 atau portrait.</p>
                 </div>
 

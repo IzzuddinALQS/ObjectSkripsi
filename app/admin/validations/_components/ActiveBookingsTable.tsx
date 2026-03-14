@@ -1,10 +1,11 @@
 'use client';
 
 import { useState, useTransition } from 'react';
-import { MapPin, User, CheckCircle, XCircle, Eye, X, ExternalLink } from 'lucide-react';
+import { MapPin, User, CheckCircle, XCircle, Eye, X, ExternalLink, LayoutGrid, List } from 'lucide-react';
 import { updateBookingStatus } from '@/features/bookings/actions';
 import { useAlert } from '@/components/providers/AlertProvider';
 import { translateError } from '@/lib/error';
+import RejectReasonModal from '@/components/ui/RejectReasonModal';
 
 interface Booking {
     id: number;
@@ -26,9 +27,18 @@ interface ActiveBookingsTableProps {
 }
 
 export default function ActiveBookingsTable({ bookings, sessionUserId }: ActiveBookingsTableProps) {
-    const { showConfirm, showAlert } = useAlert();
+    const { showAlert } = useAlert();
     const [isPending, startTransition] = useTransition();
     const [selectedBooking, setSelectedBooking] = useState<Booking | null>(null);
+    const [rejectModalOpen, setRejectModalOpen] = useState(false);
+    const [rejectingBookingId, setRejectingBookingId] = useState<number | null>(null);
+
+    const [viewMode, setViewMode] = useState<'grid' | 'list'>(() => {
+        if (typeof window !== 'undefined') {
+            return window.innerWidth >= 768 ? 'list' : 'grid';
+        }
+        return 'list';
+    });
 
     const handleApprove = (bookingId: number) => {
         startTransition(async () => {
@@ -36,17 +46,19 @@ export default function ActiveBookingsTable({ bookings, sessionUserId }: ActiveB
         });
     };
 
-    const handleReject = async (bookingId: number) => {
-        const confirmed = await showConfirm({
-            title: 'Tolak Booking',
-            message: 'Tolak permintaan booking ini?',
-            type: 'danger',
-            confirmText: 'Tolak'
-        });
-        if (!confirmed) return;
+    const handleReject = (bookingId: number) => {
+        setRejectingBookingId(bookingId);
+        setRejectModalOpen(true);
+    };
+
+    const handleRejectConfirm = (reason: string) => {
+        if (rejectingBookingId === null) return;
+        const bookingId = rejectingBookingId;
+        setRejectModalOpen(false);
+        setRejectingBookingId(null);
         startTransition(async () => {
             try {
-                await updateBookingStatus(bookingId, 'Ditolak', sessionUserId);
+                await updateBookingStatus(bookingId, 'Ditolak', sessionUserId, reason || undefined);
                 showAlert({ title: 'Berhasil', message: 'Permintaan booking ditolak', type: 'success' });
             } catch (error: any) {
                 const { title, message } = translateError(error, 'Gagal menolak booking');
@@ -57,8 +69,26 @@ export default function ActiveBookingsTable({ bookings, sessionUserId }: ActiveB
 
     return (
         <>
+            <div className="flex justify-end mb-4">
+                <div className="hidden md:flex items-center bg-gray-100 rounded-lg p-0.5">
+                    <button
+                        onClick={() => setViewMode('grid')}
+                        className={`p-1.5 rounded ${viewMode === 'grid' ? 'bg-white shadow-sm text-[#0F4C81]' : 'text-gray-500 hover:text-gray-700'}`} title="Tampilan Grid">
+                        <LayoutGrid className="w-4 h-4" />
+                    </button>
+                    <button
+                        onClick={() => setViewMode('list')}
+                        className={`p-1.5 rounded ${viewMode === 'list' ? 'bg-white shadow-sm text-[#0F4C81]' : 'text-gray-500 hover:text-gray-700'}`} title="Tampilan List">
+                        <List className="w-4 h-4" />
+                    </button>
+                </div>
+            </div>
+            {/* Users List */}
             <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
-                <table className="w-full text-left">
+                {/* Table View (Hidden on mobile, toggled on desktop) */}
+                {viewMode === 'list' && (
+                <div className="overflow-x-auto hidden md:block">
+                    <table className="w-full text-left">
                     <thead className="bg-gray-50 border-b border-gray-100">
                         <tr>
                             <th className="px-6 py-4 font-semibold text-gray-700">Pemohon</th>
@@ -149,6 +179,82 @@ export default function ActiveBookingsTable({ bookings, sessionUserId }: ActiveB
                         )}
                     </tbody>
                 </table>
+            </div>
+                )}
+
+                {/* Grid/Card View — always on mobile, desktop only in grid mode */}
+                <div className={`p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ${viewMode === 'grid' ? 'grid' : 'grid md:hidden'}`}>
+                        {bookings.map((booking) => (
+                            <div key={booking.id} className={`bg-white border rounded-xl p-4 flex flex-col gap-3 shadow-sm hover:shadow-md transition-shadow ${isPending ? 'opacity-50' : ''}`}>
+                                <div className="flex justify-between items-start">
+                                    <div className="flex items-center gap-3">
+                                        <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-blue-600 shrink-0">
+                                            <MapPin className="w-5 h-5" />
+                                        </div>
+                                        <div className="min-w-0">
+                                            <p className="font-semibold text-gray-900 break-words" title={booking.room.name}>{booking.room.name}</p>
+                                            <p className="text-xs text-gray-500 break-words" title={booking.purpose}>{booking.purpose}</p>
+                                        </div>
+                                    </div>
+                                    <span className={`inline-flex px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider ${
+                                        booking.status === 'Pending' ? 'bg-yellow-100 text-yellow-700' :
+                                        booking.status === 'Disetujui' ? 'bg-green-100 text-green-700' :
+                                        'bg-red-100 text-red-700'
+                                    }`}>
+                                        {booking.status}
+                                    </span>
+                                </div>
+                                
+                                <div className="bg-gray-50 rounded-lg p-3 space-y-2 text-sm">
+                                    <div className="flex items-center gap-2 text-gray-700">
+                                        <User className="w-4 h-4 text-gray-400 shrink-0" />
+                                        <span className="break-words" title={booking.user.fullName}>{booking.user.fullName} ({booking.user.identifier})</span>
+                                    </div>
+                                    <div className="flex justify-between items-center text-xs text-gray-600 pt-1 border-t border-gray-200">
+                                        <span>{new Date(booking.startTime).toLocaleDateString('id-ID')}</span>
+                                        <span>
+                                            {new Date(booking.startTime).toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' })}
+                                            {' - '}
+                                            {new Date(booking.endTime).toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' })}
+                                        </span>
+                                    </div>
+                                </div>
+                                
+                                <div className="flex justify-end gap-2 mt-auto pt-2">
+                                    <button
+                                        onClick={() => setSelectedBooking(booking)}
+                                        className="flex-1 flex justify-center items-center gap-1 text-[#0F4C81] bg-blue-50 hover:bg-blue-100 py-2 rounded-lg text-xs font-semibold transition-colors"
+                                    >
+                                        <Eye className="w-3.5 h-3.5" /> Detail
+                                    </button>
+                                    
+                                    {booking.status === 'Pending' && (
+                                        <>
+                                            <button
+                                                onClick={() => handleApprove(booking.id)}
+                                                disabled={isPending}
+                                                className="flex-1 flex justify-center items-center gap-1 text-green-700 bg-green-50 hover:bg-green-100 py-2 rounded-lg text-xs font-semibold transition-colors disabled:opacity-50"
+                                            >
+                                                <CheckCircle className="w-3.5 h-3.5" /> Setuju
+                                            </button>
+                                            <button
+                                                onClick={() => handleReject(booking.id)}
+                                                disabled={isPending}
+                                                className="flex-1 flex justify-center items-center gap-1 text-red-700 bg-red-50 hover:bg-red-100 py-2 rounded-lg text-xs font-semibold transition-colors disabled:opacity-50"
+                                            >
+                                                <XCircle className="w-3.5 h-3.5" /> Tolak
+                                            </button>
+                                        </>
+                                    )}
+                                </div>
+                            </div>
+                        ))}
+                        {bookings.length === 0 && (
+                            <div className="col-span-full py-12 text-center text-gray-500 border rounded-xl border-dashed">
+                                Belum ada permintaan booking.
+                            </div>
+                        )}
+                </div>
             </div>
 
             {/* Modal Detail Booking */}
@@ -254,6 +360,13 @@ export default function ActiveBookingsTable({ bookings, sessionUserId }: ActiveB
                     </div>
                 </div>
             )}
+            <RejectReasonModal
+                isOpen={rejectModalOpen}
+                onClose={() => { setRejectModalOpen(false); setRejectingBookingId(null); }}
+                onConfirm={handleRejectConfirm}
+                title="Tolak Booking Ruangan"
+                isPending={isPending}
+            />
         </>
     );
 }

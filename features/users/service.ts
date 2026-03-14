@@ -155,6 +155,23 @@ export class UserService {
     }
 
     /**
+     * Get rejected users
+     */
+    static async getRejected() {
+        return await db.select({
+            identifier: users.identifier,
+            fullName: users.fullName,
+            email: users.email,
+            createdAt: users.createdAt,
+            role: roles.name,
+        })
+            .from(users)
+            .innerJoin(roles, eq(users.roleId, roles.id))
+            .where(eq(users.status, 'Rejected'))
+            .orderBy(desc(users.createdAt));
+    }
+
+    /**
      * Update user status
      */
     static async updateStatus(userId: string, status: 'Active' | 'Rejected') {

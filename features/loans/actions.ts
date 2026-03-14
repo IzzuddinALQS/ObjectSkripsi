@@ -56,11 +56,12 @@ export async function getLoanRequests(status?: string, startDate?: Date, endDate
 export async function updateLoanStatus(
     loanId: number,
     status: 'Disetujui' | 'Ditolak',
-    validatorId: string
+    validatorId: string,
+    rejectionReason?: string
 ) {
     try {
         await requirePermission('loans.manage');
-        await LoanService.updateStatus(loanId, status, validatorId);
+        await LoanService.updateStatus(loanId, status, validatorId, rejectionReason);
         revalidatePath('/admin/loans');
         revalidatePath('/student/loans');
         revalidatePath('/admin/inventory');

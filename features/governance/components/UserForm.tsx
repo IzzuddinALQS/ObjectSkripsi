@@ -36,7 +36,7 @@ export default function UserForm({ roles, lecturers, initialData, onSuccess, onC
     const isEdit = !!initialData;
 
     return (
-        <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 mb-8">
+        <div className="bg-white p-4 md:p-6 rounded-xl shadow-sm border border-gray-100 mb-8">
             <h2 className="text-lg font-semibold mb-4 flex items-center gap-2">
                 {isEdit ? <Save className="w-5 h-5 text-primary" /> : <UserPlus className="w-5 h-5 text-primary" />}
                 {isEdit ? 'Edit User' : 'Tambah User Baru'}
