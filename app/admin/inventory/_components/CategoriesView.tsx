@@ -3,6 +3,8 @@
 import { createCategory, deleteCategory, updateCategory } from '@/features/inventory/actions';
 import { Plus, Trash2, Tags, Pencil, X, Check } from 'lucide-react';
 import { useState } from 'react';
+import { useAlert } from '@/components/providers/AlertProvider';
+import { translateError } from '@/lib/error';
 
 interface Category {
     id: number;
@@ -14,6 +16,7 @@ interface CategoriesViewProps {
 }
 
 export default function CategoriesView({ categories }: CategoriesViewProps) {
+    const { showAlert, showConfirm } = useAlert();
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [editingId, setEditingId] = useState<number | null>(null);
     const [editName, setEditName] = useState('');
@@ -31,20 +34,40 @@ export default function CategoriesView({ categories }: CategoriesViewProps) {
     const handleSaveEdit = async (id: number) => {
         if (!editName.trim()) return;
 
-        const result = await updateCategory(id, { name: editName });
-        if (result.success) {
-            setEditingId(null);
-            setEditName('');
-        } else {
-            alert(result.error);
+        try {
+            const result = await updateCategory(id, { name: editName });
+            if (result.success) {
+                setEditingId(null);
+                setEditName('');
+                showAlert({ title: 'Berhasil', message: 'Kategori berhasil diperbarui', type: 'success' });
+            } else {
+                showAlert({ title: 'Gagal', message: result.error || 'Gagal memperbarui kategori', type: 'error' });
+            }
+        } catch (error: any) {
+            const { title, message } = translateError(error);
+            showAlert({ title, message, type: 'error' });
         }
     };
 
     const handleDelete = async (id: number) => {
-        if (confirm('Apakah Anda yakin ingin menghapus kategori ini?')) {
-            const result = await deleteCategory(id);
-            if (!result.success) {
-                alert(result.error);
+        const confirmed = await showConfirm({
+            title: 'Hapus Kategori',
+            message: 'Apakah Anda yakin ingin menghapus kategori ini?',
+            type: 'danger',
+            confirmText: 'Hapus'
+        });
+        
+        if (confirmed) {
+            try {
+                const result = await deleteCategory(id);
+                if (!result.success) {
+                    showAlert({ title: 'Gagal', message: result.error || 'Gagal menghapus kategori', type: 'error' });
+                } else {
+                    showAlert({ title: 'Berhasil', message: 'Kategori berhasil dihapus', type: 'success' });
+                }
+            } catch (error: any) {
+                const { title, message } = translateError(error);
+                showAlert({ title, message, type: 'error' });
             }
         }
     };
@@ -59,11 +82,18 @@ export default function CategoriesView({ categories }: CategoriesViewProps) {
                 </h2>
                 <form action={async (formData) => {
                     setIsSubmitting(true);
-                    const name = formData.get('name') as string;
-                    await createCategory({ name });
-                    setIsSubmitting(false);
-                    const form = document.getElementById('add-category-form') as HTMLFormElement;
-                    form?.reset();
+                    try {
+                        const name = formData.get('name') as string;
+                        await createCategory({ name });
+                        const form = document.getElementById('add-category-form') as HTMLFormElement;
+                        form?.reset();
+                        showAlert({ title: 'Berhasil', message: 'Kategori berhasil ditambahkan', type: 'success' });
+                    } catch (error: any) {
+                        const { title, message } = translateError(error);
+                        showAlert({ title, message, type: 'error' });
+                    } finally {
+                        setIsSubmitting(false);
+                    }
                 }} id="add-category-form" className="flex gap-4 items-end">
                     <div className="flex-1">
                         <label className="block text-sm font-medium text-gray-700 mb-1">Nama Kategori</label>

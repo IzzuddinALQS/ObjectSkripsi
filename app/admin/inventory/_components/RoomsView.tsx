@@ -4,6 +4,8 @@ import { createRoom, deleteRoom, updateRoom } from '@/features/inventory/actions
 import { Plus, Trash2, MapPin, Edit, Search } from 'lucide-react';
 import { useState, useMemo } from 'react';
 import Modal from '@/components/shared/Modal';
+import { useAlert } from '@/components/providers/AlertProvider';
+import { translateError } from '@/lib/error';
 
 interface Room {
     id: number;
@@ -18,6 +20,7 @@ interface RoomsViewProps {
 }
 
 export default function RoomsView({ rooms }: RoomsViewProps) {
+    const { showConfirm, showAlert } = useAlert();
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [editingRoom, setEditingRoom] = useState<Room | null>(null);
 
@@ -60,9 +63,16 @@ export default function RoomsView({ rooms }: RoomsViewProps) {
         const location = formData.get('location') as string;
         const capacity = parseInt(formData.get('capacity') as string);
 
-        await updateRoom(editingRoom.id, { name, location, capacity });
-        setIsSubmitting(false);
-        setEditingRoom(null);
+        try {
+            await updateRoom(editingRoom.id, { name, location, capacity });
+            setEditingRoom(null);
+            showAlert({ title: 'Berhasil', message: 'Ruangan berhasil diperbarui', type: 'success' });
+        } catch (error: any) {
+            const { title, message } = translateError(error);
+            showAlert({ title, message, type: 'error' });
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -75,14 +85,21 @@ export default function RoomsView({ rooms }: RoomsViewProps) {
                 </h2>
                 <form action={async (formData) => {
                     setIsSubmitting(true);
-                    const name = formData.get('name') as string;
-                    const location = formData.get('location') as string;
-                    const capacity = parseInt(formData.get('capacity') as string);
+                    try {
+                        const name = formData.get('name') as string;
+                        const location = formData.get('location') as string;
+                        const capacity = parseInt(formData.get('capacity') as string);
 
-                    await createRoom({ name, location, capacity });
-                    setIsSubmitting(false);
-                    const form = document.getElementById('add-room-form') as HTMLFormElement;
-                    form?.reset();
+                        await createRoom({ name, location, capacity });
+                        const form = document.getElementById('add-room-form') as HTMLFormElement;
+                        form?.reset();
+                        showAlert({ title: 'Berhasil', message: 'Ruangan berhasil ditambahkan', type: 'success' });
+                    } catch (error: any) {
+                        const { title, message } = translateError(error);
+                        showAlert({ title, message, type: 'error' });
+                    } finally {
+                        setIsSubmitting(false);
+                    }
                 }} id="add-room-form" className="flex flex-col md:flex-row gap-4 items-end">
                     <div className="flex-1 w-full">
                         <label className="block text-sm font-medium text-gray-700 mb-1">Nama Ruangan</label>
@@ -160,11 +177,18 @@ export default function RoomsView({ rooms }: RoomsViewProps) {
                                         <select
                                             defaultValue={room.status || 'Tersedia'}
                                             onChange={async (e) => {
-                                                const { updateRoomStatus } = await import('@/features/inventory/actions');
-                                                await updateRoomStatus(
-                                                    room.id,
-                                                    e.target.value as 'Tersedia' | 'Maintenance'
-                                                );
+                                                try {
+                                                    const { updateRoomStatus } = await import('@/features/inventory/actions');
+                                                    await updateRoomStatus(
+                                                        room.id,
+                                                        e.target.value as 'Tersedia' | 'Maintenance'
+                                                    );
+                                                } catch (error: any) {
+                                                    const { title, message } = translateError(error);
+                                                    showAlert({ title, message, type: 'error' });
+                                                    // Revert select UI change visually if needed (though revalidatePath might do it if they refresh, 
+                                                    // but for instant feedback throwing error is enough, state is uncontrolled so maybe UI stays wrong but user sees error)
+                                                }
                                             }}
                                             className={`text-xs font-medium px-2 py-1 rounded border-0 cursor-pointer ${room.status === 'Tersedia' ? 'bg-green-50 text-green-700' :
                                                 'bg-gray-50 text-gray-700'
@@ -184,8 +208,20 @@ export default function RoomsView({ rooms }: RoomsViewProps) {
                                                 <Edit className="w-4 h-4" />
                                             </button>
                                             <form action={async () => {
-                                                if (confirm('Apakah Anda yakin ingin menghapus ruangan ini?')) {
-                                                    await deleteRoom(room.id);
+                                                const confirmed = await showConfirm({
+                                                    title: 'Hapus Ruangan',
+                                                    message: 'Apakah Anda yakin ingin menghapus ruangan ini?',
+                                                    type: 'danger',
+                                                    confirmText: 'Hapus'
+                                                });
+                                                if (confirmed) {
+                                                    try {
+                                                        await deleteRoom(room.id);
+                                                        showAlert({ title: 'Berhasil', message: 'Ruangan berhasil dihapus', type: 'success' });
+                                                    } catch (error: any) {
+                                                        const { title, message } = translateError(error);
+                                                        showAlert({ title, message, type: 'error' });
+                                                    }
                                                 }
                                             }}>
                                                 <button

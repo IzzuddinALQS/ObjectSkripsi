@@ -6,6 +6,8 @@ import QRCodeDisplay from '@/components/shared/QRCodeDisplay';
 import { useState, useMemo } from 'react';
 import Modal from '@/components/shared/Modal';
 import CategoriesView from './CategoriesView';
+import { useAlert } from '@/components/providers/AlertProvider';
+import { translateError } from '@/lib/error';
 
 interface Item {
     id: number;
@@ -34,6 +36,7 @@ interface ItemsViewProps {
 }
 
 export default function ItemsView({ items, rooms, categories }: ItemsViewProps) {
+    const { showConfirm, showAlert } = useAlert();
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [showCategoryModal, setShowCategoryModal] = useState(false);
     const [editingItem, setEditingItem] = useState<Item | null>(null);
@@ -79,15 +82,22 @@ export default function ItemsView({ items, rooms, categories }: ItemsViewProps) 
         const roomId = parseInt(formData.get('roomId') as string);
         const description = formData.get('description') as string;
 
-        await updateItem(editingItem.id, {
-            name,
-            categoryId,
-            roomId,
-            description: description || undefined,
-            status: editingItem.status || 'Tersedia' as const
-        });
-        setIsSubmitting(false);
-        setEditingItem(null);
+        try {
+            await updateItem(editingItem.id, {
+                name,
+                categoryId,
+                roomId,
+                description: description || undefined,
+                status: editingItem.status || 'Tersedia' as const
+            });
+            setEditingItem(null);
+            showAlert({ title: 'Berhasil', message: 'Alat berhasil diperbarui', type: 'success' });
+        } catch (error: any) {
+            const { title, message } = translateError(error);
+            showAlert({ title, message, type: 'error' });
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -117,17 +127,24 @@ export default function ItemsView({ items, rooms, categories }: ItemsViewProps) 
                     // Generate QR code string (using timestamp + random for uniqueness)
                     const qrCode = `ITEM-${Date.now()}-${Math.random().toString(36).substring(7).toUpperCase()}`;
 
-                    await createItem({
-                        name,
-                        categoryId,
-                        roomId,
-                        description: description || undefined,
-                        qrCode,
-                        status: 'Tersedia'
-                    });
-                    setIsSubmitting(false);
-                    const form = document.getElementById('add-item-form') as HTMLFormElement;
-                    form?.reset();
+                    try {
+                        await createItem({
+                            name,
+                            categoryId,
+                            roomId,
+                            description: description || undefined,
+                            qrCode,
+                            status: 'Tersedia'
+                        });
+                        const form = document.getElementById('add-item-form') as HTMLFormElement;
+                        form?.reset();
+                        showAlert({ title: 'Berhasil', message: 'Alat berhasil ditambahkan', type: 'success' });
+                    } catch (error: any) {
+                        const { title, message } = translateError(error);
+                        showAlert({ title, message, type: 'error' });
+                    } finally {
+                        setIsSubmitting(false);
+                    }
                 }} id="add-item-form" className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                         <label className="block text-sm font-medium text-gray-700 mb-1">Nama Alat</label>
@@ -271,12 +288,17 @@ export default function ItemsView({ items, rooms, categories }: ItemsViewProps) 
                                             <select
                                                 defaultValue={item.status || 'Tersedia'}
                                                 onChange={async (e) => {
+                                                try {
                                                     const { updateItemStatus } = await import('@/features/inventory/actions');
                                                     await updateItemStatus(
                                                         item.id,
                                                         e.target.value as 'Tersedia' | 'Maintenance'
                                                     );
-                                                }}
+                                                } catch (error: any) {
+                                                    const { title, message } = translateError(error);
+                                                    showAlert({ title, message, type: 'error' });
+                                                }
+                                            }}
                                                 className={`text-xs font-medium px-2 py-1 rounded border-0 cursor-pointer ${item.status === 'Tersedia' ? 'bg-green-50 text-green-700' :
                                                     'bg-gray-50 text-gray-700'
                                                     }`}
@@ -299,8 +321,20 @@ export default function ItemsView({ items, rooms, categories }: ItemsViewProps) 
                                                 <Edit className="w-4 h-4" />
                                             </button>
                                             <form action={async () => {
-                                                if (confirm('Apakah Anda yakin ingin menghapus alat ini?')) {
-                                                    await deleteItem(item.id);
+                                                const confirmed = await showConfirm({
+                                                    title: 'Hapus Alat',
+                                                    message: 'Apakah Anda yakin ingin menghapus alat ini?',
+                                                    type: 'danger',
+                                                    confirmText: 'Hapus'
+                                                });
+                                                if (confirmed) {
+                                                    try {
+                                                        await deleteItem(item.id);
+                                                        showAlert({ title: 'Berhasil', message: 'Alat berhasil dihapus', type: 'success' });
+                                                    } catch (error: any) {
+                                                        const { title, message } = translateError(error);
+                                                        showAlert({ title, message, type: 'error' });
+                                                    }
                                                 }
                                             }}>
                                                 <button

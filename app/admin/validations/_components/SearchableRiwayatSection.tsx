@@ -4,6 +4,8 @@ import { useState, useMemo, useTransition } from 'react';
 import { User, Box, Search, X, Trash2 } from 'lucide-react';
 import { deleteLoan } from '@/features/loans/actions';
 import { deleteBooking } from '@/features/bookings/actions';
+import { useAlert } from '@/components/providers/AlertProvider';
+import { translateError } from '@/lib/error';
 
 interface CompletedLoan {
     id: number;
@@ -35,6 +37,7 @@ interface SearchableRiwayatProps {
 }
 
 export default function SearchableRiwayatSection({ completedLoans, completedBookings }: SearchableRiwayatProps) {
+    const { showConfirm, showAlert } = useAlert();
     const [searchQuery, setSearchQuery] = useState('');
     const [isPending, startTransition] = useTransition();
 
@@ -58,18 +61,42 @@ export default function SearchableRiwayatSection({ completedLoans, completedBook
         );
     }, [completedBookings, searchQuery]);
 
-    const handleDeleteLoan = (loanId: number) => {
-        if (confirm('Apakah Anda yakin ingin menghapus riwayat peminjaman ini?')) {
+    const handleDeleteLoan = async (loanId: number) => {
+        const confirmed = await showConfirm({
+            title: 'Hapus Riwayat',
+            message: 'Apakah Anda yakin ingin menghapus riwayat peminjaman ini?',
+            type: 'danger',
+            confirmText: 'Hapus'
+        });
+        if (confirmed) {
             startTransition(async () => {
-                await deleteLoan(loanId);
+                try {
+                    await deleteLoan(loanId);
+                    showAlert({ title: 'Berhasil', message: 'Riwayat peminjaman dihapus', type: 'success' });
+                } catch (error: any) {
+                    const { title, message } = translateError(error, 'Gagal menghapus riwayat');
+                    showAlert({ title, message, type: 'error' });
+                }
             });
         }
     };
 
-    const handleDeleteBooking = (bookingId: number) => {
-        if (confirm('Apakah Anda yakin ingin menghapus riwayat booking ini?')) {
+    const handleDeleteBooking = async (bookingId: number) => {
+        const confirmed = await showConfirm({
+            title: 'Hapus Riwayat',
+            message: 'Apakah Anda yakin ingin menghapus riwayat booking ini?',
+            type: 'danger',
+            confirmText: 'Hapus'
+        });
+        if (confirmed) {
             startTransition(async () => {
-                await deleteBooking(bookingId);
+                try {
+                    await deleteBooking(bookingId);
+                    showAlert({ title: 'Berhasil', message: 'Riwayat booking dihapus', type: 'success' });
+                } catch (error: any) {
+                    const { title, message } = translateError(error, 'Gagal menghapus riwayat');
+                    showAlert({ title, message, type: 'error' });
+                }
             });
         }
     };

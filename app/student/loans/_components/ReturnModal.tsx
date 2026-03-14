@@ -3,6 +3,7 @@
 import { useState, useTransition } from 'react';
 import { Upload, X, Camera, Check } from 'lucide-react';
 import { requestItemReturn } from '@/features/loans/actions';
+import { useAlert } from '@/components/providers/AlertProvider';
 
 interface ReturnModalProps {
     loanId: number;
@@ -11,6 +12,7 @@ interface ReturnModalProps {
 }
 
 export default function ReturnModal({ loanId, itemName, onClose }: ReturnModalProps) {
+    const { showAlert } = useAlert();
     const [isPending, startTransition] = useTransition();
     const [photoFile, setPhotoFile] = useState<File | null>(null);
     const [photoPreview, setPhotoPreview] = useState<string | null>(null);
@@ -20,7 +22,7 @@ export default function ReturnModal({ loanId, itemName, onClose }: ReturnModalPr
         const file = e.target.files?.[0];
         if (file) {
             if (file.size > 2 * 1024 * 1024) {
-                alert('Ukuran file maksimal 2MB');
+                showAlert({ title: 'Peringatan', message: 'Ukuran file maksimal 2MB', type: 'error' });
                 e.target.value = '';
                 return;
             }
@@ -58,7 +60,7 @@ export default function ReturnModal({ loanId, itemName, onClose }: ReturnModalPr
 
             const res = await requestItemReturn(loanId, photoPath);
             if (res?.error) {
-                alert(res.error);
+                showAlert({ title: 'Gagal', message: res.error, type: 'error' });
             } else {
                 onClose();
             }

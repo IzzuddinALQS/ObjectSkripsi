@@ -3,6 +3,8 @@
 import { useState, useTransition } from 'react';
 import { Box, User, CheckCircle, XCircle, Eye, X, ExternalLink } from 'lucide-react';
 import { updateLoanStatus, adminDirectReturn } from '@/features/loans/actions';
+import { useAlert } from '@/components/providers/AlertProvider';
+import { translateError } from '@/lib/error';
 
 interface Loan {
     id: number;
@@ -27,6 +29,7 @@ interface ActiveLoansTableProps {
 }
 
 export default function ActiveLoansTable({ loans, sessionUserId }: ActiveLoansTableProps) {
+    const { showConfirm, showAlert } = useAlert();
     const [isPending, startTransition] = useTransition();
     const [selectedLoan, setSelectedLoan] = useState<Loan | null>(null);
 
@@ -36,17 +39,41 @@ export default function ActiveLoansTable({ loans, sessionUserId }: ActiveLoansTa
         });
     };
 
-    const handleReject = (loanId: number) => {
-        if (!confirm('Tolak permintaan pinjaman ini?')) return;
+    const handleReject = async (loanId: number) => {
+        const confirmed = await showConfirm({
+            title: 'Tolak Peminjaman',
+            message: 'Tolak permintaan pinjaman ini?',
+            type: 'danger',
+            confirmText: 'Tolak'
+        });
+        if (!confirmed) return;
         startTransition(async () => {
-            await updateLoanStatus(loanId, 'Ditolak', sessionUserId);
+            try {
+                await updateLoanStatus(loanId, 'Ditolak', sessionUserId);
+                showAlert({ title: 'Berhasil', message: 'Permintaan pinjaman ditolak', type: 'success' });
+            } catch (error: any) {
+                const { title, message } = translateError(error, 'Gagal menolak peminjaman');
+                showAlert({ title, message, type: 'error' });
+            }
         });
     };
 
-    const handleReturn = (loanId: number) => {
-        if (!confirm('Konfirmasi pengembalian alat?')) return;
+    const handleReturn = async (loanId: number) => {
+        const confirmed = await showConfirm({
+            title: 'Konfirmasi Pengembalian',
+            message: 'Konfirmasi pengembalian alat?',
+            type: 'warning',
+            confirmText: 'Konfirmasi'
+        });
+        if (!confirmed) return;
         startTransition(async () => {
-            await adminDirectReturn(loanId, sessionUserId);
+            try {
+                await adminDirectReturn(loanId, sessionUserId);
+                showAlert({ title: 'Berhasil', message: 'Alat berhasil dikembalikan', type: 'success' });
+            } catch (error: any) {
+                const { title, message } = translateError(error, 'Gagal memproses pengembalian');
+                showAlert({ title, message, type: 'error' });
+            }
         });
     };
 

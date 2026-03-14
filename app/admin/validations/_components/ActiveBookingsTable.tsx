@@ -3,6 +3,8 @@
 import { useState, useTransition } from 'react';
 import { MapPin, User, CheckCircle, XCircle, Eye, X, ExternalLink } from 'lucide-react';
 import { updateBookingStatus } from '@/features/bookings/actions';
+import { useAlert } from '@/components/providers/AlertProvider';
+import { translateError } from '@/lib/error';
 
 interface Booking {
     id: number;
@@ -24,6 +26,7 @@ interface ActiveBookingsTableProps {
 }
 
 export default function ActiveBookingsTable({ bookings, sessionUserId }: ActiveBookingsTableProps) {
+    const { showConfirm, showAlert } = useAlert();
     const [isPending, startTransition] = useTransition();
     const [selectedBooking, setSelectedBooking] = useState<Booking | null>(null);
 
@@ -33,10 +36,22 @@ export default function ActiveBookingsTable({ bookings, sessionUserId }: ActiveB
         });
     };
 
-    const handleReject = (bookingId: number) => {
-        if (!confirm('Tolak permintaan booking ini?')) return;
+    const handleReject = async (bookingId: number) => {
+        const confirmed = await showConfirm({
+            title: 'Tolak Booking',
+            message: 'Tolak permintaan booking ini?',
+            type: 'danger',
+            confirmText: 'Tolak'
+        });
+        if (!confirmed) return;
         startTransition(async () => {
-            await updateBookingStatus(bookingId, 'Ditolak', sessionUserId);
+            try {
+                await updateBookingStatus(bookingId, 'Ditolak', sessionUserId);
+                showAlert({ title: 'Berhasil', message: 'Permintaan booking ditolak', type: 'success' });
+            } catch (error: any) {
+                const { title, message } = translateError(error, 'Gagal menolak booking');
+                showAlert({ title, message, type: 'error' });
+            }
         });
     };
 

@@ -3,6 +3,8 @@
 import { useState } from 'react';
 import { Plus, X, Loader2, Upload } from 'lucide-react';
 import { adminManualBooking } from '@/features/bookings/actions';
+import { useAlert } from '@/components/providers/AlertProvider';
+import { translateError } from '@/lib/error';
 
 const PURPOSE_TEMPLATES = [
     'Penelitian/Riset',
@@ -28,6 +30,7 @@ interface ManualBookingButtonProps {
 }
 
 export default function ManualBookingButton({ rooms, lecturers, adminId }: ManualBookingButtonProps) {
+    const { showAlert } = useAlert();
     const [isOpen, setIsOpen] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -45,12 +48,12 @@ export default function ManualBookingButton({ rooms, lecturers, adminId }: Manua
         if (e.target.files && e.target.files[0]) {
             const file = e.target.files[0];
             if (file.type !== 'application/pdf') {
-                alert('Surat permohonan harus dalam format PDF.');
+                showAlert({ title: 'Format Tidak Valid', message: 'Surat permohonan harus dalam format PDF.', type: 'error' });
                 e.target.value = '';
                 return;
             }
             if (file.size > 2 * 1024 * 1024) {
-                alert('Ukuran file maksimal 2MB');
+                showAlert({ title: 'Ukuran Terlalu Besar', message: 'Ukuran file maksimal 2MB', type: 'error' });
                 e.target.value = '';
                 return;
             }
@@ -111,8 +114,10 @@ export default function ManualBookingButton({ rooms, lecturers, adminId }: Manua
             setCustomOrganisasi('');
             setJumlahPeserta(1);
             setSuratFile(null);
+            showAlert({ title: 'Berhasil', message: 'Booking manual berhasil diproses', type: 'success' });
         } catch (error: any) {
-            alert(error.message || 'Gagal memproses booking');
+            const { title, message } = translateError(error, 'Gagal memproses booking');
+            showAlert({ title, message, type: 'error' });
         } finally {
             setIsSubmitting(false);
         }

@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { Box, MapPin, Tag, Calendar, Clock, Building2, GraduationCap, Upload, Check } from 'lucide-react';
 import { createLoanRequest, getLecturersForLoan } from '@/features/loans/actions';
 import { useRouter } from 'next/navigation';
+import { useAlert } from '@/components/providers/AlertProvider';
 import TimeSelect from '@/components/shared/TimeSelect';
 
 // Organization options
@@ -47,6 +48,7 @@ interface Lecturer {
 }
 
 export default function ItemCard({ item, userId, variant = 'grid', role = 'student', initialOpen = false }: { item: any; userId: string; variant?: 'grid' | 'list', role?: 'student' | 'lecturer', initialOpen?: boolean }) {
+    const { showAlert } = useAlert();
     const [showModal, setShowModal] = useState(initialOpen);
     const [loading, setLoading] = useState(false);
     const router = useRouter();
@@ -91,13 +93,13 @@ export default function ItemCard({ item, userId, variant = 'grid', role = 'stude
         if (file) {
             // Only allow PDF for surat izin
             if (file.type !== 'application/pdf') {
-                alert('Surat izin harus dalam format PDF');
+                showAlert({ title: 'Format Tidak Valid', message: 'Surat izin harus dalam format PDF', type: 'error' });
                 e.target.value = '';
                 return;
             }
             // Validate file size (2MB max)
             if (file.size > 2 * 1024 * 1024) {
-                alert('Ukuran file maksimal 2MB');
+                showAlert({ title: 'Ukuran Terlalu Besar', message: 'Ukuran file maksimal 2MB', type: 'error' });
                 e.target.value = '';
                 return;
             }
@@ -170,7 +172,7 @@ export default function ItemCard({ item, userId, variant = 'grid', role = 'stude
             });
 
             if (res?.error) {
-                alert(res.error);
+                showAlert({ title: 'Gagal', message: res.error, type: 'error' });
                 return;
             }
 
@@ -180,14 +182,14 @@ export default function ItemCard({ item, userId, variant = 'grid', role = 'stude
                 : suratIzinPath && !isVerified
                     ? 'Permintaan peminjaman berhasil dikirim! Surat izin tidak dapat diverifikasi otomatis dan akan divalidasi manual oleh admin.'
                     : 'Permintaan peminjaman berhasil dikirim! Mohon tunggu validasi dari admin.';
-            alert(statusMessage);
+            await showAlert({ title: 'Berhasil', message: statusMessage, type: 'success' });
 
             setShowModal(false);
             resetForm();
             router.refresh();
         } catch (error) {
             console.error(error);
-            alert('Gagal mengirim permintaan');
+            showAlert({ title: 'Error', message: 'Gagal mengirim permintaan', type: 'error' });
         } finally {
             setLoading(false);
         }

@@ -3,6 +3,8 @@
 import { useState } from 'react';
 import { Plus, Pencil, Trash2, Image as ImageIcon, X, Loader2, Upload } from 'lucide-react';
 import { addHeroPhoto, updateHeroPhoto, deleteHeroPhoto } from '@/features/hero-photos/actions';
+import { useAlert } from '@/components/providers/AlertProvider';
+import { translateError } from '@/lib/error';
 
 interface HeroPhoto {
     id: number;
@@ -17,6 +19,7 @@ interface HeroPhoto {
 import HeroFocalPicker from './HeroFocalPicker';
 
 export default function HeroPhotoManager({ initialPhotos }: { initialPhotos: HeroPhoto[] }) {
+    const { showAlert, showConfirm } = useAlert();
     const [photos, setPhotos] = useState(initialPhotos);
     const [editingPhoto, setEditingPhoto] = useState<HeroPhoto | null>(null);
     const [isLoading, setIsLoading] = useState(false);
@@ -59,7 +62,7 @@ export default function HeroPhotoManager({ initialPhotos }: { initialPhotos: Her
         const file = e.target.files?.[0];
         if (file) {
             if (file.size > 2 * 1024 * 1024) {
-                alert('Ukuran file maksimal 2MB');
+                showAlert({ title: 'Ukuran Terlalu Besar', message: 'Ukuran file maksimal 2MB', type: 'error' });
                 e.target.value = '';
                 return;
             }
@@ -90,29 +93,39 @@ export default function HeroPhotoManager({ initialPhotos }: { initialPhotos: Her
                 await updateHeroPhoto(editingPhoto.id, data);
             } else {
                 if (!selectedFile) {
-                    alert('Mohon pilih foto terlebih dahulu');
+                    showAlert({ title: 'Peringatan', message: 'Mohon pilih foto terlebih dahulu', type: 'warning' });
                     setIsLoading(false);
                     return;
                 }
                 await addHeroPhoto(data);
             }
             window.location.reload();
-        } catch (error) {
+        } catch (error: any) {
             console.error('Failed to save photo:', error);
-            alert('Gagal menyimpan foto');
+            const { title, message } = translateError(error, 'Gagal menyimpan foto');
+            showAlert({ title, message, type: 'error' });
         } finally {
             setIsLoading(false);
         }
     };
 
     const handleDelete = async (id: number) => {
-        if (!confirm('Apakah Anda yakin ingin menghapus foto ini?')) return;
+        const confirmed = await showConfirm({
+            title: 'Hapus Foto',
+            message: 'Apakah Anda yakin ingin menghapus foto ini?',
+            type: 'danger',
+            confirmText: 'Hapus'
+        });
+        if (!confirmed) return;
+        
         try {
             await deleteHeroPhoto(id);
             setPhotos(photos.filter(p => p.id !== id));
-        } catch (error) {
+            await showAlert({ title: 'Berhasil', message: 'Foto berhasil dihapus', type: 'success' });
+        } catch (error: any) {
             console.error('Failed to delete photo:', error);
-            alert('Gagal menghapus foto');
+            const { title, message } = translateError(error, 'Gagal menghapus foto');
+            showAlert({ title, message, type: 'error' });
         }
     };
 

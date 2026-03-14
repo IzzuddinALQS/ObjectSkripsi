@@ -3,6 +3,8 @@
 import { useState } from 'react';
 import { Plus, X, Loader2, Search, Upload } from 'lucide-react';
 import { adminManualLoan } from '@/features/loans/actions';
+import { useAlert } from '@/components/providers/AlertProvider';
+import { translateError } from '@/lib/error';
 
 const PURPOSE_TEMPLATES = [
     'Praktikum dan Tugas Akhir',
@@ -27,6 +29,7 @@ interface ManualLoanButtonProps {
 }
 
 export default function ManualLoanButton({ items, lecturers, adminId }: ManualLoanButtonProps) {
+    const { showAlert } = useAlert();
     const [isOpen, setIsOpen] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [selectedItemIds, setSelectedItemIds] = useState<number[]>([]);
@@ -50,12 +53,12 @@ export default function ManualLoanButton({ items, lecturers, adminId }: ManualLo
         if (e.target.files && e.target.files[0]) {
             const file = e.target.files[0];
             if (file.type !== 'application/pdf') {
-                alert('Surat izin harus dalam format PDF.');
+                showAlert({ title: 'Format Tidak Valid', message: 'Surat izin harus dalam format PDF.', type: 'error' });
                 e.target.value = '';
                 return;
             }
             if (file.size > 2 * 1024 * 1024) {
-                alert('Ukuran file maksimal 2MB');
+                showAlert({ title: 'Ukuran Terlalu Besar', message: 'Ukuran file maksimal 2MB', type: 'error' });
                 e.target.value = '';
                 return;
             }
@@ -66,7 +69,7 @@ export default function ManualLoanButton({ items, lecturers, adminId }: ManualLo
     async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
         if (selectedItemIds.length === 0) {
-            alert('Pilih minimal 1 alat');
+            showAlert({ title: 'Peringatan', message: 'Pilih minimal 1 alat', type: 'warning' });
             return;
         }
 
@@ -124,8 +127,10 @@ export default function ManualLoanButton({ items, lecturers, adminId }: ManualLo
             setCustomOrganisasi('');
             setSuratFile(null);
             setSelectedItemIds([]);
+            showAlert({ title: 'Berhasil', message: 'Peminjaman manual berhasil diproses', type: 'success' });
         } catch (error: any) {
-            alert(error.message || 'Gagal memproses peminjaman');
+            const { title, message } = translateError(error, 'Gagal memproses peminjaman');
+            showAlert({ title, message, type: 'error' });
         } finally {
             setIsSubmitting(false);
         }
