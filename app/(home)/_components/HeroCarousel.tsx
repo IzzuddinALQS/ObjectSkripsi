@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { ChevronLeft, ChevronRight, Image as ImageIcon } from 'lucide-react';
 
 interface HeroPhoto {
@@ -57,11 +58,15 @@ export default function HeroCarousel({ photos }: { photos: HeroPhoto[] }) {
             {photos.map((photo, index) => {
                 const contentNode = (
                     <>
-                        <img
+                        <Image
                             src={photo.imageUrl}
                             alt={photo.title}
-                            className="absolute inset-0 w-full h-full object-cover z-0"
+                            fill
+                            unoptimized
+                            priority={index === 0}
+                            className="object-cover z-0"
                             style={{ objectPosition: `${photo.focalX || 50}% ${photo.focalY || 50}%` }}
+                            sizes="100vw"
                         />
                         {/* Gradient Overlay */}
                         <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent z-10 pointer-events-none" />
