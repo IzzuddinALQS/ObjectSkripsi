@@ -3,6 +3,7 @@
 import { PublicationService, PublicationFilters } from './service';
 import { revalidatePath } from 'next/cache';
 import { requirePermission, requireAnyPermission } from '@/lib/auth';
+import { deleteFile } from '@/lib/upload';
 
 // Admin/Dosen creates and publishes directly
 export async function createPublication(data: {
@@ -37,6 +38,15 @@ export async function updatePublication(id: number, data: {
     publishDay?: number | null;
 }) {
     await requireAnyPermission(['publications.manage', 'dashboard.lecturer']);
+
+    // Delete old file if a new filePath is provided
+    if (data.filePath) {
+        const oldPub = await PublicationService.getById(id);
+        if (oldPub?.filePath && oldPub.filePath !== data.filePath) {
+            await deleteFile(oldPub.filePath);
+        }
+    }
+
     await PublicationService.update(id, data);
     revalidatePath('/publications');
     revalidatePath('/admin/publications');
@@ -70,6 +80,13 @@ export async function getPublicationYears() {
 
 export async function deletePublication(id: number) {
     await requireAnyPermission(['publications.manage', 'dashboard.lecturer']);
+
+    // Delete file from disk before DB delete
+    const pub = await PublicationService.getById(id);
+    if (pub?.filePath) {
+        await deleteFile(pub.filePath);
+    }
+
     await PublicationService.delete(id);
     revalidatePath('/publications');
     revalidatePath('/admin/publications');

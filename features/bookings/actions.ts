@@ -3,6 +3,7 @@
 import { BookingService } from './service';
 import { revalidatePath } from 'next/cache';
 import { requirePermission } from '@/lib/auth';
+import { deleteFile } from '@/lib/upload';
 
 /**
  * Get all rooms
@@ -75,6 +76,16 @@ export async function getBookingRequests(status?: string, startDate?: Date, endD
  */
 export async function deleteBooking(id: number) {
     await requirePermission('bookings.manage');
+
+    // Delete suratPermohonan file from disk
+    const { db } = await import('@/db');
+    const { roomBookings } = await import('@/db/schema');
+    const { eq } = await import('drizzle-orm');
+    const booking = await db.select().from(roomBookings).where(eq(roomBookings.id, id)).limit(1);
+    if (booking[0]?.suratPermohonan) {
+        await deleteFile(booking[0].suratPermohonan);
+    }
+
     await BookingService.delete(id);
     revalidatePath('/admin/bookings');
 }

@@ -8,6 +8,7 @@ import { writeFile } from 'fs/promises';
 import { join } from 'path';
 import { mkdir } from 'fs/promises';
 import { requirePermission } from '@/lib/auth';
+import { deleteFile } from '@/lib/upload';
 
 const MAX_FILE_SIZE = 2 * 1024 * 1024; // 2MB
 
@@ -98,6 +99,9 @@ export async function updateGovernanceDoc(id: number, formData: FormData) {
         const title = formData.get('title') as string;
         const type = formData.get('type') as 'SOP' | 'LPJ Bulanan';
 
+        // Fetch old record to delete old files when replaced
+        const oldDoc = await db.select().from(governanceDocs).where(eq(governanceDocs.id, id)).limit(1);
+
         const updateData: any = {
             title,
             type,
@@ -111,6 +115,10 @@ export async function updateGovernanceDoc(id: number, formData: FormData) {
             if (file.size > MAX_FILE_SIZE) {
                 return { success: false, error: 'Ukuran file dokumen maksimal 2MB' };
             }
+            // Delete old file from disk
+            if (oldDoc[0]?.filePath) {
+                await deleteFile(oldDoc[0].filePath);
+            }
             const bytes = await file.arrayBuffer();
             const buffer = Buffer.from(bytes);
             const filename = `${uniqueSuffix}-${file.name.replace(/[^a-zA-Z0-9.-]/g, '_')}`;
@@ -122,6 +130,10 @@ export async function updateGovernanceDoc(id: number, formData: FormData) {
         if (coverFile && coverFile.size > 0) {
             if (coverFile.size > MAX_FILE_SIZE) {
                 return { success: false, error: 'Ukuran file cover maksimal 2MB' };
+            }
+            // Delete old cover from disk
+            if (oldDoc[0]?.coverPath) {
+                await deleteFile(oldDoc[0].coverPath);
             }
             const coverBytes = await coverFile.arrayBuffer();
             const coverBuffer = Buffer.from(coverBytes);
@@ -146,6 +158,16 @@ export async function updateGovernanceDoc(id: number, formData: FormData) {
 export async function deleteGovernanceDoc(id: number) {
     try {
         await requirePermission('governance.manage');
+
+        // Fetch record to get file paths before deleting
+        const doc = await db.select().from(governanceDocs).where(eq(governanceDocs.id, id)).limit(1);
+        if (doc[0]?.filePath) {
+            await deleteFile(doc[0].filePath);
+        }
+        if (doc[0]?.coverPath) {
+            await deleteFile(doc[0].coverPath);
+        }
+
         await db.delete(governanceDocs).where(eq(governanceDocs.id, id));
         revalidatePath('/admin/governance');
         return { success: true };

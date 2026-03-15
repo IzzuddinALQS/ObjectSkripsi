@@ -6,6 +6,7 @@ import { db } from '@/db';
 import { users } from '@/db/schema';
 import { eq } from 'drizzle-orm';
 import { requirePermission } from '@/lib/auth';
+import { deleteFile } from '@/lib/upload';
 
 /**
  * Get available items for borrowing
@@ -77,6 +78,17 @@ export async function updateLoanStatus(
 export async function deleteLoan(id: number) {
     try {
         await requirePermission('loans.manage');
+
+        // Delete uploaded files (suratIzin, returnPhoto) from disk
+        const { itemLoans } = await import('@/db/schema');
+        const loan = await db.select().from(itemLoans).where(eq(itemLoans.id, id)).limit(1);
+        if (loan[0]?.suratIzin) {
+            await deleteFile(loan[0].suratIzin);
+        }
+        if (loan[0]?.returnPhoto) {
+            await deleteFile(loan[0].returnPhoto);
+        }
+
         await LoanService.delete(id);
         revalidatePath('/admin/loans');
         revalidatePath('/admin/inventory');

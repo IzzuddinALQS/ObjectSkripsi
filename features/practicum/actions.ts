@@ -3,6 +3,7 @@
 import { PracticumService } from './service';
 import { revalidatePath } from 'next/cache';
 import { requirePermission } from '@/lib/auth';
+import { deleteFile } from '@/lib/upload';
 import type { CreateModuleInput, UpdateModuleInput } from './types';
 
 /**
@@ -56,6 +57,15 @@ export async function createModule(data: CreateModuleInput) {
  */
 export async function updateModule(id: number, data: UpdateModuleInput) {
     await requirePermission('practicum.manage');
+
+    // Delete old file if a new filePath is provided
+    if (data.filePath) {
+        const oldModule = await PracticumService.getById(id);
+        if (oldModule?.filePath && oldModule.filePath !== data.filePath) {
+            await deleteFile(oldModule.filePath);
+        }
+    }
+
     await PracticumService.update(id, data);
     revalidatePath('/admin/practicum');
     revalidatePath('/lecturer/practicum');
@@ -67,6 +77,13 @@ export async function updateModule(id: number, data: UpdateModuleInput) {
  */
 export async function deleteModule(id: number) {
     await requirePermission('practicum.manage');
+
+    // Delete file from disk before DB delete
+    const mod = await PracticumService.getById(id);
+    if (mod?.filePath) {
+        await deleteFile(mod.filePath);
+    }
+
     await PracticumService.delete(id);
     revalidatePath('/admin/practicum');
     revalidatePath('/lecturer/practicum');
