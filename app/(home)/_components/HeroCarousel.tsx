@@ -55,19 +55,19 @@ export default function HeroCarousel({ photos }: { photos: HeroPhoto[] }) {
     return (
         <div className="w-full aspect-[16/9] sm:aspect-[21/9] relative bg-gray-900 flex items-center justify-center overflow-hidden rounded-2xl shadow-lg group">
             {photos.map((photo, index) => {
-                const Content = () => (
+                const contentNode = (
                     <>
-                        {/* Image with Gradient Overlay */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10" />
                         <img
                             src={photo.imageUrl}
                             alt={photo.title}
-                            className="w-full h-full object-cover"
+                            className="absolute inset-0 w-full h-full object-cover z-0"
                             style={{ objectPosition: `${photo.focalX || 50}% ${photo.focalY || 50}%` }}
                         />
+                        {/* Gradient Overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent z-10 pointer-events-none" />
 
                         {/* Content */}
-                        <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 lg:p-8 z-20 transform transition-transform duration-500 translate-y-0">
+                        <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 lg:p-8 z-20 pointer-events-none">
                             <h2 className="text-lg sm:text-2xl lg:text-3xl font-bold text-white mb-1 sm:mb-2 drop-shadow-md">{photo.title}</h2>
                             {photo.description && (
                                 <p className="text-white/90 text-sm sm:text-base lg:text-lg max-w-2xl drop-shadow-sm line-clamp-2">{photo.description}</p>
@@ -84,11 +84,11 @@ export default function HeroCarousel({ photos }: { photos: HeroPhoto[] }) {
                     >
                         {photo.link ? (
                             <a href={photo.link} target="_blank" rel="noopener noreferrer" className="block w-full h-full cursor-pointer">
-                                <Content />
+                                {contentNode}
                             </a>
                         ) : (
-                            <div className="w-full h-full">
-                                <Content />
+                            <div className="w-full h-full relative">
+                                {contentNode}
                             </div>
                         )}
                     </div>
