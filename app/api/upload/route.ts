@@ -58,8 +58,8 @@ export async function POST(request: NextRequest) {
         const buffer = Buffer.from(bytes);
         await writeFile(filepath, buffer);
 
-        // Return public URL path
-        const publicPath = `/uploads/${folder}/${filename}`;
+        // Return dynamic URL path
+        const publicPath = `/api/file/${folder}/${filename}`;
 
         // Run document verification if requested
         if (verify && docType) {

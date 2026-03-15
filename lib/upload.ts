@@ -24,15 +24,15 @@ export async function saveFile(file: File): Promise<string> {
     await mkdir(UPLOAD_DIR, { recursive: true });
     await writeFile(filepath, buffer);
 
-    // Return public URL path
-    return `/uploads/${filename}`;
+    // Return dynamic API URL path instead of static /uploads pattern
+    return `/api/file/${filename}`;
 }
 
 export async function deleteFile(filePath: string): Promise<void> {
     try {
-        // filePath looks like "/uploads/governance/file.pdf" or "/uploads/file.pdf"
-        // Strip the leading "/uploads/" prefix and resolve from UPLOAD_DIR
-        const relativePath = filePath.replace(/^\/uploads\//, '');
+        // filePath looks like "/api/file/governance/file.pdf" or "/api/file/file.pdf"
+        // Strip the leading "/api/file/" prefix and resolve from UPLOAD_DIR
+        const relativePath = filePath.replace(/^\/api\/file\//, '');
         const filepath = path.join(UPLOAD_DIR, relativePath);
         await unlink(filepath);
     } catch (error) {
