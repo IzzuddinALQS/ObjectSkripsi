@@ -91,6 +91,7 @@ export async function deletePublication(id: number) {
     revalidatePath('/publications');
     revalidatePath('/admin/publications');
     revalidatePath('/lecturer/publications');
+    revalidatePath('/'); // Invalidate homepage "Top Publications" cache
 }
 
 export async function incrementViewCount(id: number) {
