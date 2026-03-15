@@ -1,8 +1,8 @@
 'use client';
 
 import { useState, useTransition } from 'react';
-import { MapPin, User, CheckCircle, XCircle, Eye, X, ExternalLink, LayoutGrid, List } from 'lucide-react';
-import { updateBookingStatus } from '@/features/bookings/actions';
+import { MapPin, User, CheckCircle, XCircle, Eye, X, ExternalLink, LayoutGrid, List, Trash2 } from 'lucide-react';
+import { updateBookingStatus, deleteBooking } from '@/features/bookings/actions';
 import { useAlert } from '@/components/providers/AlertProvider';
 import { translateError } from '@/lib/error';
 import RejectReasonModal from '@/components/ui/RejectReasonModal';
@@ -27,7 +27,7 @@ interface ActiveBookingsTableProps {
 }
 
 export default function ActiveBookingsTable({ bookings, sessionUserId }: ActiveBookingsTableProps) {
-    const { showAlert } = useAlert();
+    const { showAlert, showConfirm } = useAlert();
     const [isPending, startTransition] = useTransition();
     const [selectedBooking, setSelectedBooking] = useState<Booking | null>(null);
     const [rejectModalOpen, setRejectModalOpen] = useState(false);
@@ -65,6 +65,26 @@ export default function ActiveBookingsTable({ bookings, sessionUserId }: ActiveB
                 showAlert({ title, message, type: 'error' });
             }
         });
+    };
+
+    const handleDelete = async (bookingId: number) => {
+        const confirmed = await showConfirm({
+            title: 'Hapus Booking',
+            message: 'Apakah Anda yakin ingin menghapus booking ini? Data tidak dapat dikembalikan.',
+            type: 'danger',
+            confirmText: 'Hapus'
+        });
+        if (confirmed) {
+            startTransition(async () => {
+                try {
+                    await deleteBooking(bookingId);
+                    showAlert({ title: 'Berhasil', message: 'Booking berhasil dihapus', type: 'success' });
+                } catch (error: any) {
+                    const { title, message } = translateError(error, 'Gagal menghapus booking');
+                    showAlert({ title, message, type: 'error' });
+                }
+            });
+        }
     };
 
     return (
@@ -166,6 +186,14 @@ export default function ActiveBookingsTable({ bookings, sessionUserId }: ActiveB
                                                 </button>
                                             </>
                                         )}
+                                        <button
+                                            onClick={() => handleDelete(booking.id)}
+                                            disabled={isPending}
+                                            className="text-red-500 hover:text-red-700 p-1.5 hover:bg-red-50 rounded-lg transition-colors disabled:opacity-50"
+                                            title="Hapus"
+                                        >
+                                            <Trash2 className="w-4 h-4" />
+                                        </button>
                                     </div>
                                 </td>
                             </tr>
@@ -246,6 +274,13 @@ export default function ActiveBookingsTable({ bookings, sessionUserId }: ActiveB
                                             </button>
                                         </>
                                     )}
+                                    <button
+                                        onClick={() => handleDelete(booking.id)}
+                                        disabled={isPending}
+                                        className="flex justify-center items-center gap-1 text-red-500 bg-red-50 hover:bg-red-100 py-2 px-3 rounded-lg text-xs font-semibold transition-colors disabled:opacity-50"
+                                    >
+                                        <Trash2 className="w-3.5 h-3.5" />
+                                    </button>
                                 </div>
                             </div>
                         ))}
