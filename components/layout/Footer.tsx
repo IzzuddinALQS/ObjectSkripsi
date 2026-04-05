@@ -14,22 +14,22 @@ export default function Footer() {
                     {/* Kolom 1: Identitas & Deskripsi */}
                     <div className="space-y-4">
                         <div className="flex items-center gap-3">
-                            <div className="w-40 h-15 rounded-lg overflow-hidden border border-white/20 bg-white">
+                            <div className="w-12 h-12 rounded-lg overflow-hidden border border-white/20 bg-white flex items-center justify-center p-1">
                                 <Image
-                                    src="/lab-informatika-logo.png"
+                                    src="/fst-icon.png"
                                     alt="Logo Lab Informatika"
-                                    width={40}
-                                    height={40}
-                                    className="object-cover w-full h-full"
+                                    width={48}
+                                    height={48}
+                                    className="object-contain w-full h-full"
                                 />
                             </div>
                             <div>
-                                <h3 className="font-bold text-xl leading-none">Lab Informatika</h3>
+                                <h3 className="font-bold text-xl leading-none">Laboratorium Elektro</h3>
                                 <span className="text-xs text-blue-200 uppercase tracking-wider">Universitas Al Azhar Indonesia</span>
                             </div>
                         </div>
                         <p className="text-blue-100 text-sm leading-relaxed max-w-xs">
-                            Pusat pengembangan keahlian praktis, riset, dan inovasi teknologi bagi mahasiswa Informatika UAI. Melayani peminjaman alat, ruang lab, dan dukungan praktikum.
+                            Pusat pengembangan keahlian praktis, riset, dan inovasi teknologi bagi mahasiswa Elektro UAI. Melayani peminjaman alat, ruang lab, dan dukungan praktikum.
                         </p>
                         <div className="flex gap-4 pt-2">
                             {/* Social Icons: Hover effect menggunakan warna Aksen #F59E0B */}
@@ -91,8 +91,8 @@ export default function Footer() {
                             </li>
                             <li className="flex items-center gap-3">
                                 <Mail className="w-5 h-5 text-[#F59E0B] shrink-0" />
-                                <a href="mailto:lab.informatika@uai.ac.id" className="hover:text-white hover:underline decoration-[#F59E0B]">
-                                    lab.informatika@uai.ac.id
+                                <a href="mailto:lab.elektro@uai.ac.id" className="hover:text-white hover:underline decoration-[#F59E0B]">
+                                    lab.elektro@uai.ac.id
                                 </a>
                             </li>
                             <li className="flex items-center gap-3">

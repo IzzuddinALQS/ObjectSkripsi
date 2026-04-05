@@ -81,15 +81,15 @@ export default function Sidebar({ subtitle, menuItems, user, profileHref }: Side
                 <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-lg overflow-hidden shrink-0 shadow-sm">
                         <Image
-                            src="/lab-informatika-logo.png"
+                            src="/fst-icon.png"
                             alt="Logo Lab Informatika"
                             width={40}
                             height={40}
-                            className="object-cover w-full h-full"
+                            className="object-contain w-full h-full"
                         />
                     </div>
                     <div>
-                        <h1 className="text-lg font-bold text-[#0F4C81] leading-tight">Lab Informatika</h1>
+                        <h1 className="text-lg font-bold text-[#0F4C81] leading-tight">Lab Elektro</h1>
                         <p className="text-xs font-medium text-[#6B7280]">{subtitle}</p>
                     </div>
                 </div>
@@ -124,16 +124,16 @@ export default function Sidebar({ subtitle, menuItems, user, profileHref }: Side
                 <div className="p-6 border-b border-gray-100 flex items-center gap-3">
                     <div className="w-10 h-10 rounded-lg overflow-hidden shrink-0 shadow-sm">
                         <Image
-                            src="/lab-informatika-logo.png"
+                            src="/fst-icon.png"
                             alt="Logo Lab Informatika"
                             width={40}
                             height={40}
-                            className="object-cover w-full h-full"
+                            className="object-contain w-full h-full"
                         />
                     </div>
                     <div className="overflow-hidden">
                         <h1 className="text-lg font-bold text-[#0F4C81] leading-tight truncate">
-                            Lab Informatika
+                            Lab Elektro
                         </h1>
                         <p className="text-xs font-medium text-[#6B7280] truncate mt-0.5">
                             {subtitle}

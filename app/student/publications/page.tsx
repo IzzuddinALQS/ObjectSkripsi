@@ -85,7 +85,7 @@ export default async function StudentPublicationsPage({
             {/* Header */}
             <div>
                 <h1 className="text-2xl font-bold text-gray-900">Publikasi</h1>
-                <p className="text-gray-500 text-sm mt-1">Lihat publikasi Informatika UAI</p>
+                <p className="text-gray-500 text-sm mt-1">Lihat publikasi Elektro UAI</p>
             </div>
 
             {/* Search and Filter */}

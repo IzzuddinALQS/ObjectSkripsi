@@ -50,13 +50,13 @@ function LoginForm() {
                 {/* Header Section */}
                 <div className="p-8 pb-0 text-center">
                     {/* Logo Box (Branding) */}
-                    <div className="mx-auto w-70 h-25 rounded-xl overflow-hidden shadow-md mb-4">
+                    <div className="mx-auto w-fit rounded-xl overflow-hidden shadow-md mb-4">
                         <Image
-                            src="/lab-informatika-logo.png"
+                            src="/fst-icon.png"
                             alt="Logo Lab Informatika"
-                            width={80}
-                            height={80}
-                            className="object-cover w-full h-full"
+                            width={120}
+                            height={120}
+                            className="object-contain w-auto h-auto max-w-[120px] max-h-[120px]"
                         />
                     </div>
 
@@ -66,7 +66,7 @@ function LoginForm() {
                     </h1>
                     {/* Text Sekunder: #6B7280 */}
                     <p className="text-[#6B7280] text-sm">
-                        Portal Laboratorium Informatika<br />Universitas Al Azhar Indonesia
+                        Portal Laboratorium Elektro<br />Universitas Al Azhar Indonesia
                     </p>
                 </div>
 

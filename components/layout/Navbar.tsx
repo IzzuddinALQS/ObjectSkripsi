@@ -10,19 +10,19 @@ export default function Navbar() {
         <nav className="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
             <div className="container mx-auto px-4 h-16 flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                    <div className="w-28 h-11 rounded-lg overflow-hidden shadow-sm">
+                    <div className="w-12 h-12 rounded-lg overflow-hidden shadow-sm flex items-center justify-center">
                         <Image
-                            src="/lab-informatika-logo.png"
+                            src="/fst-icon.png"
                             alt="Logo Lab Informatika"
-                            width={40}
-                            height={40}
-                            className="object-cover w-full h-full"
+                            width={48}
+                            height={48}
+                            className="object-contain w-full h-full"
                         />
                     </div>
 
                     <div className="flex flex-col justify-center">
                         <h1 className="font-bold text-lg sm:text-xl text-[#0F4C81] leading-tight tracking-tight">
-                            Lab Informatika
+                            Laboratorium Elektro
                         </h1>
                         <span className="hidden sm:block text-xs font-medium text-[#6B7280] tracking-wider">
                             UNIVERSITAS AL AZHAR INDONESIA
