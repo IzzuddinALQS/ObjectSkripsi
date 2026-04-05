@@ -22,7 +22,7 @@ export default function Navbar() {
 
                     <div className="flex flex-col justify-center">
                         <h1 className="font-bold text-lg sm:text-xl text-[#0F4C81] leading-tight tracking-tight">
-                            Laboratorium Elektro
+                            Laboratorium Industri
                         </h1>
                         <span className="hidden sm:block text-xs font-medium text-[#6B7280] tracking-wider">
                             UNIVERSITAS AL AZHAR INDONESIA

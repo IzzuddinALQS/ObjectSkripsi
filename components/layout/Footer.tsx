@@ -24,12 +24,12 @@ export default function Footer() {
                                 />
                             </div>
                             <div>
-                                <h3 className="font-bold text-xl leading-none">Laboratorium Elektro</h3>
+                                <h3 className="font-bold text-xl leading-none">Lab Industri</h3>
                                 <span className="text-xs text-blue-200 uppercase tracking-wider">Universitas Al Azhar Indonesia</span>
                             </div>
                         </div>
                         <p className="text-blue-100 text-sm leading-relaxed max-w-xs">
-                            Pusat pengembangan keahlian praktis, riset, dan inovasi teknologi bagi mahasiswa Elektro UAI. Melayani peminjaman alat, ruang lab, dan dukungan praktikum.
+                            Pusat pengembangan keahlian praktis, riset, dan inovasi teknologi bagi mahasiswa Teknik Industri UAI. Melayani peminjaman alat, ruang lab, dan dukungan praktikum.
                         </p>
                         <div className="flex gap-4 pt-2">
                             {/* Social Icons: Hover effect menggunakan warna Aksen #F59E0B */}
@@ -91,8 +91,8 @@ export default function Footer() {
                             </li>
                             <li className="flex items-center gap-3">
                                 <Mail className="w-5 h-5 text-[#F59E0B] shrink-0" />
-                                <a href="mailto:lab.elektro@uai.ac.id" className="hover:text-white hover:underline decoration-[#F59E0B]">
-                                    lab.elektro@uai.ac.id
+                                <a href="mailto:lab.industri@uai.ac.id" className="hover:text-white hover:underline decoration-[#F59E0B]">
+                                    lab.industri@uai.ac.id
                                 </a>
                             </li>
                             <li className="flex items-center gap-3">
@@ -107,7 +107,7 @@ export default function Footer() {
             {/* --- Bottom Footer: Copyright --- */}
             <div className="bg-[#0A365C] py-6 border-t border-white/5">
                 <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-blue-300">
-                    <p>&copy; {currentYear} Informatika Universitas Al Azhar Indonesia. All rights reserved.</p>
+                    <p>&copy; {currentYear} Teknik Industri Universitas Al Azhar Indonesia. All rights reserved.</p>
                     <div className="flex gap-6">
                         <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
                         <Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link>

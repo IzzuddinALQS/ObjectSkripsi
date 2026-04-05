@@ -93,7 +93,7 @@ export default async function PublicationsPage({
                 {/* Header */}
                 <div className="mb-8">
                     <h1 className="text-3xl font-bold text-gray-900">Galeri Publikasi</h1>
-                    <p className="text-gray-500 mt-2">Karya dan publikasi mahasiswa elektro UAI</p>
+                    <p className="text-gray-500 mt-2">Karya dan publikasi mahasiswa Teknik Industri UAI</p>
                 </div>
 
                 {/* Search and Filter */}

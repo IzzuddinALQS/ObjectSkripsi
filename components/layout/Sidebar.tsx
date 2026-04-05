@@ -89,7 +89,7 @@ export default function Sidebar({ subtitle, menuItems, user, profileHref }: Side
                         />
                     </div>
                     <div>
-                        <h1 className="text-lg font-bold text-[#0F4C81] leading-tight">Lab Elektro</h1>
+                        <h1 className="text-lg font-bold text-[#0F4C81] leading-tight">Lab Industri</h1>
                         <p className="text-xs font-medium text-[#6B7280]">{subtitle}</p>
                     </div>
                 </div>
@@ -133,7 +133,7 @@ export default function Sidebar({ subtitle, menuItems, user, profileHref }: Side
                     </div>
                     <div className="overflow-hidden">
                         <h1 className="text-lg font-bold text-[#0F4C81] leading-tight truncate">
-                            Lab Elektro
+                            Lab Industri
                         </h1>
                         <p className="text-xs font-medium text-[#6B7280] truncate mt-0.5">
                             {subtitle}

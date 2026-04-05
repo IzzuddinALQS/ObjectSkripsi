@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Laboratorium Elektro UAI",
-  description: "Website Laboratorium Elektro Universitas Al-Azhar Indonesia",
+  title: "Lab Industri UAI",
+  description: "Website Lab Industri Universitas Al-Azhar Indonesia",
 };
 
 export default function RootLayout({

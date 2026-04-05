@@ -7,6 +7,6 @@ export default defineConfig({
     out: './drizzle',
     dialect: 'mysql',
     dbCredentials: {
-        url: process.env.DATABASE_URL || 'mysql://root:@localhost:3306/be-labelektrouai',
+        url: process.env.DATABASE_URL || 'mysql://root:@localhost:3306/be-labindustriuai',
     },
 });
