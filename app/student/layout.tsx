@@ -1,6 +1,8 @@
-import { getSession, hasPermission } from '@/lib/auth';
+import { getSession } from '@/lib/auth';
 import { redirect } from 'next/navigation';
 import Sidebar from '@/components/layout/Sidebar';
+import SessionRefresher from '@/components/providers/SessionRefresher';
+import { STUDENT_MENU_ITEMS, getMenuForUser } from '@/lib/menu';
 
 export default async function StudentLayout({
     children,
@@ -12,26 +14,7 @@ export default async function StudentLayout({
     if (!session || session.user.role !== 'Mahasiswa') {
         redirect('/login');
     }
-
-    // Default student menus
-    const menuItems: any[] = [
-        { name: 'Dashboard', href: '/student/dashboard', iconName: 'LayoutDashboard' },
-        { name: 'Peminjaman Alat', href: '/student/items', iconName: 'Box' },
-        { name: 'Booking Ruangan', href: '/student/rooms', iconName: 'CalendarDays' },
-        {
-            name: 'Akademik', href: '#', iconName: 'GraduationCap',
-            children: [
-                { name: 'Mata Kuliah', href: '/student/courses', iconName: 'GraduationCap' },
-                { name: 'Modul Praktikum', href: '/student/practicum', iconName: 'BookOpen' },
-            ]
-        },
-        { name: 'Publikasi', href: '/student/publications', iconName: 'FileText' },
-    ];
-
-    // Add extra menu items if student has custom permissions
-    if (hasPermission(session, 'publications.manage')) {
-        menuItems.push({ name: 'Kelola Publikasi', href: '/lecturer/publications', iconName: 'BookOpen' });
-    }
+    const menuItems = getMenuForUser(session, STUDENT_MENU_ITEMS, '/student');
 
     return (
         <div className="flex min-h-screen bg-gray-50">
@@ -45,7 +28,8 @@ export default async function StudentLayout({
                     initial: session.user.fullName.charAt(0)
                 }}
             />
-            <main className="flex-1 lg:ml-64 pt-20 lg:pt-0 p-4 lg:p-8">
+            <main className="flex-1 lg:ml-64 pt-20 p-4 lg:p-8">
+                <SessionRefresher />
                 {children}
             </main>
         </div>

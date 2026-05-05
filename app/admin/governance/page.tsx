@@ -3,26 +3,32 @@ import { getUsers, getRoles, getLecturers } from '@/features/users/actions';
 import { getHeroPhotos } from '@/features/hero-photos/actions';
 import { getAllPermissions, getRolePermissionMap } from '@/features/permissions/actions';
 import GovernanceManager from '@/features/governance/components/GovernanceManager';
-import { getSession } from '@/lib/auth';
+import { getSession, hasPermission } from '@/lib/auth';
 
 export default async function GovernancePage() {
     const session = await getSession();
 
-    const [sops, lpjs, users, roles, lecturers, heroPhotos, allPermissions, rolePermissionMap] = await Promise.all([
-        getGovernanceDocs('SOP'),
-        getGovernanceDocs('LPJ Bulanan'),
-        getUsers(),
-        getRoles(),
+    const canManageGovernance = hasPermission(session, 'governance.manage');
+    const canManageUsers = hasPermission(session, 'users.manage');
+    const canManageHero = hasPermission(session, 'hero.manage');
+
+    const [sops, lpjs, templateSurats, users, roles, lecturers, heroPhotos, allPermissions, rolePermissionMap] = await Promise.all([
+        canManageGovernance ? getGovernanceDocs('SOP') : Promise.resolve([]),
+        canManageGovernance ? getGovernanceDocs('LPJ Bulanan') : Promise.resolve([]),
+        canManageGovernance ? getGovernanceDocs('Template Surat') : Promise.resolve([]),
+        canManageUsers ? getUsers() : Promise.resolve([]),
+        canManageUsers ? getRoles() : Promise.resolve([]),
         getLecturers(),
-        getHeroPhotos(),
-        getAllPermissions(),
-        getRolePermissionMap(),
+        canManageHero ? getHeroPhotos() : Promise.resolve([]),
+        canManageUsers ? getAllPermissions() : Promise.resolve([]),
+        canManageUsers ? getRolePermissionMap() : Promise.resolve({}),
     ]);
 
     return (
         <GovernanceManager
             sops={sops}
             lpjs={lpjs}
+            templateSurats={templateSurats}
             users={users}
             roles={roles}
             lecturers={lecturers}
@@ -30,6 +36,7 @@ export default async function GovernancePage() {
             adminId={session?.user.identifier || ''}
             allPermissions={allPermissions}
             rolePermissionMap={rolePermissionMap}
+            permissions={{ canManageGovernance, canManageUsers, canManageHero }}
         />
     );
 }

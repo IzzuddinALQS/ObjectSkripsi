@@ -48,7 +48,8 @@ export class UserService {
                 batch: users.batch,
                 studyType: users.studyType,
                 programStudi: users.programStudi,
-                dosenPembimbing: users.dosenPembimbing
+                dosenPembimbing: users.dosenPembimbing,
+                customRoleEnabled: users.customRoleEnabled,
             })
             .from(users)
             .leftJoin(roles, eq(users.roleId, roles.id))
@@ -177,6 +178,12 @@ export class UserService {
     static async updateStatus(userId: string, status: 'Active' | 'Rejected') {
         await db.update(users)
             .set({ status })
+            .where(eq(users.identifier, userId));
+    }
+
+    static async setCustomRoleEnabled(userId: string, enabled: boolean) {
+        await db.update(users)
+            .set({ customRoleEnabled: enabled })
             .where(eq(users.identifier, userId));
     }
 

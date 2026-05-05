@@ -63,6 +63,7 @@ export async function seedPermissions() {
         { code: 'practicum.manage', name: 'Manajemen Modul & Jadwal Praktikum', category: 'Academic' },
         { code: 'publications.manage', name: 'Manajemen Publikasi', category: 'Publications' },
         { code: 'governance.manage', name: 'Manajemen SOP & Laporan LPJ', category: 'Governance' },
+        { code: 'download-center.manage', name: 'Kelola Pusat Download', category: 'Download Center' },
         { code: 'hero.manage', name: 'Kelola Hero Photos', category: 'Hero' },
     ];
 

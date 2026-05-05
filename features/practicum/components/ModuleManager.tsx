@@ -76,12 +76,20 @@ export default function ModuleManager({ modules, courses }: ModuleManagerProps) 
         }
     };
 
+    const normalizeLink = (raw: string): string => {
+        const trimmed = raw.trim();
+        if (!trimmed) return '';
+        if (/^https?:\/\//i.test(trimmed)) return trimmed;
+        return `https://${trimmed}`;
+    };
+
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
         const name = formData.get('name') as string;
         const description = formData.get('description') as string;
         const courseId = formData.get('courseId') as string;
+        const moduleLink = normalizeLink((formData.get('moduleLink') as string) || '');
 
         startTransition(async () => {
             try {
@@ -112,6 +120,7 @@ export default function ModuleManager({ modules, courses }: ModuleManagerProps) 
                         description: description || undefined,
                         courseId: courseId ? parseInt(courseId) : undefined,
                         filePath: filePath || undefined,
+                        moduleLink,
                     });
                     setMessage({ type: 'success', text: 'Modul berhasil diperbarui!' });
                 } else {
@@ -120,6 +129,7 @@ export default function ModuleManager({ modules, courses }: ModuleManagerProps) 
                         description: description || undefined,
                         courseId: courseId ? parseInt(courseId) : undefined,
                         filePath,
+                        moduleLink,
                     });
                     setMessage({ type: 'success', text: 'Modul berhasil ditambahkan!' });
                 }
@@ -245,6 +255,17 @@ export default function ModuleManager({ modules, courses }: ModuleManagerProps) 
                                 </div>
                             </div>
                             <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-1">Link Modul (Opsional)</label>
+                                <input
+                                    name="moduleLink"
+                                    type="url"
+                                    defaultValue={editingModule?.moduleLink || ''}
+                                    className="w-full px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20"
+                                    placeholder="https://drive.google.com/..."
+                                />
+                                <p className="text-xs text-gray-400 mt-1">Bisa isi link Google Drive, OneDrive, GitBook, atau URL lainnya.</p>
+                            </div>
+                            <div>
                                 <label className="block text-sm font-medium text-gray-700 mb-1">Deskripsi</label>
                                 <textarea
                                     name="description"
@@ -336,7 +357,7 @@ export default function ModuleManager({ modules, courses }: ModuleManagerProps) 
                                 <tr>
                                     <th className="text-left px-6 py-3 font-semibold text-gray-600">Nama Modul</th>
                                     <th className="text-left px-6 py-3 font-semibold text-gray-600">Mata Kuliah</th>
-                                    <th className="text-left px-6 py-3 font-semibold text-gray-600">File Modul</th>
+                                    <th className="text-left px-6 py-3 font-semibold text-gray-600">Akses Modul</th>
                                     <th className="text-center px-6 py-3 font-semibold text-gray-600">Aksi</th>
                                 </tr>
                             </thead>
@@ -362,16 +383,31 @@ export default function ModuleManager({ modules, courses }: ModuleManagerProps) 
                                             )}
                                         </td>
                                         <td className="px-6 py-4">
-                                            {module.filePath ? (
-                                                <a
-                                                    href={module.filePath}
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    className="inline-flex items-center gap-1 text-[#0F4C81] hover:underline hover:text-blue-800 text-xs font-medium bg-blue-50/50 px-2 py-1 rounded"
-                                                >
-                                                    <ExternalLink className="w-3 h-3" />
-                                                    Lihat File
-                                                </a>
+                                            {module.filePath || module.moduleLink ? (
+                                                <div className="flex flex-wrap items-center gap-2">
+                                                    {module.filePath && (
+                                                        <a
+                                                            href={module.filePath}
+                                                            target="_blank"
+                                                            rel="noopener noreferrer"
+                                                            className="inline-flex items-center gap-1 text-[#0F4C81] hover:underline hover:text-blue-800 text-xs font-medium bg-blue-50/50 px-2 py-1 rounded"
+                                                        >
+                                                            <ExternalLink className="w-3 h-3" />
+                                                            Lihat File
+                                                        </a>
+                                                    )}
+                                                    {module.moduleLink && (
+                                                        <a
+                                                            href={module.moduleLink}
+                                                            target="_blank"
+                                                            rel="noopener noreferrer"
+                                                            className="inline-flex items-center gap-1 text-emerald-700 hover:text-emerald-800 text-xs font-medium bg-emerald-50 px-2 py-1 rounded"
+                                                        >
+                                                            <ExternalLink className="w-3 h-3" />
+                                                            Buka Link
+                                                        </a>
+                                                    )}
+                                                </div>
                                             ) : (
                                                 <span className="text-gray-400 text-xs italic">Tidak ada file</span>
                                             )}
@@ -440,17 +476,30 @@ export default function ModuleManager({ modules, courses }: ModuleManagerProps) 
                                     )}
                                 </div>
                                 <div>
-                                    {module.filePath && (
-                                        <a
-                                            href={module.filePath}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="inline-flex items-center gap-1 text-xs font-medium text-[#0F4C81] hover:text-blue-800 bg-blue-50/50 hover:bg-blue-100 px-2.5 py-1.5 rounded-lg transition-colors"
-                                        >
-                                            <ExternalLink className="w-3.5 h-3.5" />
-                                            File
-                                        </a>
-                                    )}
+                                    <div className="flex items-center gap-2">
+                                        {module.filePath && (
+                                            <a
+                                                href={module.filePath}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="inline-flex items-center gap-1 text-xs font-medium text-[#0F4C81] hover:text-blue-800 bg-blue-50/50 hover:bg-blue-100 px-2.5 py-1.5 rounded-lg transition-colors"
+                                            >
+                                                <ExternalLink className="w-3.5 h-3.5" />
+                                                File
+                                            </a>
+                                        )}
+                                        {module.moduleLink && (
+                                            <a
+                                                href={module.moduleLink}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="inline-flex items-center gap-1 text-xs font-medium text-emerald-700 hover:text-emerald-800 bg-emerald-50 hover:bg-emerald-100 px-2.5 py-1.5 rounded-lg transition-colors"
+                                            >
+                                                <ExternalLink className="w-3.5 h-3.5" />
+                                                Link
+                                            </a>
+                                        )}
+                                    </div>
                                 </div>
                             </div>
                         </div>

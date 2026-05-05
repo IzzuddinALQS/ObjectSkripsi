@@ -89,10 +89,9 @@ export async function getAttendanceWithDetails(userId: string, roomId: number) {
  */
 export async function getTodayAttendance() {
     const { gte, desc } = await import('drizzle-orm');
-    const { startOfTodayWIB } = await import('@/lib/timezone');
+    const { startOfDayWIBForDb } = await import('@/lib/timezone');
 
-    // Get start of today in WIB (converted to UTC for DB query)
-    const todayUTC = startOfTodayWIB();
+    const todayStart = startOfDayWIBForDb(0);
 
     const result = await db.select({
         id: labAttendance.id,
@@ -111,7 +110,7 @@ export async function getTodayAttendance() {
         .from(labAttendance)
         .innerJoin(users, eq(labAttendance.userId, users.identifier))
         .innerJoin(rooms, eq(labAttendance.roomId, rooms.id))
-        .where(gte(labAttendance.checkInTime, todayUTC))
+        .where(gte(labAttendance.checkInTime, todayStart))
         .orderBy(desc(labAttendance.checkInTime));
 
     return result;
@@ -122,9 +121,9 @@ export async function getTodayAttendance() {
  */
 export async function getRoomAttendanceStats() {
     const { gte, sql } = await import('drizzle-orm');
-    const { startOfTodayWIB } = await import('@/lib/timezone');
+    const { startOfDayWIBForDb } = await import('@/lib/timezone');
 
-    const todayUTC = startOfTodayWIB();
+    const todayStart = startOfDayWIBForDb(0);
 
     const result = await db.select({
         roomId: labAttendance.roomId,
@@ -133,7 +132,7 @@ export async function getRoomAttendanceStats() {
     })
         .from(labAttendance)
         .innerJoin(rooms, eq(labAttendance.roomId, rooms.id))
-        .where(gte(labAttendance.checkInTime, todayUTC))
+        .where(gte(labAttendance.checkInTime, todayStart))
         .groupBy(labAttendance.roomId, rooms.name)
         .orderBy(rooms.name);
 

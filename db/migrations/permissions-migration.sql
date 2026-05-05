@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS user_permissions (
     FOREIGN KEY (permission_id) REFERENCES permissions(id) ON DELETE CASCADE
 );
 
--- 4. Seed all 16 permissions
+-- 4. Seed all permissions
 INSERT INTO permissions (code, name, category, description) VALUES
 ('inventory.view', 'Lihat Inventaris', 'Inventory', 'Melihat daftar barang inventaris'),
 ('inventory.manage', 'Kelola Inventaris', 'Inventory', 'CRUD barang, kategori, ruangan'),
@@ -43,6 +43,7 @@ INSERT INTO permissions (code, name, category, description) VALUES
 ('bookings.request', 'Ajukan Booking', 'Bookings', 'Mengajukan booking ruangan'),
 ('bookings.manage', 'Kelola Booking', 'Bookings', 'Approve/reject booking ruangan'),
 ('publications.manage', 'Kelola Publikasi', 'Publications', 'CRUD publikasi jurnal'),
+('download-center.manage', 'Kelola Pusat Download', 'Download Center', 'Upload/hapus dokumen pusat download'),
 ('governance.view', 'Lihat Tata Kelola', 'Governance', 'Melihat dokumen SOP dan LPJ'),
 ('governance.manage', 'Kelola Tata Kelola', 'Governance', 'Upload/hapus dokumen SOP dan LPJ'),
 ('users.manage', 'Kelola User', 'Users', 'CRUD user, approval, assign permission'),
@@ -52,6 +53,14 @@ INSERT INTO permissions (code, name, category, description) VALUES
 ('dashboard.lecturer', 'Dashboard Dosen', 'Dashboard', 'Akses dashboard dosen'),
 ('hero.manage', 'Kelola Hero Photos', 'Hero', 'Kelola foto hero homepage'),
 ('attendance.manage', 'Kelola Absensi', 'Attendance', 'Kelola data absensi lab');
+
+-- 11. Add custom role activation flag on users
+ALTER TABLE users
+ADD COLUMN custom_role_enabled BOOLEAN NOT NULL DEFAULT FALSE;
+
+-- 12. Extend governance_docs type enum for download center
+ALTER TABLE governance_docs
+MODIFY COLUMN type ENUM('SOP', 'LPJ Bulanan', 'Pusat Download') NOT NULL;
 
 -- 5. Seed Admin defaults (ALL permissions except dashboard.lecturer)
 -- Assuming Admin role id = 1

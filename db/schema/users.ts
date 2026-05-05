@@ -1,4 +1,4 @@
-import { mysqlTable, int, varchar, datetime, mysqlEnum, index } from 'drizzle-orm/mysql-core';
+import { mysqlTable, int, varchar, datetime, mysqlEnum, index, boolean } from 'drizzle-orm/mysql-core';
 import { relations, sql } from 'drizzle-orm';
 
 // Roles
@@ -22,6 +22,7 @@ export const users = mysqlTable('users', {
     programStudi: varchar('program_studi', { length: 100 }).default('Informatika'), // e.g. 'Informatika', 'Sistem Informasi'
     dosenPembimbing: varchar('dosen_pembimbing', { length: 255 }), // Stores dosen name directly (no FK relation)
     phoneNumber: varchar('phone_number', { length: 20 }), // Optional phone number
+    customRoleEnabled: boolean('custom_role_enabled').notNull().default(false),
     createdAt: datetime('created_at').default(sql`CURRENT_TIMESTAMP`),
 }, (table) => ({
     roleIdx: index('role_idx').on(table.roleId),

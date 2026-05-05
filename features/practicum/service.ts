@@ -20,6 +20,7 @@ export class PracticumService {
                 name: practicumModules.name,
                 description: practicumModules.description,
                 filePath: practicumModules.filePath,
+                moduleLink: practicumModules.moduleLink,
                 createdAt: practicumModules.createdAt,
                 updatedAt: practicumModules.updatedAt,
                 courseName: courses.name,
@@ -41,6 +42,7 @@ export class PracticumService {
                 name: practicumModules.name,
                 description: practicumModules.description,
                 filePath: practicumModules.filePath,
+                moduleLink: practicumModules.moduleLink,
                 createdAt: practicumModules.createdAt,
                 updatedAt: practicumModules.updatedAt,
                 courseName: courses.name,
@@ -63,6 +65,7 @@ export class PracticumService {
                 name: practicumModules.name,
                 description: practicumModules.description,
                 filePath: practicumModules.filePath,
+                moduleLink: practicumModules.moduleLink,
                 createdAt: practicumModules.createdAt,
                 updatedAt: practicumModules.updatedAt,
                 courseName: courses.name,
@@ -88,6 +91,7 @@ export class PracticumService {
                 name: practicumModules.name,
                 description: practicumModules.description,
                 filePath: practicumModules.filePath,
+                moduleLink: practicumModules.moduleLink,
                 createdAt: practicumModules.createdAt,
                 updatedAt: practicumModules.updatedAt,
                 courseName: courses.name,
@@ -119,6 +123,7 @@ export class PracticumService {
             name: data.name,
             description: data.description || null,
             filePath: data.filePath || null,
+            moduleLink: data.moduleLink || null,
         });
     }
 
@@ -134,6 +139,7 @@ export class PracticumService {
         if (data.name !== undefined) updateData.name = data.name;
         if (data.description !== undefined) updateData.description = data.description;
         if (data.filePath !== undefined) updateData.filePath = data.filePath;
+        if (data.moduleLink !== undefined) updateData.moduleLink = data.moduleLink || null;
 
         await db.update(practicumModules).set(updateData).where(eq(practicumModules.id, id));
     }

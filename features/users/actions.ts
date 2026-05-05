@@ -74,6 +74,12 @@ export async function updateUserStatus(userId: string, status: 'Active' | 'Rejec
     revalidatePath('/admin/validations');
 }
 
+export async function updateCustomRoleActivation(userId: string, enabled: boolean) {
+    await requirePermission('users.manage');
+    await UserService.setCustomRoleEnabled(userId, enabled);
+    revalidatePath('/admin/governance');
+}
+
 export async function updateUserProfile(data: {
     fullName?: string;
     identifier?: string;

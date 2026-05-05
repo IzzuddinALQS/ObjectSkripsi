@@ -55,7 +55,9 @@ export function formatWIB(utcDate: Date | string | null, options?: Intl.DateTime
     if (!utcDate) return '-';
 
     const defaultOptions: Intl.DateTimeFormatOptions = {
-        timeZone: 'Asia/Jakarta',
+        // mysql2 (without timezone config) reads WIB DATETIME values as UTC-valued JS Dates.
+        // Using 'UTC' here displays the raw value, which equals the correct WIB time.
+        timeZone: 'UTC',
         hour: '2-digit',
         minute: '2-digit',
         ...options
@@ -102,4 +104,39 @@ export function formatTimeWIB(utcDate: Date | string | null): string {
         hour: '2-digit',
         minute: '2-digit'
     });
+}
+
+/**
+ * Convert a local Date to a "DB-compatible" Date for Drizzle queries.
+ * No-op kept for backwards compatibility.
+ */
+export function toDbDate(date: Date): Date {
+    return date;
+}
+
+/**
+ * Returns WIB midnight of today (or N days ago) as "fake UTC" Date for DB queries.
+ * mysql2 serializes this to the correct WIB time string that MySQL stores.
+ */
+export function startOfDayWIBForDb(daysAgo = 0): Date {
+    // Add 7h to get current WIB date, then build midnight in UTC position
+    const wibNow = new Date(Date.now() + 7 * 60 * 60 * 1000);
+    const year = wibNow.getUTCFullYear();
+    const month = wibNow.getUTCMonth();
+    const date = wibNow.getUTCDate() - daysAgo;
+    return new Date(Date.UTC(year, month, date, 0, 0, 0));
+}
+
+/**
+ * Get current WIB time as "fake UTC" for DB query parameters.
+ */
+export function nowAsWIBForDb(): Date {
+    return new Date(Date.now() + 7 * 60 * 60 * 1000);
+}
+
+/**
+ * Get start of today (midnight WIB) as a DB-compatible Date.
+ */
+export function startOfTodayForDb(): Date {
+    return startOfDayWIBForDb(0);
 }

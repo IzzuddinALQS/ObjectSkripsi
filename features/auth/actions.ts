@@ -3,14 +3,15 @@
 import { cookies } from 'next/headers';
 import { db } from '@/db';
 import { users, roles, permissions, rolePermissions, userPermissions } from '@/db/schema';
-import { eq, or, and } from 'drizzle-orm';
-import { encrypt } from '@/lib/auth';
+import { eq, or } from 'drizzle-orm';
+import { encrypt, getSession } from '@/lib/auth';
 import bcrypt from 'bcryptjs';
 
 /**
  * Compute effective permissions for a user:
  * effective = role_defaults + user_grants - user_revocations
  */
+
 async function getEffectivePermissions(userId: string, roleId: number): Promise<string[]> {
     // 1. Get role default permission codes
     const rolePerms = await db.select({ code: permissions.code })
@@ -97,4 +98,32 @@ export async function login(formData: any) {
 export async function logout() {
     // Destroy the session
     (await cookies()).set('session', '', { expires: new Date(0) });
+}
+
+/**
+ * Transparently refresh the current user's session with latest permissions from DB.
+ */
+export async function refreshUserSession() {
+    const session = await getSession();
+    if (!session?.user) return;
+
+    const { identifier: userId, roleId } = session.user;
+    if (!userId || !roleId) return;
+
+    const freshPermissions = await getEffectivePermissions(userId, roleId);
+    const currentPerms: string[] = session.user.permissions ?? [];
+
+    const currentSet = new Set(currentPerms);
+    const freshSet = new Set(freshPermissions);
+    const isSame = currentSet.size === freshSet.size && [...freshSet].every((p) => currentSet.has(p));
+
+    if (isSame) return;
+
+    const expires = new Date(Date.now() + 24 * 60 * 60 * 1000);
+    const newSession = await encrypt({
+        user: { ...session.user, permissions: freshPermissions },
+        expires,
+    });
+
+    (await cookies()).set('session', newSession, { expires, httpOnly: true });
 }

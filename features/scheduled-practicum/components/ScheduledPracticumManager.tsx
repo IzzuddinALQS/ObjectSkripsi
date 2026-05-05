@@ -1,16 +1,34 @@
 'use client';
 
 import { useState, useTransition, useMemo, useCallback } from 'react';
-import { Plus, Trash2, Edit, X, Clock, MapPin, ChevronLeft, ChevronRight, BookOpen } from 'lucide-react';
+import { Plus, Trash2, Edit, X, Clock, MapPin, ChevronLeft, ChevronRight, BookOpen, FileText, CalendarRange } from 'lucide-react';
 import TimeSelect from '@/components/shared/TimeSelect';
 import { createScheduledPracticum, updateScheduledPracticum, deleteScheduledPracticum } from '@/features/scheduled-practicum/actions';
+import BulkScheduleForm from './BulkScheduleForm';
 import type { ScheduledPracticumWithDetails } from '@/features/scheduled-practicum/types';
 import { DAY_NAMES } from '@/features/scheduled-practicum/types';
 import type { CourseWithLecturer } from '@/features/courses/types';
 import type { PracticumModuleWithCourse } from '@/features/practicum/types';
+import type { PracticumReportWithDetails } from '@/features/practicum-reports/types';
+import { LecturerPracticumReportTable, AllPracticumLpjManager } from '@/features/practicum-reports/components';
+import ViewportPortal from '@/components/shared/ViewportPortal';
+
 interface Room {
     id: number;
     name: string;
+}
+
+interface LpjDoc {
+    id: number;
+    scheduledPracticumId: number;
+    title: string;
+    description: string | null;
+    filePath: string;
+    periodMonth: number;
+    periodYear: number;
+    createdAt: Date | null;
+    uploaderName: string | null;
+    uploaderId: string;
 }
 
 interface ScheduledPracticumManagerProps {
@@ -18,6 +36,9 @@ interface ScheduledPracticumManagerProps {
     courses: CourseWithLecturer[];
     modules: PracticumModuleWithCourse[];
     rooms: Room[];
+    allReports?: PracticumReportWithDetails[];
+    lpjDocs?: LpjDoc[];
+    currentUserId?: string;
 }
 
 /* ── Calendar helpers ─────────────────────────────────────────── */
@@ -60,11 +81,13 @@ const CAL_HEADERS = ['Sen', 'Sel', 'Rab', 'Kam', 'Jum', 'Sab', 'Min'];
 
 /* ── Component ────────────────────────────────────────────────── */
 
-export default function ScheduledPracticumManager({ schedules, courses, modules, rooms }: ScheduledPracticumManagerProps) {
+export default function ScheduledPracticumManager({ schedules, courses, modules, rooms, allReports, lpjDocs, currentUserId }: ScheduledPracticumManagerProps) {
     const [isPending, startTransition] = useTransition();
     const [message, setMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
+    const [activeTab, setActiveTab] = useState<'calendar' | 'reports' | 'lpj'>('calendar');
 
     const [showForm, setShowForm] = useState(false);
+    const [showBulkForm, setShowBulkForm] = useState(false);
     const [editing, setEditing] = useState<ScheduledPracticumWithDetails | null>(null);
     const [formDate, setFormDate] = useState<string>('');
 
@@ -175,16 +198,88 @@ export default function ScheduledPracticumManager({ schedules, courses, modules,
     const isSel = (d: Date) => selectedDate?.toDateString() === d.toDateString();
 
     const selectedSchedules = selectedDate ? getSchedulesForDate(selectedDate) : [];
+    const pendingReportsCount = allReports?.filter(r => r.status === 'Pending' || !r.status).length ?? 0;
 
     return (
-        <div className="space-y-6">
+        <div className="space-y-6 pt-2">
             {/* Header */}
-            <div className="flex justify-between items-center">
+            <div className="flex justify-between items-start pb-1">
                 <div>
                     <h1 className="text-2xl font-bold text-gray-900">Kalender Praktikum</h1>
-                    <p className="text-gray-500 text-sm mt-1">Klik tanggal untuk melihat atau menambahkan jadwal praktikum</p>
+                    <p className="text-gray-500 text-sm mt-1.5">Klik tanggal untuk melihat atau menambahkan jadwal praktikum</p>
                 </div>
+                <button
+                    onClick={() => setShowBulkForm(true)}
+                    className="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-4 py-2.5 rounded-lg text-sm font-medium shadow-sm"
+                >
+                    <CalendarRange className="w-4 h-4" />
+                    Jadwal Massal
+                </button>
             </div>
+                    Jadwal Massal
+                </button>
+            </div>
+
+            {showBulkForm && (
+                <BulkScheduleForm
+                    courses={courses}
+                    modules={modules}
+                    rooms={rooms}
+                    onClose={() => setShowBulkForm(false)}
+                />
+            )}
+
+            {/* Tabs - only show when reports are available */}
+            {allReports && (
+                <div className="flex gap-2 border-b border-gray-200">
+                    <button
+                        onClick={() => setActiveTab('calendar')}
+                        className={`px-4 py-2.5 text-sm font-medium border-b-2 transition-colors ${
+                            activeTab === 'calendar'
+                                ? 'border-green-600 text-green-600'
+                                : 'border-transparent text-gray-500 hover:text-gray-700'
+                        }`}
+                    >
+                        <span className="flex items-center gap-2">
+                            <BookOpen className="w-4 h-4" />
+                            Kalender Praktikum
+                        </span>
+                    </button>
+                    <button
+                        onClick={() => setActiveTab('reports')}
+                        className={`px-4 py-2.5 text-sm font-medium border-b-2 transition-colors ${
+                            activeTab === 'reports'
+                                ? 'border-blue-600 text-blue-600'
+                                : 'border-transparent text-gray-500 hover:text-gray-700'
+                        }`}
+                    >
+                        <span className="flex items-center gap-2">
+                            <FileText className="w-4 h-4" />
+                            Berita Acara
+                            {pendingReportsCount > 0 && (
+                                <span className="inline-flex items-center justify-center px-2 py-0.5 text-xs font-bold bg-yellow-100 text-yellow-800 rounded-full">
+                                    {pendingReportsCount}
+                                </span>
+                            )}
+                        </span>
+                    </button>
+                    {lpjDocs !== undefined && (
+                        <button
+                            onClick={() => setActiveTab('lpj')}
+                            className={`px-4 py-2.5 text-sm font-medium border-b-2 transition-colors ${
+                                activeTab === 'lpj'
+                                    ? 'border-orange-500 text-orange-600'
+                                    : 'border-transparent text-gray-500 hover:text-gray-700'
+                            }`}
+                        >
+                            <span className="flex items-center gap-2">
+                                <FileText className="w-4 h-4" />
+                                LPJ Praktikum
+                            </span>
+                        </button>
+                    )}
+                </div>
+            )}
 
             {/* Message */}
             {message && (
@@ -193,6 +288,31 @@ export default function ScheduledPracticumManager({ schedules, courses, modules,
                 </div>
             )}
 
+            {activeTab === 'lpj' && lpjDocs !== undefined && currentUserId ? (
+                <AllPracticumLpjManager
+                    schedules={schedules.map(s => ({ id: s.id, courseName: s.courseName ?? '', courseCode: s.courseCode ?? '' }))}
+                    initialDocs={lpjDocs}
+                    currentUserId={currentUserId}
+                    isAdmin={false}
+                />
+            ) : activeTab === 'reports' && allReports ? (
+                <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+                    <div className="px-5 py-4 border-b border-gray-100 bg-gradient-to-r from-blue-50 to-indigo-50">
+                        <div className="flex items-center gap-3">
+                            <div className="p-2 bg-blue-100 rounded-lg">
+                                <FileText className="w-5 h-5 text-blue-600" />
+                            </div>
+                            <div>
+                                <h2 className="text-lg font-bold text-gray-900">Berita Acara Matakuliah Saya</h2>
+                                <p className="text-sm text-gray-500">Verifikasi berita acara dari matakuliah yang Anda ampu</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="p-4">
+                        <LecturerPracticumReportTable reports={allReports} />
+                    </div>
+                </div>
+            ) : (
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
                 {/* ═══ LEFT: Calendar ═══ */}
                 <div className="lg:col-span-2">
@@ -337,11 +457,11 @@ export default function ScheduledPracticumManager({ schedules, courses, modules,
                                                             </span>
                                                         </div>
                                                     </div>
-                                                    <div className="flex flex-col gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
-                                                        <button onClick={() => handleEdit(s)} className="p-1 text-blue-500 hover:bg-blue-50 rounded" title="Edit">
+                                                    <div className="flex flex-col gap-1 shrink-0">
+                                                        <button onClick={() => handleEdit(s)} className="p-1.5 text-blue-500 hover:bg-blue-50 rounded-lg transition-colors" title="Edit jadwal">
                                                             <Edit className="w-3.5 h-3.5" />
                                                         </button>
-                                                        <button onClick={() => handleDelete(s.id)} className="p-1 text-red-500 hover:bg-red-50 rounded" title="Hapus">
+                                                        <button onClick={() => handleDelete(s.id)} className="p-1.5 text-red-500 hover:bg-red-50 rounded-lg transition-colors" title="Hapus jadwal">
                                                             <Trash2 className="w-3.5 h-3.5" />
                                                         </button>
                                                     </div>
@@ -379,10 +499,12 @@ export default function ScheduledPracticumManager({ schedules, courses, modules,
                     </div>
                 </div>
             </div>
+            )}
 
             {/* ═══ FORM MODAL ═══ */}
             {showForm && (
-                <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+                <ViewportPortal>
+                <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-[120] p-4">
                     <div className="bg-white rounded-xl shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
                         <div className="p-5 border-b border-gray-100 flex items-center justify-between bg-gradient-to-r from-green-50 to-emerald-50">
                             <div>
@@ -502,6 +624,7 @@ export default function ScheduledPracticumManager({ schedules, courses, modules,
                         </form>
                     </div>
                 </div>
+                </ViewportPortal>
             )}
         </div>
     );

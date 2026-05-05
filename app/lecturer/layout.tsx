@@ -1,6 +1,8 @@
 import { getSession, hasPermission } from '@/lib/auth';
 import { redirect } from 'next/navigation';
 import Sidebar from '@/components/layout/Sidebar';
+import SessionRefresher from '@/components/providers/SessionRefresher';
+import { LECTURER_MENU_ITEMS, getMenuForUser } from '@/lib/menu';
 
 export default async function LecturerLayout({
     children,
@@ -12,28 +14,7 @@ export default async function LecturerLayout({
     if (!session || !hasPermission(session, 'dashboard.lecturer')) {
         redirect('/login');
     }
-
-    // Define all possible menu items with their required permissions
-    const allMenuItems = [
-        { name: 'Dashboard', href: '/lecturer/dashboard', iconName: 'LayoutDashboard', permission: 'dashboard.lecturer' },
-        { name: 'Peminjaman Alat', href: '/lecturer/items', iconName: 'Package', permission: 'dashboard.lecturer' },
-        { name: 'Booking Ruangan', href: '/lecturer/rooms', iconName: 'CalendarDays', permission: 'dashboard.lecturer' },
-        {
-            name: 'Akademik', href: '#', iconName: 'GraduationCap',
-            permission: 'dashboard.lecturer',
-            children: [
-                { name: 'Mata Kuliah', href: '/lecturer/courses', iconName: 'Book' },
-                { name: 'Modul Praktikum', href: '/lecturer/modules', iconName: 'FileText' },
-                { name: 'Jadwal Praktikum', href: '/lecturer/schedules', iconName: 'Calendar' },
-            ]
-        },
-        { name: 'Publikasi', href: '/lecturer/publications', iconName: 'BookOpen', permission: 'dashboard.lecturer' },
-    ];
-
-    // Filter: only show items the user has permission for
-    const menuItems = allMenuItems.filter(item =>
-        hasPermission(session, item.permission)
-    );
+    const menuItems = getMenuForUser(session, LECTURER_MENU_ITEMS, '/lecturer');
 
     return (
         <div className="flex min-h-screen bg-gray-50">
@@ -47,7 +28,8 @@ export default async function LecturerLayout({
                     initial: session.user.fullName.charAt(0)
                 }}
             />
-            <main className="flex-1 lg:ml-64 pt-20 lg:pt-0 p-4 lg:p-8">
+            <main className="flex-1 lg:ml-64 pt-20 p-4 lg:p-8">
+                <SessionRefresher />
                 {children}
             </main>
         </div>

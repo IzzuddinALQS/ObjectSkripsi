@@ -8,6 +8,7 @@ export interface PracticumModule {
     name: string;
     description: string | null;
     filePath: string | null;
+    moduleLink: string | null;
     createdAt: Date | null;
     updatedAt: Date | null;
 }
@@ -22,6 +23,7 @@ export interface CreateModuleInput {
     name: string;
     description?: string;
     filePath?: string;
+    moduleLink?: string;
 }
 
 export interface UpdateModuleInput {
@@ -29,4 +31,5 @@ export interface UpdateModuleInput {
     name?: string;
     description?: string;
     filePath?: string;
+    moduleLink?: string;
 }

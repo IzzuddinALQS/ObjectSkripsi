@@ -2,7 +2,7 @@
 
 import { db } from '@/db';
 import { governanceDocs, users } from '@/db/schema';
-import { eq, desc } from 'drizzle-orm';
+import { eq, desc, inArray } from 'drizzle-orm';
 import { revalidatePath } from 'next/cache';
 import { writeFile } from 'fs/promises';
 import { join } from 'path';
@@ -31,13 +31,30 @@ export async function getGovernanceDocs(type: string) {
     return docs;
 }
 
+export async function getAllGovernanceDocsForDownload() {
+    return await db
+        .select({
+            id: governanceDocs.id,
+            title: governanceDocs.title,
+            filePath: governanceDocs.filePath,
+            coverPath: governanceDocs.coverPath,
+            type: governanceDocs.type,
+            createdAt: governanceDocs.createdAt,
+            uploaderName: users.fullName,
+        })
+        .from(governanceDocs)
+        .leftJoin(users, eq(governanceDocs.adminId, users.identifier))
+        .where(inArray(governanceDocs.type, ['SOP', 'LPJ Bulanan', 'Template Surat']))
+        .orderBy(desc(governanceDocs.createdAt));
+}
+
 export async function uploadGovernanceDoc(formData: FormData) {
     try {
         await requirePermission('governance.manage');
         const file = formData.get('file') as File;
         const coverFile = formData.get('cover') as File | null;
         const title = formData.get('title') as string;
-        const type = formData.get('type') as 'SOP' | 'LPJ Bulanan';
+        const type = formData.get('type') as 'SOP' | 'LPJ Bulanan' | 'Template Surat';
         const adminId = formData.get('adminId') as string;
 
         if (!file || file.size === 0) {
@@ -84,6 +101,8 @@ export async function uploadGovernanceDoc(formData: FormData) {
         });
 
         revalidatePath('/admin/governance');
+        revalidatePath('/student/manage/governance');
+        revalidatePath('/lecturer/manage/governance');
         revalidatePath('/');
         return { success: true };
     } catch (error: any) {
@@ -97,7 +116,7 @@ export async function updateGovernanceDoc(id: number, formData: FormData) {
         const file = formData.get('file') as File | null;
         const coverFile = formData.get('cover') as File | null;
         const title = formData.get('title') as string;
-        const type = formData.get('type') as 'SOP' | 'LPJ Bulanan';
+        const type = formData.get('type') as 'SOP' | 'LPJ Bulanan' | 'Template Surat' | 'Video Profil';
 
         // Fetch old record to delete old files when replaced
         const oldDoc = await db.select().from(governanceDocs).where(eq(governanceDocs.id, id)).limit(1);
@@ -148,6 +167,8 @@ export async function updateGovernanceDoc(id: number, formData: FormData) {
             .where(eq(governanceDocs.id, id));
 
         revalidatePath('/admin/governance');
+        revalidatePath('/student/manage/governance');
+        revalidatePath('/lecturer/manage/governance');
         revalidatePath('/');
         return { success: true };
     } catch (error: any) {
@@ -170,6 +191,9 @@ export async function deleteGovernanceDoc(id: number) {
 
         await db.delete(governanceDocs).where(eq(governanceDocs.id, id));
         revalidatePath('/admin/governance');
+        revalidatePath('/student/manage/governance');
+        revalidatePath('/lecturer/manage/governance');
+        revalidatePath('/');
         return { success: true };
     } catch (error: any) {
         return { success: false, error: error.message || 'Gagal menghapus dokumen' };

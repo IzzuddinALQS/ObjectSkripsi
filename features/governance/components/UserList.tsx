@@ -114,7 +114,7 @@ export default function UserList({ users, roles, lecturers, allPermissions = [],
         startTransition(async () => {
             try {
                 await updateUserPermissions(permUser.identifier, userOverrides);
-                setSaveMessage('Berhasil disimpan! User perlu login ulang.');
+                setSaveMessage('Berhasil disimpan! Perubahan akan aktif otomatis saat user membuka halaman berikutnya.');
             } catch {
                 setSaveMessage('Gagal menyimpan permission.');
             }
