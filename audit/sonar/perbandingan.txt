@@ -1,0 +1,28 @@
+
+== Cognitive Complexity (eslint-plugin-sonarjs vs S3776) ==
+Fungsi dilaporkan ESLint   : 597
+Issue SonarQube S3776      : 597
+Fungsi dengan nilai sama   : 597
+Fungsi dengan nilai beda   : 0  (lokasi: ESLint lebih besar 0, SonarQube lebih besar 0)
+
+== Cyclomatic Complexity (ESLint complexity vs S1541) ==
+Fungsi dilaporkan ESLint   : 1656
+Issue SonarQube S1541      : 1656
+Fungsi dengan nilai sama   : 1467
+Fungsi dengan nilai beda   : 189  (lokasi: ESLint lebih besar 187, SonarQube lebih besar 0)
+Contoh perbedaan terbesar (berkas:baris ESLint vs SonarQube):
+  features/governance/components/UserForm.tsx:25  ESLint=[21]  SonarQube=[13]
+  features/courses/components/CourseManager.tsx:19  ESLint=[32]  SonarQube=[25]
+  features/publications/service.ts:80  ESLint=[16]  SonarQube=[9]
+  features/publications/service.ts:143  ESLint=[16]  SonarQube=[9]
+  features/attendance/components/AttendanceModal.tsx:33  ESLint=[18]  SonarQube=[12]
+  features/practicum/components/ModuleManager.tsx:14  ESLint=[29]  SonarQube=[24]
+  app/student/items/_components/ItemCard.tsx:111  ESLint=[24]  SonarQube=[20]
+  features/inventory/actions.ts:188  ESLint=[9]  SonarQube=[5]
+  features/scheduled-practicum/components/AdminScheduledPracticumManager.tsx:79  ESLint=[33]  SonarQube=[29]
+  features/scheduled-practicum/components/StudentScheduledPracticumManager.tsx:79  ESLint=[32]  SonarQube=[28]
+  lib/documentVerifier.ts:167  ESLint=[21]  SonarQube=[17]
+  app/(home)/_components/HomeCalendar.tsx:49  ESLint=[9]  SonarQube=[6]
+  app/lecturer/dashboard/page.tsx:10  ESLint=[13]  SonarQube=[10]
+  app/student/items/_components/ItemCard.tsx:50  ESLint=[21]  SonarQube=[18]
+  features/bookings/components/RoomBookingClient.tsx:128  ESLint=[16]  SonarQube=[13]

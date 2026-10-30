@@ -1,0 +1,1883 @@
+berkas,baris,fungsi,CC,CogC,kategori,cakupan_proposal
+app/publications/page.tsx,43,Async function 'PublicationsPage',33,14,High,ya
+features/scheduled-practicum/components/AdminScheduledPracticumManager.tsx,79,Function 'AdminScheduledPracticumManager',33,21,High,ya
+features/courses/components/CourseManager.tsx,19,Function 'CourseManager',32,15,High,ya
+features/scheduled-practicum/components/StudentScheduledPracticumManager.tsx,79,Function 'StudentScheduledPracticumManager',32,16,High,ya
+app/student/publications/page.tsx,44,Async function 'StudentPublicationsPage',31,14,High,ya
+features/governance/components/GovernanceManager.tsx,46,Function 'GovernanceManager',31,13,High,ya
+features/practicum/components/ModuleManager.tsx,14,Function 'ModuleManager',29,19,High,ya
+features/practicum-reports/components/AdminPracticumReportTable.tsx,22,Function 'AdminPracticumReportTable',28,7,High,ya
+features/practicum-reports/components/LecturerPracticumReportTable.tsx,34,Function 'LecturerPracticumReportTable',26,6,High,ya
+app/student/items/_components/ItemCard.tsx,111,Async arrow function,24,23,High,ya
+features/dashboard/analytics.ts,99,Function 'generateSmartInsights',24,29,High,ya
+features/governance/components/UserList.tsx,25,Function 'UserList',24,14,High,ya
+db/seeds/comprehensive.seed.ts,176,Async function 'seedCourses',22,1,High,tidak
+app/student/items/_components/ItemCard.tsx,50,Function 'ItemCard',21,12,High,ya
+features/governance/components/UserForm.tsx,25,Function 'UserForm',21,5,High,ya
+features/publications/components/PublicationManager.tsx,44,Function 'PublicationManager',21,11,High,ya
+features/users/actions.ts,83,Async function 'updateUserProfile',21,22,High,ya
+lib/documentVerifier.ts,167,Async function 'extractTextWithOCR',21,58,High,ya
+app/admin/validations/_components/SearchableRiwayatSection.tsx,43,Function 'SearchableRiwayatSection',19,10,Moderate,ya
+app/admin/riwayat/page.tsx,8,Async function 'RiwayatPage',18,11,Moderate,ya
+features/attendance/components/AttendanceModal.tsx,33,Function 'AttendanceModal',18,1,Moderate,ya
+app/admin/validations/_components/ActiveLoansTable.tsx,32,Function 'ActiveLoansTable',17,6,Moderate,ya
+features/scheduled-practicum/actions.ts,108,Async function 'bulkCreateScheduledPracticum',17,12,Moderate,ya
+features/users/register.ts,8,Async function 'register',17,12,Moderate,ya
+app/publications/page.tsx,336,Arrow function,16,5,Moderate,ya
+app/student/items/_components/StudentItemsManager.tsx,20,Function 'StudentItemsManager',16,9,Moderate,ya
+features/bookings/components/RoomBookingClient.tsx,128,Async arrow function,16,15,Moderate,ya
+features/publications/service.ts,80,Static async method 'getAll',16,5,Moderate,ya
+features/publications/service.ts,143,Static async method 'getPublished',16,5,Moderate,ya
+features/practicum-reports/components/BeritaAcaraManager.tsx,49,Function 'BeritaAcaraManager',15,13,Moderate,ya
+features/practicum-reports/components/BeritaAcaraManager.tsx,207,Arrow function,15,10,Moderate,ya
+lib/error.ts,6,Function 'translateError',15,11,Moderate,ya
+app/admin/validations/page.tsx,20,Async function 'AdminValidationsPage',14,5,Moderate,ya
+app/publications/page.tsx,267,Arrow function,14,5,Moderate,ya
+app/student/rooms/_components/StudentRoomManager.tsx,16,Function 'StudentRoomManager',14,6,Moderate,ya
+features/governance/components/UserForm.tsx,44,Async arrow function,14,10,Moderate,ya
+features/users/components/ProfileForm.tsx,24,Async arrow function,14,9,Moderate,ya
+app/admin/validations/_components/ActiveBookingsTable.tsx,29,Function 'ActiveBookingsTable',13,3,Moderate,ya
+app/lecturer/dashboard/page.tsx,10,Async function 'LecturerDashboard',13,2,Moderate,ya
+features/attendance/actions.ts,37,Async function 'checkIn',13,6,Moderate,ya
+features/bookings/service.ts,59,Static async method 'create',13,5,Moderate,ya
+features/governance/actions.ts,113,Async function 'updateGovernanceDoc',13,13,Moderate,ya
+features/governance/components/BulkEnrollment.tsx,11,Function 'BulkEnrollment',13,2,Moderate,ya
+features/loans/service.ts,65,Static async method 'create',13,5,Moderate,ya
+features/practicum-reports/lpj-actions.ts,42,Async function 'uploadPracticumLpjDoc',13,5,Moderate,ya
+features/publications/components/PublicationManager.tsx,87,Arrow function,13,14,Moderate,ya
+features/scheduled-practicum/components/AdminScheduledPracticumManager.tsx,308,Arrow function,13,10,Moderate,ya
+features/scheduled-practicum/components/StudentScheduledPracticumManager.tsx,280,Arrow function,13,10,Moderate,ya
+lib/documentVerifier.ts,338,Static async method 'verifyDocument',13,21,Moderate,ya
+app/admin/inventory/_components/ItemsView.tsx,39,Function 'ItemsView',12,9,Moderate,ya
+app/admin/inventory/_components/RoomsView.tsx,22,Function 'RoomsView',12,7,Moderate,ya
+app/api/upload/route.ts,11,Async function 'POST',12,15,Moderate,ya
+app/student/loans/_components/ReturnModal.tsx,14,Function 'ReturnModal',12,9,Moderate,ya
+app/(auth)/register/RegisterForm.tsx,27,Function 'RegisterForm',11,6,Moderate,ya
+app/admin/governance/page.tsx,8,Async function 'GovernancePage',11,8,Moderate,ya
+app/admin/hero-photos/_components/HeroPhotoManager.tsx,21,Function 'HeroPhotoManager',11,4,Moderate,ya
+app/admin/inventory/_components/ItemsView.tsx,61,Arrow function,11,10,Moderate,ya
+app/admin/validations/_components/SearchableUsersSection.tsx,20,Function 'SearchableUsersSection',11,5,Moderate,ya
+app/lecturer/manage/governance/page.tsx,9,Async function 'LecturerManageGovernancePage',11,9,Moderate,ya
+app/student/manage/governance/page.tsx,9,Async function 'StudentManageGovernancePage',11,9,Moderate,ya
+features/courses/components/CourseList.tsx,11,Function 'CourseList',11,10,Moderate,ya
+features/practicum/components/ModuleList.tsx,13,Function 'ModuleList',11,10,Moderate,ya
+lib/documentVerifier.ts,279,Static async method 'validateFile',11,12,Moderate,ya
+app/admin/validations/_components/ManualLoanButton.tsx,69,Async function 'handleSubmit',10,8,Low,ya
+app/api/berita-acara/download/route.ts,41,Async function 'GET',10,8,Low,ya
+app/api/file/[...path]/route.ts,5,Async function 'GET',10,7,Low,ya
+app/student/publications/page.tsx,196,Arrow function,10,2,Low,ya
+app/student/publications/page.tsx,230,Arrow function,10,4,Low,ya
+db/fix-practicum-posts-columns.ts,11,Async function 'main',10,3,Low,tidak
+features/governance/actions.ts,51,Async function 'uploadGovernanceDoc',10,7,Low,ya
+features/governance/components/GovernanceUploadForm.tsx,14,Function 'GovernanceUploadForm',10,6,Low,ya
+features/practicum-reports/components/AllPracticumLpjManager.tsx,38,Function 'AllPracticumLpjManager',10,6,Low,ya
+features/practicum-reports/components/PracticumReportForm.tsx,174,Arrow function,10,15,Low,ya
+features/practicum-reports/components/PracticumReportTable.tsx,12,Function 'PracticumReportTable',10,1,Low,ya
+features/practicum/components/ModuleManager.tsx,94,Async arrow function,10,10,Low,ya
+features/publications/components/PublicationManager.tsx,535,Arrow function,10,2,Low,ya
+features/users/components/ProfileForm.tsx,18,Function 'ProfileForm',10,3,Low,ya
+lib/menu.ts,133,Function 'getMenuForUser',10,16,Low,ya
+app/(home)/_components/HomeCalendar.tsx,49,Function 'HomeCalendar',9,2,Low,ya
+app/admin/pengembalian/page.tsx,62,Arrow function,9,8,Low,ya
+app/admin/validations/_components/ManualBookingButton.tsx,64,Async function 'handleSubmit',9,7,Low,ya
+app/student/items/_components/StudentItemsManager.tsx,46,Arrow function,9,8,Low,ya
+db/run-migration-0008.ts,10,Async function 'run',9,2,Low,tidak
+features/auth/actions.ts,45,Async function 'login',9,6,Low,ya
+features/bookings/actions.ts,140,Async function 'adminManualBooking',9,5,Low,ya
+features/courses/components/CourseManager.tsx,81,Async arrow function,9,7,Low,ya
+features/governance/components/GovernanceUploadForm.tsx,24,Async arrow function,9,10,Low,ya
+features/inventory/actions.ts,188,Async function 'getHomepageStats',9,0,Low,ya
+features/loans/actions.ts,238,Async function 'adminManualLoan',9,7,Low,ya
+features/practicum-reports/components/AdminPracticumReportTable.tsx,154,Arrow function,9,2,Low,ya
+features/practicum-reports/components/PracticumLpjManager.tsx,32,Function 'PracticumLpjManager',9,6,Low,ya
+features/publications/components/PublicationManager.tsx,195,Async arrow function,9,7,Low,ya
+features/publications/components/PublicationManager.tsx,484,Arrow function,9,4,Low,ya
+migrate.ts,26,Async function 'main',9,3,Low,tidak
+app/(auth)/register/RegisterForm.tsx,44,Async arrow function,8,12,Low,ya
+app/admin/dashboard/_components/DashboardNotifications.tsx,23,Function 'DashboardNotifications',8,2,Low,ya
+app/admin/profile/page.tsx,8,Async function 'AdminProfilePage',8,2,Low,ya
+app/admin/validations/page.tsx,289,Arrow function,8,11,Low,ya
+app/items/[qrCode]/page.tsx,11,Async function 'ItemDetailPage',8,5,Low,ya
+app/student/loans/_components/LoansTable.tsx,26,Function 'LoansTable',8,3,Low,ya
+app/student/loans/_components/LoansTable.tsx,100,Arrow function,8,1,Low,ya
+components/shared/CalendarView.tsx,46,Function 'CalendarView',8,2,Low,tidak
+features/auth/actions.ts,106,Async function 'refreshUserSession',8,4,Low,ya
+features/bookings/service.ts,121,Static async method 'getAll',8,4,Low,ya
+features/dashboard/components/StatCard.tsx,14,Function 'StatCard',8,3,Low,ya
+features/download-center/actions.ts,31,Async function 'uploadDownloadCenterDoc',8,4,Low,ya
+features/governance/components/DataExport.tsx,7,Function 'DataExport',8,12,Low,ya
+features/hero-photos/actions.ts,40,Async function 'updateHeroPhoto',8,6,Low,ya
+features/loans/service.ts,105,Static async method 'getAll',8,4,Low,ya
+features/practicum-reports/components/BeritaAcaraManager.tsx,296,Arrow function,8,6,Low,ya
+features/publications/components/PublicationManager.tsx,147,Async arrow function,8,4,Low,ya
+features/scheduled-practicum/service.ts,242,Static async method 'update',8,7,Low,ya
+features/users/enrollment.ts,112,Async function 'parseCSV',8,7,Low,ya
+middleware.ts,5,Async function 'middleware',8,2,Low,tidak
+app/admin/validations/_components/ManualLoanButton.tsx,31,Function 'ManualLoanButton',7,1,Low,ya
+app/admin/validations/_components/SearchableBookingsSection.tsx,130,Arrow function,7,4,Low,ya
+app/admin/validations/_components/SearchableLoansSection.tsx,44,Function 'SearchableLoansSection',7,2,Low,ya
+app/admin/validations/_components/SearchableLoansSection.tsx,179,Arrow function,7,5,Low,ya
+app/admin/validations/_components/SearchableRiwayatSection.tsx,175,Arrow function,7,4,Low,ya
+app/admin/validations/_components/SearchableRiwayatSection.tsx,232,Arrow function,7,4,Low,ya
+app/admin/validations/_components/ValidationTabs.tsx,18,Function 'ValidationTabs',7,2,Low,ya
+app/admin/validations/page.tsx,379,Arrow function,7,7,Low,ya
+app/api/berita-acara/download/route.ts,165,Arrow function,7,0,Low,ya
+app/student/loans/_components/LoansTable.tsx,163,Arrow function,7,1,Low,ya
+features/courses/service.ts,128,Static async method 'update',7,6,Low,ya
+features/dashboard/service.ts,487,Static async method 'getPendingCounts',7,0,Low,ya
+features/dashboard/service.ts,577,Static async method 'getRoomUtilization',7,0,Low,ya
+features/download-center/actions.ts,79,Async function 'deleteDownloadCenterDoc',7,5,Low,ya
+features/governance/actions.ts,179,Async function 'deleteGovernanceDoc',7,3,Low,ya
+features/governance/components/UserList.tsx,386,Arrow function,7,4,Low,ya
+features/governance/export-actions.ts,155,Arrow function,7,5,Low,ya
+features/loans/actions.ts,78,Async function 'deleteLoan',7,3,Low,ya
+features/practicum-reports/components/LecturerPracticumReportTable.tsx,149,Arrow function,7,1,Low,ya
+features/practicum-reports/components/PracticumReportForm.tsx,36,Async arrow function,7,0,Low,ya
+features/practicum/components/ModuleList.tsx,139,Arrow function,7,2,Low,ya
+features/practicum/components/ModuleList.tsx,193,Arrow function,7,1,Low,ya
+features/practicum/components/ModuleManager.tsx,365,Arrow function,7,2,Low,ya
+features/practicum/service.ts,133,Static async method 'update',7,5,Low,ya
+features/scheduled-practicum/components/BulkScheduleForm.tsx,28,Function 'BulkScheduleForm',7,4,Low,ya
+features/users/enrollment.ts,22,Async function 'bulkEnrollUsers',7,5,Low,ya
+lib/formatters.ts,108,Function 'formatRelativeTime',7,6,Low,ya
+lib/menu.ts,97,Arrow function,7,6,Low,ya
+app/(auth)/login/page.tsx,10,Function 'LoginForm',6,3,Low,ya
+app/(home)/_components/HeroCarousel.tsx,58,Arrow function,6,2,Low,ya
+app/admin/dashboard/page.tsx,13,Async function 'AdminDashboard',6,0,Low,ya
+app/admin/inventory/_components/ItemsView.tsx,282,Arrow function,6,3,Low,ya
+app/admin/inventory/_components/RoomsView.tsx,50,Arrow function,6,6,Low,ya
+app/admin/validations/_components/ActiveLoansTable.tsx,127,Arrow function,6,4,Low,ya
+app/admin/validations/_components/ActiveLoansTable.tsx,221,Arrow function,6,4,Low,ya
+app/admin/validations/_components/LoansTableWithSearch.tsx,76,Arrow function,6,4,Low,ya
+app/admin/validations/_components/ManualBookingButton.tsx,32,Function 'ManualBookingButton',6,1,Low,ya
+app/admin/validations/_components/SearchableRiwayatSection.tsx,317,Arrow function,6,3,Low,ya
+app/admin/validations/_components/SearchableRiwayatSection.tsx,369,Arrow function,6,3,Low,ya
+app/api/berita-acara/download/route.ts,8,Function 'getDateRange',6,6,Low,ya
+app/student/dashboard/_components/StudentScheduleWidget.tsx,155,Arrow function,6,3,Low,ya
+app/student/loans/_components/ReturnModal.tsx,41,Async arrow function,6,6,Low,ya
+features/attendance/components/AttendanceModal.tsx,72,Async arrow function,6,4,Low,ya
+features/bookings/components/RoomBookingClient.tsx,72,Function 'RoomBookingClient',6,1,Low,ya
+features/courses/components/CourseList.tsx,28,Arrow function,6,7,Low,ya
+features/courses/components/CourseManager.tsx,39,Arrow function,6,6,Low,ya
+features/courses/components/CourseManager.tsx,373,Arrow function,6,2,Low,ya
+features/dashboard/analytics.ts,33,Function 'calculateTrend',6,7,Low,ya
+features/download-center/components/DownloadCenterManager.tsx,30,Function 'DownloadCenterManager',6,3,Low,ya
+features/governance/components/BulkEnrollment.tsx,50,Async arrow function,6,4,Low,ya
+features/governance/components/DataExport.tsx,32,Async arrow function,6,4,Low,ya
+features/governance/components/DownloadCenter.tsx,28,Function 'DownloadCenter',6,4,Low,ya
+features/governance/components/UserList.tsx,348,Arrow function,6,3,Low,ya
+features/hero-photos/actions.ts,12,Async function 'addHeroPhoto',6,1,Low,ya
+features/practicum-reports/actions.ts,78,Async function 'verifyPracticumReport',6,4,Low,ya
+features/practicum-reports/components/AllPracticumLpjManager.tsx,246,Arrow function,6,1,Low,ya
+features/practicum-reports/components/BeritaAcaraManager.tsx,65,Async arrow function,6,6,Low,ya
+features/practicum-reports/components/PracticumReportTable.tsx,65,Arrow function,6,0,Low,ya
+features/practicum-reports/lpj-actions.ts,89,Async function 'deletePracticumLpjDoc',6,4,Low,ya
+features/publications/components/LikeButton.tsx,14,Function 'LikeButton',6,2,Low,ya
+features/scheduled-practicum/components/AdminScheduledPracticumManager.tsx,153,Async arrow function,6,6,Low,ya
+features/scheduled-practicum/components/StudentScheduledPracticumManager.tsx,158,Async arrow function,6,6,Low,ya
+lib/documentVerifier.ts,81,Function 'downscalePixels',6,7,Low,ya
+lib/documentVerifier.ts,116,Function 'rawPixelsToBmp',6,3,Low,ya
+lib/formatters.ts,188,Function 'formatFileSize',6,4,Low,ya
+app/(auth)/login/page.tsx,23,Async arrow function,5,3,Low,ya
+app/(home)/_components/HomeCalendar.tsx,241,Arrow function,5,3,Low,ya
+app/admin/hero-photos/_components/HeroFocalPicker.tsx,60,Arrow function,5,4,Low,ya
+app/admin/hero-photos/_components/HeroPhotoManager.tsx,38,Arrow function,5,0,Low,ya
+app/admin/hero-photos/_components/HeroPhotoManager.tsx,76,Async arrow function,5,6,Low,ya
+app/admin/inventory/_components/CategoriesView.tsx,34,Async arrow function,5,4,Low,ya
+app/admin/inventory/_components/CategoriesView.tsx,52,Async arrow function,5,6,Low,ya
+app/admin/inventory/_components/InventoryManager.tsx,14,Function 'InventoryManager',5,2,Low,ya
+app/admin/inventory/_components/ItemsView.tsx,86,Async arrow function,5,2,Low,ya
+app/admin/riwayat/page.tsx,176,Arrow function,5,7,Low,ya
+app/admin/validations/_components/ActiveBookingsTable.tsx,123,Arrow function,5,4,Low,ya
+app/admin/validations/_components/ActiveBookingsTable.tsx,215,Arrow function,5,4,Low,ya
+app/admin/validations/_components/LoanHistoryFilter.tsx,7,Function 'LoanHistoryFilter',5,1,Low,ya
+app/admin/validations/_components/ManualBookingButton.tsx,47,Arrow function,5,6,Low,ya
+app/admin/validations/_components/ManualLoanButton.tsx,52,Arrow function,5,6,Low,ya
+app/admin/validations/_components/SearchableBookingsSection.tsx,28,Function 'SearchableBookingsSection',5,1,Low,ya
+app/admin/validations/_components/SearchableBookingsSection.tsx,42,Arrow function,5,1,Low,ya
+app/api/refresh-session/route.ts,36,Async function 'GET',5,2,Low,ya
+app/dashboard/page.tsx,4,Async function 'DashboardPage',5,4,Low,ya
+app/items/[qrCode]/pinjam/page.tsx,9,Async function 'ItemLoanRedirectPage',5,5,Low,ya
+app/lecturer/dashboard/page.tsx,89,Arrow function,5,6,Low,ya
+app/lecturer/governance/page.tsx,6,Async function 'LecturerGovernancePage',5,1,Low,ya
+app/lecturer/rooms/page.tsx,6,Async function 'LecturerRoomsPage',5,3,Low,ya
+app/publications/page.tsx,439,Arrow function,5,5,Low,ya
+app/student/dashboard/_components/StudentScheduleWidget.tsx,40,Function 'getCalendarDays',5,4,Low,ya
+app/student/dashboard/_components/StudentScheduleWidget.tsx,96,Arrow function,5,7,Low,ya
+app/student/dashboard/_components/StudentScheduleWidget.tsx,254,Arrow function,5,2,Low,ya
+app/student/dashboard/page.tsx,10,Async function 'StudentDashboard',5,1,Low,ya
+app/student/items/_components/ItemCard.tsx,91,Arrow function,5,5,Low,ya
+app/student/loans/_components/LoansTable.tsx,46,Arrow function,5,1,Low,ya
+app/student/loans/_components/LoansTable.tsx,56,Arrow function,5,4,Low,ya
+app/student/publications/page.tsx,274,Arrow function,5,5,Low,ya
+components/layout/Sidebar.tsx,68,Function 'Sidebar',5,3,Low,tidak
+components/providers/AlertProvider.tsx,49,Function 'AlertProvider',5,3,Low,tidak
+components/providers/AlertProvider.tsx,109,Arrow function,5,1,Low,tidak
+components/providers/AlertProvider.tsx,119,Arrow function,5,1,Low,tidak
+components/shared/CustomCalendar.tsx,42,Function 'CustomCalendar',5,2,Low,tidak
+components/shared/CustomCalendar.tsx,193,Arrow function,5,3,Low,tidak
+components/ui/RejectReasonModal.tsx,14,Function 'RejectReasonModal',5,2,Low,tidak
+components/ui/separator.tsx,11,Arrow function,5,2,Low,tidak
+db/seeds/comprehensive.seed.ts,98,Async function 'seedUsers',5,5,Low,tidak
+db/seeds/create-upload-structure.ts,18,Async function 'createUploadStructure',5,8,Low,tidak
+features/bookings/components/RoomBookingClient.tsx,110,Arrow function,5,6,Low,ya
+features/courses/components/CourseList.tsx,134,Arrow function,5,2,Low,ya
+features/courses/components/CourseList.tsx,219,Arrow function,5,5,Low,ya
+features/courses/components/CourseManager.tsx,430,Arrow function,5,5,Low,ya
+features/courses/service.ts,114,Static async method 'create',5,0,Low,ya
+features/governance/components/BulkEnrollment.tsx,152,Arrow function,5,0,Low,ya
+features/governance/components/DocumentList.tsx,20,Function 'DocumentList',5,3,Low,ya
+features/governance/components/DocumentList.tsx,100,Async arrow function,5,5,Low,ya
+features/hero-photos/service.ts,62,Static async method 'update',5,3,Low,ya
+features/loans/service.ts,159,Static async method 'updateStatus',5,3,Low,ya
+features/practicum-reports/actions.ts,104,Async function 'lecturerVerifyPracticumReport',5,3,Low,ya
+features/practicum-reports/actions.ts,130,Async function 'deletePracticumReport',5,2,Low,ya
+features/practicum-reports/actions.ts,153,Async function 'lecturerDeletePracticumReport',5,3,Low,ya
+features/practicum-reports/actions.ts,178,Async function 'deleteAllPracticumReports',5,2,Low,ya
+features/practicum-reports/components/BeritaAcaraManager.tsx,25,Function 'getCalendarDays',5,4,Low,ya
+features/practicum-reports/components/PracticumReportForm.tsx,22,Function 'PracticumReportForm',5,2,Low,ya
+features/practicum/actions.ts,58,Async function 'updateModule',5,4,Low,ya
+features/practicum/components/ModuleList.tsx,30,Arrow function,5,6,Low,ya
+features/practicum/components/ModuleList.tsx,259,Arrow function,5,5,Low,ya
+features/practicum/components/ModuleManager.tsx,37,Arrow function,5,6,Low,ya
+features/practicum/components/ModuleManager.tsx,441,Arrow function,5,0,Low,ya
+features/practicum/components/ModuleManager.tsx,524,Arrow function,5,5,Low,ya
+features/practicum/service.ts,120,Static async method 'create',5,0,Low,ya
+features/publications/actions.ts,29,Async function 'updatePublication',5,4,Low,ya
+features/publications/components/PublicationManager.tsx,624,Arrow function,5,5,Low,ya
+features/publications/service.ts,235,Static async method 'getAllKeywords',5,9,Low,ya
+features/scheduled-practicum/components/AdminScheduledPracticumManager.tsx,46,Function 'getCalendarDays',5,4,Low,ya
+features/scheduled-practicum/components/BulkScheduleForm.tsx,58,Async arrow function,5,5,Low,ya
+features/scheduled-practicum/components/StudentScheduledPracticumManager.tsx,46,Function 'getCalendarDays',5,4,Low,ya
+features/users/enrollment.ts,117,Arrow function,5,6,Low,ya
+lib/auth.ts,60,Function 'hasPermission',5,0,Low,ya
+app/(home)/_components/AvailableItemsSection.tsx,20,Arrow function,4,1,Low,ya
+app/(home)/_components/HomeCalendar.tsx,142,Arrow function,4,2,Low,ya
+app/admin/dashboard/_components/DashboardNotifications.tsx,119,Arrow function,4,0,Low,ya
+app/admin/dashboard/_components/DashboardNotifications.tsx,144,Arrow function,4,0,Low,ya
+app/admin/dashboard/_components/DashboardNotifications.tsx,169,Arrow function,4,0,Low,ya
+app/admin/hero-photos/_components/HeroPhotoManager.tsx,61,Arrow function,4,3,Low,ya
+app/admin/inventory/_components/ItemsView.tsx,129,Async arrow function,4,1,Low,ya
+app/admin/pengembalian/page.tsx,7,Async function 'PengembalianPage',4,1,Low,ya
+app/admin/validations/_components/LoansTableWithSearch.tsx,31,Function 'LoansTableWithSearch',4,1,Low,ya
+app/admin/validations/_components/SearchableUsersSection.tsx,35,Arrow function,4,1,Low,ya
+app/admin/validations/_components/SearchableUsersSection.tsx,171,Arrow function,4,1,Low,ya
+app/items/[qrCode]/page.tsx,20,Arrow function,4,1,Low,ya
+app/lecturer/courses/page.tsx,6,Async function 'LecturerCoursesPage',4,2,Low,ya
+app/lecturer/items/page.tsx,7,Async function 'LecturerItemsPage',4,2,Low,ya
+app/lecturer/modules/page.tsx,7,Async function 'LecturerPracticumPage',4,2,Low,ya
+app/lecturer/schedules/page.tsx,9,Async function 'LecturerScheduledPracticumPage',4,2,Low,ya
+app/publications/page.tsx,24,Function 'formatPublishDate',4,4,Low,ya
+app/student/dashboard/_components/StudentScheduleWidget.tsx,236,Arrow function,4,5,Low,ya
+app/student/dashboard/page.tsx,87,Arrow function,4,2,Low,ya
+app/student/loans/_components/ReturnModal.tsx,21,Arrow function,4,3,Low,ya
+app/student/manage/scheduled-practicum/page.tsx,11,Async function 'StudentManageScheduledPracticumPage',4,2,Low,ya
+app/student/publications/page.tsx,25,Function 'formatPublishDate',4,4,Low,ya
+app/student/rooms/_components/StudentRoomManager.tsx,41,Arrow function,4,1,Low,ya
+app/student/rooms/_components/StudentRoomManager.tsx,181,Arrow function,4,0,Low,ya
+app/student/rooms/page.tsx,6,Async function 'RoomBookingPage',4,3,Low,ya
+components/layout/SidebarSubmenu.tsx,20,Function 'SidebarSubmenu',4,2,Low,tidak
+components/providers/AlertProvider.tsx,76,Arrow function,4,0,Low,tidak
+components/shared/QRCodeDisplay.tsx,12,Function 'QRCodeDisplay',4,1,Low,tidak
+components/shared/SearchFilter.tsx,12,Function 'SearchFilter',4,0,Low,tidak
+components/ui/button.tsx,17,Arrow function,4,0,Low,tidak
+components/ui/command.tsx,93,Arrow function,4,1,Low,tidak
+features/courses/components/CourseList.tsx,173,Arrow function,4,1,Low,ya
+features/courses/components/CourseManager.tsx,320,Arrow function,4,1,Low,ya
+features/dashboard/analytics.ts,280,Arrow function,4,1,Low,ya
+features/dashboard/components/InsightCard.tsx,10,Function 'InsightCard',4,0,Low,ya
+features/dashboard/service.ts,391,Static async method 'getLoanTrendData',4,1,Low,ya
+features/dashboard/service.ts,542,Static async method 'getUpcomingDeadlines',4,0,Low,ya
+features/dashboard/service.ts,611,Static async method 'getLoanTrend14Days',4,1,Low,ya
+features/governance/components/BulkEnrollment.tsx,18,Async arrow function,4,2,Low,ya
+features/governance/components/BulkEnrollment.tsx,34,Async arrow function,4,2,Low,ya
+features/governance/components/DownloadCenter.tsx,49,Arrow function,4,3,Low,ya
+features/governance/components/DownloadCenter.tsx,125,Arrow function,4,0,Low,ya
+features/governance/components/UserList.tsx,48,Arrow function,4,1,Low,ya
+features/governance/components/UserList.tsx,258,Arrow function,4,3,Low,ya
+features/governance/export-actions.ts,106,Arrow function,4,3,Low,ya
+features/loans/service.ts,221,Static async method 'delete',4,3,Low,ya
+features/loans/service.ts,246,Static async method 'requestReturn',4,4,Low,ya
+features/practicum-reports/actions.ts,48,Async function 'createPracticumReport',4,2,Low,ya
+features/practicum-reports/components/AdminPracticumReportTable.tsx,33,Arrow function,4,3,Low,ya
+features/practicum-reports/components/AdminPracticumReportTable.tsx,40,Arrow function,4,3,Low,ya
+features/practicum-reports/components/LecturerPracticumReportTable.tsx,44,Arrow function,4,3,Low,ya
+features/practicum-reports/components/LecturerPracticumReportTable.tsx,51,Arrow function,4,3,Low,ya
+features/practicum-reports/components/LecturerPracticumReportTable.tsx,60,Arrow function,4,3,Low,ya
+features/practicum-reports/components/PracticumReportForm.tsx,59,Async arrow function,4,2,Low,ya
+features/practicum-reports/components/PracticumReportTable.tsx,15,Arrow function,4,3,Low,ya
+features/practicum-reports/components/PracticumReportTable.tsx,22,Arrow function,4,3,Low,ya
+features/practicum-reports/lpj-actions.ts,14,Async function 'getPracticumLpjDocs',4,3,Low,ya
+features/practicum-reports/service.ts,214,Static async method 'create',4,1,Low,ya
+features/practicum-reports/validator.ts,35,Arrow function,4,2,Low,ya
+features/practicum/components/ModuleManager.tsx,67,Arrow function,4,3,Low,ya
+features/publications/components/PublicationManager.tsx,34,Function 'formatPublishDate',4,4,Low,ya
+features/publications/components/PublicationManager.tsx,128,Async arrow function,4,3,Low,ya
+features/publications/components/PublicationManager.tsx,349,Arrow function,4,3,Low,ya
+features/publications/components/PublicationManager.tsx,726,Arrow function,4,3,Low,ya
+features/scheduled-practicum/components/AdminScheduledPracticumManager.tsx,106,Arrow function,4,6,Low,ya
+features/scheduled-practicum/components/AdminScheduledPracticumManager.tsx,166,Async arrow function,4,3,Low,ya
+features/scheduled-practicum/components/StudentScheduledPracticumManager.tsx,110,Arrow function,4,6,Low,ya
+features/scheduled-practicum/components/StudentScheduledPracticumManager.tsx,177,Async arrow function,4,3,Low,ya
+features/scheduled-practicum/service.ts,175,Arrow function,4,3,Low,ya
+features/users/enrollment.ts,86,Async function 'checkPreRegisteredUser',4,2,Low,ya
+lib/formatters.ts,160,Function 'formatPercentage',4,1,Low,ya
+app/(home)/_components/AnnouncementSection.tsx,8,Function 'AnnouncementSection',3,1,Low,ya
+app/(home)/_components/HeroCarousel.tsx,17,Function 'HeroCarousel',3,1,Low,ya
+app/(home)/_components/HomeCalendar.tsx,97,Arrow function,3,1,Low,ya
+app/(home)/_components/HomeCalendar.tsx,105,Arrow function,3,1,Low,ya
+app/(home)/_components/HomeCalendar.tsx,115,Arrow function,3,1,Low,ya
+app/(home)/_components/HomeCalendar.tsx,125,Arrow function,3,1,Low,ya
+app/(home)/_components/HomeCalendar.tsx,134,Arrow function,3,1,Low,ya
+app/(home)/_components/PublicationSection.tsx,22,Function 'formatDate',3,2,Low,ya
+app/(home)/_components/PublicationSection.tsx,55,Arrow function,3,0,Low,ya
+app/(home)/page.tsx,17,Async function 'Home',3,2,Low,ya
+app/admin/dashboard/_components/DashboardAnalytics.tsx,18,Function 'DashboardAnalytics',3,1,Low,ya
+app/admin/dashboard/_components/TodayAttendance.tsx,24,Function 'TodayAttendance',3,2,Low,ya
+app/admin/dashboard/page.tsx,99,Arrow function,3,3,Low,ya
+app/admin/download-center/page.tsx,6,Async function 'AdminDownloadCenterPage',3,1,Low,ya
+app/admin/hero-photos/_components/HeroFocalPicker.tsx,13,Function 'HeroFocalPicker',3,0,Low,ya
+app/admin/hero-photos/_components/HeroPhotoManager.tsx,112,Async arrow function,3,2,Low,ya
+app/admin/inventory/_components/CategoriesView.tsx,18,Function 'CategoriesView',3,1,Low,ya
+app/admin/inventory/_components/CategoriesView.tsx,83,Async arrow function,3,1,Low,ya
+app/admin/inventory/_components/ItemsView.tsx,46,Arrow function,3,3,Low,ya
+app/admin/inventory/_components/ItemsView.tsx,352,Async arrow function,3,3,Low,ya
+app/admin/inventory/_components/ItemsView.tsx,403,Async arrow function,3,3,Low,ya
+app/admin/inventory/_components/RoomsView.tsx,28,Arrow function,3,3,Low,ya
+app/admin/inventory/_components/RoomsView.tsx,67,Async arrow function,3,2,Low,ya
+app/admin/inventory/_components/RoomsView.tsx,95,Async arrow function,3,1,Low,ya
+app/admin/inventory/_components/RoomsView.tsx,196,Arrow function,3,1,Low,ya
+app/admin/inventory/_components/RoomsView.tsx,238,Async arrow function,3,3,Low,ya
+app/admin/inventory/_components/RoomsView.tsx,282,Arrow function,3,1,Low,ya
+app/admin/inventory/_components/RoomsView.tsx,322,Async arrow function,3,3,Low,ya
+app/admin/layout.tsx,7,Async function 'AdminLayout',3,1,Low,ya
+app/admin/publications/page.tsx,6,Async function 'AdminPublicationsPage',3,1,Low,ya
+app/admin/riwayat/page.tsx,239,Arrow function,3,3,Low,ya
+app/admin/scheduled-practicum/page.tsx,10,Async function 'AdminScheduledPracticumPage',3,0,Low,ya
+app/admin/validations/_components/ActiveBookingsTable.tsx,36,Arrow function,3,3,Low,ya
+app/admin/validations/_components/ActiveBookingsTable.tsx,59,Async arrow function,3,1,Low,ya
+app/admin/validations/_components/ActiveLoansTable.tsx,40,Arrow function,3,3,Low,ya
+app/admin/validations/_components/ActiveLoansTable.tsx,63,Async arrow function,3,1,Low,ya
+app/admin/validations/_components/ActiveLoansTable.tsx,375,Arrow function,3,2,Low,ya
+app/admin/validations/_components/LoanHistoryFilter.tsx,14,Arrow function,3,4,Low,ya
+app/admin/validations/_components/LoansTableWithSearch.tsx,42,Arrow function,3,0,Low,ya
+app/admin/validations/_components/SearchableLoansSection.tsx,58,Arrow function,3,0,Low,ya
+app/admin/validations/_components/SearchableLoansSection.tsx,68,Arrow function,3,0,Low,ya
+app/admin/validations/_components/SearchableLoansSection.tsx,277,Arrow function,3,2,Low,ya
+app/admin/validations/_components/SearchableRiwayatSection.tsx,49,Arrow function,3,3,Low,ya
+app/admin/validations/_components/SearchableRiwayatSection.tsx,59,Arrow function,3,0,Low,ya
+app/admin/validations/_components/SearchableRiwayatSection.tsx,69,Arrow function,3,0,Low,ya
+app/admin/validations/_components/SearchableUsersSection.tsx,25,Arrow function,3,3,Low,ya
+app/admin/validations/_components/SearchableUsersSection.tsx,120,Arrow function,3,1,Low,ya
+app/admin/validations/_components/ValidationTabs.tsx,36,Arrow function,3,2,Low,ya
+app/api/berita-acara/download/route.ts,138,Arrow function,3,2,Low,ya
+app/api/refresh-session/route.ts,7,Async function 'getEffectivePermissions',3,4,Low,ya
+app/lecturer/layout.tsx,7,Async function 'LecturerLayout',3,1,Low,ya
+app/lecturer/manage/courses/page.tsx,5,Async function 'LecturerManageCoursesPage',3,1,Low,ya
+app/lecturer/manage/dashboard/page.tsx,5,Async function 'LecturerManageDashboardPage',3,1,Low,ya
+app/lecturer/manage/download-center/page.tsx,6,Async function 'LecturerManageDownloadCenterPage',3,1,Low,ya
+app/lecturer/manage/inventory/page.tsx,5,Async function 'LecturerManageInventoryPage',3,1,Low,ya
+app/lecturer/manage/practicum/page.tsx,5,Async function 'LecturerManagePracticumPage',3,1,Low,ya
+app/lecturer/manage/publications/page.tsx,5,Async function 'LecturerManagePublicationsPage',3,1,Low,ya
+app/lecturer/manage/scheduled-practicum/page.tsx,11,Async function 'LecturerManageScheduledPracticumPage',3,1,Low,ya
+app/lecturer/manage/validations/page.tsx,5,Async function 'LecturerManageValidationsPage',3,1,Low,ya
+app/lecturer/profile/page.tsx,5,Async function 'LecturerProfilePage',3,1,Low,ya
+app/lecturer/publications/page.tsx,6,Async function 'LecturerPublicationsPage',3,1,Low,ya
+app/student/dashboard/_components/StudentScheduleWidget.tsx,126,Arrow function,3,3,Low,ya
+app/student/items/_components/ItemCard.tsx,449,Arrow function,3,1,Low,ya
+app/student/items/_components/StudentItemsManager.tsx,37,Arrow function,3,3,Low,ya
+app/student/items/_components/StudentItemsManager.tsx,179,Arrow function,3,0,Low,ya
+app/student/items/page.tsx,7,Async function 'BrowseItemsPage',3,2,Low,ya
+app/student/layout.tsx,7,Async function 'StudentLayout',3,1,Low,ya
+app/student/loans/_components/LoansTable.tsx,28,Arrow function,3,3,Low,ya
+app/student/manage/courses/page.tsx,5,Async function 'StudentManageCoursesPage',3,1,Low,ya
+app/student/manage/dashboard/page.tsx,5,Async function 'StudentManageDashboardPage',3,1,Low,ya
+app/student/manage/download-center/page.tsx,6,Async function 'StudentManageDownloadCenterPage',3,1,Low,ya
+app/student/manage/inventory/page.tsx,5,Async function 'StudentManageInventoryPage',3,1,Low,ya
+app/student/manage/practicum/page.tsx,5,Async function 'StudentManagePracticumPage',3,1,Low,ya
+app/student/manage/publications/page.tsx,5,Async function 'StudentManagePublicationsPage',3,1,Low,ya
+app/student/manage/validations/page.tsx,5,Async function 'StudentManageValidationsPage',3,1,Low,ya
+app/student/profile/page.tsx,5,Async function 'StudentProfilePage',3,1,Low,ya
+app/student/rooms/_components/StudentRoomManager.tsx,25,Arrow function,3,3,Low,ya
+app/student/rooms/_components/StudentRoomManager.tsx,132,Arrow function,3,0,Low,ya
+components/layout/Sidebar.tsx,73,Arrow function,3,1,Low,tidak
+components/layout/SidebarLink.tsx,11,Function 'SidebarLink',3,1,Low,tidak
+components/providers/AlertProvider.tsx,61,Arrow function,3,0,Low,tidak
+components/providers/AlertProvider.tsx,98,Arrow function,3,4,Low,tidak
+components/shared/CustomCalendar.tsx,84,Arrow function,3,1,Low,tidak
+components/shared/CustomCalendar.tsx,92,Arrow function,3,1,Low,tidak
+components/shared/CustomCalendar.tsx,102,Arrow function,3,1,Low,tidak
+components/shared/CustomCalendar.tsx,112,Arrow function,3,1,Low,tidak
+components/shared/CustomCalendar.tsx,121,Arrow function,3,1,Low,tidak
+components/shared/CustomCalendar.tsx,129,Arrow function,3,1,Low,tidak
+components/shared/QRCodeDisplay.tsx,26,Arrow function,3,2,Low,tidak
+components/shared/RoomCalendar.tsx,26,Function 'RoomCalendar',3,3,Low,tidak
+components/shared/RoomCalendar.tsx,29,Arrow function,3,2,Low,tidak
+components/shared/RoomCalendar.tsx,47,Arrow function,3,1,Low,tidak
+components/shared/TimeSelect.tsx,12,Function 'TimeSelect',3,1,Low,tidak
+components/ui/popover.tsx,17,Arrow function,3,2,Low,tidak
+components/ui/popover.tsx,29,Arrow function,3,2,Low,tidak
+components/ui/popover.tsx,62,Arrow function,3,1,Low,tidak
+components/ui/popover.tsx,76,Arrow function,3,1,Low,tidak
+components/ui/tabs.tsx,14,Arrow function,3,1,Low,tidak
+components/ui/tabs.tsx,48,Arrow function,3,1,Low,tidak
+components/ui/tabs.tsx,61,Arrow function,3,1,Low,tidak
+components/ui/tabs.tsx,71,Arrow function,3,1,Low,tidak
+features/auth/actions.ts,15,Async function 'getEffectivePermissions',3,4,Low,ya
+features/bookings/actions.ts,77,Async function 'deleteBooking',3,1,Low,ya
+features/bookings/service.ts,174,Static async method 'updateStatus',3,1,Low,ya
+features/courses/components/CourseList.tsx,17,Arrow function,3,3,Low,ya
+features/courses/components/CourseManager.tsx,29,Arrow function,3,3,Low,ya
+features/dashboard/analytics.ts,60,Function 'detectBusiestDay',3,1,Low,ya
+features/dashboard/service.ts,245,Static async method 'getLecturerDashboard',3,1,Low,ya
+features/dashboard/service.ts,466,Static async method 'getIdleItemsCount',3,0,Low,ya
+features/download-center/components/DownloadCenterManager.tsx,35,Async arrow function,3,2,Low,ya
+features/download-center/components/DownloadCenterManager.tsx,47,Async arrow function,3,2,Low,ya
+features/download-center/components/DownloadCenterManager.tsx,108,Arrow function,3,1,Low,ya
+features/governance/components/DataExport.tsx,138,Arrow function,3,2,Low,ya
+features/governance/components/DocumentList.tsx,66,Arrow function,3,0,Low,ya
+features/governance/components/DownloadCenter.tsx,32,Arrow function,3,2,Low,ya
+features/governance/components/DownloadCenter.tsx,70,Arrow function,3,2,Low,ya
+features/governance/components/GovernanceManager.tsx,59,Arrow function,3,2,Low,ya
+features/governance/components/UserForm.tsx,30,Arrow function,3,1,Low,ya
+features/governance/components/UserList.tsx,30,Arrow function,3,3,Low,ya
+features/governance/components/UserList.tsx,56,Arrow function,3,3,Low,ya
+features/governance/components/UserList.tsx,88,Arrow function,3,1,Low,ya
+features/governance/components/UserList.tsx,196,Arrow function,3,3,Low,ya
+features/governance/export-actions.ts,13,Arrow function,3,1,Low,ya
+features/governance/export-actions.ts,22,Arrow function,3,1,Low,ya
+features/governance/export-actions.ts,57,Arrow function,3,2,Low,ya
+features/hero-photos/actions.ts,80,Async function 'deleteHeroPhoto',3,1,Low,ya
+features/inventory/actions.ts,76,Async function 'deleteCategory',3,3,Low,ya
+features/loans/actions.ts,21,Async function 'createLoanRequest',3,1,Low,ya
+features/loans/actions.ts,57,Async function 'updateLoanStatus',3,1,Low,ya
+features/loans/actions.ts,113,Async function 'requestItemReturn',3,1,Low,ya
+features/loans/actions.ts,130,Async function 'approveReturn',3,1,Low,ya
+features/loans/actions.ts,147,Async function 'rejectReturn',3,1,Low,ya
+features/loans/actions.ts,163,Async function 'adminDirectReturn',3,1,Low,ya
+features/loans/actions.ts,208,Async function 'requestItemLoan',3,1,Low,ya
+features/loans/service.ts,290,Static async method 'approveReturn',3,2,Low,ya
+features/loans/service.ts,318,Static async method 'adminDirectReturn',3,2,Low,ya
+features/permissions/service.ts,27,Static async method 'getRolePermissionMap',3,3,Low,ya
+features/permissions/service.ts,63,Static async method 'getEffectivePermissions',3,4,Low,ya
+features/permissions/service.ts,93,Static async method 'setUserPermission',3,3,Low,ya
+features/permissions/service.ts,134,Static async method 'setUserPermissions',3,2,Low,ya
+features/practicum-reports/components/AdminPracticumReportTable.tsx,14,Arrow function,3,1,Low,ya
+features/practicum-reports/components/AdminPracticumReportTable.tsx,50,Async arrow function,3,2,Low,ya
+features/practicum-reports/components/AdminPracticumReportTable.tsx,61,Arrow function,3,1,Low,ya
+features/practicum-reports/components/AdminPracticumReportTable.tsx,63,Async arrow function,3,2,Low,ya
+features/practicum-reports/components/AdminPracticumReportTable.tsx,82,Async arrow function,3,2,Low,ya
+features/practicum-reports/components/AdminPracticumReportTable.tsx,96,Async arrow function,3,2,Low,ya
+features/practicum-reports/components/AllPracticumLpjManager.tsx,57,Arrow function,3,2,Low,ya
+features/practicum-reports/components/AllPracticumLpjManager.tsx,70,Async arrow function,3,2,Low,ya
+features/practicum-reports/components/AllPracticumLpjManager.tsx,88,Async arrow function,3,2,Low,ya
+features/practicum-reports/components/AllPracticumLpjManager.tsx,204,Arrow function,3,0,Low,ya
+features/practicum-reports/components/LecturerPracticumReportTable.tsx,26,Arrow function,3,1,Low,ya
+features/practicum-reports/components/LecturerPracticumReportTable.tsx,68,Async arrow function,3,2,Low,ya
+features/practicum-reports/components/LecturerPracticumReportTable.tsx,79,Arrow function,3,1,Low,ya
+features/practicum-reports/components/LecturerPracticumReportTable.tsx,81,Async arrow function,3,2,Low,ya
+features/practicum-reports/components/LecturerPracticumReportTable.tsx,100,Async arrow function,3,2,Low,ya
+features/practicum-reports/components/PracticumLpjManager.tsx,62,Async arrow function,3,2,Low,ya
+features/practicum-reports/components/PracticumLpjManager.tsx,80,Async arrow function,3,2,Low,ya
+features/practicum-reports/components/PracticumLpjManager.tsx,177,Arrow function,3,0,Low,ya
+features/practicum-reports/components/PracticumLpjManager.tsx,211,Arrow function,3,0,Low,ya
+features/practicum-reports/components/PracticumReportTable.tsx,31,Arrow function,3,1,Low,ya
+features/practicum-reports/service.ts,198,Static async method 'getLecturerName',3,0,Low,ya
+features/practicum/actions.ts,78,Async function 'deleteModule',3,1,Low,ya
+features/practicum/components/ModuleList.tsx,19,Arrow function,3,3,Low,ya
+features/practicum/components/ModuleManager.tsx,26,Arrow function,3,3,Low,ya
+features/practicum/components/ModuleManager.tsx,79,Arrow function,3,2,Low,ya
+features/publications/actions.ts,81,Async function 'deletePublication',3,1,Low,ya
+features/publications/components/PublicationManager.tsx,55,Arrow function,3,3,Low,ya
+features/publications/components/PublicationManager.tsx,65,Arrow function,3,3,Low,ya
+features/publications/service.ts,294,Static async method 'getLikeCount',3,0,Low,ya
+features/publications/service.ts,318,Static async method 'getLikeCounts',3,2,Low,ya
+features/scheduled-practicum/actions.ts,40,Async function 'createScheduledPracticum',3,1,Low,ya
+features/scheduled-practicum/actions.ts,59,Async function 'updateScheduledPracticum',3,1,Low,ya
+features/scheduled-practicum/actions.ts,78,Async function 'deleteScheduledPracticum',3,1,Low,ya
+features/scheduled-practicum/components/AdminScheduledPracticumManager.tsx,259,Arrow function,3,0,Low,ya
+features/scheduled-practicum/components/StudentScheduledPracticumManager.tsx,250,Arrow function,3,0,Low,ya
+features/scheduled-practicum/components/StudentScheduledPracticumManager.tsx,366,Arrow function,3,1,Low,ya
+features/scheduled-practicum/service.ts,210,Static async method 'create',3,1,Low,ya
+features/users/service.ts,109,Static async method 'update',3,3,Low,ya
+features/users/validator.ts,36,Arrow function,3,2,Low,ya
+lib/auth.ts,23,Async function 'getSession',3,1,Low,ya
+lib/auth.ts,32,Async function 'requirePermission',3,2,Low,ya
+lib/auth.ts,46,Async function 'requireAnyPermission',3,2,Low,ya
+lib/auth.ts,71,Async function 'updateSession',3,1,Low,ya
+lib/formatters.ts,15,Function 'formatDateTime',3,2,Low,ya
+lib/formatters.ts,34,Function 'formatDate',3,2,Low,ya
+lib/formatters.ts,49,Function 'formatDateWithDay',3,2,Low,ya
+lib/formatters.ts,65,Function 'formatDateShort',3,2,Low,ya
+lib/formatters.ts,80,Function 'formatTime',3,2,Low,ya
+lib/formatters.ts,94,Function 'formatTimeWithSeconds',3,2,Low,ya
+lib/formatters.ts,137,Function 'formatNumber',3,1,Low,ya
+lib/formatters.ts,146,Function 'formatCurrency',3,1,Low,ya
+lib/formatters.ts,170,Function 'truncateText',3,2,Low,ya
+lib/menu.ts,109,Arrow function,3,2,Low,ya
+lib/menu.ts,126,Arrow function,3,2,Low,ya
+lib/menu.ts,153,Arrow function,3,2,Low,ya
+lib/timezone.ts,54,Function 'formatWIB',3,2,Low,ya
+migrate.ts,9,Async function 'addColumnIfNotExists',3,4,Low,tidak
+app/(auth)/register/RegisterForm.tsx,73,Async function 'handleSubmit',2,2,Low,ya
+app/(auth)/register/RegisterForm.tsx,137,Arrow function,2,1,Low,ya
+app/(home)/_components/AvailableItemsSection.tsx,18,Function 'AvailableItemsSection',2,1,Low,ya
+app/(home)/_components/AvailableItemsSection.tsx,51,Arrow function,2,0,Low,ya
+app/(home)/_components/HeroCarousel.tsx,21,Arrow function,2,1,Low,ya
+app/(home)/_components/HeroCarousel.tsx,121,Arrow function,2,1,Low,ya
+app/(home)/_components/HomeCalendar.tsx,62,Arrow function,2,1,Low,ya
+app/(home)/_components/HomeCalendar.tsx,72,Arrow function,2,1,Low,ya
+app/(home)/_components/HomeCalendar.tsx,81,Arrow function,2,1,Low,ya
+app/(home)/_components/HomeCalendar.tsx,95,Arrow function,2,1,Low,ya
+app/(home)/_components/ModuleSection.tsx,14,Function 'ModuleSection',2,1,Low,ya
+app/(home)/_components/ModuleSection.tsx,37,Arrow function,2,0,Low,ya
+app/(home)/_components/PublicationSection.tsx,28,Function 'PublicationSection',2,1,Low,ya
+app/(home)/_components/SOPSection.tsx,16,Function 'SOPSection',2,1,Low,ya
+app/(home)/_components/SOPSection.tsx,32,Arrow function,2,1,Low,ya
+app/admin/dashboard/_components/DashboardAnalytics.tsx,25,Async function 'fetchAnalytics',2,1,Low,ya
+app/admin/dashboard/_components/MarkAllReadButton.tsx,7,Function 'MarkAllReadButton',2,1,Low,ya
+app/admin/dashboard/_components/PendingBookingsAlert.tsx,8,Function 'PendingBookingsAlert',2,1,Low,ya
+app/admin/dashboard/_components/PendingLoansAlert.tsx,8,Function 'PendingLoansAlert',2,1,Low,ya
+app/admin/dashboard/_components/PendingUserAlert.tsx,8,Function 'PendingUserAlert',2,1,Low,ya
+app/admin/dashboard/_components/RoomAttendanceChart.tsx,18,Function 'RoomAttendanceChart',2,1,Low,ya
+app/admin/dashboard/_components/TodayAttendance.tsx,29,Async function 'fetchAttendance',2,1,Low,ya
+app/admin/hero-photos/_components/HeroFocalPicker.tsx,30,Arrow function,2,1,Low,ya
+app/admin/hero-photos/_components/HeroFocalPicker.tsx,39,Arrow function,2,2,Low,ya
+app/admin/hero-photos/_components/HeroPhotoManager.tsx,267,Arrow function,2,1,Low,ya
+app/admin/inventory/_components/CategoriesView.tsx,115,Arrow function,2,1,Low,ya
+app/admin/inventory/_components/ItemsView.tsx,319,Async arrow function,2,1,Low,ya
+app/admin/inventory/_components/ItemsView.tsx,420,Async arrow function,2,1,Low,ya
+app/admin/inventory/_components/RoomsView.tsx,42,Arrow function,2,1,Low,ya
+app/admin/inventory/_components/RoomsView.tsx,207,Async arrow function,2,1,Low,ya
+app/admin/inventory/_components/RoomsView.tsx,298,Async arrow function,2,1,Low,ya
+app/admin/riwayat/page.tsx,36,Arrow function,2,1,Low,ya
+app/admin/riwayat/page.tsx,41,Arrow function,2,1,Low,ya
+app/admin/validations/_components/ActiveBookingsTable.tsx,54,Arrow function,2,1,Low,ya
+app/admin/validations/_components/ActiveBookingsTable.tsx,70,Async arrow function,2,1,Low,ya
+app/admin/validations/_components/ActiveBookingsTable.tsx,78,Async arrow function,2,1,Low,ya
+app/admin/validations/_components/ActiveLoansTable.tsx,58,Arrow function,2,1,Low,ya
+app/admin/validations/_components/ActiveLoansTable.tsx,74,Async arrow function,2,1,Low,ya
+app/admin/validations/_components/ActiveLoansTable.tsx,82,Async arrow function,2,1,Low,ya
+app/admin/validations/_components/LoansTableWithSearch.tsx,39,Arrow function,2,1,Low,ya
+app/admin/validations/_components/ManualLoanButton.tsx,47,Arrow function,2,0,Low,ya
+app/admin/validations/_components/ManualLoanButton.tsx,297,Arrow function,2,0,Low,ya
+app/admin/validations/_components/ManualLoanButton.tsx,302,Arrow function,2,2,Low,ya
+app/admin/validations/_components/PendingReturnsList.tsx,29,Function 'PendingReturnsList',2,1,Low,ya
+app/admin/validations/_components/PendingReturnsList.tsx,60,Arrow function,2,0,Low,ya
+app/admin/validations/_components/SearchableBookingsSection.tsx,36,Arrow function,2,0,Low,ya
+app/admin/validations/_components/SearchableBookingsSection.tsx,39,Arrow function,2,1,Low,ya
+app/admin/validations/_components/SearchableBookingsSection.tsx,64,Arrow function,2,1,Low,ya
+app/admin/validations/_components/SearchableBookingsSection.tsx,69,Async arrow function,2,0,Low,ya
+app/admin/validations/_components/SearchableLoansSection.tsx,52,Arrow function,2,0,Low,ya
+app/admin/validations/_components/SearchableLoansSection.tsx,55,Arrow function,2,1,Low,ya
+app/admin/validations/_components/SearchableLoansSection.tsx,65,Arrow function,2,1,Low,ya
+app/admin/validations/_components/SearchableLoansSection.tsx,89,Arrow function,2,1,Low,ya
+app/admin/validations/_components/SearchableLoansSection.tsx,94,Async arrow function,2,0,Low,ya
+app/admin/validations/_components/SearchableRiwayatSection.tsx,56,Arrow function,2,1,Low,ya
+app/admin/validations/_components/SearchableRiwayatSection.tsx,66,Arrow function,2,1,Low,ya
+app/admin/validations/_components/SearchableRiwayatSection.tsx,76,Async arrow function,2,1,Low,ya
+app/admin/validations/_components/SearchableRiwayatSection.tsx,84,Async arrow function,2,1,Low,ya
+app/admin/validations/_components/SearchableRiwayatSection.tsx,96,Async arrow function,2,1,Low,ya
+app/admin/validations/_components/SearchableRiwayatSection.tsx,104,Async arrow function,2,1,Low,ya
+app/admin/validations/_components/SearchableUsersSection.tsx,32,Arrow function,2,1,Low,ya
+app/admin/validations/_components/ValidationTabs.tsx,60,Arrow function,2,1,Low,ya
+app/admin/validations/page.tsx,71,Arrow function,2,0,Low,ya
+app/admin/validations/page.tsx,131,Arrow function,2,1,Low,ya
+app/admin/validations/page.tsx,196,Arrow function,2,0,Low,ya
+app/admin/validations/page.tsx,246,Arrow function,2,0,Low,ya
+app/admin/validations/page.tsx,247,Arrow function,2,0,Low,ya
+app/admin/validations/page.tsx,561,Arrow function,2,0,Low,ya
+app/api/berita-acara/download/route.ts,191,Arrow function,2,0,Low,ya
+app/lecturer/dashboard/page.tsx,188,Arrow function,2,1,Low,ya
+app/lecturer/download-center/page.tsx,6,Async function 'LecturerDownloadCenterPage',2,1,Low,ya
+app/lecturer/governance/page.tsx,31,Arrow function,2,1,Low,ya
+app/lecturer/governance/page.tsx,74,Arrow function,2,1,Low,ya
+app/publications/page.tsx,34,Function 'buildUrl',2,1,Low,ya
+app/publications/page.tsx,36,Arrow function,2,1,Low,ya
+app/publications/page.tsx,210,Arrow function,2,1,Low,ya
+app/student/dashboard/_components/StudentScheduleWidget.tsx,37,Function 'jsDayToOurDay',2,1,Low,ya
+app/student/dashboard/_components/StudentScheduleWidget.tsx,38,Function 'ourDayToJsDay',2,1,Low,ya
+app/student/dashboard/_components/StudentScheduleWidget.tsx,59,Function 'toDateKey',2,1,Low,ya
+app/student/dashboard/_components/StudentScheduleWidget.tsx,64,Function 'StudentScheduleWidget',2,0,Low,ya
+app/student/dashboard/_components/StudentScheduleWidget.tsx,74,Arrow function,2,1,Low,ya
+app/student/dashboard/_components/StudentScheduleWidget.tsx,85,Arrow function,2,1,Low,ya
+app/student/dashboard/_components/StudentScheduleWidget.tsx,112,Arrow function,2,0,Low,ya
+app/student/dashboard/_components/StudentScheduleWidget.tsx,120,Arrow function,2,2,Low,ya
+app/student/dashboard/_components/StudentScheduleWidget.tsx,121,Arrow function,2,2,Low,ya
+app/student/download-center/page.tsx,6,Async function 'StudentDownloadCenterPage',2,1,Low,ya
+app/student/items/_components/ItemCard.tsx,84,Arrow function,2,1,Low,ya
+app/student/items/_components/ItemCard.tsx,260,Arrow function,2,0,Low,ya
+app/student/items/_components/StudentItemsManager.tsx,223,Arrow function,2,0,Low,ya
+app/student/loans/_components/LoansTable.tsx,35,Arrow function,2,0,Low,ya
+app/student/publications/page.tsx,35,Function 'buildUrl',2,1,Low,ya
+app/student/publications/page.tsx,37,Arrow function,2,1,Low,ya
+app/student/publications/page.tsx,153,Arrow function,2,1,Low,ya
+app/student/rooms/_components/StudentRoomManager.tsx,32,Arrow function,2,0,Low,ya
+components/layout/Sidebar.tsx,158,Arrow function,2,1,Low,tidak
+components/layout/SidebarSubmenu.tsx,28,Arrow function,2,1,Low,tidak
+components/layout/SidebarSubmenu.tsx,59,Arrow function,2,1,Low,tidak
+components/providers/AlertProvider.tsx,30,Function 'useAlert',2,1,Low,tidak
+components/providers/AlertProvider.tsx,91,Arrow function,2,1,Low,tidak
+components/shared/CustomCalendar.tsx,48,Arrow function,2,1,Low,tidak
+components/shared/CustomCalendar.tsx,58,Arrow function,2,1,Low,tidak
+components/shared/CustomCalendar.tsx,67,Arrow function,2,1,Low,tidak
+components/shared/CustomCalendar.tsx,82,Arrow function,2,1,Low,tidak
+components/shared/CustomCalendar.tsx,136,Arrow function,2,0,Low,tidak
+components/shared/Modal.tsx,13,Function 'Modal',2,1,Low,tidak
+components/shared/Modal.tsx,14,Arrow function,2,1,Low,tidak
+components/shared/Modal.tsx,15,Arrow function,2,1,Low,tidak
+components/shared/QRCodeDisplay.tsx,20,Arrow function,2,1,Low,tidak
+components/shared/RoomCalendar.tsx,38,Arrow function,2,1,Low,tidak
+components/shared/TimeSelect.tsx,19,Arrow function,2,0,Low,tidak
+components/shared/TimeSelect.tsx,24,Arrow function,2,0,Low,tidak
+components/shared/ViewportPortal.tsx,10,Function 'ViewportPortal',2,1,Low,tidak
+components/ui/badge.tsx,8,Function 'Badge',2,0,Low,tidak
+components/ui/command.tsx,32,Arrow function,2,0,Low,tidak
+components/ui/command.tsx,45,Arrow function,2,0,Low,tidak
+components/ui/command.tsx,107,Arrow function,2,1,Low,tidak
+components/ui/popover.tsx,11,Arrow function,2,1,Low,tidak
+components/ui/popover.tsx,28,Arrow function,2,1,Low,tidak
+components/ui/tabs.tsx,18,Arrow function,2,1,Low,tidak
+db/seeds/comprehensive.seed.ts,18,Async function 'seedRoles',2,1,Low,tidak
+db/seeds/comprehensive.seed.ts,42,Async function 'seedPermissions',2,1,Low,tidak
+db/seeds/comprehensive.seed.ts,211,Async function 'seedItemCategories',2,1,Low,tidak
+db/seeds/comprehensive.seed.ts,236,Async function 'runComprehensiveSeed',2,1,Low,tidak
+db/seeds/run-seed.ts,9,Async function 'main',2,1,Low,tidak
+features/attendance/actions.ts,107,Async function 'getLatestAttendanceForUser',2,0,Low,ya
+features/attendance/components/AttendanceButton.tsx,15,Function 'AttendanceButton',2,0,Low,ya
+features/attendance/components/AttendanceModal.tsx,47,Arrow function,2,1,Low,ya
+features/attendance/components/AttendanceModal.tsx,54,Async arrow function,2,1,Low,ya
+features/attendance/components/AttendanceModal.tsx,63,Async arrow function,2,1,Low,ya
+features/attendance/service.ts,8,Async function 'findUserByNim',2,0,Low,ya
+features/attendance/service.ts,60,Async function 'getAttendanceWithDetails',2,0,Low,ya
+features/bookings/components/RoomBookingClient.tsx,94,Async arrow function,2,1,Low,ya
+features/bookings/service.ts,76,Arrow function,2,1,Low,ya
+features/bookings/service.ts,245,Static async method 'getScheduledPracticumsForCalendar',2,1,Low,ya
+features/courses/components/CourseManager.tsx,71,Async arrow function,2,0,Low,ya
+features/courses/components/CourseManager.tsx,108,Arrow function,2,1,Low,ya
+features/courses/components/CourseManager.tsx,110,Async arrow function,2,1,Low,ya
+features/courses/service.ts,62,Static async method 'getById',2,0,Low,ya
+features/courses/service.ts,168,Arrow function,2,0,Low,ya
+features/dashboard/actions.ts,16,Async function 'getLecturerDashboard',2,0,Low,ya
+features/dashboard/analytics.ts,48,Arrow function,2,0,Low,ya
+features/dashboard/analytics.ts,276,Function 'formatChartData',2,0,Low,ya
+features/dashboard/components/CategoryBarChart.tsx,12,Function 'CategoryBarChart',2,0,Low,ya
+features/dashboard/components/TrendChart.tsx,12,Function 'TrendChart',2,0,Low,ya
+features/dashboard/service.ts,435,Arrow function,2,0,Low,ya
+features/dashboard/service.ts,457,Arrow function,2,0,Low,ya
+features/dashboard/service.ts,505,Static async method 'getRecentBookings',2,0,Low,ya
+features/download-center/components/DownloadCenterManager.tsx,21,Function 'formatDate',2,1,Low,ya
+features/download-center/components/DownloadCenterManager.tsx,45,Arrow function,2,1,Low,ya
+features/governance/components/BulkEnrollment.tsx,69,Arrow function,2,1,Low,ya
+features/governance/components/DocumentList.tsx,23,Arrow function,2,1,Low,ya
+features/governance/components/UserList.tsx,45,Arrow function,2,1,Low,ya
+features/governance/components/UserList.tsx,66,Async arrow function,2,1,Low,ya
+features/governance/components/UserList.tsx,73,Arrow function,2,1,Low,ya
+features/governance/components/UserList.tsx,93,Arrow function,2,1,Low,ya
+features/governance/components/UserList.tsx,99,Arrow function,2,2,Low,ya
+features/governance/components/UserList.tsx,112,Arrow function,2,1,Low,ya
+features/governance/components/UserList.tsx,114,Async arrow function,2,1,Low,ya
+features/governance/components/UserList.tsx,232,Async arrow function,2,1,Low,ya
+features/governance/components/UserList.tsx,293,Async arrow function,2,1,Low,ya
+features/hero-photos/service.ts,48,Static async method 'create',2,0,Low,ya
+features/inventory/actions.ts,62,Async function 'updateCategory',2,1,Low,ya
+features/inventory/service.ts,131,Static async method 'getByQrCode',2,1,Low,ya
+features/loans/service.ts,35,Static async method 'getAvailableItems',2,1,Low,ya
+features/permissions/service.ts,120,Static async method 'removeUserPermission',2,1,Low,ya
+features/practicum-reports/actions.ts,20,Async function 'getLecturerPracticumReports',2,1,Low,ya
+features/practicum-reports/actions.ts,29,Async function 'getMyPracticumReports',2,1,Low,ya
+features/practicum-reports/actions.ts,38,Async function 'getMyReportedScheduleIds',2,1,Low,ya
+features/practicum-reports/components/AdminPracticumReportTable.tsx,80,Arrow function,2,1,Low,ya
+features/practicum-reports/components/AllPracticumLpjManager.tsx,86,Arrow function,2,1,Low,ya
+features/practicum-reports/components/BeritaAcaraManager.tsx,42,Function 'jsDayToOurDay',2,1,Low,ya
+features/practicum-reports/components/BeritaAcaraManager.tsx,44,Function 'toDateKey',2,1,Low,ya
+features/practicum-reports/components/BeritaAcaraManager.tsx,110,Arrow function,2,2,Low,ya
+features/practicum-reports/components/BeritaAcaraManager.tsx,111,Arrow function,2,2,Low,ya
+features/practicum-reports/components/BeritaAcaraManager.tsx,244,Arrow function,2,1,Low,ya
+features/practicum-reports/components/LecturerPracticumReportTable.tsx,98,Arrow function,2,1,Low,ya
+features/practicum-reports/components/PracticumLpjManager.tsx,50,Arrow function,2,1,Low,ya
+features/practicum-reports/components/PracticumLpjManager.tsx,78,Arrow function,2,1,Low,ya
+features/practicum-reports/components/PracticumReportForm.tsx,29,Arrow function,2,1,Low,ya
+features/practicum-reports/service.ts,129,Static async method 'getById',2,0,Low,ya
+features/practicum-reports/service.ts,243,Static async method 'verify',2,0,Low,ya
+features/practicum/components/ModuleManager.tsx,86,Async arrow function,2,0,Low,ya
+features/practicum/components/ModuleManager.tsx,146,Arrow function,2,1,Low,ya
+features/practicum/components/ModuleManager.tsx,148,Async arrow function,2,1,Low,ya
+features/practicum/service.ts,60,Static async method 'getById',2,0,Low,ya
+features/publications/actions.ts,103,Async function 'getTopPublications',2,0,Low,ya
+features/publications/components/LikeButton.tsx,21,Arrow function,2,1,Low,ya
+features/publications/components/LikeButton.tsx,23,Async arrow function,2,1,Low,ya
+features/publications/components/LikeButton.tsx,36,Arrow function,2,1,Low,ya
+features/publications/components/PublicationLink.tsx,13,Function 'PublicationLink',2,0,Low,ya
+features/publications/components/PublicationManager.tsx,79,Arrow function,2,1,Low,ya
+features/publications/components/PublicationManager.tsx,167,Arrow function,2,1,Low,ya
+features/publications/components/PublicationManager.tsx,169,Async arrow function,2,1,Low,ya
+features/publications/components/PublicationManager.tsx,179,Async arrow function,2,1,Low,ya
+features/publications/components/PublicationManager.tsx,449,Arrow function,2,1,Low,ya
+features/publications/components/PublicationManager.tsx,536,Arrow function,2,1,Low,ya
+features/publications/service.ts,198,Static async method 'getById',2,0,Low,ya
+features/publications/service.ts,225,Static async method 'getTop',2,0,Low,ya
+features/publications/service.ts,268,Static async method 'toggleLike',2,2,Low,ya
+features/publications/service.ts,339,Static async method 'getUserLikedIds',2,1,Low,ya
+features/scheduled-practicum/components/AdminScheduledPracticumManager.tsx,63,Function 'jsDayToOurDay',2,1,Low,ya
+features/scheduled-practicum/components/AdminScheduledPracticumManager.tsx,69,Function 'toDateKey',2,1,Low,ya
+features/scheduled-practicum/components/AdminScheduledPracticumManager.tsx,118,Arrow function,2,0,Low,ya
+features/scheduled-practicum/components/AdminScheduledPracticumManager.tsx,121,Arrow function,2,1,Low,ya
+features/scheduled-practicum/components/AdminScheduledPracticumManager.tsx,126,Arrow function,2,0,Low,ya
+features/scheduled-practicum/components/AdminScheduledPracticumManager.tsx,128,Arrow function,2,2,Low,ya
+features/scheduled-practicum/components/AdminScheduledPracticumManager.tsx,129,Arrow function,2,2,Low,ya
+features/scheduled-practicum/components/AdminScheduledPracticumManager.tsx,132,Arrow function,2,1,Low,ya
+features/scheduled-practicum/components/AdminScheduledPracticumManager.tsx,142,Async arrow function,2,1,Low,ya
+features/scheduled-practicum/components/AdminScheduledPracticumManager.tsx,164,Arrow function,2,1,Low,ya
+features/scheduled-practicum/components/AdminScheduledPracticumManager.tsx,185,Arrow function,2,0,Low,ya
+features/scheduled-practicum/components/AdminScheduledPracticumManager.tsx,394,Arrow function,2,0,Low,ya
+features/scheduled-practicum/components/BulkScheduleForm.tsx,46,Arrow function,2,1,Low,ya
+features/scheduled-practicum/components/BulkScheduleForm.tsx,51,Arrow function,2,1,Low,ya
+features/scheduled-practicum/components/BulkScheduleForm.tsx,155,Arrow function,2,1,Low,ya
+features/scheduled-practicum/components/StudentScheduledPracticumManager.tsx,63,Function 'jsDayToOurDay',2,1,Low,ya
+features/scheduled-practicum/components/StudentScheduledPracticumManager.tsx,69,Function 'toDateKey',2,1,Low,ya
+features/scheduled-practicum/components/StudentScheduledPracticumManager.tsx,124,Arrow function,2,0,Low,ya
+features/scheduled-practicum/components/StudentScheduledPracticumManager.tsx,128,Arrow function,2,1,Low,ya
+features/scheduled-practicum/components/StudentScheduledPracticumManager.tsx,133,Arrow function,2,2,Low,ya
+features/scheduled-practicum/components/StudentScheduledPracticumManager.tsx,134,Arrow function,2,2,Low,ya
+features/scheduled-practicum/components/StudentScheduledPracticumManager.tsx,137,Arrow function,2,1,Low,ya
+features/scheduled-practicum/components/StudentScheduledPracticumManager.tsx,147,Async arrow function,2,1,Low,ya
+features/scheduled-practicum/components/StudentScheduledPracticumManager.tsx,175,Arrow function,2,1,Low,ya
+features/scheduled-practicum/components/StudentScheduledPracticumManager.tsx,206,Arrow function,2,0,Low,ya
+features/scheduled-practicum/service.ts,15,Function 'dateToDayOfWeek',2,1,Low,ya
+features/scheduled-practicum/service.ts,87,Static async method 'getById',2,0,Low,ya
+features/scheduled-practicum/service.ts,148,Static async method 'hasConflict',2,1,Low,ya
+features/scheduled-practicum/service.ts,197,Arrow function,2,1,Low,ya
+features/users/service.ts,88,Static async method 'create',2,1,Low,ya
+features/users/service.ts,193,Static async method 'getById',2,0,Low,ya
+features/users/service.ts,224,Static async method 'isIdentifierUnique',2,1,Low,ya
+features/users/service.ts,240,Static async method 'isEmailUnique',2,1,Low,ya
+lib/device.ts,7,Async function 'isMobileRequest',2,0,Low,ya
+lib/device.ts,17,Async function 'getDefaultViewMode',2,1,Low,ya
+lib/documentVerifier.ts,191,Arrow function,2,1,Low,ya
+lib/documentVerifier.ts,437,Static async method 'verify',2,1,Low,ya
+lib/formatters.ts,179,Function 'capitalize',2,1,Low,ya
+lib/menu.ts,96,Arrow function,2,1,Low,ya
+lib/menu.ts,134,Arrow function,2,1,Low,ya
+lib/timezone.ts,45,Function 'toWIB',2,1,Low,ya
+lib/timezone.ts,73,Function 'formatDateTimeWIB',2,1,Low,ya
+lib/timezone.ts,87,Function 'formatDateWIB',2,1,Low,ya
+lib/timezone.ts,101,Function 'formatTimeWIB',2,1,Low,ya
+lib/timezone.ts,121,Function 'startOfDayWIBForDb',2,0,Low,ya
+lib/upload.ts,7,Async function 'saveFile',2,1,Low,ya
+lib/upload.ts,31,Async function 'deleteFile',2,1,Low,ya
+app/(auth)/login/page.tsx,107,Arrow function,1,0,Low,ya
+app/(auth)/login/page.tsx,129,Arrow function,1,0,Low,ya
+app/(auth)/login/page.tsx,136,Arrow function,1,0,Low,ya
+app/(auth)/login/page.tsx,186,Function 'LoginPage',1,0,Low,ya
+app/(auth)/register/RegisterForm.tsx,154,Arrow function,1,0,Low,ya
+app/(auth)/register/RegisterForm.tsx,158,Arrow function,1,0,Low,ya
+app/(auth)/register/RegisterForm.tsx,158,Arrow function,1,0,Low,ya
+app/(auth)/register/RegisterForm.tsx,169,Arrow function,1,0,Low,ya
+app/(auth)/register/RegisterForm.tsx,187,Arrow function,1,0,Low,ya
+app/(auth)/register/RegisterForm.tsx,198,Arrow function,1,0,Low,ya
+app/(auth)/register/RegisterForm.tsx,202,Arrow function,1,0,Low,ya
+app/(auth)/register/RegisterForm.tsx,234,Arrow function,1,0,Low,ya
+app/(auth)/register/RegisterForm.tsx,254,Arrow function,1,0,Low,ya
+app/(auth)/register/page.tsx,4,Async function 'RegisterPage',1,0,Low,ya
+app/(home)/_components/AnnouncementSection.tsx,24,Arrow function,1,0,Low,ya
+app/(home)/_components/AnnouncementSection.tsx,33,Arrow function,1,0,Low,ya
+app/(home)/_components/AvailableItemsSection.tsx,57,Arrow function,1,0,Low,ya
+app/(home)/_components/HeroCarousel.tsx,24,Arrow function,1,0,Low,ya
+app/(home)/_components/HeroCarousel.tsx,25,Arrow function,1,0,Low,ya
+app/(home)/_components/HeroCarousel.tsx,28,Arrow function,1,0,Low,ya
+app/(home)/_components/HeroCarousel.tsx,31,Arrow function,1,0,Low,ya
+app/(home)/_components/HeroCarousel.tsx,32,Arrow function,1,0,Low,ya
+app/(home)/_components/HeroCarousel.tsx,35,Arrow function,1,0,Low,ya
+app/(home)/_components/HeroCarousel.tsx,36,Arrow function,1,0,Low,ya
+app/(home)/_components/HeroCarousel.tsx,124,Arrow function,1,0,Low,ya
+app/(home)/_components/HeroSection.tsx,4,Async function 'HeroSection',1,0,Low,ya
+app/(home)/_components/HomeCalendar.tsx,61,Arrow function,1,0,Low,ya
+app/(home)/_components/HomeCalendar.tsx,71,Arrow function,1,0,Low,ya
+app/(home)/_components/HomeCalendar.tsx,114,Arrow function,1,0,Low,ya
+app/(home)/_components/HomeCalendar.tsx,124,Arrow function,1,0,Low,ya
+app/(home)/_components/HomeCalendar.tsx,150,Arrow function,1,0,Low,ya
+app/(home)/_components/HomeCalendar.tsx,156,Arrow function,1,0,Low,ya
+app/(home)/_components/HomeCalendar.tsx,160,Arrow function,1,0,Low,ya
+app/(home)/_components/HomeCalendar.tsx,189,Arrow function,1,0,Low,ya
+app/(home)/_components/HomeCalendar.tsx,193,Arrow function,1,0,Low,ya
+app/(home)/_components/HomeCalendar.tsx,226,Arrow function,1,0,Low,ya
+app/(home)/_components/HomeCalendar.tsx,236,Arrow function,1,0,Low,ya
+app/(home)/_components/HomeCalendar.tsx,250,Arrow function,1,0,Low,ya
+app/(home)/_components/HomeCalendar.tsx,280,Arrow function,1,0,Low,ya
+app/(home)/_components/HomeCalendar.tsx,302,Arrow function,1,0,Low,ya
+app/(home)/_components/QuickStats.tsx,10,Function 'QuickStats',1,0,Low,ya
+app/(home)/_components/QuickStats.tsx,42,Arrow function,1,0,Low,ya
+app/admin/courses/page.tsx,5,Async function 'AdminCoursesPage',1,0,Low,ya
+app/admin/dashboard/_components/DashboardAnalytics.tsx,24,Arrow function,1,0,Low,ya
+app/admin/dashboard/_components/DashboardAnalytics.tsx,33,Arrow function,1,0,Low,ya
+app/admin/dashboard/_components/DashboardAnalytics.tsx,67,Arrow function,1,0,Low,ya
+app/admin/dashboard/_components/DashboardAnalytics.tsx,86,Arrow function,1,0,Low,ya
+app/admin/dashboard/_components/MarkAllReadButton.tsx,10,Arrow function,1,0,Low,ya
+app/admin/dashboard/_components/MarkAllReadButton.tsx,11,Async arrow function,1,0,Low,ya
+app/admin/dashboard/_components/RoomAttendanceChart.tsx,19,Arrow function,1,0,Low,ya
+app/admin/dashboard/_components/RoomAttendanceChart.tsx,24,Arrow function,1,0,Low,ya
+app/admin/dashboard/_components/RoomAttendanceChart.tsx,62,Arrow function,1,0,Low,ya
+app/admin/dashboard/_components/RoomAttendanceChart.tsx,65,Arrow function,1,0,Low,ya
+app/admin/dashboard/_components/TodayAttendance.tsx,28,Arrow function,1,0,Low,ya
+app/admin/dashboard/_components/TodayAttendance.tsx,72,Arrow function,1,0,Low,ya
+app/admin/dashboard/_components/TodayAttendance.tsx,77,Arrow function,1,0,Low,ya
+app/admin/dashboard/page.tsx,130,Arrow function,1,0,Low,ya
+app/admin/dashboard/page.tsx,130,Arrow function,1,0,Low,ya
+app/admin/dashboard/page.tsx,141,Arrow function,1,0,Low,ya
+app/admin/dashboard/page.tsx,156,Arrow function,1,0,Low,ya
+app/admin/dashboard/page.tsx,156,Arrow function,1,0,Low,ya
+app/admin/dashboard/page.tsx,169,Arrow function,1,0,Low,ya
+app/admin/hero-photos/_components/HeroFocalPicker.tsx,21,Arrow function,1,0,Low,ya
+app/admin/hero-photos/_components/HeroFocalPicker.tsx,25,Arrow function,1,0,Low,ya
+app/admin/hero-photos/_components/HeroFocalPicker.tsx,35,Arrow function,1,0,Low,ya
+app/admin/hero-photos/_components/HeroFocalPicker.tsx,52,Arrow function,1,0,Low,ya
+app/admin/hero-photos/_components/HeroPhotoManager.tsx,53,Arrow function,1,0,Low,ya
+app/admin/hero-photos/_components/HeroPhotoManager.tsx,123,Arrow function,1,0,Low,ya
+app/admin/hero-photos/_components/HeroPhotoManager.tsx,147,Arrow function,1,0,Low,ya
+app/admin/hero-photos/_components/HeroPhotoManager.tsx,192,Arrow function,1,0,Low,ya
+app/admin/hero-photos/_components/HeroPhotoManager.tsx,206,Arrow function,1,0,Low,ya
+app/admin/hero-photos/_components/HeroPhotoManager.tsx,216,Arrow function,1,0,Low,ya
+app/admin/hero-photos/_components/HeroPhotoManager.tsx,216,Arrow function,1,0,Low,ya
+app/admin/hero-photos/_components/HeroPhotoManager.tsx,226,Arrow function,1,0,Low,ya
+app/admin/hero-photos/_components/HeroPhotoManager.tsx,237,Arrow function,1,0,Low,ya
+app/admin/hero-photos/_components/HeroPhotoManager.tsx,284,Arrow function,1,0,Low,ya
+app/admin/hero-photos/_components/HeroPhotoManager.tsx,290,Arrow function,1,0,Low,ya
+app/admin/hero-photos/page.tsx,4,Async function 'HeroPhotosPage',1,0,Low,ya
+app/admin/inventory/_components/CategoriesView.tsx,24,Arrow function,1,0,Low,ya
+app/admin/inventory/_components/CategoriesView.tsx,29,Arrow function,1,0,Low,ya
+app/admin/inventory/_components/CategoriesView.tsx,124,Arrow function,1,0,Low,ya
+app/admin/inventory/_components/CategoriesView.tsx,136,Arrow function,1,0,Low,ya
+app/admin/inventory/_components/CategoriesView.tsx,153,Arrow function,1,0,Low,ya
+app/admin/inventory/_components/CategoriesView.tsx,160,Arrow function,1,0,Low,ya
+app/admin/inventory/_components/InventoryManager.tsx,29,Arrow function,1,0,Low,ya
+app/admin/inventory/_components/InventoryManager.tsx,39,Arrow function,1,0,Low,ya
+app/admin/inventory/_components/ItemsView.tsx,60,Arrow function,1,0,Low,ya
+app/admin/inventory/_components/ItemsView.tsx,122,Arrow function,1,0,Low,ya
+app/admin/inventory/_components/ItemsView.tsx,166,Arrow function,1,0,Low,ya
+app/admin/inventory/_components/ItemsView.tsx,175,Arrow function,1,0,Low,ya
+app/admin/inventory/_components/ItemsView.tsx,206,Arrow function,1,0,Low,ya
+app/admin/inventory/_components/ItemsView.tsx,213,Arrow function,1,0,Low,ya
+app/admin/inventory/_components/ItemsView.tsx,217,Arrow function,1,0,Low,ya
+app/admin/inventory/_components/ItemsView.tsx,224,Arrow function,1,0,Low,ya
+app/admin/inventory/_components/ItemsView.tsx,228,Arrow function,1,0,Low,ya
+app/admin/inventory/_components/ItemsView.tsx,235,Arrow function,1,0,Low,ya
+app/admin/inventory/_components/ItemsView.tsx,246,Arrow function,1,0,Low,ya
+app/admin/inventory/_components/ItemsView.tsx,253,Arrow function,1,0,Low,ya
+app/admin/inventory/_components/ItemsView.tsx,346,Arrow function,1,0,Low,ya
+app/admin/inventory/_components/ItemsView.tsx,395,Arrow function,1,0,Low,ya
+app/admin/inventory/_components/ItemsView.tsx,402,Arrow function,1,0,Low,ya
+app/admin/inventory/_components/ItemsView.tsx,444,Arrow function,1,0,Low,ya
+app/admin/inventory/_components/ItemsView.tsx,453,Arrow function,1,0,Low,ya
+app/admin/inventory/_components/ItemsView.tsx,475,Arrow function,1,0,Low,ya
+app/admin/inventory/_components/ItemsView.tsx,488,Arrow function,1,0,Low,ya
+app/admin/inventory/_components/ItemsView.tsx,505,Arrow function,1,0,Low,ya
+app/admin/inventory/_components/RoomsView.tsx,40,Arrow function,1,0,Low,ya
+app/admin/inventory/_components/RoomsView.tsx,49,Arrow function,1,0,Low,ya
+app/admin/inventory/_components/RoomsView.tsx,145,Arrow function,1,0,Low,ya
+app/admin/inventory/_components/RoomsView.tsx,152,Arrow function,1,0,Low,ya
+app/admin/inventory/_components/RoomsView.tsx,162,Arrow function,1,0,Low,ya
+app/admin/inventory/_components/RoomsView.tsx,169,Arrow function,1,0,Low,ya
+app/admin/inventory/_components/RoomsView.tsx,232,Arrow function,1,0,Low,ya
+app/admin/inventory/_components/RoomsView.tsx,316,Arrow function,1,0,Low,ya
+app/admin/inventory/_components/RoomsView.tsx,360,Arrow function,1,0,Low,ya
+app/admin/inventory/_components/RoomsView.tsx,396,Arrow function,1,0,Low,ya
+app/admin/inventory/page.tsx,4,Async function 'InventoryPage',1,0,Low,ya
+app/admin/pengembalian/page.tsx,13,Arrow function,1,0,Low,ya
+app/admin/practicum/page.tsx,5,Async function 'AdminPracticumPage',1,0,Low,ya
+app/admin/riwayat/page.tsx,37,Arrow function,1,0,Low,ya
+app/admin/riwayat/page.tsx,42,Arrow function,1,0,Low,ya
+app/admin/riwayat/page.tsx,47,Arrow function,1,0,Low,ya
+app/admin/riwayat/page.tsx,48,Arrow function,1,0,Low,ya
+app/admin/riwayat/page.tsx,140,Arrow function,1,0,Low,ya
+app/admin/riwayat/page.tsx,141,Arrow function,1,0,Low,ya
+app/admin/riwayat/page.tsx,148,Arrow function,1,0,Low,ya
+app/admin/riwayat/page.tsx,149,Arrow function,1,0,Low,ya
+app/admin/riwayat/page.tsx,156,Arrow function,1,0,Low,ya
+app/admin/riwayat/page.tsx,157,Arrow function,1,0,Low,ya
+app/admin/validations/_components/ActiveBookingsTable.tsx,43,Arrow function,1,0,Low,ya
+app/admin/validations/_components/ActiveBookingsTable.tsx,44,Async arrow function,1,0,Low,ya
+app/admin/validations/_components/ActiveBookingsTable.tsx,49,Arrow function,1,0,Low,ya
+app/admin/validations/_components/ActiveBookingsTable.tsx,95,Arrow function,1,0,Low,ya
+app/admin/validations/_components/ActiveBookingsTable.tsx,100,Arrow function,1,0,Low,ya
+app/admin/validations/_components/ActiveBookingsTable.tsx,162,Arrow function,1,0,Low,ya
+app/admin/validations/_components/ActiveBookingsTable.tsx,172,Arrow function,1,0,Low,ya
+app/admin/validations/_components/ActiveBookingsTable.tsx,180,Arrow function,1,0,Low,ya
+app/admin/validations/_components/ActiveBookingsTable.tsx,190,Arrow function,1,0,Low,ya
+app/admin/validations/_components/ActiveBookingsTable.tsx,253,Arrow function,1,0,Low,ya
+app/admin/validations/_components/ActiveBookingsTable.tsx,262,Arrow function,1,0,Low,ya
+app/admin/validations/_components/ActiveBookingsTable.tsx,269,Arrow function,1,0,Low,ya
+app/admin/validations/_components/ActiveBookingsTable.tsx,278,Arrow function,1,0,Low,ya
+app/admin/validations/_components/ActiveBookingsTable.tsx,305,Arrow function,1,0,Low,ya
+app/admin/validations/_components/ActiveBookingsTable.tsx,389,Arrow function,1,0,Low,ya
+app/admin/validations/_components/ActiveBookingsTable.tsx,400,Arrow function,1,0,Low,ya
+app/admin/validations/_components/ActiveLoansTable.tsx,47,Arrow function,1,0,Low,ya
+app/admin/validations/_components/ActiveLoansTable.tsx,48,Async arrow function,1,0,Low,ya
+app/admin/validations/_components/ActiveLoansTable.tsx,53,Arrow function,1,0,Low,ya
+app/admin/validations/_components/ActiveLoansTable.tsx,98,Arrow function,1,0,Low,ya
+app/admin/validations/_components/ActiveLoansTable.tsx,103,Arrow function,1,0,Low,ya
+app/admin/validations/_components/ActiveLoansTable.tsx,165,Arrow function,1,0,Low,ya
+app/admin/validations/_components/ActiveLoansTable.tsx,175,Arrow function,1,0,Low,ya
+app/admin/validations/_components/ActiveLoansTable.tsx,183,Arrow function,1,0,Low,ya
+app/admin/validations/_components/ActiveLoansTable.tsx,194,Arrow function,1,0,Low,ya
+app/admin/validations/_components/ActiveLoansTable.tsx,255,Arrow function,1,0,Low,ya
+app/admin/validations/_components/ActiveLoansTable.tsx,264,Arrow function,1,0,Low,ya
+app/admin/validations/_components/ActiveLoansTable.tsx,271,Arrow function,1,0,Low,ya
+app/admin/validations/_components/ActiveLoansTable.tsx,281,Arrow function,1,0,Low,ya
+app/admin/validations/_components/ActiveLoansTable.tsx,309,Arrow function,1,0,Low,ya
+app/admin/validations/_components/ActiveLoansTable.tsx,378,Arrow function,1,0,Low,ya
+app/admin/validations/_components/ActiveLoansTable.tsx,408,Arrow function,1,0,Low,ya
+app/admin/validations/_components/ActiveLoansTable.tsx,419,Arrow function,1,0,Low,ya
+app/admin/validations/_components/LoanHistoryFilter.tsx,25,Arrow function,1,0,Low,ya
+app/admin/validations/_components/LoanHistoryFilter.tsx,41,Arrow function,1,0,Low,ya
+app/admin/validations/_components/LoanHistoryFilter.tsx,50,Arrow function,1,0,Low,ya
+app/admin/validations/_components/LoansTableWithSearch.tsx,49,Arrow function,1,0,Low,ya
+app/admin/validations/_components/LoansTableWithSearch.tsx,114,Arrow function,1,0,Low,ya
+app/admin/validations/_components/LoansTableWithSearch.tsx,120,Arrow function,1,0,Low,ya
+app/admin/validations/_components/LoansTableWithSearch.tsx,129,Arrow function,1,0,Low,ya
+app/admin/validations/_components/ManualBookingButton.tsx,129,Arrow function,1,0,Low,ya
+app/admin/validations/_components/ManualBookingButton.tsx,141,Arrow function,1,0,Low,ya
+app/admin/validations/_components/ManualBookingButton.tsx,170,Arrow function,1,0,Low,ya
+app/admin/validations/_components/ManualBookingButton.tsx,175,Arrow function,1,0,Low,ya
+app/admin/validations/_components/ManualBookingButton.tsx,183,Arrow function,1,0,Low,ya
+app/admin/validations/_components/ManualBookingButton.tsx,196,Arrow function,1,0,Low,ya
+app/admin/validations/_components/ManualBookingButton.tsx,201,Arrow function,1,0,Low,ya
+app/admin/validations/_components/ManualBookingButton.tsx,208,Arrow function,1,0,Low,ya
+app/admin/validations/_components/ManualBookingButton.tsx,224,Arrow function,1,0,Low,ya
+app/admin/validations/_components/ManualBookingButton.tsx,233,Arrow function,1,0,Low,ya
+app/admin/validations/_components/ManualBookingButton.tsx,236,Arrow function,1,0,Low,ya
+app/admin/validations/_components/ManualBookingButton.tsx,244,Arrow function,1,0,Low,ya
+app/admin/validations/_components/ManualBookingButton.tsx,264,Arrow function,1,0,Low,ya
+app/admin/validations/_components/ManualBookingButton.tsx,308,Arrow function,1,0,Low,ya
+app/admin/validations/_components/ManualLoanButton.tsx,142,Arrow function,1,0,Low,ya
+app/admin/validations/_components/ManualLoanButton.tsx,154,Arrow function,1,0,Low,ya
+app/admin/validations/_components/ManualLoanButton.tsx,183,Arrow function,1,0,Low,ya
+app/admin/validations/_components/ManualLoanButton.tsx,188,Arrow function,1,0,Low,ya
+app/admin/validations/_components/ManualLoanButton.tsx,196,Arrow function,1,0,Low,ya
+app/admin/validations/_components/ManualLoanButton.tsx,231,Arrow function,1,0,Low,ya
+app/admin/validations/_components/ManualLoanButton.tsx,236,Arrow function,1,0,Low,ya
+app/admin/validations/_components/ManualLoanButton.tsx,243,Arrow function,1,0,Low,ya
+app/admin/validations/_components/ManualLoanButton.tsx,256,Arrow function,1,0,Low,ya
+app/admin/validations/_components/ManualLoanButton.tsx,259,Arrow function,1,0,Low,ya
+app/admin/validations/_components/ManualLoanButton.tsx,267,Arrow function,1,0,Low,ya
+app/admin/validations/_components/ManualLoanButton.tsx,290,Arrow function,1,0,Low,ya
+app/admin/validations/_components/ManualLoanButton.tsx,303,Arrow function,1,0,Low,ya
+app/admin/validations/_components/ManualLoanButton.tsx,304,Arrow function,1,0,Low,ya
+app/admin/validations/_components/ManualLoanButton.tsx,304,Arrow function,1,0,Low,ya
+app/admin/validations/_components/ManualLoanButton.tsx,345,Arrow function,1,0,Low,ya
+app/admin/validations/_components/PendingReturnsList.tsx,32,Arrow function,1,0,Low,ya
+app/admin/validations/_components/PendingReturnsList.tsx,33,Async arrow function,1,0,Low,ya
+app/admin/validations/_components/PendingReturnsList.tsx,38,Arrow function,1,0,Low,ya
+app/admin/validations/_components/PendingReturnsList.tsx,39,Async arrow function,1,0,Low,ya
+app/admin/validations/_components/PendingReturnsList.tsx,80,Arrow function,1,0,Low,ya
+app/admin/validations/_components/PendingReturnsList.tsx,88,Arrow function,1,0,Low,ya
+app/admin/validations/_components/SearchableBookingsSection.tsx,35,Arrow function,1,0,Low,ya
+app/admin/validations/_components/SearchableBookingsSection.tsx,50,Arrow function,1,0,Low,ya
+app/admin/validations/_components/SearchableBookingsSection.tsx,51,Arrow function,1,0,Low,ya
+app/admin/validations/_components/SearchableBookingsSection.tsx,53,Arrow function,1,0,Low,ya
+app/admin/validations/_components/SearchableBookingsSection.tsx,54,Async arrow function,1,0,Low,ya
+app/admin/validations/_components/SearchableBookingsSection.tsx,59,Arrow function,1,0,Low,ya
+app/admin/validations/_components/SearchableBookingsSection.tsx,95,Arrow function,1,0,Low,ya
+app/admin/validations/_components/SearchableBookingsSection.tsx,101,Arrow function,1,0,Low,ya
+app/admin/validations/_components/SearchableBookingsSection.tsx,169,Arrow function,1,0,Low,ya
+app/admin/validations/_components/SearchableBookingsSection.tsx,176,Arrow function,1,0,Low,ya
+app/admin/validations/_components/SearchableBookingsSection.tsx,203,Arrow function,1,0,Low,ya
+app/admin/validations/_components/SearchableLoansSection.tsx,51,Arrow function,1,0,Low,ya
+app/admin/validations/_components/SearchableLoansSection.tsx,75,Arrow function,1,0,Low,ya
+app/admin/validations/_components/SearchableLoansSection.tsx,76,Arrow function,1,0,Low,ya
+app/admin/validations/_components/SearchableLoansSection.tsx,78,Arrow function,1,0,Low,ya
+app/admin/validations/_components/SearchableLoansSection.tsx,79,Async arrow function,1,0,Low,ya
+app/admin/validations/_components/SearchableLoansSection.tsx,84,Arrow function,1,0,Low,ya
+app/admin/validations/_components/SearchableLoansSection.tsx,100,Arrow function,1,0,Low,ya
+app/admin/validations/_components/SearchableLoansSection.tsx,101,Async arrow function,1,0,Low,ya
+app/admin/validations/_components/SearchableLoansSection.tsx,106,Arrow function,1,0,Low,ya
+app/admin/validations/_components/SearchableLoansSection.tsx,107,Async arrow function,1,0,Low,ya
+app/admin/validations/_components/SearchableLoansSection.tsx,112,Arrow function,1,0,Low,ya
+app/admin/validations/_components/SearchableLoansSection.tsx,113,Async arrow function,1,0,Low,ya
+app/admin/validations/_components/SearchableLoansSection.tsx,143,Arrow function,1,0,Low,ya
+app/admin/validations/_components/SearchableLoansSection.tsx,149,Arrow function,1,0,Low,ya
+app/admin/validations/_components/SearchableLoansSection.tsx,217,Arrow function,1,0,Low,ya
+app/admin/validations/_components/SearchableLoansSection.tsx,224,Arrow function,1,0,Low,ya
+app/admin/validations/_components/SearchableLoansSection.tsx,234,Arrow function,1,0,Low,ya
+app/admin/validations/_components/SearchableLoansSection.tsx,305,Arrow function,1,0,Low,ya
+app/admin/validations/_components/SearchableLoansSection.tsx,313,Arrow function,1,0,Low,ya
+app/admin/validations/_components/SearchableLoansSection.tsx,337,Arrow function,1,0,Low,ya
+app/admin/validations/_components/SearchableRiwayatSection.tsx,124,Arrow function,1,0,Low,ya
+app/admin/validations/_components/SearchableRiwayatSection.tsx,130,Arrow function,1,0,Low,ya
+app/admin/validations/_components/SearchableRiwayatSection.tsx,149,Arrow function,1,0,Low,ya
+app/admin/validations/_components/SearchableRiwayatSection.tsx,154,Arrow function,1,0,Low,ya
+app/admin/validations/_components/SearchableRiwayatSection.tsx,208,Arrow function,1,0,Low,ya
+app/admin/validations/_components/SearchableRiwayatSection.tsx,266,Arrow function,1,0,Low,ya
+app/admin/validations/_components/SearchableRiwayatSection.tsx,291,Arrow function,1,0,Low,ya
+app/admin/validations/_components/SearchableRiwayatSection.tsx,296,Arrow function,1,0,Low,ya
+app/admin/validations/_components/SearchableRiwayatSection.tsx,347,Arrow function,1,0,Low,ya
+app/admin/validations/_components/SearchableRiwayatSection.tsx,403,Arrow function,1,0,Low,ya
+app/admin/validations/_components/SearchableUsersSection.tsx,42,Arrow function,1,0,Low,ya
+app/admin/validations/_components/SearchableUsersSection.tsx,43,Async arrow function,1,0,Low,ya
+app/admin/validations/_components/SearchableUsersSection.tsx,48,Arrow function,1,0,Low,ya
+app/admin/validations/_components/SearchableUsersSection.tsx,49,Async arrow function,1,0,Low,ya
+app/admin/validations/_components/SearchableUsersSection.tsx,65,Arrow function,1,0,Low,ya
+app/admin/validations/_components/SearchableUsersSection.tsx,70,Arrow function,1,0,Low,ya
+app/admin/validations/_components/SearchableUsersSection.tsx,84,Arrow function,1,0,Low,ya
+app/admin/validations/_components/SearchableUsersSection.tsx,90,Arrow function,1,0,Low,ya
+app/admin/validations/_components/SearchableUsersSection.tsx,138,Arrow function,1,0,Low,ya
+app/admin/validations/_components/SearchableUsersSection.tsx,146,Arrow function,1,0,Low,ya
+app/admin/validations/_components/SearchableUsersSection.tsx,196,Arrow function,1,0,Low,ya
+app/admin/validations/_components/SearchableUsersSection.tsx,204,Arrow function,1,0,Low,ya
+app/admin/validations/_components/ValidationTabs.tsx,42,Arrow function,1,0,Low,ya
+app/admin/validations/_components/ValidationTabs.tsx,63,Arrow function,1,0,Low,ya
+app/admin/validations/page.tsx,32,Arrow function,1,0,Low,ya
+app/admin/validations/page.tsx,54,Arrow function,1,0,Low,ya
+app/admin/validations/page.tsx,85,Arrow function,1,0,Low,ya
+app/admin/validations/page.tsx,91,Arrow function,1,0,Low,ya
+app/admin/validations/page.tsx,158,Async arrow function,1,0,Low,ya
+app/admin/validations/page.tsx,167,Async arrow function,1,0,Low,ya
+app/admin/validations/page.tsx,210,Arrow function,1,0,Low,ya
+app/admin/validations/page.tsx,216,Arrow function,1,0,Low,ya
+app/admin/validations/page.tsx,335,Async arrow function,1,0,Low,ya
+app/admin/validations/page.tsx,417,Async arrow function,1,0,Low,ya
+app/admin/validations/page.tsx,469,Arrow function,1,0,Low,ya
+app/admin/validations/page.tsx,479,Async arrow function,1,0,Low,ya
+app/admin/validations/page.tsx,487,Async arrow function,1,0,Low,ya
+app/admin/validations/page.tsx,533,Arrow function,1,0,Low,ya
+app/api/berita-acara/download/route.ts,190,Arrow function,1,0,Low,ya
+app/api/file/[...path]/route.ts,14,Arrow function,1,0,Low,ya
+app/api/refresh-session/route.ts,17,Arrow function,1,0,Low,ya
+app/layout.tsx,21,Function 'RootLayout',1,0,Low,ya
+app/lecturer/dashboard/page.tsx,138,Arrow function,1,0,Low,ya
+app/lecturer/practicum/page.tsx,5,Async function 'LecturerPracticumPage',1,0,Low,ya
+app/publications/page.tsx,68,Arrow function,1,0,Low,ya
+app/publications/page.tsx,125,Arrow function,1,0,Low,ya
+app/publications/page.tsx,137,Arrow function,1,0,Low,ya
+app/publications/page.tsx,149,Arrow function,1,0,Low,ya
+app/publications/page.tsx,290,Arrow function,1,0,Low,ya
+app/publications/page.tsx,374,Arrow function,1,0,Low,ya
+app/student/courses/page.tsx,4,Async function 'StudentCoursesPage',1,0,Low,ya
+app/student/dashboard/_components/StudentScheduleWidget.tsx,107,Arrow function,1,0,Low,ya
+app/student/dashboard/_components/StudentScheduleWidget.tsx,115,Arrow function,1,0,Low,ya
+app/student/dashboard/_components/StudentScheduleWidget.tsx,115,Arrow function,1,0,Low,ya
+app/student/dashboard/_components/StudentScheduleWidget.tsx,116,Arrow function,1,0,Low,ya
+app/student/dashboard/_components/StudentScheduleWidget.tsx,116,Arrow function,1,0,Low,ya
+app/student/dashboard/_components/StudentScheduleWidget.tsx,117,Arrow function,1,0,Low,ya
+app/student/dashboard/_components/StudentScheduleWidget.tsx,120,Arrow function,1,2,Low,ya
+app/student/dashboard/_components/StudentScheduleWidget.tsx,120,Arrow function,1,2,Low,ya
+app/student/dashboard/_components/StudentScheduleWidget.tsx,121,Arrow function,1,2,Low,ya
+app/student/dashboard/_components/StudentScheduleWidget.tsx,121,Arrow function,1,2,Low,ya
+app/student/dashboard/_components/StudentScheduleWidget.tsx,123,Arrow function,1,0,Low,ya
+app/student/dashboard/_components/StudentScheduleWidget.tsx,150,Arrow function,1,0,Low,ya
+app/student/dashboard/page.tsx,22,Arrow function,1,0,Low,ya
+app/student/dashboard/page.tsx,128,Arrow function,1,0,Low,ya
+app/student/items/_components/ItemCard.tsx,75,Arrow function,1,0,Low,ya
+app/student/items/_components/ItemCard.tsx,79,Arrow function,1,0,Low,ya
+app/student/items/_components/ItemCard.tsx,83,Arrow function,1,0,Low,ya
+app/student/items/_components/ItemCard.tsx,86,Arrow function,1,0,Low,ya
+app/student/items/_components/ItemCard.tsx,198,Arrow function,1,0,Low,ya
+app/student/items/_components/ItemCard.tsx,225,Arrow function,1,0,Low,ya
+app/student/items/_components/ItemCard.tsx,286,Arrow function,1,0,Low,ya
+app/student/items/_components/ItemCard.tsx,298,Arrow function,1,0,Low,ya
+app/student/items/_components/ItemCard.tsx,299,Arrow function,1,0,Low,ya
+app/student/items/_components/ItemCard.tsx,321,Arrow function,1,0,Low,ya
+app/student/items/_components/ItemCard.tsx,324,Arrow function,1,0,Low,ya
+app/student/items/_components/ItemCard.tsx,332,Arrow function,1,0,Low,ya
+app/student/items/_components/ItemCard.tsx,348,Arrow function,1,0,Low,ya
+app/student/items/_components/ItemCard.tsx,352,Arrow function,1,0,Low,ya
+app/student/items/_components/ItemCard.tsx,369,Arrow function,1,0,Low,ya
+app/student/items/_components/ItemCard.tsx,384,Arrow function,1,0,Low,ya
+app/student/items/_components/ItemCard.tsx,421,Arrow function,1,0,Low,ya
+app/student/items/_components/ItemCard.tsx,426,Arrow function,1,0,Low,ya
+app/student/items/_components/ItemCard.tsx,433,Arrow function,1,0,Low,ya
+app/student/items/_components/ItemCard.tsx,460,Arrow function,1,0,Low,ya
+app/student/items/_components/ItemCard.tsx,480,Arrow function,1,0,Low,ya
+app/student/items/_components/ItemCard.tsx,494,Arrow function,1,0,Low,ya
+app/student/items/_components/ItemCard.tsx,531,Arrow function,1,0,Low,ya
+app/student/items/_components/StudentItemsManager.tsx,45,Arrow function,1,0,Low,ya
+app/student/items/_components/StudentItemsManager.tsx,71,Arrow function,1,0,Low,ya
+app/student/items/_components/StudentItemsManager.tsx,81,Arrow function,1,0,Low,ya
+app/student/items/_components/StudentItemsManager.tsx,89,Arrow function,1,0,Low,ya
+app/student/items/_components/StudentItemsManager.tsx,91,Arrow function,1,0,Low,ya
+app/student/items/_components/StudentItemsManager.tsx,110,Arrow function,1,0,Low,ya
+app/student/items/_components/StudentItemsManager.tsx,116,Arrow function,1,0,Low,ya
+app/student/items/_components/StudentItemsManager.tsx,120,Arrow function,1,0,Low,ya
+app/student/items/_components/StudentItemsManager.tsx,126,Arrow function,1,0,Low,ya
+app/student/items/_components/StudentItemsManager.tsx,130,Arrow function,1,0,Low,ya
+app/student/items/_components/StudentItemsManager.tsx,144,Arrow function,1,0,Low,ya
+app/student/items/_components/StudentItemsManager.tsx,149,Arrow function,1,0,Low,ya
+app/student/loans/_components/LoansTable.tsx,69,Arrow function,1,0,Low,ya
+app/student/loans/_components/LoansTable.tsx,76,Arrow function,1,0,Low,ya
+app/student/loans/_components/LoansTable.tsx,134,Arrow function,1,0,Low,ya
+app/student/loans/_components/LoansTable.tsx,203,Arrow function,1,0,Low,ya
+app/student/loans/_components/LoansTable.tsx,235,Arrow function,1,0,Low,ya
+app/student/loans/_components/ReturnModal.tsx,31,Arrow function,1,0,Low,ya
+app/student/loans/_components/ReturnModal.tsx,38,Async arrow function,1,0,Low,ya
+app/student/loans/_components/ReturnModal.tsx,92,Arrow function,1,0,Low,ya
+app/student/loans/_components/ReturnModal.tsx,106,Arrow function,1,0,Low,ya
+app/student/loans/_components/ReturnModal.tsx,146,Arrow function,1,0,Low,ya
+app/student/loans/page.tsx,3,Async function 'MyLoansPage',1,0,Low,ya
+app/student/practicum/page.tsx,5,Async function 'StudentPracticumPage',1,0,Low,ya
+app/student/publications/page.tsx,70,Arrow function,1,0,Low,ya
+app/student/publications/page.tsx,107,Arrow function,1,0,Low,ya
+app/student/publications/page.tsx,113,Arrow function,1,0,Low,ya
+app/student/publications/page.tsx,119,Arrow function,1,0,Low,ya
+app/student/publications/page.tsx,248,Arrow function,1,0,Low,ya
+app/student/rooms/_components/StudentRoomManager.tsx,55,Arrow function,1,0,Low,ya
+app/student/rooms/_components/StudentRoomManager.tsx,65,Arrow function,1,0,Low,ya
+app/student/rooms/_components/StudentRoomManager.tsx,73,Arrow function,1,0,Low,ya
+app/student/rooms/_components/StudentRoomManager.tsx,75,Arrow function,1,0,Low,ya
+app/student/rooms/_components/StudentRoomManager.tsx,102,Arrow function,1,0,Low,ya
+app/student/rooms/_components/StudentRoomManager.tsx,109,Arrow function,1,0,Low,ya
+components/layout/Footer.tsx,5,Function 'Footer',1,0,Low,tidak
+components/layout/LogoutButton.tsx,6,Function 'LogoutButton',1,0,Low,tidak
+components/layout/Navbar.tsx,8,Function 'Navbar',1,0,Low,tidak
+components/layout/Sidebar.tsx,71,Arrow function,1,0,Low,tidak
+components/layout/Sidebar.tsx,101,Arrow function,1,0,Low,tidak
+components/layout/Sidebar.tsx,164,Arrow function,1,0,Low,tidak
+components/layout/SidebarSubmenu.tsx,25,Arrow function,1,0,Low,tidak
+components/layout/SidebarSubmenu.tsx,37,Arrow function,1,0,Low,tidak
+components/providers/AlertProvider.tsx,62,Arrow function,1,0,Low,tidak
+components/providers/AlertProvider.tsx,77,Arrow function,1,0,Low,tidak
+components/providers/AlertProvider.tsx,92,Arrow function,1,0,Low,tidak
+components/providers/AlertProvider.tsx,99,Arrow function,1,0,Low,tidak
+components/providers/SessionRefresher.tsx,6,Function 'SessionRefresher',1,0,Low,tidak
+components/providers/SessionRefresher.tsx,7,Arrow function,1,0,Low,tidak
+components/shared/CalendarView.tsx,60,Arrow function,1,0,Low,tidak
+components/shared/CalendarView.tsx,86,Arrow function,1,0,Low,tidak
+components/shared/CalendarView.tsx,90,Arrow function,1,0,Low,tidak
+components/shared/CustomCalendar.tsx,47,Arrow function,1,0,Low,tidak
+components/shared/CustomCalendar.tsx,57,Arrow function,1,0,Low,tidak
+components/shared/CustomCalendar.tsx,101,Arrow function,1,0,Low,tidak
+components/shared/CustomCalendar.tsx,111,Arrow function,1,0,Low,tidak
+components/shared/CustomCalendar.tsx,143,Arrow function,1,0,Low,tidak
+components/shared/CustomCalendar.tsx,147,Arrow function,1,0,Low,tidak
+components/shared/CustomCalendar.tsx,178,Arrow function,1,0,Low,tidak
+components/shared/CustomCalendar.tsx,188,Arrow function,1,0,Low,tidak
+components/shared/CustomCalendar.tsx,202,Arrow function,1,0,Low,tidak
+components/shared/CustomCalendar.tsx,232,Arrow function,1,0,Low,tidak
+components/shared/CustomCalendar.tsx,255,Arrow function,1,0,Low,tidak
+components/shared/Modal.tsx,24,Arrow function,1,0,Low,tidak
+components/shared/QRCodeDisplay.tsx,32,Async arrow function,1,0,Low,tidak
+components/shared/QRCodeDisplay.tsx,46,Arrow function,1,0,Low,tidak
+components/shared/QRCodeDisplay.tsx,53,Arrow function,1,0,Low,tidak
+components/shared/QRCodeDisplay.tsx,54,Arrow function,1,0,Low,tidak
+components/shared/QRCodeDisplay.tsx,80,Arrow function,1,0,Low,tidak
+components/shared/RoomCalendar.tsx,37,Arrow function,1,0,Low,tidak
+components/shared/RoomCalendar.tsx,46,Arrow function,1,0,Low,tidak
+components/shared/RoomCalendar.tsx,55,Arrow function,1,0,Low,tidak
+components/shared/RoomCalendar.tsx,56,Arrow function,1,0,Low,tidak
+components/shared/RoomCalendar.tsx,98,Arrow function,1,0,Low,tidak
+components/shared/SearchFilter.tsx,19,Arrow function,1,0,Low,tidak
+components/shared/SearchFilter.tsx,20,Arrow function,1,0,Low,tidak
+components/shared/SearchFilter.tsx,23,Arrow function,1,0,Low,tidak
+components/shared/SearchFilter.tsx,26,Arrow function,1,0,Low,tidak
+components/shared/SearchFilter.tsx,37,Arrow function,1,0,Low,tidak
+components/shared/TimeSelect.tsx,13,Arrow function,1,0,Low,tidak
+components/shared/TimeSelect.tsx,14,Arrow function,1,0,Low,tidak
+components/shared/TimeSelect.tsx,38,Arrow function,1,0,Low,tidak
+components/shared/TimeSelect.tsx,48,Arrow function,1,0,Low,tidak
+components/shared/ViewportPortal.tsx,13,Arrow function,1,0,Low,tidak
+components/shared/ViewportPortal.tsx,15,Arrow function,1,0,Low,tidak
+components/ui/RejectReasonModal.tsx,25,Arrow function,1,0,Low,tidak
+components/ui/RejectReasonModal.tsx,30,Arrow function,1,0,Low,tidak
+components/ui/RejectReasonModal.tsx,65,Arrow function,1,0,Low,tidak
+components/ui/button.tsx,5,Function 'cn',1,0,Low,tidak
+components/ui/card.tsx,4,Arrow function,1,0,Low,tidak
+components/ui/card.tsx,13,Arrow function,1,0,Low,tidak
+components/ui/card.tsx,22,Arrow function,1,0,Low,tidak
+components/ui/card.tsx,31,Arrow function,1,0,Low,tidak
+components/ui/card.tsx,40,Arrow function,1,0,Low,tidak
+components/ui/card.tsx,49,Arrow function,1,0,Low,tidak
+components/ui/command.tsx,13,Arrow function,1,0,Low,tidak
+components/ui/command.tsx,55,Arrow function,1,0,Low,tidak
+components/ui/command.tsx,65,Arrow function,1,0,Low,tidak
+components/ui/command.tsx,76,Arrow function,1,0,Low,tidak
+components/ui/input.tsx,9,Arrow function,1,0,Low,tidak
+components/ui/popover.tsx,38,Arrow function,1,0,Low,tidak
+components/ui/popover.tsx,53,Arrow function,1,0,Low,tidak
+components/ui/table.tsx,5,Arrow function,1,0,Low,tidak
+components/ui/table.tsx,16,Arrow function,1,0,Low,tidak
+components/ui/table.tsx,21,Arrow function,1,0,Low,tidak
+components/ui/table.tsx,30,Arrow function,1,0,Low,tidak
+components/ui/table.tsx,39,Arrow function,1,0,Low,tidak
+components/ui/table.tsx,51,Arrow function,1,0,Low,tidak
+components/ui/table.tsx,63,Arrow function,1,0,Low,tidak
+components/ui/table.tsx,72,Arrow function,1,0,Low,tidak
+components/ui/tabs.tsx,33,Arrow function,1,0,Low,tidak
+db/fix-practicum-posts-columns.ts,58,Arrow function,1,0,Low,tidak
+db/schema/attendance.ts,9,Arrow function,1,0,Low,tidak
+db/schema/attendance.ts,10,Arrow function,1,0,Low,tidak
+db/schema/attendance.ts,14,Arrow function,1,0,Low,tidak
+db/schema/attendance.ts,20,Arrow function,1,0,Low,tidak
+db/schema/bookings.ts,16,Arrow function,1,0,Low,tidak
+db/schema/bookings.ts,17,Arrow function,1,0,Low,tidak
+db/schema/bookings.ts,18,Arrow function,1,0,Low,tidak
+db/schema/bookings.ts,30,Arrow function,1,0,Low,tidak
+db/schema/bookings.ts,36,Arrow function,1,0,Low,tidak
+db/schema/inventory.ts,15,Arrow function,1,0,Low,tidak
+db/schema/inventory.ts,16,Arrow function,1,0,Low,tidak
+db/schema/inventory.ts,21,Arrow function,1,0,Low,tidak
+db/schema/inventory.ts,26,Arrow function,1,0,Low,tidak
+db/schema/inventory.ts,40,Arrow function,1,0,Low,tidak
+db/schema/inventory.ts,41,Arrow function,1,0,Low,tidak
+db/schema/inventory.ts,42,Arrow function,1,0,Low,tidak
+db/schema/inventory.ts,61,Arrow function,1,0,Low,tidak
+db/schema/inventory.ts,67,Arrow function,1,0,Low,tidak
+db/schema/others.ts,8,Arrow function,1,0,Low,tidak
+db/schema/others.ts,14,Arrow function,1,0,Low,tidak
+db/schema/others.ts,21,Arrow function,1,0,Low,tidak
+db/schema/others.ts,33,Arrow function,1,0,Low,tidak
+db/schema/others.ts,37,Arrow function,1,0,Low,tidak
+db/schema/others.ts,49,Arrow function,1,0,Low,tidak
+db/schema/others.ts,50,Arrow function,1,0,Low,tidak
+db/schema/others.ts,52,Arrow function,1,0,Low,tidak
+db/schema/others.ts,59,Arrow function,1,0,Low,tidak
+db/schema/permissions.ts,17,Arrow function,1,0,Low,tidak
+db/schema/permissions.ts,18,Arrow function,1,0,Low,tidak
+db/schema/permissions.ts,19,Arrow function,1,0,Low,tidak
+db/schema/permissions.ts,27,Arrow function,1,0,Low,tidak
+db/schema/permissions.ts,28,Arrow function,1,0,Low,tidak
+db/schema/permissions.ts,30,Arrow function,1,0,Low,tidak
+db/schema/permissions.ts,36,Arrow function,1,0,Low,tidak
+db/schema/permissions.ts,41,Arrow function,1,0,Low,tidak
+db/schema/permissions.ts,52,Arrow function,1,0,Low,tidak
+db/schema/practicum.ts,16,Arrow function,1,0,Low,tidak
+db/schema/practicum.ts,18,Arrow function,1,0,Low,tidak
+db/schema/practicum.ts,22,Arrow function,1,0,Low,tidak
+db/schema/practicum.ts,37,Arrow function,1,0,Low,tidak
+db/schema/practicum.ts,44,Arrow function,1,0,Low,tidak
+db/schema/practicum.ts,48,Arrow function,1,0,Low,tidak
+db/schema/practicum.ts,62,Arrow function,1,0,Low,tidak
+db/schema/practicum.ts,63,Arrow function,1,0,Low,tidak
+db/schema/practicum.ts,64,Arrow function,1,0,Low,tidak
+db/schema/practicum.ts,65,Arrow function,1,0,Low,tidak
+db/schema/practicum.ts,72,Arrow function,1,0,Low,tidak
+db/schema/practicum.ts,79,Arrow function,1,0,Low,tidak
+db/schema/practicum.ts,107,Arrow function,1,0,Low,tidak
+db/schema/practicum.ts,128,Arrow function,1,0,Low,tidak
+db/schema/practicum.ts,134,Arrow function,1,0,Low,tidak
+db/schema/practicum.ts,146,Arrow function,1,0,Low,tidak
+db/schema/practicum.ts,170,Arrow function,1,0,Low,tidak
+db/schema/practicum.ts,171,Arrow function,1,0,Low,tidak
+db/schema/practicum.ts,178,Arrow function,1,0,Low,tidak
+db/schema/practicum.ts,184,Arrow function,1,0,Low,tidak
+db/schema/users.ts,12,Arrow function,1,0,Low,tidak
+db/schema/users.ts,27,Arrow function,1,0,Low,tidak
+db/schema/users.ts,32,Arrow function,1,0,Low,tidak
+db/seeds/comprehensive.seed.ts,52,Arrow function,1,0,Low,tidak
+db/seeds/comprehensive.seed.ts,53,Arrow function,1,0,Low,tidak
+db/seeds/comprehensive.seed.ts,75,Arrow function,1,0,Low,tidak
+db/seeds/comprehensive.seed.ts,83,Arrow function,1,0,Low,tidak
+db/seeds/comprehensive.seed.ts,84,Arrow function,1,0,Low,tidak
+db/seeds/comprehensive.seed.ts,102,Arrow function,1,0,Low,tidak
+db/seeds/comprehensive.seed.ts,103,Arrow function,1,0,Low,tidak
+db/seeds/comprehensive.seed.ts,113,Method 'where',1,0,Low,tidak
+db/seeds/comprehensive.seed.ts,132,Method 'where',1,0,Low,tidak
+db/seeds/comprehensive.seed.ts,153,Method 'where',1,0,Low,tidak
+db/seeds/comprehensive.seed.ts,187,Arrow function,1,0,Low,tidak
+db/seeds/comprehensive.seed.ts,188,Arrow function,1,0,Low,tidak
+features/attendance/actions.ts,9,Async function 'getRooms',1,0,Low,ya
+features/attendance/actions.ts,16,Async function 'getLecturers',1,0,Low,ya
+features/attendance/actions.ts,142,Async function 'getTodayAttendanceAction',1,0,Low,ya
+features/attendance/actions.ts,150,Async function 'getRoomAttendanceStatsAction',1,0,Low,ya
+features/attendance/components/AttendanceButton.tsx,21,Arrow function,1,0,Low,ya
+features/attendance/components/AttendanceButton.tsx,30,Arrow function,1,0,Low,ya
+features/attendance/components/AttendanceModal.tsx,93,Arrow function,1,0,Low,ya
+features/attendance/components/AttendanceModal.tsx,139,Arrow function,1,0,Low,ya
+features/attendance/components/AttendanceModal.tsx,157,Arrow function,1,0,Low,ya
+features/attendance/components/AttendanceModal.tsx,162,Arrow function,1,0,Low,ya
+features/attendance/components/AttendanceModal.tsx,179,Arrow function,1,0,Low,ya
+features/attendance/components/AttendanceModal.tsx,184,Arrow function,1,0,Low,ya
+features/attendance/components/AttendanceModal.tsx,202,Arrow function,1,0,Low,ya
+features/attendance/components/AttendanceModal.tsx,220,Arrow function,1,0,Low,ya
+features/attendance/components/AttendanceModal.tsx,224,Arrow function,1,0,Low,ya
+features/attendance/components/AttendanceModal.tsx,311,Arrow function,1,0,Low,ya
+features/attendance/service.ts,26,Async function 'getAvailableRooms',1,0,Low,ya
+features/attendance/service.ts,41,Async function 'createAttendance',1,0,Low,ya
+features/attendance/service.ts,90,Async function 'getTodayAttendance',1,0,Low,ya
+features/attendance/service.ts,122,Async function 'getRoomAttendanceStats',1,0,Low,ya
+features/auth/actions.ts,22,Arrow function,1,0,Low,ya
+features/auth/actions.ts,98,Async function 'logout',1,0,Low,ya
+features/auth/actions.ts,118,Arrow function,1,0,Low,ya
+features/bookings/actions.ts,11,Async function 'getAllRooms',1,0,Low,ya
+features/bookings/actions.ts,18,Async function 'getLecturers',1,0,Low,ya
+features/bookings/actions.ts,39,Async function 'getRoomAvailability',1,0,Low,ya
+features/bookings/actions.ts,47,Async function 'createRoomBooking',1,0,Low,ya
+features/bookings/actions.ts,69,Async function 'getBookingRequests',1,0,Low,ya
+features/bookings/actions.ts,96,Async function 'updateBookingStatus',1,0,Low,ya
+features/bookings/actions.ts,112,Async function 'getMyBookings',1,0,Low,ya
+features/bookings/actions.ts,119,Async function 'getMonthBookings',1,0,Low,ya
+features/bookings/actions.ts,126,Async function 'getMaintenanceRooms',1,0,Low,ya
+features/bookings/actions.ts,133,Async function 'getScheduledPracticumsForCalendar',1,0,Low,ya
+features/bookings/components/RoomBookingClient.tsx,90,Arrow function,1,0,Low,ya
+features/bookings/components/RoomBookingClient.tsx,103,Arrow function,1,0,Low,ya
+features/bookings/components/RoomBookingClient.tsx,256,Arrow function,1,0,Low,ya
+features/bookings/components/RoomBookingClient.tsx,260,Arrow function,1,0,Low,ya
+features/bookings/components/RoomBookingClient.tsx,272,Arrow function,1,0,Low,ya
+features/bookings/components/RoomBookingClient.tsx,275,Arrow function,1,0,Low,ya
+features/bookings/components/RoomBookingClient.tsx,283,Arrow function,1,0,Low,ya
+features/bookings/components/RoomBookingClient.tsx,299,Arrow function,1,0,Low,ya
+features/bookings/components/RoomBookingClient.tsx,315,Arrow function,1,0,Low,ya
+features/bookings/components/RoomBookingClient.tsx,344,Arrow function,1,0,Low,ya
+features/bookings/components/RoomBookingClient.tsx,348,Arrow function,1,0,Low,ya
+features/bookings/components/RoomBookingClient.tsx,363,Arrow function,1,0,Low,ya
+features/bookings/components/RoomBookingClient.tsx,368,Arrow function,1,0,Low,ya
+features/bookings/components/RoomBookingClient.tsx,375,Arrow function,1,0,Low,ya
+features/bookings/service.ts,28,Static async method 'getAllRooms',1,0,Low,ya
+features/bookings/service.ts,35,Static async method 'getRoomAvailability',1,0,Low,ya
+features/bookings/service.ts,157,Arrow function,1,0,Low,ya
+features/bookings/service.ts,167,Static async method 'delete',1,0,Low,ya
+features/bookings/service.ts,192,Static async method 'getByUserId',1,0,Low,ya
+features/bookings/service.ts,203,Arrow function,1,0,Low,ya
+features/bookings/service.ts,212,Static async method 'getMonthBookings',1,0,Low,ya
+features/bookings/service.ts,229,Arrow function,1,0,Low,ya
+features/bookings/service.ts,238,Static async method 'getMaintenanceRooms',1,0,Low,ya
+features/bookings/validator.ts,15,Arrow function,1,0,Low,ya
+features/courses/actions.ts,11,Async function 'getCourses',1,0,Low,ya
+features/courses/actions.ts,18,Async function 'getCoursesByLecturerId',1,0,Low,ya
+features/courses/actions.ts,25,Async function 'getCourseById',1,0,Low,ya
+features/courses/actions.ts,32,Async function 'searchCourses',1,0,Low,ya
+features/courses/actions.ts,39,Async function 'getAllSemesters',1,0,Low,ya
+features/courses/actions.ts,46,Async function 'createCourse',1,0,Low,ya
+features/courses/actions.ts,56,Async function 'updateCourse',1,0,Low,ya
+features/courses/actions.ts,66,Async function 'assignLecturerToCourse',1,0,Low,ya
+features/courses/actions.ts,76,Async function 'deleteCourse',1,0,Low,ya
+features/courses/components/CourseList.tsx,27,Arrow function,1,0,Low,ya
+features/courses/components/CourseList.tsx,46,Arrow function,1,0,Low,ya
+features/courses/components/CourseList.tsx,52,Arrow function,1,0,Low,ya
+features/courses/components/CourseList.tsx,57,Arrow function,1,0,Low,ya
+features/courses/components/CourseList.tsx,78,Arrow function,1,0,Low,ya
+features/courses/components/CourseList.tsx,84,Arrow function,1,0,Low,ya
+features/courses/components/CourseList.tsx,101,Arrow function,1,0,Low,ya
+features/courses/components/CourseList.tsx,106,Arrow function,1,0,Low,ya
+features/courses/components/CourseList.tsx,209,Arrow function,1,0,Low,ya
+features/courses/components/CourseList.tsx,209,Arrow function,1,0,Low,ya
+features/courses/components/CourseList.tsx,229,Arrow function,1,0,Low,ya
+features/courses/components/CourseList.tsx,241,Arrow function,1,0,Low,ya
+features/courses/components/CourseList.tsx,241,Arrow function,1,0,Low,ya
+features/courses/components/CourseManager.tsx,38,Arrow function,1,0,Low,ya
+features/courses/components/CourseManager.tsx,55,Arrow function,1,0,Low,ya
+features/courses/components/CourseManager.tsx,61,Arrow function,1,0,Low,ya
+features/courses/components/CourseManager.tsx,66,Arrow function,1,0,Low,ya
+features/courses/components/CourseManager.tsx,120,Arrow function,1,0,Low,ya
+features/courses/components/CourseManager.tsx,135,Arrow function,1,0,Low,ya
+features/courses/components/CourseManager.tsx,159,Arrow function,1,0,Low,ya
+features/courses/components/CourseManager.tsx,217,Arrow function,1,0,Low,ya
+features/courses/components/CourseManager.tsx,242,Arrow function,1,0,Low,ya
+features/courses/components/CourseManager.tsx,262,Arrow function,1,0,Low,ya
+features/courses/components/CourseManager.tsx,268,Arrow function,1,0,Low,ya
+features/courses/components/CourseManager.tsx,285,Arrow function,1,0,Low,ya
+features/courses/components/CourseManager.tsx,290,Arrow function,1,0,Low,ya
+features/courses/components/CourseManager.tsx,349,Arrow function,1,0,Low,ya
+features/courses/components/CourseManager.tsx,356,Arrow function,1,0,Low,ya
+features/courses/components/CourseManager.tsx,394,Arrow function,1,0,Low,ya
+features/courses/components/CourseManager.tsx,397,Arrow function,1,0,Low,ya
+features/courses/components/CourseManager.tsx,420,Arrow function,1,0,Low,ya
+features/courses/components/CourseManager.tsx,420,Arrow function,1,0,Low,ya
+features/courses/components/CourseManager.tsx,440,Arrow function,1,0,Low,ya
+features/courses/components/CourseManager.tsx,452,Arrow function,1,0,Low,ya
+features/courses/components/CourseManager.tsx,452,Arrow function,1,0,Low,ya
+features/courses/service.ts,15,Static async method 'getAll',1,0,Low,ya
+features/courses/service.ts,38,Static async method 'getByLecturerId',1,0,Low,ya
+features/courses/service.ts,86,Static async method 'search',1,0,Low,ya
+features/courses/service.ts,144,Static async method 'assignLecturer',1,0,Low,ya
+features/courses/service.ts,153,Static async method 'delete',1,0,Low,ya
+features/courses/service.ts,160,Static async method 'getAllSemesters',1,0,Low,ya
+features/courses/service.ts,167,Arrow function,1,0,Low,ya
+features/dashboard/actions.ts,7,Async function 'getAdminStats',1,0,Low,ya
+features/dashboard/actions.ts,12,Async function 'getStudentDashboard',1,0,Low,ya
+features/dashboard/actions.ts,20,Async function 'markLoanNotificationRead',1,0,Low,ya
+features/dashboard/actions.ts,26,Async function 'markBookingNotificationRead',1,0,Low,ya
+features/dashboard/actions.ts,32,Async function 'markAllNotificationsRead',1,0,Low,ya
+features/dashboard/actions.ts,39,Async function 'getLoanTrendData',1,0,Low,ya
+features/dashboard/actions.ts,44,Async function 'getBookingsByRoom',1,0,Low,ya
+features/dashboard/actions.ts,49,Async function 'getLoansByCategory',1,0,Low,ya
+features/dashboard/actions.ts,54,Async function 'getIdleItemsCount',1,0,Low,ya
+features/dashboard/actions.ts,59,Async function 'getPendingCounts',1,0,Low,ya
+features/dashboard/actions.ts,64,Async function 'getRecentBookings',1,0,Low,ya
+features/dashboard/actions.ts,69,Async function 'getSmartAnalyticsData',1,0,Low,ya
+features/dashboard/analytics.ts,46,Function 'detectPeakHours',1,0,Low,ya
+features/dashboard/analytics.ts,53,Arrow function,1,0,Low,ya
+features/dashboard/analytics.ts,54,Arrow function,1,0,Low,ya
+features/dashboard/analytics.ts,62,Arrow function,1,0,Low,ya
+features/dashboard/analytics.ts,105,Arrow function,1,0,Low,ya
+features/dashboard/analytics.ts,153,Arrow function,1,0,Low,ya
+features/dashboard/analytics.ts,154,Arrow function,1,0,Low,ya
+features/dashboard/analytics.ts,258,Arrow function,1,0,Low,ya
+features/dashboard/service.ts,17,Static async method 'getAdminStats',1,0,Low,ya
+features/dashboard/service.ts,49,Arrow function,1,0,Low,ya
+features/dashboard/service.ts,67,Arrow function,1,0,Low,ya
+features/dashboard/service.ts,91,Arrow function,1,0,Low,ya
+features/dashboard/service.ts,115,Arrow function,1,0,Low,ya
+features/dashboard/service.ts,139,Arrow function,1,0,Low,ya
+features/dashboard/service.ts,168,Static async method 'getStudentDashboard',1,0,Low,ya
+features/dashboard/service.ts,188,Arrow function,1,0,Low,ya
+features/dashboard/service.ts,212,Arrow function,1,0,Low,ya
+features/dashboard/service.ts,229,Arrow function,1,0,Low,ya
+features/dashboard/service.ts,265,Arrow function,1,0,Low,ya
+features/dashboard/service.ts,288,Arrow function,1,0,Low,ya
+features/dashboard/service.ts,305,Arrow function,1,0,Low,ya
+features/dashboard/service.ts,341,Static async method 'markLoanNotificationRead',1,0,Low,ya
+features/dashboard/service.ts,350,Static async method 'markBookingNotificationRead',1,0,Low,ya
+features/dashboard/service.ts,359,Static async method 'markAllNotificationsRead',1,0,Low,ya
+features/dashboard/service.ts,423,Static async method 'getBookingsByRoom',1,0,Low,ya
+features/dashboard/service.ts,444,Static async method 'getLoansByCategory',1,0,Low,ya
+features/dashboard/service.ts,520,Static async method 'getOverdueLoans',1,0,Low,ya
+features/dashboard/service.ts,560,Static async method 'getDayOfWeekStats',1,0,Low,ya
+features/dashboard/service.ts,635,Static async method 'getSmartAnalyticsData',1,0,Low,ya
+features/download-center/actions.ts,14,Async function 'getDownloadCenterDocs',1,0,Low,ya
+features/download-center/components/DownloadCenterManager.tsx,34,Arrow function,1,0,Low,ya
+features/download-center/components/DownloadCenterManager.tsx,132,Arrow function,1,0,Low,ya
+features/governance/actions.ts,15,Async function 'getGovernanceDocs',1,0,Low,ya
+features/governance/actions.ts,34,Async function 'getAllGovernanceDocsForDownload',1,0,Low,ya
+features/governance/components/BulkEnrollment.tsx,121,Arrow function,1,0,Low,ya
+features/governance/components/DataExport.tsx,9,Arrow function,1,0,Low,ya
+features/governance/components/DataExport.tsx,14,Arrow function,1,0,Low,ya
+features/governance/components/DataExport.tsx,20,Arrow function,1,0,Low,ya
+features/governance/components/DataExport.tsx,112,Arrow function,1,0,Low,ya
+features/governance/components/DataExport.tsx,121,Arrow function,1,0,Low,ya
+features/governance/components/DataExport.tsx,153,Arrow function,1,0,Low,ya
+features/governance/components/DocumentList.tsx,26,Arrow function,1,0,Low,ya
+features/governance/components/DocumentList.tsx,40,Arrow function,1,0,Low,ya
+features/governance/components/DocumentList.tsx,46,Arrow function,1,0,Low,ya
+features/governance/components/DocumentList.tsx,92,Arrow function,1,0,Low,ya
+features/governance/components/DownloadCenter.tsx,34,Arrow function,1,0,Low,ya
+features/governance/components/DownloadCenter.tsx,37,Arrow function,1,0,Low,ya
+features/governance/components/DownloadCenter.tsx,42,Arrow function,1,0,Low,ya
+features/governance/components/DownloadCenter.tsx,44,Arrow function,1,0,Low,ya
+features/governance/components/DownloadCenter.tsx,45,Arrow function,1,0,Low,ya
+features/governance/components/DownloadCenter.tsx,46,Arrow function,1,0,Low,ya
+features/governance/components/DownloadCenter.tsx,73,Arrow function,1,0,Low,ya
+features/governance/components/DownloadCenter.tsx,97,Arrow function,1,0,Low,ya
+features/governance/components/DownloadCenter.tsx,102,Arrow function,1,0,Low,ya
+features/governance/components/GovernanceManager.tsx,65,Arrow function,1,0,Low,ya
+features/governance/components/GovernanceManager.tsx,70,Arrow function,1,0,Low,ya
+features/governance/components/GovernanceManager.tsx,102,Arrow function,1,0,Low,ya
+features/governance/components/GovernanceManager.tsx,109,Arrow function,1,0,Low,ya
+features/governance/components/GovernanceManager.tsx,116,Arrow function,1,0,Low,ya
+features/governance/components/GovernanceManager.tsx,126,Arrow function,1,0,Low,ya
+features/governance/components/GovernanceManager.tsx,135,Arrow function,1,0,Low,ya
+features/governance/components/GovernanceManager.tsx,173,Arrow function,1,0,Low,ya
+features/governance/components/GovernanceManager.tsx,182,Arrow function,1,0,Low,ya
+features/governance/components/GovernanceManager.tsx,182,Arrow function,1,0,Low,ya
+features/governance/components/GovernanceUploadForm.tsx,71,Arrow function,1,0,Low,ya
+features/governance/components/UserForm.tsx,32,Arrow function,1,0,Low,ya
+features/governance/components/UserForm.tsx,132,Arrow function,1,0,Low,ya
+features/governance/components/UserForm.tsx,137,Arrow function,1,0,Low,ya
+features/governance/components/UserForm.tsx,154,Arrow function,1,0,Low,ya
+features/governance/components/UserForm.tsx,154,Arrow function,1,0,Low,ya
+features/governance/components/UserForm.tsx,190,Arrow function,1,0,Low,ya
+features/governance/components/UserList.tsx,81,Arrow function,1,0,Low,ya
+features/governance/components/UserList.tsx,94,Arrow function,1,0,Low,ya
+features/governance/components/UserList.tsx,101,Arrow function,1,0,Low,ya
+features/governance/components/UserList.tsx,105,Arrow function,1,0,Low,ya
+features/governance/components/UserList.tsx,105,Arrow function,1,0,Low,ya
+features/governance/components/UserList.tsx,108,Arrow function,1,0,Low,ya
+features/governance/components/UserList.tsx,130,Arrow function,1,0,Low,ya
+features/governance/components/UserList.tsx,131,Arrow function,1,0,Low,ya
+features/governance/components/UserList.tsx,146,Arrow function,1,0,Low,ya
+features/governance/components/UserList.tsx,152,Arrow function,1,0,Low,ya
+features/governance/components/UserList.tsx,170,Arrow function,1,0,Low,ya
+features/governance/components/UserList.tsx,175,Arrow function,1,0,Low,ya
+features/governance/components/UserList.tsx,219,Arrow function,1,0,Low,ya
+features/governance/components/UserList.tsx,226,Arrow function,1,0,Low,ya
+features/governance/components/UserList.tsx,281,Arrow function,1,0,Low,ya
+features/governance/components/UserList.tsx,287,Arrow function,1,0,Low,ya
+features/governance/components/UserList.tsx,348,Arrow function,1,3,Low,ya
+features/governance/components/UserList.tsx,349,Arrow function,1,0,Low,ya
+features/governance/components/UserList.tsx,363,Arrow function,1,0,Low,ya
+features/governance/components/UserList.tsx,372,Arrow function,1,0,Low,ya
+features/governance/components/UserList.tsx,386,Arrow function,1,4,Low,ya
+features/governance/components/UserList.tsx,387,Arrow function,1,0,Low,ya
+features/governance/components/UserList.tsx,400,Arrow function,1,0,Low,ya
+features/governance/components/UserList.tsx,409,Arrow function,1,0,Low,ya
+features/governance/export-actions.ts,31,Async function 'exportAttendanceData',1,0,Low,ya
+features/governance/export-actions.ts,71,Arrow function,1,0,Low,ya
+features/governance/export-actions.ts,78,Async function 'exportLoanData',1,0,Low,ya
+features/governance/export-actions.ts,119,Arrow function,1,0,Low,ya
+features/governance/export-actions.ts,126,Async function 'exportBookingData',1,0,Low,ya
+features/governance/export-actions.ts,175,Arrow function,1,0,Low,ya
+features/hero-photos/actions.ts,8,Async function 'getHeroPhotos',1,0,Low,ya
+features/hero-photos/service.ts,32,Static async method 'getAll',1,0,Low,ya
+features/hero-photos/service.ts,39,Static async method 'getById',1,0,Low,ya
+features/hero-photos/service.ts,84,Static async method 'delete',1,0,Low,ya
+features/inventory/actions.ts,9,Async function 'getRooms',1,0,Low,ya
+features/inventory/actions.ts,13,Async function 'createRoom',1,0,Low,ya
+features/inventory/actions.ts,19,Async function 'updateRoom',1,0,Low,ya
+features/inventory/actions.ts,25,Async function 'deleteRoom',1,0,Low,ya
+features/inventory/actions.ts,34,Async function 'updateRoomStatus',1,0,Low,ya
+features/inventory/actions.ts,52,Async function 'getCategories',1,0,Low,ya
+features/inventory/actions.ts,56,Async function 'createCategory',1,0,Low,ya
+features/inventory/actions.ts,98,Async function 'getItems',1,0,Low,ya
+features/inventory/actions.ts,102,Async function 'createItem',1,0,Low,ya
+features/inventory/actions.ts,115,Async function 'updateItem',1,0,Low,ya
+features/inventory/actions.ts,127,Async function 'deleteItem',1,0,Low,ya
+features/inventory/actions.ts,136,Async function 'updateItemStatus',1,0,Low,ya
+features/inventory/actions.ts,153,Async function 'getMaintenanceItems',1,0,Low,ya
+features/inventory/actions.ts,157,Async function 'getItemByQrCode',1,0,Low,ya
+features/inventory/actions.ts,164,Async function 'getAvailableItems',1,0,Low,ya
+features/inventory/service.ts,47,Static async method 'getRooms',1,0,Low,ya
+features/inventory/service.ts,51,Static async method 'createRoom',1,0,Low,ya
+features/inventory/service.ts,55,Static async method 'updateRoom',1,0,Low,ya
+features/inventory/service.ts,59,Static async method 'deleteRoom',1,0,Low,ya
+features/inventory/service.ts,65,Static async method 'getCategories',1,0,Low,ya
+features/inventory/service.ts,69,Static async method 'createCategory',1,0,Low,ya
+features/inventory/service.ts,73,Static async method 'updateCategory',1,0,Low,ya
+features/inventory/service.ts,77,Static async method 'deleteCategory',1,0,Low,ya
+features/inventory/service.ts,83,Static async method 'getItems',1,0,Low,ya
+features/inventory/service.ts,95,Arrow function,1,0,Low,ya
+features/inventory/service.ts,102,Static async method 'createItem',1,0,Low,ya
+features/inventory/service.ts,106,Static async method 'updateItem',1,0,Low,ya
+features/inventory/service.ts,110,Static async method 'deleteItem',1,0,Low,ya
+features/inventory/service.ts,114,Static async method 'getMaintenanceItems',1,0,Low,ya
+features/inventory/service.ts,125,Arrow function,1,0,Low,ya
+features/loans/actions.ts,14,Async function 'getAvailableItems',1,0,Low,ya
+features/loans/actions.ts,49,Async function 'getLoanRequests',1,0,Low,ya
+features/loans/actions.ts,104,Async function 'getMyLoans',1,0,Low,ya
+features/loans/actions.ts,181,Async function 'getPendingReturns',1,0,Low,ya
+features/loans/actions.ts,189,Async function 'getLecturersForLoan',1,0,Low,ya
+features/loans/service.ts,54,Arrow function,1,0,Low,ya
+features/loans/service.ts,145,Arrow function,1,0,Low,ya
+features/loans/service.ts,192,Static async method 'getByUserId',1,0,Low,ya
+features/loans/service.ts,207,Arrow function,1,0,Low,ya
+features/loans/service.ts,346,Static async method 'rejectReturn',1,0,Low,ya
+features/loans/service.ts,357,Static async method 'getPendingReturns',1,0,Low,ya
+features/loans/service.ts,370,Arrow function,1,0,Low,ya
+features/permissions/actions.ts,7,Async function 'getAllPermissions',1,0,Low,ya
+features/permissions/actions.ts,12,Async function 'getUserPermissionOverrides',1,0,Low,ya
+features/permissions/actions.ts,17,Async function 'getEffectivePermissions',1,0,Low,ya
+features/permissions/actions.ts,22,Async function 'setUserPermission',1,0,Low,ya
+features/permissions/actions.ts,28,Async function 'removeUserPermission',1,0,Low,ya
+features/permissions/actions.ts,34,Async function 'updateUserPermissions',1,0,Low,ya
+features/permissions/actions.ts,43,Async function 'getRolePermissionMap',1,0,Low,ya
+features/permissions/service.ts,9,Static async method 'getAllPermissions',1,0,Low,ya
+features/permissions/service.ts,16,Static async method 'getRolePermissions',1,0,Low,ya
+features/permissions/service.ts,21,Arrow function,1,0,Low,ya
+features/permissions/service.ts,46,Static async method 'getUserOverrides',1,0,Low,ya
+features/permissions/service.ts,69,Arrow function,1,0,Low,ya
+features/permissions/service.ts,142,Arrow function,1,0,Low,ya
+features/permissions/service.ts,145,Arrow function,1,0,Low,ya
+features/permissions/service.ts,146,Arrow function,1,0,Low,ya
+features/practicum-reports/actions.ts,12,Async function 'getAllPracticumReports',1,0,Low,ya
+features/practicum-reports/components/AdminPracticumReportTable.tsx,49,Arrow function,1,0,Low,ya
+features/practicum-reports/components/AdminPracticumReportTable.tsx,95,Arrow function,1,0,Low,ya
+features/practicum-reports/components/AdminPracticumReportTable.tsx,133,Arrow function,1,0,Low,ya
+features/practicum-reports/components/AdminPracticumReportTable.tsx,187,Arrow function,1,0,Low,ya
+features/practicum-reports/components/AdminPracticumReportTable.tsx,195,Arrow function,1,0,Low,ya
+features/practicum-reports/components/AdminPracticumReportTable.tsx,205,Arrow function,1,0,Low,ya
+features/practicum-reports/components/AdminPracticumReportTable.tsx,214,Arrow function,1,0,Low,ya
+features/practicum-reports/components/AdminPracticumReportTable.tsx,243,Arrow function,1,0,Low,ya
+features/practicum-reports/components/AdminPracticumReportTable.tsx,309,Arrow function,1,0,Low,ya
+features/practicum-reports/components/AdminPracticumReportTable.tsx,319,Arrow function,1,0,Low,ya
+features/practicum-reports/components/AdminPracticumReportTable.tsx,328,Arrow function,1,0,Low,ya
+features/practicum-reports/components/AdminPracticumReportTable.tsx,354,Arrow function,1,0,Low,ya
+features/practicum-reports/components/AdminPracticumReportTable.tsx,368,Arrow function,1,0,Low,ya
+features/practicum-reports/components/AdminPracticumReportTable.tsx,400,Arrow function,1,0,Low,ya
+features/practicum-reports/components/AdminPracticumReportTable.tsx,432,Arrow function,1,0,Low,ya
+features/practicum-reports/components/AllPracticumLpjManager.tsx,91,Arrow function,1,0,Low,ya
+features/practicum-reports/components/AllPracticumLpjManager.tsx,91,Arrow function,1,0,Low,ya
+features/practicum-reports/components/AllPracticumLpjManager.tsx,100,Arrow function,1,0,Low,ya
+features/practicum-reports/components/AllPracticumLpjManager.tsx,102,Arrow function,1,0,Low,ya
+features/practicum-reports/components/AllPracticumLpjManager.tsx,113,Arrow function,1,0,Low,ya
+features/practicum-reports/components/AllPracticumLpjManager.tsx,113,Arrow function,1,0,Low,ya
+features/practicum-reports/components/AllPracticumLpjManager.tsx,125,Arrow function,1,0,Low,ya
+features/practicum-reports/components/AllPracticumLpjManager.tsx,138,Arrow function,1,0,Low,ya
+features/practicum-reports/components/AllPracticumLpjManager.tsx,143,Arrow function,1,0,Low,ya
+features/practicum-reports/components/AllPracticumLpjManager.tsx,154,Arrow function,1,0,Low,ya
+features/practicum-reports/components/AllPracticumLpjManager.tsx,166,Arrow function,1,0,Low,ya
+features/practicum-reports/components/AllPracticumLpjManager.tsx,169,Arrow function,1,0,Low,ya
+features/practicum-reports/components/AllPracticumLpjManager.tsx,178,Arrow function,1,0,Low,ya
+features/practicum-reports/components/AllPracticumLpjManager.tsx,181,Arrow function,1,0,Low,ya
+features/practicum-reports/components/AllPracticumLpjManager.tsx,190,Arrow function,1,0,Low,ya
+features/practicum-reports/components/AllPracticumLpjManager.tsx,224,Arrow function,1,0,Low,ya
+features/practicum-reports/components/AllPracticumLpjManager.tsx,283,Arrow function,1,0,Low,ya
+features/practicum-reports/components/BeritaAcaraManager.tsx,110,Arrow function,1,2,Low,ya
+features/practicum-reports/components/BeritaAcaraManager.tsx,110,Arrow function,1,2,Low,ya
+features/practicum-reports/components/BeritaAcaraManager.tsx,111,Arrow function,1,2,Low,ya
+features/practicum-reports/components/BeritaAcaraManager.tsx,111,Arrow function,1,2,Low,ya
+features/practicum-reports/components/BeritaAcaraManager.tsx,115,Arrow function,1,0,Low,ya
+features/practicum-reports/components/BeritaAcaraManager.tsx,120,Arrow function,1,0,Low,ya
+features/practicum-reports/components/BeritaAcaraManager.tsx,141,Arrow function,1,0,Low,ya
+features/practicum-reports/components/BeritaAcaraManager.tsx,154,Arrow function,1,0,Low,ya
+features/practicum-reports/components/BeritaAcaraManager.tsx,161,Arrow function,1,0,Low,ya
+features/practicum-reports/components/BeritaAcaraManager.tsx,191,Arrow function,1,0,Low,ya
+features/practicum-reports/components/BeritaAcaraManager.tsx,201,Arrow function,1,0,Low,ya
+features/practicum-reports/components/BeritaAcaraManager.tsx,217,Arrow function,1,0,Low,ya
+features/practicum-reports/components/BeritaAcaraManager.tsx,330,Arrow function,1,0,Low,ya
+features/practicum-reports/components/BeritaAcaraManager.tsx,386,Arrow function,1,0,Low,ya
+features/practicum-reports/components/LecturerPracticumReportTable.tsx,67,Arrow function,1,0,Low,ya
+features/practicum-reports/components/LecturerPracticumReportTable.tsx,95,Arrow function,1,0,Low,ya
+features/practicum-reports/components/LecturerPracticumReportTable.tsx,96,Arrow function,1,0,Low,ya
+features/practicum-reports/components/LecturerPracticumReportTable.tsx,193,Arrow function,1,0,Low,ya
+features/practicum-reports/components/LecturerPracticumReportTable.tsx,198,Arrow function,1,0,Low,ya
+features/practicum-reports/components/LecturerPracticumReportTable.tsx,201,Arrow function,1,0,Low,ya
+features/practicum-reports/components/LecturerPracticumReportTable.tsx,206,Arrow function,1,0,Low,ya
+features/practicum-reports/components/LecturerPracticumReportTable.tsx,232,Arrow function,1,0,Low,ya
+features/practicum-reports/components/LecturerPracticumReportTable.tsx,334,Arrow function,1,0,Low,ya
+features/practicum-reports/components/LecturerPracticumReportTable.tsx,338,Arrow function,1,0,Low,ya
+features/practicum-reports/components/LecturerPracticumReportTable.tsx,344,Arrow function,1,0,Low,ya
+features/practicum-reports/components/LecturerPracticumReportTable.tsx,368,Arrow function,1,0,Low,ya
+features/practicum-reports/components/LecturerPracticumReportTable.tsx,379,Arrow function,1,0,Low,ya
+features/practicum-reports/components/LecturerPracticumReportTable.tsx,417,Arrow function,1,0,Low,ya
+features/practicum-reports/components/PracticumLpjManager.tsx,83,Arrow function,1,0,Low,ya
+features/practicum-reports/components/PracticumLpjManager.tsx,83,Arrow function,1,0,Low,ya
+features/practicum-reports/components/PracticumLpjManager.tsx,92,Arrow function,1,0,Low,ya
+features/practicum-reports/components/PracticumLpjManager.tsx,103,Arrow function,1,0,Low,ya
+features/practicum-reports/components/PracticumLpjManager.tsx,103,Arrow function,1,0,Low,ya
+features/practicum-reports/components/PracticumLpjManager.tsx,115,Arrow function,1,0,Low,ya
+features/practicum-reports/components/PracticumLpjManager.tsx,129,Arrow function,1,0,Low,ya
+features/practicum-reports/components/PracticumLpjManager.tsx,141,Arrow function,1,0,Low,ya
+features/practicum-reports/components/PracticumLpjManager.tsx,144,Arrow function,1,0,Low,ya
+features/practicum-reports/components/PracticumLpjManager.tsx,153,Arrow function,1,0,Low,ya
+features/practicum-reports/components/PracticumLpjManager.tsx,156,Arrow function,1,0,Low,ya
+features/practicum-reports/components/PracticumLpjManager.tsx,165,Arrow function,1,0,Low,ya
+features/practicum-reports/components/PracticumLpjManager.tsx,194,Arrow function,1,0,Low,ya
+features/practicum-reports/components/PracticumLpjManager.tsx,234,Arrow function,1,0,Low,ya
+features/practicum-reports/components/PracticumReportForm.tsx,195,Arrow function,1,0,Low,ya
+features/practicum-reports/components/PracticumReportTable.tsx,99,Arrow function,1,0,Low,ya
+features/practicum-reports/components/PracticumReportTable.tsx,126,Arrow function,1,0,Low,ya
+features/practicum-reports/components/PracticumReportTable.tsx,190,Arrow function,1,0,Low,ya
+features/practicum-reports/service.ts,14,Static async method 'getAllWithDetails',1,0,Low,ya
+features/practicum-reports/service.ts,53,Static async method 'getByLecturerId',1,0,Low,ya
+features/practicum-reports/service.ts,95,Static async method 'getByUser',1,0,Low,ya
+features/practicum-reports/service.ts,170,Static async method 'existsForUserAndSchedule',1,0,Low,ya
+features/practicum-reports/service.ts,186,Static async method 'getReportedScheduleIds',1,0,Low,ya
+features/practicum-reports/service.ts,192,Arrow function,1,0,Low,ya
+features/practicum-reports/service.ts,258,Static async method 'belongsToLecturer',1,0,Low,ya
+features/practicum-reports/service.ts,274,Static async method 'delete',1,0,Low,ya
+features/practicum-reports/service.ts,281,Static async method 'deleteAll',1,0,Low,ya
+features/practicum/actions.ts,12,Async function 'getModules',1,0,Low,ya
+features/practicum/actions.ts,19,Async function 'getModulesByLecturerId',1,0,Low,ya
+features/practicum/actions.ts,26,Async function 'getModuleById',1,0,Low,ya
+features/practicum/actions.ts,33,Async function 'searchModules',1,0,Low,ya
+features/practicum/actions.ts,40,Async function 'getModulesByCourse',1,0,Low,ya
+features/practicum/actions.ts,47,Async function 'createModule',1,0,Low,ya
+features/practicum/components/ModuleList.tsx,29,Arrow function,1,0,Low,ya
+features/practicum/components/ModuleList.tsx,48,Arrow function,1,0,Low,ya
+features/practicum/components/ModuleList.tsx,54,Arrow function,1,0,Low,ya
+features/practicum/components/ModuleList.tsx,59,Arrow function,1,0,Low,ya
+features/practicum/components/ModuleList.tsx,81,Arrow function,1,0,Low,ya
+features/practicum/components/ModuleList.tsx,87,Arrow function,1,0,Low,ya
+features/practicum/components/ModuleList.tsx,91,Arrow function,1,0,Low,ya
+features/practicum/components/ModuleList.tsx,106,Arrow function,1,0,Low,ya
+features/practicum/components/ModuleList.tsx,111,Arrow function,1,0,Low,ya
+features/practicum/components/ModuleList.tsx,249,Arrow function,1,0,Low,ya
+features/practicum/components/ModuleList.tsx,249,Arrow function,1,0,Low,ya
+features/practicum/components/ModuleList.tsx,269,Arrow function,1,0,Low,ya
+features/practicum/components/ModuleList.tsx,281,Arrow function,1,0,Low,ya
+features/practicum/components/ModuleList.tsx,281,Arrow function,1,0,Low,ya
+features/practicum/components/ModuleManager.tsx,36,Arrow function,1,0,Low,ya
+features/practicum/components/ModuleManager.tsx,51,Arrow function,1,0,Low,ya
+features/practicum/components/ModuleManager.tsx,57,Arrow function,1,0,Low,ya
+features/practicum/components/ModuleManager.tsx,62,Arrow function,1,0,Low,ya
+features/practicum/components/ModuleManager.tsx,158,Arrow function,1,0,Low,ya
+features/practicum/components/ModuleManager.tsx,173,Arrow function,1,0,Low,ya
+features/practicum/components/ModuleManager.tsx,196,Arrow function,1,0,Low,ya
+features/practicum/components/ModuleManager.tsx,219,Arrow function,1,0,Low,ya
+features/practicum/components/ModuleManager.tsx,288,Arrow function,1,0,Low,ya
+features/practicum/components/ModuleManager.tsx,308,Arrow function,1,0,Low,ya
+features/practicum/components/ModuleManager.tsx,314,Arrow function,1,0,Low,ya
+features/practicum/components/ModuleManager.tsx,318,Arrow function,1,0,Low,ya
+features/practicum/components/ModuleManager.tsx,332,Arrow function,1,0,Low,ya
+features/practicum/components/ModuleManager.tsx,337,Arrow function,1,0,Low,ya
+features/practicum/components/ModuleManager.tsx,418,Arrow function,1,0,Low,ya
+features/practicum/components/ModuleManager.tsx,425,Arrow function,1,0,Low,ya
+features/practicum/components/ModuleManager.tsx,450,Arrow function,1,0,Low,ya
+features/practicum/components/ModuleManager.tsx,457,Arrow function,1,0,Low,ya
+features/practicum/components/ModuleManager.tsx,514,Arrow function,1,0,Low,ya
+features/practicum/components/ModuleManager.tsx,514,Arrow function,1,0,Low,ya
+features/practicum/components/ModuleManager.tsx,534,Arrow function,1,0,Low,ya
+features/practicum/components/ModuleManager.tsx,546,Arrow function,1,0,Low,ya
+features/practicum/components/ModuleManager.tsx,546,Arrow function,1,0,Low,ya
+features/practicum/service.ts,15,Static async method 'getAll',1,0,Low,ya
+features/practicum/service.ts,37,Static async method 'getByLecturerId',1,0,Low,ya
+features/practicum/service.ts,85,Static async method 'search',1,0,Low,ya
+features/practicum/service.ts,109,Static async method 'getByCourseId',1,0,Low,ya
+features/practicum/service.ts,150,Static async method 'delete',1,0,Low,ya
+features/publications/actions.ts,9,Async function 'createPublication',1,0,Low,ya
+features/publications/actions.ts,57,Async function 'getPublicPublications',1,0,Low,ya
+features/publications/actions.ts,62,Async function 'getPublications',1,0,Low,ya
+features/publications/actions.ts,67,Async function 'getPublication',1,0,Low,ya
+features/publications/actions.ts,72,Async function 'getPublicationKeywords',1,0,Low,ya
+features/publications/actions.ts,77,Async function 'getPublicationYears',1,0,Low,ya
+features/publications/actions.ts,97,Async function 'incrementViewCount',1,0,Low,ya
+features/publications/actions.ts,108,Async function 'togglePublicationLike',1,0,Low,ya
+features/publications/actions.ts,115,Async function 'getPublicationLikeCount',1,0,Low,ya
+features/publications/actions.ts,119,Async function 'checkUserLikedPublication',1,0,Low,ya
+features/publications/actions.ts,123,Async function 'getPublicationLikeCounts',1,0,Low,ya
+features/publications/actions.ts,127,Async function 'getUserLikedPublicationIds',1,0,Low,ya
+features/publications/components/LikeButton.tsx,43,Async arrow function,1,0,Low,ya
+features/publications/components/PublicationLink.tsx,14,Async arrow function,1,0,Low,ya
+features/publications/components/PublicationManager.tsx,63,Arrow function,1,0,Low,ya
+features/publications/components/PublicationManager.tsx,69,Arrow function,1,0,Low,ya
+features/publications/components/PublicationManager.tsx,77,Arrow function,1,0,Low,ya
+features/publications/components/PublicationManager.tsx,82,Arrow function,1,0,Low,ya
+features/publications/components/PublicationManager.tsx,86,Arrow function,1,0,Low,ya
+features/publications/components/PublicationManager.tsx,117,Arrow function,1,0,Low,ya
+features/publications/components/PublicationManager.tsx,123,Arrow function,1,0,Low,ya
+features/publications/components/PublicationManager.tsx,144,Arrow function,1,0,Low,ya
+features/publications/components/PublicationManager.tsx,192,Arrow function,1,0,Low,ya
+features/publications/components/PublicationManager.tsx,250,Arrow function,1,0,Low,ya
+features/publications/components/PublicationManager.tsx,260,Arrow function,1,0,Low,ya
+features/publications/components/PublicationManager.tsx,299,Arrow function,1,0,Low,ya
+features/publications/components/PublicationManager.tsx,334,Arrow function,1,0,Low,ya
+features/publications/components/PublicationManager.tsx,390,Arrow function,1,0,Low,ya
+features/publications/components/PublicationManager.tsx,396,Arrow function,1,0,Low,ya
+features/publications/components/PublicationManager.tsx,400,Arrow function,1,0,Low,ya
+features/publications/components/PublicationManager.tsx,406,Arrow function,1,0,Low,ya
+features/publications/components/PublicationManager.tsx,410,Arrow function,1,0,Low,ya
+features/publications/components/PublicationManager.tsx,416,Arrow function,1,0,Low,ya
+features/publications/components/PublicationManager.tsx,420,Arrow function,1,0,Low,ya
+features/publications/components/PublicationManager.tsx,427,Arrow function,1,0,Low,ya
+features/publications/components/PublicationManager.tsx,434,Arrow function,1,0,Low,ya
+features/publications/components/PublicationManager.tsx,452,Arrow function,1,0,Low,ya
+features/publications/components/PublicationManager.tsx,496,Arrow function,1,0,Low,ya
+features/publications/components/PublicationManager.tsx,517,Arrow function,1,0,Low,ya
+features/publications/components/PublicationManager.tsx,520,Arrow function,1,0,Low,ya
+features/publications/components/PublicationManager.tsx,553,Arrow function,1,0,Low,ya
+features/publications/components/PublicationManager.tsx,560,Arrow function,1,0,Low,ya
+features/publications/components/PublicationManager.tsx,575,Arrow function,1,0,Low,ya
+features/publications/components/PublicationManager.tsx,618,Arrow function,1,0,Low,ya
+features/publications/components/PublicationManager.tsx,618,Arrow function,1,0,Low,ya
+features/publications/components/PublicationManager.tsx,633,Arrow function,1,0,Low,ya
+features/publications/components/PublicationManager.tsx,644,Arrow function,1,0,Low,ya
+features/publications/components/PublicationManager.tsx,644,Arrow function,1,0,Low,ya
+features/publications/components/PublicationManager.tsx,662,Arrow function,1,0,Low,ya
+features/publications/components/PublicationManager.tsx,703,Arrow function,1,0,Low,ya
+features/publications/components/PublicationManager.tsx,759,Arrow function,1,0,Low,ya
+features/publications/service.ts,43,Static async method 'create',1,0,Low,ya
+features/publications/service.ts,61,Static async method 'update',1,0,Low,ya
+features/publications/service.ts,130,Arrow function,1,0,Low,ya
+features/publications/service.ts,209,Static async method 'delete',1,0,Low,ya
+features/publications/service.ts,216,Static async method 'incrementViewCount',1,0,Low,ya
+features/publications/service.ts,245,Arrow function,1,0,Low,ya
+features/publications/service.ts,256,Static async method 'getAllYears',1,0,Low,ya
+features/publications/service.ts,262,Arrow function,1,0,Low,ya
+features/publications/service.ts,304,Static async method 'checkUserLiked',1,0,Low,ya
+features/publications/service.ts,326,Arrow function,1,0,Low,ya
+features/publications/service.ts,346,Arrow function,1,0,Low,ya
+features/publications/service.ts,349,Arrow function,1,0,Low,ya
+features/scheduled-practicum/actions.ts,12,Async function 'getScheduledPracticums',1,0,Low,ya
+features/scheduled-practicum/actions.ts,19,Async function 'getScheduledPracticumsByLecturerId',1,0,Low,ya
+features/scheduled-practicum/actions.ts,26,Async function 'getScheduledPracticumById',1,0,Low,ya
+features/scheduled-practicum/actions.ts,33,Async function 'getScheduledPracticumsByRoom',1,0,Low,ya
+features/scheduled-practicum/actions.ts,129,Arrow function,1,0,Low,ya
+features/scheduled-practicum/components/AdminScheduledPracticumManager.tsx,65,Function 'formatDateStr',1,0,Low,ya
+features/scheduled-practicum/components/AdminScheduledPracticumManager.tsx,119,Arrow function,1,0,Low,ya
+features/scheduled-practicum/components/AdminScheduledPracticumManager.tsx,123,Arrow function,1,0,Low,ya
+features/scheduled-practicum/components/AdminScheduledPracticumManager.tsx,126,Arrow function,1,0,Low,ya
+features/scheduled-practicum/components/AdminScheduledPracticumManager.tsx,128,Arrow function,1,2,Low,ya
+features/scheduled-practicum/components/AdminScheduledPracticumManager.tsx,128,Arrow function,1,2,Low,ya
+features/scheduled-practicum/components/AdminScheduledPracticumManager.tsx,129,Arrow function,1,2,Low,ya
+features/scheduled-practicum/components/AdminScheduledPracticumManager.tsx,129,Arrow function,1,2,Low,ya
+features/scheduled-practicum/components/AdminScheduledPracticumManager.tsx,130,Arrow function,1,0,Low,ya
+features/scheduled-practicum/components/AdminScheduledPracticumManager.tsx,175,Arrow function,1,0,Low,ya
+features/scheduled-practicum/components/AdminScheduledPracticumManager.tsx,184,Arrow function,1,0,Low,ya
+features/scheduled-practicum/components/AdminScheduledPracticumManager.tsx,196,Arrow function,1,0,Low,ya
+features/scheduled-practicum/components/AdminScheduledPracticumManager.tsx,209,Arrow function,1,0,Low,ya
+features/scheduled-practicum/components/AdminScheduledPracticumManager.tsx,216,Arrow function,1,0,Low,ya
+features/scheduled-practicum/components/AdminScheduledPracticumManager.tsx,225,Arrow function,1,0,Low,ya
+features/scheduled-practicum/components/AdminScheduledPracticumManager.tsx,240,Arrow function,1,0,Low,ya
+features/scheduled-practicum/components/AdminScheduledPracticumManager.tsx,302,Arrow function,1,0,Low,ya
+features/scheduled-practicum/components/AdminScheduledPracticumManager.tsx,317,Arrow function,1,0,Low,ya
+features/scheduled-practicum/components/AdminScheduledPracticumManager.tsx,342,Arrow function,1,0,Low,ya
+features/scheduled-practicum/components/AdminScheduledPracticumManager.tsx,419,Arrow function,1,0,Low,ya
+features/scheduled-practicum/components/AdminScheduledPracticumManager.tsx,422,Arrow function,1,0,Low,ya
+features/scheduled-practicum/components/AdminScheduledPracticumManager.tsx,476,Arrow function,1,0,Low,ya
+features/scheduled-practicum/components/AdminScheduledPracticumManager.tsx,487,Arrow function,1,0,Low,ya
+features/scheduled-practicum/components/AdminScheduledPracticumManager.tsx,491,Arrow function,1,0,Low,ya
+features/scheduled-practicum/components/AdminScheduledPracticumManager.tsx,505,Arrow function,1,0,Low,ya
+features/scheduled-practicum/components/AdminScheduledPracticumManager.tsx,524,Arrow function,1,0,Low,ya
+features/scheduled-practicum/components/AdminScheduledPracticumManager.tsx,558,Arrow function,1,0,Low,ya
+features/scheduled-practicum/components/BulkScheduleForm.tsx,42,Arrow function,1,0,Low,ya
+features/scheduled-practicum/components/BulkScheduleForm.tsx,45,Arrow function,1,0,Low,ya
+features/scheduled-practicum/components/BulkScheduleForm.tsx,47,Arrow function,1,0,Low,ya
+features/scheduled-practicum/components/BulkScheduleForm.tsx,98,Arrow function,1,0,Low,ya
+features/scheduled-practicum/components/BulkScheduleForm.tsx,102,Arrow function,1,0,Low,ya
+features/scheduled-practicum/components/BulkScheduleForm.tsx,114,Arrow function,1,0,Low,ya
+features/scheduled-practicum/components/BulkScheduleForm.tsx,118,Arrow function,1,0,Low,ya
+features/scheduled-practicum/components/BulkScheduleForm.tsx,129,Arrow function,1,0,Low,ya
+features/scheduled-practicum/components/BulkScheduleForm.tsx,133,Arrow function,1,0,Low,ya
+features/scheduled-practicum/components/BulkScheduleForm.tsx,159,Arrow function,1,0,Low,ya
+features/scheduled-practicum/components/BulkScheduleForm.tsx,180,Arrow function,1,0,Low,ya
+features/scheduled-practicum/components/BulkScheduleForm.tsx,190,Arrow function,1,0,Low,ya
+features/scheduled-practicum/components/StudentScheduledPracticumManager.tsx,65,Function 'formatDateStr',1,0,Low,ya
+features/scheduled-practicum/components/StudentScheduledPracticumManager.tsx,122,Arrow function,1,0,Low,ya
+features/scheduled-practicum/components/StudentScheduledPracticumManager.tsx,122,Arrow function,1,0,Low,ya
+features/scheduled-practicum/components/StudentScheduledPracticumManager.tsx,126,Arrow function,1,0,Low,ya
+features/scheduled-practicum/components/StudentScheduledPracticumManager.tsx,130,Arrow function,1,0,Low,ya
+features/scheduled-practicum/components/StudentScheduledPracticumManager.tsx,133,Arrow function,1,2,Low,ya
+features/scheduled-practicum/components/StudentScheduledPracticumManager.tsx,133,Arrow function,1,2,Low,ya
+features/scheduled-practicum/components/StudentScheduledPracticumManager.tsx,134,Arrow function,1,2,Low,ya
+features/scheduled-practicum/components/StudentScheduledPracticumManager.tsx,134,Arrow function,1,2,Low,ya
+features/scheduled-practicum/components/StudentScheduledPracticumManager.tsx,135,Arrow function,1,0,Low,ya
+features/scheduled-practicum/components/StudentScheduledPracticumManager.tsx,186,Arrow function,1,0,Low,ya
+features/scheduled-practicum/components/StudentScheduledPracticumManager.tsx,195,Arrow function,1,0,Low,ya
+features/scheduled-practicum/components/StudentScheduledPracticumManager.tsx,200,Arrow function,1,0,Low,ya
+features/scheduled-practicum/components/StudentScheduledPracticumManager.tsx,205,Arrow function,1,0,Low,ya
+features/scheduled-practicum/components/StudentScheduledPracticumManager.tsx,222,Arrow function,1,0,Low,ya
+features/scheduled-practicum/components/StudentScheduledPracticumManager.tsx,231,Arrow function,1,0,Low,ya
+features/scheduled-practicum/components/StudentScheduledPracticumManager.tsx,274,Arrow function,1,0,Low,ya
+features/scheduled-practicum/components/StudentScheduledPracticumManager.tsx,289,Arrow function,1,0,Low,ya
+features/scheduled-practicum/components/StudentScheduledPracticumManager.tsx,314,Arrow function,1,0,Low,ya
+features/scheduled-practicum/components/StudentScheduledPracticumManager.tsx,401,Arrow function,1,0,Low,ya
+features/scheduled-practicum/components/StudentScheduledPracticumManager.tsx,411,Arrow function,1,0,Low,ya
+features/scheduled-practicum/components/StudentScheduledPracticumManager.tsx,414,Arrow function,1,0,Low,ya
+features/scheduled-practicum/components/StudentScheduledPracticumManager.tsx,489,Arrow function,1,0,Low,ya
+features/scheduled-practicum/components/StudentScheduledPracticumManager.tsx,500,Arrow function,1,0,Low,ya
+features/scheduled-practicum/components/StudentScheduledPracticumManager.tsx,504,Arrow function,1,0,Low,ya
+features/scheduled-practicum/components/StudentScheduledPracticumManager.tsx,518,Arrow function,1,0,Low,ya
+features/scheduled-practicum/components/StudentScheduledPracticumManager.tsx,537,Arrow function,1,0,Low,ya
+features/scheduled-practicum/components/StudentScheduledPracticumManager.tsx,571,Arrow function,1,0,Low,ya
+features/scheduled-practicum/components/StudentScheduledPracticumManager.tsx,587,Arrow function,1,0,Low,ya
+features/scheduled-practicum/service.ts,24,Static async method 'getAll',1,0,Low,ya
+features/scheduled-practicum/service.ts,55,Static async method 'getByLecturerId',1,0,Low,ya
+features/scheduled-practicum/service.ts,121,Static async method 'getByRoom',1,0,Low,ya
+features/scheduled-practicum/service.ts,263,Static async method 'delete',1,0,Low,ya
+features/users/actions.ts,7,Async function 'getUsers',1,0,Low,ya
+features/users/actions.ts,15,Async function 'getRoles',1,0,Low,ya
+features/users/actions.ts,20,Async function 'getLecturers',1,0,Low,ya
+features/users/actions.ts,26,Async function 'createUser',1,0,Low,ya
+features/users/actions.ts,42,Async function 'updateUser',1,0,Low,ya
+features/users/actions.ts,58,Async function 'deleteUser',1,0,Low,ya
+features/users/actions.ts,64,Async function 'getPendingUsers',1,0,Low,ya
+features/users/actions.ts,68,Async function 'getRejectedUsers',1,0,Low,ya
+features/users/actions.ts,72,Async function 'updateUserStatus',1,0,Low,ya
+features/users/actions.ts,77,Async function 'updateCustomRoleActivation',1,0,Low,ya
+features/users/enrollment.ts,33,Method 'where',1,0,Low,ya
+features/users/enrollment.ts,75,Async function 'getRoleByName',1,0,Low,ya
+features/users/enrollment.ts,77,Method 'where',1,0,Low,ya
+features/users/enrollment.ts,90,Method 'where',1,0,Low,ya
+features/users/service.ts,39,Static async method 'getAll',1,0,Low,ya
+features/users/service.ts,64,Static async method 'getRoles',1,0,Low,ya
+features/users/service.ts,71,Static async method 'getLecturers',1,0,Low,ya
+features/users/service.ts,90,Method 'where',1,0,Low,ya
+features/users/service.ts,111,Method 'where',1,0,Low,ya
+features/users/service.ts,138,Static async method 'delete',1,0,Low,ya
+features/users/service.ts,145,Static async method 'getPending',1,0,Low,ya
+features/users/service.ts,161,Static async method 'getRejected',1,0,Low,ya
+features/users/service.ts,178,Static async method 'updateStatus',1,0,Low,ya
+features/users/service.ts,184,Static async method 'setCustomRoleEnabled',1,0,Low,ya
+features/users/service.ts,210,Static async method 'verifyPassword',1,0,Low,ya
+features/users/service.ts,217,Static async method 'hashPassword',1,0,Low,ya
+lib/auth.ts,8,Async function 'encrypt',1,0,Low,ya
+lib/auth.ts,16,Async function 'decrypt',1,0,Low,ya
+lib/auth.ts,67,Function 'hasAnyPermission',1,0,Low,ya
+lib/auth.ts,68,Arrow function,1,0,Low,ya
+lib/documentVerifier.ts,419,Arrow function,1,0,Low,ya
+lib/formatters.ts,127,Function 'getCurrentDateTime',1,0,Low,ya
+lib/menu.ts,94,Function 'filterMenuByPermissions',1,0,Low,ya
+lib/menu.ts,121,Function 'hasCustomAdminPermission',1,0,Low,ya
+lib/menu.ts,125,Function 'prefixMenuHrefs',1,0,Low,ya
+lib/menu.ts,143,Arrow function,1,0,Low,ya
+lib/menu.ts,150,Arrow function,1,0,Low,ya
+lib/menu.ts,163,Arrow function,1,0,Low,ya
+lib/menu.ts,170,Arrow function,1,0,Low,ya
+lib/timezone.ts,16,Function 'nowWIB',1,0,Low,ya
+lib/timezone.ts,25,Function 'startOfTodayWIB',1,0,Low,ya
+lib/timezone.ts,35,Function 'endOfTodayWIB',1,0,Low,ya
+lib/timezone.ts,113,Function 'toDbDate',1,0,Low,ya
+lib/timezone.ts,133,Function 'nowAsWIBForDb',1,0,Low,ya
+lib/timezone.ts,140,Function 'startOfTodayForDb',1,0,Low,ya
+lib/upload.ts,44,Function 'validateFileType',1,0,Low,ya
+lib/upload.ts,45,Arrow function,1,0,Low,ya
+lib/utils.ts,4,Function 'cn',1,0,Low,ya
+migrate.ts,133,Arrow function,1,0,Low,tidak
+next.config.ts,10,Async method 'rewrites',1,0,Low,tidak

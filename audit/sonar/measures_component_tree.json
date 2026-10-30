@@ -1,0 +1,4260 @@
+[
+ {
+  "key": "lab-industri:features/attendance/actions.ts",
+  "name": "actions.ts",
+  "qualifier": "FIL",
+  "path": "features/attendance/actions.ts",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "6",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "17"
+   },
+   {
+    "metric": "ncloc",
+    "value": "108"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/courses/actions.ts",
+  "name": "actions.ts",
+  "qualifier": "FIL",
+  "path": "features/courses/actions.ts",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "complexity",
+    "value": "9"
+   },
+   {
+    "metric": "ncloc",
+    "value": "44"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/practicum/actions.ts",
+  "name": "actions.ts",
+  "qualifier": "FIL",
+  "path": "features/practicum/actions.ts",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "5",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "12"
+   },
+   {
+    "metric": "ncloc",
+    "value": "52"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/scheduled-practicum/actions.ts",
+  "name": "actions.ts",
+  "qualifier": "FIL",
+  "path": "features/scheduled-practicum/actions.ts",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "15",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "26"
+   },
+   {
+    "metric": "ncloc",
+    "value": "119"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/dashboard/actions.ts",
+  "name": "actions.ts",
+  "qualifier": "FIL",
+  "path": "features/dashboard/actions.ts",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "complexity",
+    "value": "13"
+   },
+   {
+    "metric": "ncloc",
+    "value": "57"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/practicum-reports/actions.ts",
+  "name": "actions.ts",
+  "qualifier": "FIL",
+  "path": "features/practicum-reports/actions.ts",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "19",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "31"
+   },
+   {
+    "metric": "ncloc",
+    "value": "132"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/governance/actions.ts",
+  "name": "actions.ts",
+  "qualifier": "FIL",
+  "path": "features/governance/actions.ts",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "23",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "25"
+   },
+   {
+    "metric": "ncloc",
+    "value": "169"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/users/actions.ts",
+  "name": "actions.ts",
+  "qualifier": "FIL",
+  "path": "features/users/actions.ts",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "22",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "30"
+   },
+   {
+    "metric": "ncloc",
+    "value": "130"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/hero-photos/actions.ts",
+  "name": "actions.ts",
+  "qualifier": "FIL",
+  "path": "features/hero-photos/actions.ts",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "8",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "16"
+   },
+   {
+    "metric": "ncloc",
+    "value": "70"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/bookings/actions.ts",
+  "name": "actions.ts",
+  "qualifier": "FIL",
+  "path": "features/bookings/actions.ts",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "6",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "21"
+   },
+   {
+    "metric": "ncloc",
+    "value": "148"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/publications/actions.ts",
+  "name": "actions.ts",
+  "qualifier": "FIL",
+  "path": "features/publications/actions.ts",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "5",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "19"
+   },
+   {
+    "metric": "ncloc",
+    "value": "99"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/loans/actions.ts",
+  "name": "actions.ts",
+  "qualifier": "FIL",
+  "path": "features/loans/actions.ts",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "17",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "32"
+   },
+   {
+    "metric": "ncloc",
+    "value": "240"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/permissions/actions.ts",
+  "name": "actions.ts",
+  "qualifier": "FIL",
+  "path": "features/permissions/actions.ts",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "complexity",
+    "value": "7"
+   },
+   {
+    "metric": "ncloc",
+    "value": "38"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/inventory/actions.ts",
+  "name": "actions.ts",
+  "qualifier": "FIL",
+  "path": "features/inventory/actions.ts",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "4",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "23"
+   },
+   {
+    "metric": "ncloc",
+    "value": "162"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/auth/actions.ts",
+  "name": "actions.ts",
+  "qualifier": "FIL",
+  "path": "features/auth/actions.ts",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "14",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "20"
+   },
+   {
+    "metric": "ncloc",
+    "value": "85"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/download-center/actions.ts",
+  "name": "actions.ts",
+  "qualifier": "FIL",
+  "path": "features/download-center/actions.ts",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "9",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "11"
+   },
+   {
+    "metric": "ncloc",
+    "value": "84"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/admin/validations/_components/ActiveBookingsTable.tsx",
+  "name": "ActiveBookingsTable.tsx",
+  "qualifier": "FIL",
+  "path": "app/admin/validations/_components/ActiveBookingsTable.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "21",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "49"
+   },
+   {
+    "metric": "ncloc",
+    "value": "397"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/admin/validations/_components/ActiveLoansTable.tsx",
+  "name": "ActiveLoansTable.tsx",
+  "qualifier": "FIL",
+  "path": "app/admin/validations/_components/ActiveLoansTable.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "25",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "58"
+   },
+   {
+    "metric": "ncloc",
+    "value": "415"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/practicum-reports/components/AdminPracticumReportTable.tsx",
+  "name": "AdminPracticumReportTable.tsx",
+  "qualifier": "FIL",
+  "path": "features/practicum-reports/components/AdminPracticumReportTable.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "30",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "81"
+   },
+   {
+    "metric": "ncloc",
+    "value": "431"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/scheduled-practicum/components/AdminScheduledPracticumManager.tsx",
+  "name": "AdminScheduledPracticumManager.tsx",
+  "qualifier": "FIL",
+  "path": "features/scheduled-practicum/components/AdminScheduledPracticumManager.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "78",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "110"
+   },
+   {
+    "metric": "ncloc",
+    "value": "543"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/practicum-reports/components/AllPracticumLpjManager.tsx",
+  "name": "AllPracticumLpjManager.tsx",
+  "qualifier": "FIL",
+  "path": "features/practicum-reports/components/AllPracticumLpjManager.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "17",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "45"
+   },
+   {
+    "metric": "ncloc",
+    "value": "286"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/dashboard/analytics.ts",
+  "name": "analytics.ts",
+  "qualifier": "FIL",
+  "path": "features/dashboard/analytics.ts",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "38",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "48"
+   },
+   {
+    "metric": "ncloc",
+    "value": "237"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/(home)/_components/AnnouncementSection.tsx",
+  "name": "AnnouncementSection.tsx",
+  "qualifier": "FIL",
+  "path": "app/(home)/_components/AnnouncementSection.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "1",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "5"
+   },
+   {
+    "metric": "ncloc",
+    "value": "42"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/attendance/components/AttendanceButton.tsx",
+  "name": "AttendanceButton.tsx",
+  "qualifier": "FIL",
+  "path": "features/attendance/components/AttendanceButton.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "complexity",
+    "value": "3"
+   },
+   {
+    "metric": "ncloc",
+    "value": "31"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/attendance/components/AttendanceModal.tsx",
+  "name": "AttendanceModal.tsx",
+  "qualifier": "FIL",
+  "path": "features/attendance/components/AttendanceModal.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "8",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "32"
+   },
+   {
+    "metric": "ncloc",
+    "value": "310"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:lib/auth.ts",
+  "name": "auth.ts",
+  "qualifier": "FIL",
+  "path": "lib/auth.ts",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "6",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "16"
+   },
+   {
+    "metric": "ncloc",
+    "value": "63"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/(home)/_components/AvailableItemsSection.tsx",
+  "name": "AvailableItemsSection.tsx",
+  "qualifier": "FIL",
+  "path": "app/(home)/_components/AvailableItemsSection.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "2",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "8"
+   },
+   {
+    "metric": "ncloc",
+    "value": "72"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/practicum-reports/components/BeritaAcaraManager.tsx",
+  "name": "BeritaAcaraManager.tsx",
+  "qualifier": "FIL",
+  "path": "features/practicum-reports/components/BeritaAcaraManager.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "59",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "71"
+   },
+   {
+    "metric": "ncloc",
+    "value": "372"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/governance/components/BulkEnrollment.tsx",
+  "name": "BulkEnrollment.tsx",
+  "qualifier": "FIL",
+  "path": "features/governance/components/BulkEnrollment.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "13",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "31"
+   },
+   {
+    "metric": "ncloc",
+    "value": "183"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/scheduled-practicum/components/BulkScheduleForm.tsx",
+  "name": "BulkScheduleForm.tsx",
+  "qualifier": "FIL",
+  "path": "features/scheduled-practicum/components/BulkScheduleForm.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "16",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "29"
+   },
+   {
+    "metric": "ncloc",
+    "value": "212"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/admin/inventory/_components/CategoriesView.tsx",
+  "name": "CategoriesView.tsx",
+  "qualifier": "FIL",
+  "path": "app/admin/inventory/_components/CategoriesView.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "13",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "20"
+   },
+   {
+    "metric": "ncloc",
+    "value": "168"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/dashboard/components/CategoryBarChart.tsx",
+  "name": "CategoryBarChart.tsx",
+  "qualifier": "FIL",
+  "path": "features/dashboard/components/CategoryBarChart.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "complexity",
+    "value": "1"
+   },
+   {
+    "metric": "ncloc",
+    "value": "46"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/courses/components/CourseList.tsx",
+  "name": "CourseList.tsx",
+  "qualifier": "FIL",
+  "path": "features/courses/components/CourseList.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "38",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "47"
+   },
+   {
+    "metric": "ncloc",
+    "value": "239"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/courses/components/CourseManager.tsx",
+  "name": "CourseManager.tsx",
+  "qualifier": "FIL",
+  "path": "features/courses/components/CourseManager.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "55",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "84"
+   },
+   {
+    "metric": "ncloc",
+    "value": "446"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/admin/dashboard/_components/DashboardAnalytics.tsx",
+  "name": "DashboardAnalytics.tsx",
+  "qualifier": "FIL",
+  "path": "app/admin/dashboard/_components/DashboardAnalytics.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "3",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "8"
+   },
+   {
+    "metric": "ncloc",
+    "value": "97"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/admin/dashboard/_components/DashboardNotifications.tsx",
+  "name": "DashboardNotifications.tsx",
+  "qualifier": "FIL",
+  "path": "app/admin/dashboard/_components/DashboardNotifications.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "2",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "14"
+   },
+   {
+    "metric": "ncloc",
+    "value": "189"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/governance/components/DataExport.tsx",
+  "name": "DataExport.tsx",
+  "qualifier": "FIL",
+  "path": "features/governance/components/DataExport.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "18",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "22"
+   },
+   {
+    "metric": "ncloc",
+    "value": "166"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:lib/device.ts",
+  "name": "device.ts",
+  "qualifier": "FIL",
+  "path": "lib/device.ts",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "1",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "4"
+   },
+   {
+    "metric": "ncloc",
+    "value": "10"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/governance/components/DocumentList.tsx",
+  "name": "DocumentList.tsx",
+  "qualifier": "FIL",
+  "path": "features/governance/components/DocumentList.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "15",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "17"
+   },
+   {
+    "metric": "ncloc",
+    "value": "117"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:lib/documentVerifier.ts",
+  "name": "documentVerifier.ts",
+  "qualifier": "FIL",
+  "path": "lib/documentVerifier.ts",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "105",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "53"
+   },
+   {
+    "metric": "ncloc",
+    "value": "321"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/governance/components/DownloadCenter.tsx",
+  "name": "DownloadCenter.tsx",
+  "qualifier": "FIL",
+  "path": "features/governance/components/DownloadCenter.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "11",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "29"
+   },
+   {
+    "metric": "ncloc",
+    "value": "163"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/download-center/components/DownloadCenterManager.tsx",
+  "name": "DownloadCenterManager.tsx",
+  "qualifier": "FIL",
+  "path": "features/download-center/components/DownloadCenterManager.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "13",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "21"
+   },
+   {
+    "metric": "ncloc",
+    "value": "139"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/users/enrollment.ts",
+  "name": "enrollment.ts",
+  "qualifier": "FIL",
+  "path": "features/users/enrollment.ts",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "22",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "27"
+   },
+   {
+    "metric": "ncloc",
+    "value": "117"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:lib/error.ts",
+  "name": "error.ts",
+  "qualifier": "FIL",
+  "path": "lib/error.ts",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "11",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "14"
+   },
+   {
+    "metric": "ncloc",
+    "value": "34"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/governance/export-actions.ts",
+  "name": "export-actions.ts",
+  "qualifier": "FIL",
+  "path": "features/governance/export-actions.ts",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "12",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "26"
+   },
+   {
+    "metric": "ncloc",
+    "value": "144"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:lib/formatters.ts",
+  "name": "formatters.ts",
+  "qualifier": "FIL",
+  "path": "lib/formatters.ts",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "28",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "46"
+   },
+   {
+    "metric": "ncloc",
+    "value": "120"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/globals.css",
+  "name": "globals.css",
+  "qualifier": "FIL",
+  "path": "app/globals.css",
+  "language": "css",
+  "measures": [
+   {
+    "metric": "ncloc",
+    "value": "104"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/governance/components/GovernanceManager.tsx",
+  "name": "GovernanceManager.tsx",
+  "qualifier": "FIL",
+  "path": "features/governance/components/GovernanceManager.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "15",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "41"
+   },
+   {
+    "metric": "ncloc",
+    "value": "181"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/governance/components/GovernanceUploadForm.tsx",
+  "name": "GovernanceUploadForm.tsx",
+  "qualifier": "FIL",
+  "path": "features/governance/components/GovernanceUploadForm.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "16",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "15"
+   },
+   {
+    "metric": "ncloc",
+    "value": "115"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/(home)/_components/HeroCarousel.tsx",
+  "name": "HeroCarousel.tsx",
+  "qualifier": "FIL",
+  "path": "app/(home)/_components/HeroCarousel.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "5",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "21"
+   },
+   {
+    "metric": "ncloc",
+    "value": "122"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/admin/hero-photos/_components/HeroFocalPicker.tsx",
+  "name": "HeroFocalPicker.tsx",
+  "qualifier": "FIL",
+  "path": "app/admin/hero-photos/_components/HeroFocalPicker.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "7",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "14"
+   },
+   {
+    "metric": "ncloc",
+    "value": "119"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/admin/hero-photos/_components/HeroPhotoManager.tsx",
+  "name": "HeroPhotoManager.tsx",
+  "qualifier": "FIL",
+  "path": "app/admin/hero-photos/_components/HeroPhotoManager.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "16",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "38"
+   },
+   {
+    "metric": "ncloc",
+    "value": "291"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/(home)/_components/HeroSection.tsx",
+  "name": "HeroSection.tsx",
+  "qualifier": "FIL",
+  "path": "app/(home)/_components/HeroSection.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "complexity",
+    "value": "1"
+   },
+   {
+    "metric": "ncloc",
+    "value": "8"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/(home)/_components/HomeCalendar.tsx",
+  "name": "HomeCalendar.tsx",
+  "qualifier": "FIL",
+  "path": "app/(home)/_components/HomeCalendar.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "18",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "52"
+   },
+   {
+    "metric": "ncloc",
+    "value": "292"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/practicum-reports/components/index.ts",
+  "name": "index.ts",
+  "qualifier": "FIL",
+  "path": "features/practicum-reports/components/index.ts",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "complexity",
+    "value": "0"
+   },
+   {
+    "metric": "ncloc",
+    "value": "5"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/dashboard/components/InsightCard.tsx",
+  "name": "InsightCard.tsx",
+  "qualifier": "FIL",
+  "path": "features/dashboard/components/InsightCard.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "complexity",
+    "value": "4"
+   },
+   {
+    "metric": "ncloc",
+    "value": "58"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/admin/inventory/_components/InventoryManager.tsx",
+  "name": "InventoryManager.tsx",
+  "qualifier": "FIL",
+  "path": "app/admin/inventory/_components/InventoryManager.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "2",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "7"
+   },
+   {
+    "metric": "ncloc",
+    "value": "53"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/student/items/_components/ItemCard.tsx",
+  "name": "ItemCard.tsx",
+  "qualifier": "FIL",
+  "path": "app/student/items/_components/ItemCard.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "43",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "71"
+   },
+   {
+    "metric": "ncloc",
+    "value": "500"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/admin/inventory/_components/ItemsView.tsx",
+  "name": "ItemsView.tsx",
+  "qualifier": "FIL",
+  "path": "app/admin/inventory/_components/ItemsView.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "56",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "63"
+   },
+   {
+    "metric": "ncloc",
+    "value": "499"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/admin/layout.tsx",
+  "name": "layout.tsx",
+  "qualifier": "FIL",
+  "path": "app/admin/layout.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "1",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "3"
+   },
+   {
+    "metric": "ncloc",
+    "value": "34"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/lecturer/layout.tsx",
+  "name": "layout.tsx",
+  "qualifier": "FIL",
+  "path": "app/lecturer/layout.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "1",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "3"
+   },
+   {
+    "metric": "ncloc",
+    "value": "34"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/student/layout.tsx",
+  "name": "layout.tsx",
+  "qualifier": "FIL",
+  "path": "app/student/layout.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "1",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "3"
+   },
+   {
+    "metric": "ncloc",
+    "value": "34"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/layout.tsx",
+  "name": "layout.tsx",
+  "qualifier": "FIL",
+  "path": "app/layout.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "complexity",
+    "value": "1"
+   },
+   {
+    "metric": "ncloc",
+    "value": "34"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/practicum-reports/components/LecturerPracticumReportTable.tsx",
+  "name": "LecturerPracticumReportTable.tsx",
+  "qualifier": "FIL",
+  "path": "features/practicum-reports/components/LecturerPracticumReportTable.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "28",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "77"
+   },
+   {
+    "metric": "ncloc",
+    "value": "412"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/publications/components/LikeButton.tsx",
+  "name": "LikeButton.tsx",
+  "qualifier": "FIL",
+  "path": "features/publications/components/LikeButton.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "7",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "13"
+   },
+   {
+    "metric": "ncloc",
+    "value": "56"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/admin/validations/_components/LoanHistoryFilter.tsx",
+  "name": "LoanHistoryFilter.tsx",
+  "qualifier": "FIL",
+  "path": "app/admin/validations/_components/LoanHistoryFilter.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "5",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "11"
+   },
+   {
+    "metric": "ncloc",
+    "value": "66"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/student/loans/_components/LoansTable.tsx",
+  "name": "LoansTable.tsx",
+  "qualifier": "FIL",
+  "path": "app/student/loans/_components/LoansTable.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "13",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "44"
+   },
+   {
+    "metric": "ncloc",
+    "value": "232"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/admin/validations/_components/LoansTableWithSearch.tsx",
+  "name": "LoansTableWithSearch.tsx",
+  "qualifier": "FIL",
+  "path": "app/admin/validations/_components/LoansTableWithSearch.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "6",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "19"
+   },
+   {
+    "metric": "ncloc",
+    "value": "150"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/practicum-reports/lpj-actions.ts",
+  "name": "lpj-actions.ts",
+  "qualifier": "FIL",
+  "path": "features/practicum-reports/lpj-actions.ts",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "12",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "19"
+   },
+   {
+    "metric": "ncloc",
+    "value": "93"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/admin/validations/_components/ManualBookingButton.tsx",
+  "name": "ManualBookingButton.tsx",
+  "qualifier": "FIL",
+  "path": "app/admin/validations/_components/ManualBookingButton.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "14",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "33"
+   },
+   {
+    "metric": "ncloc",
+    "value": "302"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/admin/validations/_components/ManualLoanButton.tsx",
+  "name": "ManualLoanButton.tsx",
+  "qualifier": "FIL",
+  "path": "app/admin/validations/_components/ManualLoanButton.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "18",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "42"
+   },
+   {
+    "metric": "ncloc",
+    "value": "336"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/admin/dashboard/_components/MarkAllReadButton.tsx",
+  "name": "MarkAllReadButton.tsx",
+  "qualifier": "FIL",
+  "path": "app/admin/dashboard/_components/MarkAllReadButton.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "1",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "4"
+   },
+   {
+    "metric": "ncloc",
+    "value": "22"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:lib/menu.ts",
+  "name": "menu.ts",
+  "qualifier": "FIL",
+  "path": "lib/menu.ts",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "39",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "37"
+   },
+   {
+    "metric": "ncloc",
+    "value": "153"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/practicum/components/ModuleList.tsx",
+  "name": "ModuleList.tsx",
+  "qualifier": "FIL",
+  "path": "features/practicum/components/ModuleList.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "37",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "52"
+   },
+   {
+    "metric": "ncloc",
+    "value": "279"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/practicum/components/ModuleManager.tsx",
+  "name": "ModuleManager.tsx",
+  "qualifier": "FIL",
+  "path": "features/practicum/components/ModuleManager.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "67",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "92"
+   },
+   {
+    "metric": "ncloc",
+    "value": "530"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/(home)/_components/ModuleSection.tsx",
+  "name": "ModuleSection.tsx",
+  "qualifier": "FIL",
+  "path": "app/(home)/_components/ModuleSection.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "1",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "4"
+   },
+   {
+    "metric": "ncloc",
+    "value": "54"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/(auth)/register/page.tsx",
+  "name": "page.tsx",
+  "qualifier": "FIL",
+  "path": "app/(auth)/register/page.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "complexity",
+    "value": "1"
+   },
+   {
+    "metric": "ncloc",
+    "value": "6"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/(auth)/login/page.tsx",
+  "name": "page.tsx",
+  "qualifier": "FIL",
+  "path": "app/(auth)/login/page.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "6",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "13"
+   },
+   {
+    "metric": "ncloc",
+    "value": "186"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/admin/validations/page.tsx",
+  "name": "page.tsx",
+  "qualifier": "FIL",
+  "path": "app/admin/validations/page.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "24",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "53"
+   },
+   {
+    "metric": "ncloc",
+    "value": "577"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/admin/scheduled-practicum/page.tsx",
+  "name": "page.tsx",
+  "qualifier": "FIL",
+  "path": "app/admin/scheduled-practicum/page.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "complexity",
+    "value": "2"
+   },
+   {
+    "metric": "ncloc",
+    "value": "30"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/admin/dashboard/page.tsx",
+  "name": "page.tsx",
+  "qualifier": "FIL",
+  "path": "app/admin/dashboard/page.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "3",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "15"
+   },
+   {
+    "metric": "ncloc",
+    "value": "173"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/admin/publications/page.tsx",
+  "name": "page.tsx",
+  "qualifier": "FIL",
+  "path": "app/admin/publications/page.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "1",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "3"
+   },
+   {
+    "metric": "ncloc",
+    "value": "24"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/admin/hero-photos/page.tsx",
+  "name": "page.tsx",
+  "qualifier": "FIL",
+  "path": "app/admin/hero-photos/page.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "complexity",
+    "value": "1"
+   },
+   {
+    "metric": "ncloc",
+    "value": "14"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/admin/inventory/page.tsx",
+  "name": "page.tsx",
+  "qualifier": "FIL",
+  "path": "app/admin/inventory/page.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "complexity",
+    "value": "1"
+   },
+   {
+    "metric": "ncloc",
+    "value": "16"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/admin/governance/page.tsx",
+  "name": "page.tsx",
+  "qualifier": "FIL",
+  "path": "app/admin/governance/page.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "8",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "10"
+   },
+   {
+    "metric": "ncloc",
+    "value": "38"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/admin/pengembalian/page.tsx",
+  "name": "page.tsx",
+  "qualifier": "FIL",
+  "path": "app/admin/pengembalian/page.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "9",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "14"
+   },
+   {
+    "metric": "ncloc",
+    "value": "118"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/admin/practicum/page.tsx",
+  "name": "page.tsx",
+  "qualifier": "FIL",
+  "path": "app/admin/practicum/page.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "complexity",
+    "value": "1"
+   },
+   {
+    "metric": "ncloc",
+    "value": "12"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/admin/download-center/page.tsx",
+  "name": "page.tsx",
+  "qualifier": "FIL",
+  "path": "app/admin/download-center/page.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "1",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "3"
+   },
+   {
+    "metric": "ncloc",
+    "value": "12"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/admin/profile/page.tsx",
+  "name": "page.tsx",
+  "qualifier": "FIL",
+  "path": "app/admin/profile/page.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "2",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "8"
+   },
+   {
+    "metric": "ncloc",
+    "value": "44"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/admin/courses/page.tsx",
+  "name": "page.tsx",
+  "qualifier": "FIL",
+  "path": "app/admin/courses/page.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "complexity",
+    "value": "1"
+   },
+   {
+    "metric": "ncloc",
+    "value": "12"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/admin/riwayat/page.tsx",
+  "name": "page.tsx",
+  "qualifier": "FIL",
+  "path": "app/admin/riwayat/page.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "23",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "40"
+   },
+   {
+    "metric": "ncloc",
+    "value": "272"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/lecturer/manage/download-center/page.tsx",
+  "name": "page.tsx",
+  "qualifier": "FIL",
+  "path": "app/lecturer/manage/download-center/page.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "1",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "3"
+   },
+   {
+    "metric": "ncloc",
+    "value": "12"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/lecturer/manage/scheduled-practicum/page.tsx",
+  "name": "page.tsx",
+  "qualifier": "FIL",
+  "path": "app/lecturer/manage/scheduled-practicum/page.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "1",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "3"
+   },
+   {
+    "metric": "ncloc",
+    "value": "34"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/lecturer/manage/publications/page.tsx",
+  "name": "page.tsx",
+  "qualifier": "FIL",
+  "path": "app/lecturer/manage/publications/page.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "1",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "3"
+   },
+   {
+    "metric": "ncloc",
+    "value": "10"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/lecturer/manage/validations/page.tsx",
+  "name": "page.tsx",
+  "qualifier": "FIL",
+  "path": "app/lecturer/manage/validations/page.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "1",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "3"
+   },
+   {
+    "metric": "ncloc",
+    "value": "10"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/lecturer/manage/inventory/page.tsx",
+  "name": "page.tsx",
+  "qualifier": "FIL",
+  "path": "app/lecturer/manage/inventory/page.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "1",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "3"
+   },
+   {
+    "metric": "ncloc",
+    "value": "10"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/lecturer/manage/dashboard/page.tsx",
+  "name": "page.tsx",
+  "qualifier": "FIL",
+  "path": "app/lecturer/manage/dashboard/page.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "1",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "3"
+   },
+   {
+    "metric": "ncloc",
+    "value": "10"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/lecturer/manage/practicum/page.tsx",
+  "name": "page.tsx",
+  "qualifier": "FIL",
+  "path": "app/lecturer/manage/practicum/page.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "1",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "3"
+   },
+   {
+    "metric": "ncloc",
+    "value": "10"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/lecturer/manage/courses/page.tsx",
+  "name": "page.tsx",
+  "qualifier": "FIL",
+  "path": "app/lecturer/manage/courses/page.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "1",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "3"
+   },
+   {
+    "metric": "ncloc",
+    "value": "10"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/lecturer/manage/governance/page.tsx",
+  "name": "page.tsx",
+  "qualifier": "FIL",
+  "path": "app/lecturer/manage/governance/page.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "9",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "11"
+   },
+   {
+    "metric": "ncloc",
+    "value": "42"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/lecturer/practicum/page.tsx",
+  "name": "page.tsx",
+  "qualifier": "FIL",
+  "path": "app/lecturer/practicum/page.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "complexity",
+    "value": "1"
+   },
+   {
+    "metric": "ncloc",
+    "value": "12"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/lecturer/modules/page.tsx",
+  "name": "page.tsx",
+  "qualifier": "FIL",
+  "path": "app/lecturer/modules/page.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "2",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "4"
+   },
+   {
+    "metric": "ncloc",
+    "value": "24"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/lecturer/rooms/page.tsx",
+  "name": "page.tsx",
+  "qualifier": "FIL",
+  "path": "app/lecturer/rooms/page.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "3",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "5"
+   },
+   {
+    "metric": "ncloc",
+    "value": "41"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/lecturer/dashboard/page.tsx",
+  "name": "page.tsx",
+  "qualifier": "FIL",
+  "path": "app/lecturer/dashboard/page.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "9",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "18"
+   },
+   {
+    "metric": "ncloc",
+    "value": "220"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/lecturer/schedules/page.tsx",
+  "name": "page.tsx",
+  "qualifier": "FIL",
+  "path": "app/lecturer/schedules/page.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "2",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "4"
+   },
+   {
+    "metric": "ncloc",
+    "value": "35"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/lecturer/profile/page.tsx",
+  "name": "page.tsx",
+  "qualifier": "FIL",
+  "path": "app/lecturer/profile/page.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "1",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "3"
+   },
+   {
+    "metric": "ncloc",
+    "value": "26"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/lecturer/download-center/page.tsx",
+  "name": "page.tsx",
+  "qualifier": "FIL",
+  "path": "app/lecturer/download-center/page.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "1",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "2"
+   },
+   {
+    "metric": "ncloc",
+    "value": "10"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/lecturer/governance/page.tsx",
+  "name": "page.tsx",
+  "qualifier": "FIL",
+  "path": "app/lecturer/governance/page.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "3",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "9"
+   },
+   {
+    "metric": "ncloc",
+    "value": "108"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/lecturer/publications/page.tsx",
+  "name": "page.tsx",
+  "qualifier": "FIL",
+  "path": "app/lecturer/publications/page.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "1",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "3"
+   },
+   {
+    "metric": "ncloc",
+    "value": "24"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/lecturer/courses/page.tsx",
+  "name": "page.tsx",
+  "qualifier": "FIL",
+  "path": "app/lecturer/courses/page.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "2",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "4"
+   },
+   {
+    "metric": "ncloc",
+    "value": "25"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/lecturer/items/page.tsx",
+  "name": "page.tsx",
+  "qualifier": "FIL",
+  "path": "app/lecturer/items/page.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "2",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "4"
+   },
+   {
+    "metric": "ncloc",
+    "value": "36"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/student/loans/page.tsx",
+  "name": "page.tsx",
+  "qualifier": "FIL",
+  "path": "app/student/loans/page.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "complexity",
+    "value": "1"
+   },
+   {
+    "metric": "ncloc",
+    "value": "4"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/student/manage/dashboard/page.tsx",
+  "name": "page.tsx",
+  "qualifier": "FIL",
+  "path": "app/student/manage/dashboard/page.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "1",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "3"
+   },
+   {
+    "metric": "ncloc",
+    "value": "10"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/student/manage/scheduled-practicum/page.tsx",
+  "name": "page.tsx",
+  "qualifier": "FIL",
+  "path": "app/student/manage/scheduled-practicum/page.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "2",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "4"
+   },
+   {
+    "metric": "ncloc",
+    "value": "35"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/student/manage/publications/page.tsx",
+  "name": "page.tsx",
+  "qualifier": "FIL",
+  "path": "app/student/manage/publications/page.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "1",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "3"
+   },
+   {
+    "metric": "ncloc",
+    "value": "10"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/student/manage/practicum/page.tsx",
+  "name": "page.tsx",
+  "qualifier": "FIL",
+  "path": "app/student/manage/practicum/page.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "1",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "3"
+   },
+   {
+    "metric": "ncloc",
+    "value": "10"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/student/manage/download-center/page.tsx",
+  "name": "page.tsx",
+  "qualifier": "FIL",
+  "path": "app/student/manage/download-center/page.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "1",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "3"
+   },
+   {
+    "metric": "ncloc",
+    "value": "12"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/student/manage/validations/page.tsx",
+  "name": "page.tsx",
+  "qualifier": "FIL",
+  "path": "app/student/manage/validations/page.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "1",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "3"
+   },
+   {
+    "metric": "ncloc",
+    "value": "10"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/student/manage/governance/page.tsx",
+  "name": "page.tsx",
+  "qualifier": "FIL",
+  "path": "app/student/manage/governance/page.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "9",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "11"
+   },
+   {
+    "metric": "ncloc",
+    "value": "42"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/student/manage/inventory/page.tsx",
+  "name": "page.tsx",
+  "qualifier": "FIL",
+  "path": "app/student/manage/inventory/page.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "1",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "3"
+   },
+   {
+    "metric": "ncloc",
+    "value": "10"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/student/manage/courses/page.tsx",
+  "name": "page.tsx",
+  "qualifier": "FIL",
+  "path": "app/student/manage/courses/page.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "1",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "3"
+   },
+   {
+    "metric": "ncloc",
+    "value": "10"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/student/practicum/page.tsx",
+  "name": "page.tsx",
+  "qualifier": "FIL",
+  "path": "app/student/practicum/page.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "complexity",
+    "value": "1"
+   },
+   {
+    "metric": "ncloc",
+    "value": "12"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/student/items/page.tsx",
+  "name": "page.tsx",
+  "qualifier": "FIL",
+  "path": "app/student/items/page.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "2",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "3"
+   },
+   {
+    "metric": "ncloc",
+    "value": "35"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/student/download-center/page.tsx",
+  "name": "page.tsx",
+  "qualifier": "FIL",
+  "path": "app/student/download-center/page.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "1",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "2"
+   },
+   {
+    "metric": "ncloc",
+    "value": "10"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/student/profile/page.tsx",
+  "name": "page.tsx",
+  "qualifier": "FIL",
+  "path": "app/student/profile/page.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "1",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "3"
+   },
+   {
+    "metric": "ncloc",
+    "value": "28"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/student/publications/page.tsx",
+  "name": "page.tsx",
+  "qualifier": "FIL",
+  "path": "app/student/publications/page.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "41",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "70"
+   },
+   {
+    "metric": "ncloc",
+    "value": "285"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/student/dashboard/page.tsx",
+  "name": "page.tsx",
+  "qualifier": "FIL",
+  "path": "app/student/dashboard/page.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "3",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "11"
+   },
+   {
+    "metric": "ncloc",
+    "value": "151"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/student/rooms/page.tsx",
+  "name": "page.tsx",
+  "qualifier": "FIL",
+  "path": "app/student/rooms/page.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "3",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "4"
+   },
+   {
+    "metric": "ncloc",
+    "value": "40"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/student/courses/page.tsx",
+  "name": "page.tsx",
+  "qualifier": "FIL",
+  "path": "app/student/courses/page.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "complexity",
+    "value": "1"
+   },
+   {
+    "metric": "ncloc",
+    "value": "10"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/(home)/page.tsx",
+  "name": "page.tsx",
+  "qualifier": "FIL",
+  "path": "app/(home)/page.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "2",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "3"
+   },
+   {
+    "metric": "ncloc",
+    "value": "99"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/dashboard/page.tsx",
+  "name": "page.tsx",
+  "qualifier": "FIL",
+  "path": "app/dashboard/page.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "4",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "5"
+   },
+   {
+    "metric": "ncloc",
+    "value": "14"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/items/[qrCode]/page.tsx",
+  "name": "page.tsx",
+  "qualifier": "FIL",
+  "path": "app/items/[qrCode]/page.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "6",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "13"
+   },
+   {
+    "metric": "ncloc",
+    "value": "131"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/items/[qrCode]/pinjam/page.tsx",
+  "name": "page.tsx",
+  "qualifier": "FIL",
+  "path": "app/items/[qrCode]/pinjam/page.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "5",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "5"
+   },
+   {
+    "metric": "ncloc",
+    "value": "24"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/publications/page.tsx",
+  "name": "page.tsx",
+  "qualifier": "FIL",
+  "path": "app/publications/page.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "49",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "80"
+   },
+   {
+    "metric": "ncloc",
+    "value": "468"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/admin/dashboard/_components/PendingBookingsAlert.tsx",
+  "name": "PendingBookingsAlert.tsx",
+  "qualifier": "FIL",
+  "path": "app/admin/dashboard/_components/PendingBookingsAlert.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "1",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "2"
+   },
+   {
+    "metric": "ncloc",
+    "value": "38"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/admin/dashboard/_components/PendingLoansAlert.tsx",
+  "name": "PendingLoansAlert.tsx",
+  "qualifier": "FIL",
+  "path": "app/admin/dashboard/_components/PendingLoansAlert.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "1",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "2"
+   },
+   {
+    "metric": "ncloc",
+    "value": "38"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/admin/validations/_components/PendingReturnsList.tsx",
+  "name": "PendingReturnsList.tsx",
+  "qualifier": "FIL",
+  "path": "app/admin/validations/_components/PendingReturnsList.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "1",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "10"
+   },
+   {
+    "metric": "ncloc",
+    "value": "94"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/admin/dashboard/_components/PendingUserAlert.tsx",
+  "name": "PendingUserAlert.tsx",
+  "qualifier": "FIL",
+  "path": "app/admin/dashboard/_components/PendingUserAlert.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "1",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "2"
+   },
+   {
+    "metric": "ncloc",
+    "value": "38"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/practicum-reports/components/PracticumLpjManager.tsx",
+  "name": "PracticumLpjManager.tsx",
+  "qualifier": "FIL",
+  "path": "features/practicum-reports/components/PracticumLpjManager.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "14",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "38"
+   },
+   {
+    "metric": "ncloc",
+    "value": "236"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/practicum-reports/components/PracticumReportForm.tsx",
+  "name": "PracticumReportForm.tsx",
+  "qualifier": "FIL",
+  "path": "features/practicum-reports/components/PracticumReportForm.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "21",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "28"
+   },
+   {
+    "metric": "ncloc",
+    "value": "276"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/practicum-reports/components/PracticumReportTable.tsx",
+  "name": "PracticumReportTable.tsx",
+  "qualifier": "FIL",
+  "path": "features/practicum-reports/components/PracticumReportTable.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "8",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "31"
+   },
+   {
+    "metric": "ncloc",
+    "value": "194"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/users/components/ProfileForm.tsx",
+  "name": "ProfileForm.tsx",
+  "qualifier": "FIL",
+  "path": "features/users/components/ProfileForm.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "12",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "23"
+   },
+   {
+    "metric": "ncloc",
+    "value": "217"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/publications/components/PublicationLink.tsx",
+  "name": "PublicationLink.tsx",
+  "qualifier": "FIL",
+  "path": "features/publications/components/PublicationLink.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "complexity",
+    "value": "3"
+   },
+   {
+    "metric": "ncloc",
+    "value": "30"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/publications/components/PublicationManager.tsx",
+  "name": "PublicationManager.tsx",
+  "qualifier": "FIL",
+  "path": "features/publications/components/PublicationManager.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "104",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "138"
+   },
+   {
+    "metric": "ncloc",
+    "value": "732"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/(home)/_components/PublicationSection.tsx",
+  "name": "PublicationSection.tsx",
+  "qualifier": "FIL",
+  "path": "app/(home)/_components/PublicationSection.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "3",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "8"
+   },
+   {
+    "metric": "ncloc",
+    "value": "90"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/(home)/_components/QuickStats.tsx",
+  "name": "QuickStats.tsx",
+  "qualifier": "FIL",
+  "path": "app/(home)/_components/QuickStats.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "complexity",
+    "value": "2"
+   },
+   {
+    "metric": "ncloc",
+    "value": "55"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/users/register.ts",
+  "name": "register.ts",
+  "qualifier": "FIL",
+  "path": "features/users/register.ts",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "12",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "16"
+   },
+   {
+    "metric": "ncloc",
+    "value": "81"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/(auth)/register/RegisterForm.tsx",
+  "name": "RegisterForm.tsx",
+  "qualifier": "FIL",
+  "path": "app/(auth)/register/RegisterForm.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "21",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "31"
+   },
+   {
+    "metric": "ncloc",
+    "value": "271"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/student/loans/_components/ReturnModal.tsx",
+  "name": "ReturnModal.tsx",
+  "qualifier": "FIL",
+  "path": "app/student/loans/_components/ReturnModal.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "21",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "25"
+   },
+   {
+    "metric": "ncloc",
+    "value": "167"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/admin/dashboard/_components/RoomAttendanceChart.tsx",
+  "name": "RoomAttendanceChart.tsx",
+  "qualifier": "FIL",
+  "path": "app/admin/dashboard/_components/RoomAttendanceChart.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "1",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "6"
+   },
+   {
+    "metric": "ncloc",
+    "value": "67"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/bookings/components/RoomBookingClient.tsx",
+  "name": "RoomBookingClient.tsx",
+  "qualifier": "FIL",
+  "path": "features/bookings/components/RoomBookingClient.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "23",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "38"
+   },
+   {
+    "metric": "ncloc",
+    "value": "378"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/admin/inventory/_components/RoomsView.tsx",
+  "name": "RoomsView.tsx",
+  "qualifier": "FIL",
+  "path": "app/admin/inventory/_components/RoomsView.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "40",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "48"
+   },
+   {
+    "metric": "ncloc",
+    "value": "394"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/api/upload/route.ts",
+  "name": "route.ts",
+  "qualifier": "FIL",
+  "path": "app/api/upload/route.ts",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "15",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "10"
+   },
+   {
+    "metric": "ncloc",
+    "value": "87"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/api/refresh-session/route.ts",
+  "name": "route.ts",
+  "qualifier": "FIL",
+  "path": "app/api/refresh-session/route.ts",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "6",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "8"
+   },
+   {
+    "metric": "ncloc",
+    "value": "63"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/api/berita-acara/download/route.ts",
+  "name": "route.ts",
+  "qualifier": "FIL",
+  "path": "app/api/berita-acara/download/route.ts",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "18",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "29"
+   },
+   {
+    "metric": "ncloc",
+    "value": "192"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/api/file/[...path]/route.ts",
+  "name": "route.ts",
+  "qualifier": "FIL",
+  "path": "app/api/file/[...path]/route.ts",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "7",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "10"
+   },
+   {
+    "metric": "ncloc",
+    "value": "34"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/scheduled-practicum/components/ScheduledPracticumManager.tsx",
+  "name": "ScheduledPracticumManager.tsx",
+  "qualifier": "FIL",
+  "path": "features/scheduled-practicum/components/ScheduledPracticumManager.tsx",
+  "language": "ts",
+  "measures": []
+ },
+ {
+  "key": "lab-industri:app/admin/validations/_components/SearchableBookingsSection.tsx",
+  "name": "SearchableBookingsSection.tsx",
+  "qualifier": "FIL",
+  "path": "app/admin/validations/_components/SearchableBookingsSection.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "8",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "36"
+   },
+   {
+    "metric": "ncloc",
+    "value": "198"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/admin/validations/_components/SearchableLoansSection.tsx",
+  "name": "SearchableLoansSection.tsx",
+  "qualifier": "FIL",
+  "path": "app/admin/validations/_components/SearchableLoansSection.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "12",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "53"
+   },
+   {
+    "metric": "ncloc",
+    "value": "326"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/admin/validations/_components/SearchableRiwayatSection.tsx",
+  "name": "SearchableRiwayatSection.tsx",
+  "qualifier": "FIL",
+  "path": "app/admin/validations/_components/SearchableRiwayatSection.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "37",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "74"
+   },
+   {
+    "metric": "ncloc",
+    "value": "411"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/admin/validations/_components/SearchableUsersSection.tsx",
+  "name": "SearchableUsersSection.tsx",
+  "qualifier": "FIL",
+  "path": "app/admin/validations/_components/SearchableUsersSection.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "12",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "39"
+   },
+   {
+    "metric": "ncloc",
+    "value": "212"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/attendance/service.ts",
+  "name": "service.ts",
+  "qualifier": "FIL",
+  "path": "features/attendance/service.ts",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "complexity",
+    "value": "8"
+   },
+   {
+    "metric": "ncloc",
+    "value": "106"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/courses/service.ts",
+  "name": "service.ts",
+  "qualifier": "FIL",
+  "path": "features/courses/service.ts",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "6",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "23"
+   },
+   {
+    "metric": "ncloc",
+    "value": "124"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/practicum/service.ts",
+  "name": "service.ts",
+  "qualifier": "FIL",
+  "path": "features/practicum/service.ts",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "5",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "19"
+   },
+   {
+    "metric": "ncloc",
+    "value": "113"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/scheduled-practicum/service.ts",
+  "name": "service.ts",
+  "qualifier": "FIL",
+  "path": "features/scheduled-practicum/service.ts",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "15",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "27"
+   },
+   {
+    "metric": "ncloc",
+    "value": "206"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/dashboard/service.ts",
+  "name": "service.ts",
+  "qualifier": "FIL",
+  "path": "features/dashboard/service.ts",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "3",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "46"
+   },
+   {
+    "metric": "ncloc",
+    "value": "536"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/practicum-reports/service.ts",
+  "name": "service.ts",
+  "qualifier": "FIL",
+  "path": "features/practicum-reports/service.ts",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "1",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "19"
+   },
+   {
+    "metric": "ncloc",
+    "value": "226"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/users/service.ts",
+  "name": "service.ts",
+  "qualifier": "FIL",
+  "path": "features/users/service.ts",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "6",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "23"
+   },
+   {
+    "metric": "ncloc",
+    "value": "174"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/hero-photos/service.ts",
+  "name": "service.ts",
+  "qualifier": "FIL",
+  "path": "features/hero-photos/service.ts",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "3",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "10"
+   },
+   {
+    "metric": "ncloc",
+    "value": "57"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/bookings/service.ts",
+  "name": "service.ts",
+  "qualifier": "FIL",
+  "path": "features/bookings/service.ts",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "12",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "32"
+   },
+   {
+    "metric": "ncloc",
+    "value": "198"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/publications/service.ts",
+  "name": "service.ts",
+  "qualifier": "FIL",
+  "path": "features/publications/service.ts",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "24",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "46"
+   },
+   {
+    "metric": "ncloc",
+    "value": "253"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/loans/service.ts",
+  "name": "service.ts",
+  "qualifier": "FIL",
+  "path": "features/loans/service.ts",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "24",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "45"
+   },
+   {
+    "metric": "ncloc",
+    "value": "279"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/permissions/service.ts",
+  "name": "service.ts",
+  "qualifier": "FIL",
+  "path": "features/permissions/service.ts",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "13",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "22"
+   },
+   {
+    "metric": "ncloc",
+    "value": "109"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/inventory/service.ts",
+  "name": "service.ts",
+  "qualifier": "FIL",
+  "path": "features/inventory/service.ts",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "1",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "17"
+   },
+   {
+    "metric": "ncloc",
+    "value": "115"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/(home)/_components/SOPSection.tsx",
+  "name": "SOPSection.tsx",
+  "qualifier": "FIL",
+  "path": "app/(home)/_components/SOPSection.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "3",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "4"
+   },
+   {
+    "metric": "ncloc",
+    "value": "58"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/dashboard/components/StatCard.tsx",
+  "name": "StatCard.tsx",
+  "qualifier": "FIL",
+  "path": "features/dashboard/components/StatCard.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "3",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "7"
+   },
+   {
+    "metric": "ncloc",
+    "value": "47"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/student/items/_components/StudentItemsManager.tsx",
+  "name": "StudentItemsManager.tsx",
+  "qualifier": "FIL",
+  "path": "app/student/items/_components/StudentItemsManager.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "24",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "42"
+   },
+   {
+    "metric": "ncloc",
+    "value": "238"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/student/rooms/_components/StudentRoomManager.tsx",
+  "name": "StudentRoomManager.tsx",
+  "qualifier": "FIL",
+  "path": "app/student/rooms/_components/StudentRoomManager.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "10",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "36"
+   },
+   {
+    "metric": "ncloc",
+    "value": "228"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/scheduled-practicum/components/StudentScheduledPracticumManager.tsx",
+  "name": "StudentScheduledPracticumManager.tsx",
+  "qualifier": "FIL",
+  "path": "features/scheduled-practicum/components/StudentScheduledPracticumManager.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "70",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "110"
+   },
+   {
+    "metric": "ncloc",
+    "value": "561"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/student/dashboard/_components/StudentScheduleWidget.tsx",
+  "name": "StudentScheduleWidget.tsx",
+  "qualifier": "FIL",
+  "path": "app/student/dashboard/_components/StudentScheduleWidget.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "35",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "58"
+   },
+   {
+    "metric": "ncloc",
+    "value": "255"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:lib/timezone.ts",
+  "name": "timezone.ts",
+  "qualifier": "FIL",
+  "path": "lib/timezone.ts",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "6",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "18"
+   },
+   {
+    "metric": "ncloc",
+    "value": "75"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/admin/dashboard/_components/TodayAttendance.tsx",
+  "name": "TodayAttendance.tsx",
+  "qualifier": "FIL",
+  "path": "app/admin/dashboard/_components/TodayAttendance.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "4",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "7"
+   },
+   {
+    "metric": "ncloc",
+    "value": "94"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/dashboard/components/TrendChart.tsx",
+  "name": "TrendChart.tsx",
+  "qualifier": "FIL",
+  "path": "features/dashboard/components/TrendChart.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "complexity",
+    "value": "1"
+   },
+   {
+    "metric": "ncloc",
+    "value": "46"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/attendance/types.ts",
+  "name": "types.ts",
+  "qualifier": "FIL",
+  "path": "features/attendance/types.ts",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "complexity",
+    "value": "0"
+   },
+   {
+    "metric": "ncloc",
+    "value": "31"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/courses/types.ts",
+  "name": "types.ts",
+  "qualifier": "FIL",
+  "path": "features/courses/types.ts",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "complexity",
+    "value": "0"
+   },
+   {
+    "metric": "ncloc",
+    "value": "29"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/practicum/types.ts",
+  "name": "types.ts",
+  "qualifier": "FIL",
+  "path": "features/practicum/types.ts",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "complexity",
+    "value": "0"
+   },
+   {
+    "metric": "ncloc",
+    "value": "28"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/scheduled-practicum/types.ts",
+  "name": "types.ts",
+  "qualifier": "FIL",
+  "path": "features/scheduled-practicum/types.ts",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "complexity",
+    "value": "0"
+   },
+   {
+    "metric": "ncloc",
+    "value": "38"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/practicum-reports/types.ts",
+  "name": "types.ts",
+  "qualifier": "FIL",
+  "path": "features/practicum-reports/types.ts",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "complexity",
+    "value": "0"
+   },
+   {
+    "metric": "ncloc",
+    "value": "65"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/users/types.ts",
+  "name": "types.ts",
+  "qualifier": "FIL",
+  "path": "features/users/types.ts",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "complexity",
+    "value": "0"
+   },
+   {
+    "metric": "ncloc",
+    "value": "45"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/bookings/types.ts",
+  "name": "types.ts",
+  "qualifier": "FIL",
+  "path": "features/bookings/types.ts",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "complexity",
+    "value": "0"
+   },
+   {
+    "metric": "ncloc",
+    "value": "52"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/loans/types.ts",
+  "name": "types.ts",
+  "qualifier": "FIL",
+  "path": "features/loans/types.ts",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "complexity",
+    "value": "0"
+   },
+   {
+    "metric": "ncloc",
+    "value": "50"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/inventory/types.ts",
+  "name": "types.ts",
+  "qualifier": "FIL",
+  "path": "features/inventory/types.ts",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "complexity",
+    "value": "0"
+   },
+   {
+    "metric": "ncloc",
+    "value": "43"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:lib/upload.ts",
+  "name": "upload.ts",
+  "qualifier": "FIL",
+  "path": "lib/upload.ts",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "2",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "5"
+   },
+   {
+    "metric": "ncloc",
+    "value": "30"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/governance/components/UserForm.tsx",
+  "name": "UserForm.tsx",
+  "qualifier": "FIL",
+  "path": "features/governance/components/UserForm.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "16",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "33"
+   },
+   {
+    "metric": "ncloc",
+    "value": "226"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/governance/components/UserList.tsx",
+  "name": "UserList.tsx",
+  "qualifier": "FIL",
+  "path": "features/governance/components/UserList.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "56",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "93"
+   },
+   {
+    "metric": "ncloc",
+    "value": "421"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:lib/utils.ts",
+  "name": "utils.ts",
+  "qualifier": "FIL",
+  "path": "lib/utils.ts",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "complexity",
+    "value": "1"
+   },
+   {
+    "metric": "ncloc",
+    "value": "5"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:app/admin/validations/_components/ValidationTabs.tsx",
+  "name": "ValidationTabs.tsx",
+  "qualifier": "FIL",
+  "path": "app/admin/validations/_components/ValidationTabs.tsx",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "5",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "14"
+   },
+   {
+    "metric": "ncloc",
+    "value": "72"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/scheduled-practicum/validator.ts",
+  "name": "validator.ts",
+  "qualifier": "FIL",
+  "path": "features/scheduled-practicum/validator.ts",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "complexity",
+    "value": "0"
+   },
+   {
+    "metric": "ncloc",
+    "value": "18"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/practicum-reports/validator.ts",
+  "name": "validator.ts",
+  "qualifier": "FIL",
+  "path": "features/practicum-reports/validator.ts",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "2",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "4"
+   },
+   {
+    "metric": "ncloc",
+    "value": "33"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/users/validator.ts",
+  "name": "validator.ts",
+  "qualifier": "FIL",
+  "path": "features/users/validator.ts",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "cognitive_complexity",
+    "value": "2",
+    "bestValue": false
+   },
+   {
+    "metric": "complexity",
+    "value": "3"
+   },
+   {
+    "metric": "ncloc",
+    "value": "38"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/bookings/validator.ts",
+  "name": "validator.ts",
+  "qualifier": "FIL",
+  "path": "features/bookings/validator.ts",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "complexity",
+    "value": "1"
+   },
+   {
+    "metric": "ncloc",
+    "value": "18"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/loans/validator.ts",
+  "name": "validator.ts",
+  "qualifier": "FIL",
+  "path": "features/loans/validator.ts",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "complexity",
+    "value": "0"
+   },
+   {
+    "metric": "ncloc",
+    "value": "13"
+   }
+  ]
+ },
+ {
+  "key": "lab-industri:features/inventory/validator.ts",
+  "name": "validator.ts",
+  "qualifier": "FIL",
+  "path": "features/inventory/validator.ts",
+  "language": "ts",
+  "measures": [
+   {
+    "metric": "complexity",
+    "value": "0"
+   },
+   {
+    "metric": "ncloc",
+    "value": "32"
+   }
+  ]
+ }
+]
